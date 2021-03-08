@@ -1,0 +1,11 @@
+image: pnavaro/selalib
+
+pages:
+  stage: deploy
+  script:
+	- cd sphinx; make html; mv ../build/html public
+  artifacts:
+    paths:
+      - public
+  tags:
+    - small
