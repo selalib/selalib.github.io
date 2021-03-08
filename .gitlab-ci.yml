@@ -3,7 +3,7 @@ image: pnavaro/selalib
 pages:
   stage: deploy
   script:
-	- make html; mv build/html public
+    - make html; mv build/html public
   artifacts:
     paths:
       - public
