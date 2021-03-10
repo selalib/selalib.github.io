@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding guidelines</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Naming Convention" href="naming_convention.html" />
+    <link rel="prev" title="Libraries" href="structure.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/selalib.png" class="logo" alt="logo">
+  
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="equations.html">
+   Equations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  User guide
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="build.html">
+   Build the library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="user_guide.html">
+   Preamble
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="low_level.html">
+   Low-Level Layer: Basic Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mid_level.html">
+   Mid-Level Layer: Numerical and Parallel Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="top_level.html">
+   Top-Level Layer: Semi-Lagrangian Toolbox
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Developer guide
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmake.html">
+   CMake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="structure.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Coding guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="naming_convention.html">
+   Naming Convention
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="doxygen.html">
+   Doxygen
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Credits
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="members.html">
+   Contributors
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/coding_style.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/selalib/selalib"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/selalib/selalib/issues/new?title=Issue%20on%20page%20%2Fcoding_style.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/selalib/selalib/edit/main/coding_style.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-coding-style">
+   General Coding style
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procedure-arguments-definition">
+   Procedure arguments definition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#naming-conventions-for-exposed-fortran-interfaces-sec-exposed-names">
+   Naming conventions for exposed Fortran interfaces {#sec:exposed_names}
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#files-and-directories">
+   Files and directories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-and-classes">
+   Types and classes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selalib-library-interfaces">
+   SeLaLib library interfaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selalib-module-interfaces">
+   SeLaLib module interfaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selalib-header-files">
+   SeLaLib header files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulations">
+   Simulations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#structure">
+     Structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#naming-conventions">
+     Naming conventions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unit-tests">
+   Unit tests
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-guidelines">
+     General guidelines
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#naming-convention">
+     Naming convention
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="coding-guidelines">
+<h1>Coding guidelines<a class="headerlink" href="#coding-guidelines" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="general-coding-style">
+<h2>General Coding style<a class="headerlink" href="#general-coding-style" title="Permalink to this headline">¶</a></h2>
+<p><strong>Documentation</strong></p>
+<ul class="simple">
+<li><p>Write brief documentation before implementation.</p></li>
+<li><p>Please share and communicate your developments on the list.</p></li>
+<li><p>If you comment out a piece of code, put a clear comment about the
+reason to do it. Otherwise is not clear why something is commented.</p></li>
+<li><p>Document your code with doxygen (see <a class="reference internal" href="doxygen.html"><span class="doc">Doxygen</span></a> for detailed instructions).</p></li>
+</ul>
+<p><strong>Interfaces</strong></p>
+<ul class="simple">
+<li><p>Don’t forget interfaces on top of each modules.</p></li>
+<li><p>Only these interfaces should be public.</p></li>
+<li><p>Type bound functions should only be made public through the type.</p></li>
+<li><p>Future updates will be much easier if we have a good interface.</p></li>
+<li><p>End user do not have to change his code to get upgrade benefits.</p></li>
+</ul>
+<p><strong>Layout</strong></p>
+<ul class="simple">
+<li><p>Indentation: 2 blank spaces (not tabs) for all structures.</p></li>
+<li><p>Maximum line length: 80 characters.</p></li>
+</ul>
+<p><strong>Names</strong></p>
+<ul class="simple">
+<li><p>Prefer explicit (even if long) names;</p></li>
+<li><p>Do not use the same name for different entities;</p></li>
+<li><p>Lower case: Fortran keywords, variables, procedures, modules,
+filenames;</p></li>
+<li><p>Upper case: preprocessor macros;</p></li>
+<li><p>Exposed interface must always begin with <code class="docutils literal notranslate"><span class="pre">sll_</span></code>.</p></li>
+</ul>
+<p><strong>Fortran</strong></p>
+<ul class="simple">
+<li><p>All modules must be declared private and implicit none.</p></li>
+<li><p>Always give the explicit name for optional arguments.</p></li>
+<li><p>Variables must be initialized to zero if required.</p></li>
+<li><p>Functions returning arrays should only be used if the array is
+small.</p></li>
+<li><p>Avoid pointer dummy arguments unless strictly necessary.</p></li>
+</ul>
+<p><strong>Assertions</strong> Add sanity checks using <code class="docutils literal notranslate"><span class="pre">SLL_ASSERT</span></code>. Examples: Check
+correct size of input/output arguments, check function error codes…</p>
+</div>
+<div class="section" id="procedure-arguments-definition">
+<h2>Procedure arguments definition<a class="headerlink" href="#procedure-arguments-definition" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>One variable per line.</p></li>
+<li><p>The intent and the :: in the declaration must be aligned.</p></li>
+<li><p>It must follow the same order that in the declaration.</p></li>
+<li><p>The intent must be always declared.</p></li>
+<li><p>A blank line must separate the declaration of local variables.</p></li>
+</ul>
+</div>
+<div class="section" id="naming-conventions-for-exposed-fortran-interfaces-sec-exposed-names">
+<h2>Naming conventions for exposed Fortran interfaces {#sec:exposed_names}<a class="headerlink" href="#naming-conventions-for-exposed-fortran-interfaces-sec-exposed-names" title="Permalink to this headline">¶</a></h2>
+<p>When any SeLaLib Fortran entity is public and exposed to other modules,
+its name must be chosen according to this rule:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sll_m_[..]</span></code> for modules;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sll_c_[..]</span></code> for abstract types;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sll_t_[..]</span></code> for non-abstract types;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sll_s_[..]</span></code> for subroutines (not attached to a type);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sll_f_[..]</span></code> for functions (not attached to a type);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sll_p_[..]</span></code> for parameters defining descriptors/flags;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sll_v_[..]</span></code> for module variables;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sll_o_[..]</span></code> for Fortran interfaces (overloading of
+subroutines/functions);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sll_i_[..]</span></code> for procedure interfaces (defined in an ‘abstract
+interface’ block).</p></li>
+</ul>
+<p>No strict rule is enforced for private entities in a module.
+Nevertheless, we recommend using <code class="docutils literal notranslate"><span class="pre">m_[..]</span></code>, <code class="docutils literal notranslate"><span class="pre">c_[..]</span></code>, <code class="docutils literal notranslate"><span class="pre">t_[..]</span></code>, <code class="docutils literal notranslate"><span class="pre">s_[..]</span></code>,
+<code class="docutils literal notranslate"><span class="pre">f_[..]</span></code>, <code class="docutils literal notranslate"><span class="pre">p_[..]</span></code>, <code class="docutils literal notranslate"><span class="pre">v_[..]</span></code>, <code class="docutils literal notranslate"><span class="pre">o_[..]</span></code> and <code class="docutils literal notranslate"><span class="pre">i_[..]</span></code> where appropriate.</p>
+</div>
+<div class="section" id="files-and-directories">
+<h2>Files and directories<a class="headerlink" href="#files-and-directories" title="Permalink to this headline">¶</a></h2>
+<p>SeLaLib is a collection of smaller libraries, each one defined in a
+separate (sub)directory. Each library may be composed of multiple
+Fortran modules, and each of these is defined in a separate source file.
+In order to reflect this logic, we must:</p>
+<ul class="simple">
+<li><p>Define one module per file and give both the same name: the module
+name is <code class="docutils literal notranslate"><span class="pre">sll_m_[MODNAME]</span></code> and the file name is
+<code class="docutils literal notranslate"><span class="pre">sll_m_[MODNAME].F90</span></code>;</p></li>
+<li><p>Define one library per (sub)directory and give both the same name:
+the directory name is <code class="docutils literal notranslate"><span class="pre">LIBNAME</span></code> and the library name is
+<code class="docutils literal notranslate"><span class="pre">sll_[LIBNAME]</span></code>;</p></li>
+<li><p>In each (sub)directory define the ‘interface module’ <code class="docutils literal notranslate"><span class="pre">sll_[LIBNAME]</span></code>
+(contained in <code class="docutils literal notranslate"><span class="pre">sll_[LIBNAME].F90</span></code>) that acts as a unique ‘entry
+point’ to the library: here we declare all public variables in the
+library by means of multiple <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">sll_m_[MODNAME],</span> <span class="pre">only</span> <span class="pre">::</span> <span class="pre">[..]</span></code>
+statements, with a very short inline comment about each exposed name
+(see § <a class="reference external" href="#sec:library_interfaces">1.5</a>{reference-type=“ref”
+reference=“sec:library_interfaces”}).</p></li>
+</ul>
+<p>We note that each (sub)directory in SeLaLib should contain exactly one
+‘CMakeLists.txt’ file, and that this file should contain exactly one
+‘ADD_LIBRARY(<span class="math notranslate nohighlight">\(\dots\)</span>)’ instruction. The compiled library will have name
+<code class="docutils literal notranslate"><span class="pre">libsll_[LIBNAME].a</span></code> (if static) or <code class="docutils literal notranslate"><span class="pre">libsll_[LIBNAME].so</span></code> (if shared).</p>
+</div>
+<div class="section" id="types-and-classes">
+<h2>Types and classes<a class="headerlink" href="#types-and-classes" title="Permalink to this headline">¶</a></h2>
+<p>Each type should have</p>
+<ul class="simple">
+<li><p>a constructor called <code class="docutils literal notranslate"><span class="pre">init</span></code> (type-bound) or <code class="docutils literal notranslate"><span class="pre">sll_s_&lt;type_name&gt;_init</span></code>
+(non type-bound) being a subroutine, and</p></li>
+<li><p>a destructor called <code class="docutils literal notranslate"><span class="pre">free</span></code> (type-bound) or <code class="docutils literal notranslate"><span class="pre">sll_s_&lt;type_name&gt;_free</span></code>
+(non type-bound) being a subroutine with a signature that has no
+additional arguments, and</p></li>
+<li><p>other procedures that are called <code class="docutils literal notranslate"><span class="pre">&lt;procedure_name&gt;</span></code> (type-bound) or<br />
+<code class="docutils literal notranslate"><span class="pre">sll_&lt;s/f&gt;_&lt;type_name_&lt;procedure_name&gt;</span></code> (non type-bound).</p></li>
+</ul>
+<p>When implementing these procedures accompanying the type, the instance
+of the type should be call <code class="docutils literal notranslate"><span class="pre">self</span></code>. In case the type is not polymorphic,
+it is usually better to use the non type-bound option to avoid overhead
+due to polymorphism introduced by the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword. If procedures are
+defined as type-bound they should only be called type-bound.</p>
+<p><strong>Note</strong>: The old interfaces <code class="docutils literal notranslate"><span class="pre">sll_o_delete</span></code>, <code class="docutils literal notranslate"><span class="pre">sll_o_new</span></code>, etc. should
+not be used any more. In general, interfaces should only be used with
+care and only within a single module.</p>
+<p>Abstract types should be used whenever we have several specific
+implementations for the same problem (interpolators, field solvers,
+etc.). If you want to avoid polymorphism for performance reason, you
+should still try follow the signature of the abstract type.</p>
+<p>In order to initialize an abstract type, two options are exemplified below.
+In general, allocatables should be preferred over pointers. The <code class="docutils literal notranslate"><span class="pre">sll_f_new_&lt;type_name&gt;</span></code> functions returning
+a pointer should be avoided in future.</p>
+<div class="highlight-fortran notranslate" id="class-init"><div class="highlight"><pre><span></span><span class="k">class</span><span class="p">(</span><span class="n">sll_c_example</span><span class="p">),</span> <span class="o">&lt;</span><span class="k">allocatable </span><span class="nb">or </span><span class="k">pointer</span><span class="o">&gt;</span> <span class="kd">::</span> <span class="n">example</span>
+
+<span class="k">allocate</span><span class="p">(</span> <span class="n">sll_t_example</span> <span class="kd">::</span> <span class="n">example</span> <span class="p">)</span>
+<span class="k">select type</span> <span class="p">(</span> <span class="n">example</span> <span class="p">)</span>
+<span class="k">type is</span> <span class="p">(</span> <span class="n">sll_t_example</span> <span class="p">)</span>
+  <span class="k">call </span><span class="n">example</span><span class="p">%</span><span class="n">init</span><span class="p">(</span> <span class="o">&lt;</span><span class="n">special</span> <span class="n">signature</span><span class="o">&gt;</span> <span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">call </span><span class="n">example</span><span class="p">%</span><span class="n">solve</span><span class="p">(</span> <span class="o">&lt;</span><span class="n">signature</span><span class="o">&gt;</span> <span class="p">)</span>
+
+<span class="k">call </span><span class="n">example</span><span class="p">%</span><span class="n">free</span><span class="p">()</span>
+<span class="k">deallocate</span><span class="p">(</span> <span class="n">example</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="p">(</span><span class="n">sll_c_example</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">target</span> <span class="kd">::</span> <span class="n">specific</span>
+<span class="k">type</span><span class="p">(</span><span class="n">sll_t_example</span><span class="p">),</span> <span class="k">pointer</span>              <span class="kd">::</span> <span class="n">example</span>
+
+<span class="k">allocate</span><span class="p">(</span> <span class="n">specific</span> <span class="p">)</span>
+<span class="k">call </span><span class="n">specific</span><span class="p">%</span><span class="n">init</span><span class="p">(</span> <span class="o">&lt;</span><span class="n">special</span> <span class="n">signature</span><span class="o">&gt;</span> <span class="p">)</span>
+<span class="n">example</span> <span class="o">=&gt;</span> <span class="n">specific</span>
+
+<span class="k">call </span><span class="n">example</span><span class="p">%</span><span class="n">solve</span><span class="p">(</span> <span class="o">&lt;</span><span class="n">signature</span><span class="o">&gt;</span> <span class="p">)</span>
+
+<span class="k">call </span><span class="n">example</span><span class="p">%</span><span class="n">free</span><span class="p">()</span>
+<span class="k">deallocate</span><span class="p">(</span> <span class="n">example</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Note</strong>: If your program just uses one specific instance of an abstract
+type, directly declare this specific type as
+<code class="docutils literal notranslate"><span class="pre">type(sll_t_example)</span> <span class="pre">::</span> <span class="pre">example</span></code> for better performance.</p>
+<p><strong>Optional performance improvement</strong>: If you have a type that is derived
+from another type but not extended itself, you can use a <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">type</span></code>
+statement within the declaration of type-bound procedures in order to
+reduce the overhead due to polymorphism as shown here.</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">subroutine </span><span class="n">sll_s_example_solve</span><span class="p">(</span> <span class="n">self</span> <span class="p">)</span>
+  <span class="k">class</span><span class="p">(</span> <span class="n">sll_t_example</span> <span class="p">),</span> <span class="k">intent</span> <span class="p">(</span> <span class="n">in</span> <span class="p">)</span> <span class="kd">::</span> <span class="n">self</span>
+  
+  <span class="k">select type</span><span class="p">(</span> <span class="n">self</span> <span class="p">)</span>
+  <span class="k">type is</span> <span class="p">(</span> <span class="n">sll_t_example</span> <span class="p">)</span>
+
+	<span class="o">&lt;</span><span class="n">instructions</span><span class="o">&gt;</span>  
+  
+  <span class="k">end </span>
+
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="selalib-library-interfaces">
+<h2>SeLaLib library interfaces<a class="headerlink" href="#selalib-library-interfaces" title="Permalink to this headline">¶</a></h2>
+<p>SeLaLib contains many libraries (=directories), each of which is
+comprised of several modules (=files). We propose to expose the public
+entities in a library through one single ‘interface module’, which will
+act as a single entry point to the library:</p>
+<ul class="simple">
+<li><p>The module name is <code class="docutils literal notranslate"><span class="pre">sll_[LIBNAME]</span></code>;</p></li>
+<li><p>The file name is <code class="docutils literal notranslate"><span class="pre">sll_[LIBNAME].F90</span></code>;</p></li>
+<li><p>The public names from all modules in a library are exposed by means
+of multiple <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">sll_m_[MODNAME],</span> <span class="pre">only</span> <span class="pre">::</span> <span class="pre">[..]</span></code> statements;</p></li>
+<li><p>Each exposed name is given a short inline comment.</p></li>
+</ul>
+<p>As an example, the interface module should look like</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="cp">#include &quot;sll_working_precision.h&quot;</span>
+<span class="cp">#include &quot;sll_assert.h&quot;</span>
+
+<span class="k">use </span><span class="n">sll_m_</span><span class="p">[</span><span class="n">MODNAME_1</span><span class="p">],</span> <span class="k">only</span><span class="p">:</span> <span class="p">&amp;</span>
+  <span class="n">sll_t_</span><span class="p">[</span><span class="n">TYPENAME</span><span class="p">],</span>  <span class="p">&amp;</span>
+  <span class="n">sll_i_</span><span class="p">[</span><span class="n">INTRFNAME</span><span class="p">],</span> <span class="p">&amp;</span>
+  <span class="p">...</span>
+<span class="k">use </span><span class="n">sll_m_</span><span class="p">[</span><span class="n">MODNAME_2</span><span class="p">],</span> <span class="k">only</span><span class="p">:</span> <span class="p">&amp;</span>
+  <span class="n">sll_c_</span><span class="p">[</span><span class="n">CLASSNAME</span><span class="p">],</span> <span class="p">&amp;</span>
+  <span class="n">sll_s_</span><span class="p">[</span><span class="n">SUBNAME</span><span class="p">],</span>   <span class="p">&amp;</span>
+  <span class="p">...</span>
+<span class="k">implicit none</span>
+<span class="k">public</span> <span class="kd">::</span> <span class="p">&amp;</span>
+  <span class="n">sll_t_</span><span class="p">[</span><span class="n">MY_TYPENAME</span><span class="p">],</span> <span class="p">&amp;</span>
+  <span class="n">sll_s_</span><span class="p">[</span><span class="n">MY_SUBNAME</span><span class="p">],</span>  <span class="p">&amp;</span>
+  <span class="p">...</span>
+<span class="k">private</span>
+</pre></div>
+</div>
+<p>There are several advantages to this approach:</p>
+<ul class="simple">
+<li><p>In order to use one of the SeLaLib libraries, a user will find all
+exposed names in a single file/module;</p></li>
+<li><p>The developer may easily switch between different versions of the
+same function/subroutine/type/etc. without effecting the user code,
+by using the ‘renaming syntax’ <code class="docutils literal notranslate"><span class="pre">[local_name]</span> <span class="pre">=&gt;</span> <span class="pre">[use_name]</span></code>;</p></li>
+<li><p>When using SeLaLib libraries, only one ‘.mod’ file per directory is
+needed at compilation time .</p></li>
+</ul>
+</div>
+<div class="section" id="selalib-module-interfaces">
+<h2>SeLaLib module interfaces<a class="headerlink" href="#selalib-module-interfaces" title="Permalink to this headline">¶</a></h2>
+<p>The first part of a module should be seen as an ‘interface’, clearly
+stating what names are imported from other modules and what names are
+exposed to the outside. For this purpose, we should:</p>
+<ul class="simple">
+<li><p>Always use the ‘only’ clause in a ‘use’ statement;</p></li>
+<li><p>Insert an ‘implicit none’ statement before any variable declaration;</p></li>
+<li><p>Specify all public entities in the module in a unique ‘public’
+statement;</p></li>
+<li><p>Follow the public statement with a blanket ‘private’ statement.</p></li>
+</ul>
+<p>For example, the first part of a module should look like the code
+snippet in
+Figure <a class="reference external" href="#fig:module_interface">[fig:module_interface]</a>{reference-type=“ref”
+reference=“fig:module_interface”}.</p>
+</div>
+<div class="section" id="selalib-header-files">
+<h2>SeLaLib header files<a class="headerlink" href="#selalib-header-files" title="Permalink to this headline">¶</a></h2>
+<p>If needed, a ‘header file’ <code class="docutils literal notranslate"><span class="pre">sll_[LIBNAME].h</span></code> may be created inside a
+<code class="docutils literal notranslate"><span class="pre">[LIBNAME]</span></code> SeLaLib directory. This file should only contain
+preprocessor instructions, e.g.</p>
+<ul class="simple">
+<li><p>User-defined variable types;</p></li>
+<li><p>Preprocessor macro definitions.</p></li>
+</ul>
+<p>A header may also contain some <code class="docutils literal notranslate"><span class="pre">use</span></code> statements, because the macros may
+be based on user-defined functions and types from other modules. (Note
+that in general, unless strictly needed, <code class="docutils literal notranslate"><span class="pre">use</span></code> statements in a header
+file should be avoided.)</p>
+</div>
+<div class="section" id="simulations">
+<h2>Simulations<a class="headerlink" href="#simulations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="structure">
+<h3>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h3>
+<p>SeLaLib simulations are independent of each other, but they naturally
+depend on many SeLaLib libraries. A simulation usually consists of:</p>
+<ol class="simple">
+<li><p>A module containing a new simulation type that is derived from an
+abstract simulation class (methods exist for initializing from file
+and running the numerical simulation);</p></li>
+<li><p>One or more programs that instantiate a simulation object of the new
+type, initialize it, and run the numerical simulation;</p></li>
+<li><p>One or more input files.</p></li>
+</ol>
+</div>
+<div class="section" id="naming-conventions">
+<h3>Naming conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h3>
+<p>We define some additional naming conventions that are specific to the
+simulations:</p>
+<ul class="simple">
+<li><p>The simulation name must follow the pattern<br />
+<code class="docutils literal notranslate"><span class="pre">SIMNAME</span> <span class="pre">=</span> <span class="pre">[METHOD]_[EQN]_[DIMC]d[DIMV]v_[COORDS]_[EXTRA]</span></code>, where</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">METHOD</span></code> describes the class of numerical method employed
+(e.g. <code class="docutils literal notranslate"><span class="pre">pic</span></code> for particle-in-cell, <code class="docutils literal notranslate"><span class="pre">pif</span></code> for particle-in-Fourier,
+<code class="docutils literal notranslate"><span class="pre">bsl</span></code> for advective (backward) semi-Lagrangian, <code class="docutils literal notranslate"><span class="pre">fsl</span></code> for
+forward semi-Lagrangian, <code class="docutils literal notranslate"><span class="pre">csl</span></code> for conservative backward
+semi-Lagrangian, <code class="docutils literal notranslate"><span class="pre">eul</span></code> for Eulerian);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EQN</span></code> is the equation that is solved (e.g. <code class="docutils literal notranslate"><span class="pre">ad</span></code> for advection
+with given field, <code class="docutils literal notranslate"><span class="pre">vp</span></code> for Vlasov-Poisson, <code class="docutils literal notranslate"><span class="pre">vm</span></code> for
+Vlasov-Maxwell, <code class="docutils literal notranslate"><span class="pre">va</span></code> for Vlasov-Ampere, <code class="docutils literal notranslate"><span class="pre">dk</span></code> for drift kinetic,
+<code class="docutils literal notranslate"><span class="pre">gk</span></code> for gyrokinetic and <code class="docutils literal notranslate"><span class="pre">gc</span></code> for guiding center);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DIMC</span></code> is the number of dimensions in configuration space;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DIMV</span></code> is the number of dimensions in velocity space (if no put
+0v);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">COORDS</span></code> is the type of coordinates used (e.g. <code class="docutils literal notranslate"><span class="pre">cart</span></code> for a
+Cartesian grid, <code class="docutils literal notranslate"><span class="pre">polar</span></code> for a polar grid, and <code class="docutils literal notranslate"><span class="pre">unstr</span></code> for an
+unstructured grid, <code class="docutils literal notranslate"><span class="pre">hex</span></code> for a hexagonal grid, <code class="docutils literal notranslate"><span class="pre">curv</span></code> for
+curvilinear from cartesian, <code class="docutils literal notranslate"><span class="pre">hexcurv</span></code> for curvilinear from
+hexagonal);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXTRA</span></code> is an additional description (short!) that distinguishes
+this specific simulation from the others; in particular, for
+Eulerian solvers specify the method (<code class="docutils literal notranslate"><span class="pre">dg</span></code> for discontinuous
+Galerkin, <code class="docutils literal notranslate"><span class="pre">fv</span></code> for finite volume, <code class="docutils literal notranslate"><span class="pre">fe</span></code> for continuous finite
+elements, <code class="docutils literal notranslate"><span class="pre">ft</span></code> for Fourier); add <code class="docutils literal notranslate"><span class="pre">serial</span></code> to a serial simulation
+if there is a parallel simulation for the same test case;</p></li>
+</ul>
+</li>
+<li><p>The simulation module must be named <code class="docutils literal notranslate"><span class="pre">sll_m_sim_[SIMNAME]</span></code>, and the
+file containing it must be named <code class="docutils literal notranslate"><span class="pre">sll_m_sim_[SIMNAME].F90</span></code> as usual;</p></li>
+<li><p>The simulation directory must be named</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">simulations/serial/[SIMNAME]/</span></code> for serial simulations;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">simulations/parallel/[SIMNAME]/</span></code> for parallel simulations;</p></li>
+</ul>
+</li>
+<li><p>Naming conventions for executables:</p>
+<ul>
+<li><p>Program file name is <code class="docutils literal notranslate"><span class="pre">sim_[SIMNAME].F90</span></code>;</p></li>
+<li><p>Program name is <code class="docutils literal notranslate"><span class="pre">sim_[SIMNAME]</span></code>;</p></li>
+<li><p>Executable name is <code class="docutils literal notranslate"><span class="pre">sim_[SIMNAME]</span></code>;</p></li>
+<li><p>CTest name (if any) is <code class="docutils literal notranslate"><span class="pre">sim_[SIMNAME]</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="unit-tests">
+<h2>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="general-guidelines">
+<h3>General guidelines<a class="headerlink" href="#general-guidelines" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Always test against some a-priori solution, set a tolerance if
+needed;</p></li>
+<li><p>Each function in a module should be tested;</p></li>
+<li><p>If possible, a failing test should indicate the function that
+originated the error;</p></li>
+<li><p>Input parameters should be varied across the widest possible
+admissible range;</p></li>
+<li><p>Tests execution time should be as short as possible (seconds, not
+minutes!);</p></li>
+<li><p>Exactly 1 CTest per module, with name <code class="docutils literal notranslate"><span class="pre">[MODNAME]</span></code>, but in addition
+there can be tests that check the combination of two modules;</p></li>
+<li><p>All files connected to tests should be inside of a library
+subdirectory called <code class="docutils literal notranslate"><span class="pre">[LIBNAME]/testing</span></code>. If there are auxiliary
+files for the tests, they should be within a subdirectory
+<code class="docutils literal notranslate"><span class="pre">[LIBNAME]/testing/[MODNAME]/</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="naming-convention">
+<h3>Naming convention<a class="headerlink" href="#naming-convention" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fortran file name is <code class="docutils literal notranslate"><span class="pre">test_[TESTNAME].F90</span></code>;</p></li>
+<li><p>Fortran program name is <code class="docutils literal notranslate"><span class="pre">test_[TESTNAME]</span></code>;</p></li>
+<li><p>Executable name is <code class="docutils literal notranslate"><span class="pre">test_[TESTNAME]</span></code>;</p></li>
+<li><p>CTest name is <code class="docutils literal notranslate"><span class="pre">[TESTNAME]</span></code>.</p></li>
+</ul>
+<p>NOTE: In the future, only one CTest should exist for each module, and
+this CTest may call multiple executables (see guidelines in previous
+section); in such a situation we should have <code class="docutils literal notranslate"><span class="pre">[TESTNAME]=[MODNAME]</span></code>.</p>
+</div>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The module <code class="docutils literal notranslate"><span class="pre">sll_m_io_utilities</span></code> provides functions to handle input
+and/or reference files in testing.</p></li>
+<li><p>An example how to use a reference file to validate the results can
+be found in the test <code class="docutils literal notranslate"><span class="pre">test_xml</span></code>.</p></li>
+<li><p>To test with a set of different parameter values, a python script
+can be used. For an example, see the test <code class="docutils literal notranslate"><span class="pre">test_ode_integrator</span></code>.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="structure.html" title="previous page">Libraries</a>
+    <a class='right-next' id="next-link" href="naming_convention.html" title="next page">Naming Convention</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The SeLaLib project team<br/>
+        
+            &copy; Copyright 2020.<br/>
+          Last updated on 10 Mar 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

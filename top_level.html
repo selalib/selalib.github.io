@@ -1,0 +1,925 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top-Level Layer: Semi-Lagrangian Toolbox</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started" href="getting_started.html" />
+    <link rel="prev" title="Mid-Level Layer: Numerical and Parallel Utilities" href="mid_level.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/selalib.png" class="logo" alt="logo">
+  
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="equations.html">
+   Equations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  User guide
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="build.html">
+   Build the library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="user_guide.html">
+   Preamble
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="low_level.html">
+   Low-Level Layer: Basic Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mid_level.html">
+   Mid-Level Layer: Numerical and Parallel Utilities
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Top-Level Layer: Semi-Lagrangian Toolbox
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Developer guide
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmake.html">
+   CMake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="structure.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coding_style.html">
+   Coding guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="naming_convention.html">
+   Naming Convention
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="doxygen.html">
+   Doxygen
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Credits
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="members.html">
+   Contributors
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/top_level.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/selalib/selalib"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/selalib/selalib/issues/new?title=Issue%20on%20page%20%2Ftop_level.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/selalib/selalib/edit/main/top_level.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#meshes">
+   Meshes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#description">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exposed-interface">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usage">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#status">
+     Status
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scalar-fields">
+   Scalar Fields
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Description
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quasi-neutral-equation-solver">
+   Quasi-Neutral Equation Solver
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Status
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#particle-distribution-function">
+   Particle Distribution Function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Status
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advection-field">
+   Advection Field
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Status
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advection">
+   Advection
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     Status
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="top-level-layer-semi-lagrangian-toolbox">
+<h1>Top-Level Layer: Semi-Lagrangian Toolbox<a class="headerlink" href="#top-level-layer-semi-lagrangian-toolbox" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="meshes">
+<h2>Meshes<a class="headerlink" href="#meshes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<p>The mesh types aim at storing array data, but including additional
+information needed to put this data in context. There are several types
+of meshes:</p>
+<dl class="simple myst">
+<dt>cartesian mesh</dt><dd><p>: an N-D fully regular mesh defined by an N-D data array and
+additional parameters that define the domain (i.e.: xmin, xmax) and
+other parameters like the number of cells in each dimension and the
+spacing of the data (i.e.: delta). The services provided should be
+like (with corresponding name changes, indicating the dimensionality
+of the data):</p>
+<ul class="simple">
+<li><p>allocation(new) and initialization functions,</p></li>
+<li><p>deletion,</p></li>
+<li><p>a copy constructor,</p></li>
+<li><p>computation of data interpolants (cubic splines for example),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_value(mesh,x1,x2,...)</span></code>: where <code class="docutils literal notranslate"><span class="pre">x1</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>,… belong to the
+corresponding interval <code class="docutils literal notranslate"><span class="pre">(x1_min,</span> <span class="pre">x1_max)</span></code>, <code class="docutils literal notranslate"><span class="pre">(x2_min,</span> <span class="pre">x2_max)</span></code>,
+etc., and which returns the interpolated value at the desired
+point. This operation launches spline interpolations under the
+hood.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_node_value(mesh,i,j,...)</span></code>: analogous to <code class="docutils literal notranslate"><span class="pre">get_value()</span></code> but
+does not need to launch any interpolation as the indices are
+integers and the requested value falls on a mesh node. This is
+implemented by a macro.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_node_value(mesh,i,j,...,val)</span></code>: sets the node datum at
+i,j,… with value. Implemented with a macro.</p></li>
+</ul>
+</dd>
+</dl>
+<p>There are some pitfalls with the suggested interface:</p>
+<ul class="simple">
+<li><p>the naming convention could get a little complicated depending on
+the type of data stored in the array (scalar, multiple-valued,
+etc.), as we had originally intended with the field/vec naming
+convention.</p></li>
+<li><p>The interface may need to directly expose its underlying data, or
+pointers to sections of it for certain operations, like FFT. The
+whole data field of a mesh could need to be set to a whole data
+array in one step, during the initialization, such as after a remap
+operation. At least in these cases, the access to the data might be
+safer given the nature of the operations.</p></li>
+</ul>
+<dl class="simple myst">
+<dt>structured mesh</dt><dd><p>: a structured mesh is a mapped cartesian mesh in which the
+coordinates are decoupled. An ND mesh data is stored as an ND array.
+In addition, however, we need N 1D arrays to store the actual
+coordinates of the node locations in each dimension. As an
+alternative, we could use N functions <span class="math notranslate nohighlight">\(x_1=f(\eta_1)\)</span>,
+<span class="math notranslate nohighlight">\(x_2=f(\eta_2)\)</span>, … , <span class="math notranslate nohighlight">\(x_n=f(\eta_n)\)</span>, to represent each
+transformation. We follow the convention that <span class="math notranslate nohighlight">\(\eta_1\)</span>, <span class="math notranslate nohighlight">\(\eta_2\)</span>,
+etc. are values in the <span class="math notranslate nohighlight">\([0,1]\)</span>. The offered services ought to be:</p>
+<ul class="simple">
+<li><p>allocation, initialization, deletion and copy.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_node_value(mesh,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">...</span> <span class="pre">)</span></code>: which reads directly from
+the data array.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_node_value(mesh,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">...</span> <span class="pre">)</span></code>: which writes directly to the
+data array.</p></li>
+<li><p>In an analogous way to the <code class="docutils literal notranslate"><span class="pre">get_value()</span></code> functions described
+above, we could provide something like <code class="docutils literal notranslate"><span class="pre">get_value(mesh,</span></code>
+<span class="math notranslate nohighlight">\(\eta_1\)</span><code class="docutils literal notranslate"><span class="pre">,</span> </code><span class="math notranslate nohighlight">\(\eta_2\)</span><code class="docutils literal notranslate"><span class="pre">)</span></code>. This would also trigger an
+interpolation step using uniform splines generated with the ND
+data. This would require the user to be <em>thinking</em> in terms of
+the logical variables <span class="math notranslate nohighlight">\(\eta_i\)</span>.</p></li>
+<li><p>Similar functions could be provided such that the user could
+also request values at points <span class="math notranslate nohighlight">\(x_i\)</span>. For this, we could launch
+non-uniform splines, with the spacing determined by the <span class="math notranslate nohighlight">\(x_i\)</span>
+arrays and the ND data.</p></li>
+<li><p>This type may also need to grant direct access to the data array
+for use in operations like FFT and similar.</p></li>
+</ul>
+</dd>
+<dt>tensor product mesh</dt><dd><p>: This is a mapped cartesian mesh in which the coordinates are
+coupled. That is, the mappings have the form:
+<span class="math notranslate nohighlight">\(x_1=f(\eta_1, \eta_2, ..., \eta_n)\)</span>,
+<span class="math notranslate nohighlight">\(x_2=f(\eta_1,\eta_2, ..., \eta_n)\)</span>, … ,
+<span class="math notranslate nohighlight">\(x_n=f(\eta_1,\eta_2, ..., \eta_n)\)</span>. The specification of this type
+of mesh requires an ND data array, N ND arrays that specify the
+transformations numerically, or N functions of arity N to specify
+the transformations. The services provided should be:</p>
+<ul class="simple">
+<li><p>allocation, initialization, deletion and copy.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_node_value(mesh,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">...</span> <span class="pre">)</span></code>: which reads directly from
+the data array.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set_node_value(mesh,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">...</span> <span class="pre">)</span></code>: which writes directly to the
+data array.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_value(mesh,</span></code> <span class="math notranslate nohighlight">\(\eta_1\)</span><code class="docutils literal notranslate"><span class="pre">,</span> </code><span class="math notranslate nohighlight">\(\eta_2\)</span><code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">...</span> <span class="pre">)</span></code> which would also
+trigger uniform spline interpolations, and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_value(mesh,</span> <span class="pre">x1,</span> <span class="pre">x2,</span> <span class="pre">...</span> <span class="pre">)</span></code>, which would trigger nonuniform
+spline interpolations.</p></li>
+</ul>
+<p>We may need to include other operations here which would entail
+inverse mappings (maybe also with splines), or NURBS or something
+else. Need to fill in the details more here.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="exposed-interface">
+<h3>Exposed Interface<a class="headerlink" href="#exposed-interface" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="status">
+<h3>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="scalar-fields">
+<h2>Scalar Fields<a class="headerlink" href="#scalar-fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Description<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The physical quantities of interest are normally defined in a physical
+space. For instance, the electric potential <span class="math notranslate nohighlight">\(\phi(\vec{x})\)</span> is specified
+by a function on the <span class="math notranslate nohighlight">\(\vec{x}\)</span> variables (<span class="math notranslate nohighlight">\(x,y,z\)</span>). Even in simple
+problems the borders of the physical domain may have relatively
+complicated shapes which make the solution of differential equations
+more difficult. Great flexibility (possibly at the expense of
+efficiency) can be gained by transferring the data from the physical
+space to a representation in a logical space in which the underlying
+grid that we use for the numerical solution is always uniform. In such
+uniform grid, the borders have a much simpler (straight line)
+representation that may aid the solution of the equations. This means
+that it is convenient to permit the alternative representation of the
+data on variables on a physical space (<span class="math notranslate nohighlight">\(\vec{x}\)</span>) or on a logical space
+(<span class="math notranslate nohighlight">\(\vec{\eta}\)</span>). For these reasons, the scalar field should be thought of
+data plus a coordinate transformation.</p>
+<p>(place picture of an example coordinate transformation here.)</p>
+<p>Consider a scalar field and the services that it should offer to permit
+us to use it in our logical grid:</p>
+<ol class="simple">
+<li><p>The scalar field is a derived type.</p></li>
+<li><p>The type contains a simple array to store the data, i.e.: the values
+of the fields on a collection of points. Both, logical mesh values
+or physical mesh values can be stored in the same array.</p></li>
+<li><p>The type contains an object that fully specifies the associated
+coordinate transformation (a mapped mesh). The transformation should
+provide all the needed services to permit moving the representation
+of the data from the physical space to the logical space and
+vice-versa:</p>
+<ol class="simple">
+<li><p>something</p></li>
+<li><p>something else</p></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="quasi-neutral-equation-solver">
+<h2>Quasi-Neutral Equation Solver<a class="headerlink" href="#quasi-neutral-equation-solver" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Description<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Here we present a simplified but hopefully reasonably clear step-by-step
+derivation of the quasi-neutral equation (the gyrokinetic Poisson
+equation) which this module solves. The intent is to make clear some of
+the assumptions that are built into this model. We follow the general
+argument given by Krommes (cite reference here for “Nonlinear
+gyrokinetics: a powerful tool for the description of microturbulence in
+magnetized plasma”).</p>
+<p>The model is based on the idea that the fast gyrations of particles
+around the magnetic field lines can be averaged away while still
+preserving the most important long-term physics (hence the name of this
+type of approach: gyrokinetics). The simplest model that we will look
+into first deals directly in the distribution function of the
+gyrocenters, instead of the particles’.</p>
+<p>We start with the Poisson equation:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}-\nabla ^2 \phi = \frac{1}{\epsilon_0}\rho,$$ where $\phi$ is the
+electric potential, $\rho$ is the volumetric charge density and
+$\epsilon_0$ is the permittivity of free space. The main assumptions
+built into the model are introduced through the treatment of $\rho$. We
+decompose the charge density in its two main constituents: the
+contribution by the ions ($\rho_i$) and the electrons' ($\rho_e$). As
+mentioned earlier, the main idea behind gyrokinetics is the averaging of
+the fast particle motions around the field lines, hence some of the
+effects that occur on longer time-scales are explicitly introduced into
+the model, for example by particle drifts (e.g.: $\vec{E}\times\vec{B}$,
+polarization drift, etc.). In doing so, we allow ourselves to further
+separate the charge density into a polarization charge and a charge at
+the particles' gyrocenters (gyrocenters do not polarize). Thus,
+Poisson's equation becomes\\$$\label{eq:poisson_2}
+-\nabla ^2 \phi = \frac{1}{\epsilon_0}(\rho^G_i + \rho^{pol}_i - \rho^G_e - \rho^{pol}_e),\end{aligned}\end{align} \]</div>
+<p>where the indices <span class="math notranslate nohighlight">\(G\)</span>, <span class="math notranslate nohighlight">\(pol\)</span>, <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(e\)</span> indicate <em>gyrocenters</em>,
+<em>polarization</em>, <em>ions</em> and <em>electrons</em> respectively. The polarization
+drift velocity, whose derivation can be found in introductory plasma
+physics texts is given by</p>
+<div class="math notranslate nohighlight">
+\[\vec{v}^{pol} = \pm \frac{1}{\omega_{ci}B}\frac{\partial \vec{E}_{\perp}}{\partial t}.\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\omega_{ci}\)</span> is the ion cyclotron frequency, <span class="math notranslate nohighlight">\(B\)</span> is the magnitude
+of the local magnetic field and <span class="math notranslate nohighlight">\(\vec{E}_{\perp}\)</span> is the electric field
+perpendicular to the magnetic field. The plus/minus sign in the equation
+applies to positive and negative particles respectively. Heuristically,
+the polarization charge obeys a continuity equation:</p>
+<div class="math notranslate nohighlight">
+\[\label{eq:rho_pol_continuity}
+\frac{\partial \rho^{pol} }{\partial t} = - \nabla \cdot \vec{j}^{pol} = - \nabla \cdot (nZe \vec{v}^{pol})=- \nabla \cdot \bigg( n Ze \frac{1}{\omega_{ci}B}\frac{\partial \vec{E}_{\perp}}{\partial t}\bigg) .\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(Z\)</span> is the charge state of the ions under consideration (obviously
+1 for a hydrogen-burning fusion plasma), <span class="math notranslate nohighlight">\(e\)</span> is the electron charge and
+<span class="math notranslate nohighlight">\(n\)</span> is the particle density per unit volume. As long as none of the
+factors of the time derivative depends itself on time, we can integrate
+immediately and arrive at an expression for <span class="math notranslate nohighlight">\(\rho^{pol}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\label{eq:rho_pol}
+\rho^{pol}(\vec{x}) = \nabla \cdot \bigg( \frac{n_i(\vec{x})Ze}{\omega_{ci}(\vec{x}) B(\vec{x}) }\nabla_{\perp}\phi(\vec{x},t) \bigg).\]</div>
+<p>Here we have introduced the assumption of <span class="math notranslate nohighlight">\(n_i\)</span>, the ion particle
+density, being independent of time. In equation
+(<a class="reference external" href="#eq:rho_pol">[eq:rho_pol]</a>{reference-type=“ref”
+reference=“eq:rho_pol”}), we can consider that the differential
+operators act only in the directions perpendicular to the magnetic
+field, as these are the only terms that will survive the taking of the
+divergence. Finally, by multiplying by the proper unit factors and using
+the relation</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\omega_p = \bigg( \frac{ne^2} {\epsilon_0 m} \bigg)^{\frac{1}{2}}$$ we
+can recast equation ([\[eq:rho_pol\]](#eq:rho_pol){reference-type=&quot;ref&quot;
+reference=&quot;eq:rho_pol&quot;}) into\\$$\label{eq:rho_pol_epsilon}
+\rho^{pol}(\vec{x}) = \epsilon_0 \nabla_{\perp} \cdot \big( \varepsilon^G(\vec{x})\nabla_{\perp}\phi(\vec{x},t) \big).\end{aligned}\end{align} \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon^G(\vec{x}) \equiv \frac{\omega^2_{pi}(\vec{x})}{\omega^2_{ci}(\vec{x})}\]</div>
+<p>is called the <em>dielectric constant of the gyrokinetic vacuum</em>. With
+equation
+(<a class="reference external" href="#eq:rho_pol_epsilon">[eq:rho_pol_epsilon]</a>{reference-type=“ref”
+reference=“eq:rho_pol_epsilon”}), and neglecting the polarization of the
+electrons, the modified Poisson equation
+(<a class="reference external" href="#eq:poisson_2">[eq:poisson_2]</a>{reference-type=“ref”
+reference=“eq:poisson_2”}) can be written as:</p>
+<div class="math notranslate nohighlight">
+\[-\nabla ^2 \phi(\vec{x},t) - \nabla_{\perp} \cdot \big(\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t) \big) = \frac{1}{\epsilon_0}(\rho^G_i - \rho^G_e).\]</div>
+<p>In fusion applications, <span class="math notranslate nohighlight">\(\varepsilon^G &gt;&gt; 1\)</span> thus we neglect the
+ordinary laplacian term on the left-hand side.</p>
+<p>The charge density of the electrons also receives a special treatment.
+The basic assumption here is that the electrons can move very quickly
+along a magnetic field line and thus are able to rapidly react to
+electric potential variations through changes in the electron particle
+density. Thus, it is assumed that along a field line, the electrons obey
+the Boltzmann relation:</p>
+<div class="math notranslate nohighlight">
+\[\label{eq:boltzmann}
+n_e(\vec{x},t) = \bar{n}_e(\vec{x},0) \exp \bigg(\frac{e}{k_BT_e}(\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})\bigg).\]</div>
+<p>In equation (<a class="reference external" href="#eq:boltzmann">[eq:boltzmann]</a>{reference-type=“ref”
+reference=“eq:boltzmann”}), <span class="math notranslate nohighlight">\(n_e(\vec{x},t)\)</span> is the instantaneous
+electron particle density, <span class="math notranslate nohighlight">\(\bar{n}_e(\vec{x})\)</span> is the average electron
+density along the magnetic field line, <span class="math notranslate nohighlight">\(k_B\)</span> is Boltzmann’s constant,
+<span class="math notranslate nohighlight">\(T_e\)</span> is the electron temperature and the <span class="math notranslate nohighlight">\(&lt; \cdot &gt;_{\ell}\)</span> average is
+taken along the magnetic field line. By making yet another assumption of
+very small deviations from the average electric potential, the previous
+equation can be linearized:</p>
+<div class="math notranslate nohighlight">
+\[\label{eq:boltzmann_linear}
+n_e(\vec{x},t) = \bar{n}_e(\vec{x},0) \bigg(1+\frac{e}{k_BT_e}(\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})\bigg).\]</div>
+<p>At the risk of being too sloppy, we will equate the electron particle
+density with the electron gyrocenter density. A more careful step would
+involve gyroaveraging directly the original electron distribution
+function. With this assumption, our modified poisson becomes:</p>
+<div class="math notranslate nohighlight">
+\[- \nabla_{\perp} \cdot \big(\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t) \big) = \frac{1}{\epsilon_0}\bigg(\rho^G_i - \bar{\rho}_{e0}^G\Big(1+\frac{e}{k_BT_e}(\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})\Big)\bigg).\]</div>
+<p>Rearranging terms and using the relation: $<span class="math notranslate nohighlight">\(\label{eq:debye_length}
+\lambda_D=\bigg(\frac{\epsilon_0k_BT_e}{ne^2}\bigg)^\frac{1}{2}=\bigg(\frac{\epsilon_0k_BT_e}{\rho e}\bigg)^\frac{1}{2},\)</span><span class="math notranslate nohighlight">\(
+we arrive at: \)</span>$\label{eq:gk_poisson}</p>
+<ul class="simple">
+<li><p>\nabla_{\perp} \cdot \big(\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t) \big)+\frac{1}{\bar{\lambda}<em>{D0}} (\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;</em>{\ell})= \frac{1}{\epsilon_0}\Big(\rho^G_i - \bar{\rho}_{e0}^G\Big).$<span class="math notranslate nohighlight">\(
+But for a normalization of the variables, equation
+([\[eq:gk_poisson\]](#eq:gk_poisson){reference-type=&quot;ref&quot;
+reference=&quot;eq:gk_poisson&quot;}) is virtually the same as the one stated in
+the report by Latu (list here reference for \&quot;Scalable Quasineutral
+solver for gyrokinetic simulation\&quot;). Equation
+([\[eq:gk_poisson\]](#eq:gk_poisson){reference-type=&quot;ref&quot;
+reference=&quot;eq:gk_poisson&quot;}) is not yet ready to solve due to the
+presence of the \)</span>&lt;\phi(\vec{x},t)&gt;$ term. We need to average the
+solution we seek, after all. To obtain an additional equation that will
+help us find this term, we take the average of both sides of the
+equation in the same sense that we have been averaging before: along a
+magnetic field line (note that in practice, due to ergodicity, this line
+may extend and fill a surface or even worse.) The barred quantities have
+already been averaged so we can get them out of the averaging operator
+when necessary. Averages of averages remain unchanged and thus we arrive
+at:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\label{eq:gk_poisson_aux}
+- \nabla_{\perp} \cdot \big(&lt;\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t)&gt;_{\ell} \big)= \frac{1}{\epsilon_0}(&lt;\rho^G_i&gt;_{\ell} - &lt;\bar{\rho}_{e0}^G&gt;_{\ell}).\]</div>
+<p>By making two final assumptions: that the quantities involved in the
+calculation of <span class="math notranslate nohighlight">\(\varepsilon^G(\vec{x},t)\)</span> are not time-dependent but
+given by the initial ion distribution, and that this quantity does not
+vary along the domain of the average procedure (the magnetic field
+line), we can extract <span class="math notranslate nohighlight">\(\varepsilon^G(\vec{x},t)\)</span> from the average
+operator, yielding the auxiliary equation that we need to compute
+<span class="math notranslate nohighlight">\(&lt;\phi(\vec{x},t)&gt;_{\ell}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\label{eq:gk_poisson_aux}
+- \nabla_{\perp} \cdot \big(\varepsilon ^G\nabla_{\perp} &lt;\phi(\vec{x},t)&gt;_{\ell} \big)= \frac{1}{\epsilon_0}(&lt;\rho^G_i&gt;_{\ell} - &lt;\bar{\rho}_{e0}^G&gt;_{\ell}).\]</div>
+<p>The average ion charge density can be computed from
+<span class="math notranslate nohighlight">\(\rho^G_i(\vec{x},t)\)</span> which is input data for the solver. To compute the
+average of the electron density we need to explicitly invoke the initial
+quasineutrality condition, i.e.: <span class="math notranslate nohighlight">\(\rho_i = \rho_e\)</span>. With this,
+<span class="math notranslate nohighlight">\(&lt;\bar{\rho}^G_{e0}&gt;_{\ell} = &lt;\bar{\rho}^G_{i0}&gt;_{\ell}\)</span> and we are
+able to compute all the quantities involved based on the initial ion
+distribution profile.</p>
+<p>Once we calculate <span class="math notranslate nohighlight">\(&lt;\phi(\vec{x},t)&gt;_{\ell}\)</span> with equation
+(<a class="reference external" href="#eq:gk_poisson_aux">[eq:gk_poisson_aux]</a>{reference-type=“ref”
+reference=“eq:gk_poisson_aux”}) we can use this to solve the final
+version of our quasi neutral equation, after introducing all the
+assumptions:</p>
+<div class="math notranslate nohighlight">
+\[\label{eq:gk_poisson_final}
+- \nabla_{\perp} \cdot \big(\bar{\varepsilon}^G(\vec{x},0)\nabla_{\perp} \phi(\vec{x},t) \big)+\frac{1}{\bar{\lambda}_D} (\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})= \frac{1}{\epsilon_0}(\rho^G_i - \bar{\rho}_{i0}^G).\]</div>
+</div>
+<div class="section" id="id3">
+<h3>Exposed Interface<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Fundamental type: None. It is a function that operates on other
+top-level types. Function:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_solve_quasi_neutral_equation( electron_T_profile_2D,
+                                       initial_rho_ion_profile_2D,
+                                       charge_density,
+                                       phi )
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Usage<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id5">
+<h3>Status<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="particle-distribution-function">
+<h2>Particle Distribution Function<a class="headerlink" href="#particle-distribution-function" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>Description<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id7">
+<h3>Exposed Interface<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Fundamental type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_distribution_function_t
+</pre></div>
+</div>
+<p>All the fundamental types in the library are implemented as pointers.
+This choice has been made to ease the addition of Python bindings, in
+case that an even higher-level interface is desired some day.</p>
+<p>Constructor and destructor:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_new_distribution_function( nr, ntheta, nphi, nvpar, mu )
+     sll_delete_distribution_function( f )
+</pre></div>
+</div>
+<p>The constructor essentially limits itself to allocating the memory for
+the type. An initialization step is required afterwards:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_initialize_df( boundary_type_r, 
+                        boundary_type_vpar, 
+                        species_charge )
+</pre></div>
+</div>
+<p>The functions that get/set a particular value of a distribution function
+on a node are defined as macros to be able to keep a single interface
+while not risking a penalization when used in critical loops. Other
+queries on this type are implemented as ordinary functions. (Need to
+define this better, for instance, if some query functions would operate
+on integer arguments and/or real coordinates.)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     SLL_GET_DF_VAL( i, j, k, l, df )
+     SLL_SET_DF_VAL( val, i, j, k, l, df )
+     sll_interpolate_df( r, theta, phi, vpar, mu )
+     sll_compute_derivative( f, r, theta, phi, vpar, mu )
+     sll_get_df_nr( df )
+     sll_get_df_nphi( df )
+     sll_get_df_ntheta( df )
+     sll_get_df_nvpar( df )
+     sll_get_df_mu( df )
+</pre></div>
+</div>
+<p>The type also offers the services:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_compute_moments( df, ... )
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>Usage<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id9">
+<h3>Status<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="advection-field">
+<h2>Advection Field<a class="headerlink" href="#advection-field" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>Description<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id11">
+<h3>Exposed Interface<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>Fundamental type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_advection_field_3D_t
+</pre></div>
+</div>
+<p>This implies that one of the options is to have multiple
+representations, for 3D, 2D, 1D.</p>
+</div>
+<div class="section" id="id12">
+<h3>Usage<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id13">
+<h3>Status<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="advection">
+<h2>Advection<a class="headerlink" href="#advection" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3>Description<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id15">
+<h3>Exposed Interface<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>Fundamental type: None. This is a function that operates on multiple
+top-level types. Function:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_advect( distribution_function, 
+                   advection_field, 
+                 dt, 
+                 space_mesh
+                 scheme )
+</pre></div>
+</div>
+<p>Above, <code class="docutils literal notranslate"><span class="pre">scheme</span></code> is the functional parameterization of the various
+methods in use (PSM, BSL, …) and for which we need a standardized
+interface. The above assumes that we can devise a standard functional
+interface.</p>
+</div>
+<div class="section" id="id16">
+<h3>Usage<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id17">
+<h3>Status<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="mid_level.html" title="previous page">Mid-Level Layer: Numerical and Parallel Utilities</a>
+    <a class='right-next' id="next-link" href="getting_started.html" title="next page">Getting Started</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The SeLaLib project team<br/>
+        
+            &copy; Copyright 2020.<br/>
+          Last updated on 10 Mar 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

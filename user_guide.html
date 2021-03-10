@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fedora</title>
+    <title>Preamble</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -52,10 +52,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Build the library" href="build.html" />
-    <link rel="prev" title="Ubuntu or Debian" href="ubuntu.html" />
+    <link rel="next" title="Low-Level Layer: Basic Utilities" href="low_level.html" />
+    <link rel="prev" title="Build the library" href="build.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -83,32 +84,47 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="selalib.html">
-   SeLaLib
+  <a class="reference internal" href="equations.html">
+   Equations
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Install dependencies
+  User guide
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="ubuntu.html">
-   Ubuntu or Debian
+  <a class="reference internal" href="build.html">
+   Build the library
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Fedora
+   Preamble
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="build.html">
-   Build the library
+  <a class="reference internal" href="low_level.html">
+   Low-Level Layer: Basic Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mid_level.html">
+   Mid-Level Layer: Numerical and Parallel Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="top_level.html">
+   Top-Level Layer: Semi-Lagrangian Toolbox
   </a>
  </li>
 </ul>
@@ -124,12 +140,27 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="cmake_guide.html">
+  <a class="reference internal" href="cmake.html">
    CMake
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="doxygen_guide.html">
+  <a class="reference internal" href="structure.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coding_style.html">
+   Coding guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="naming_convention.html">
+   Naming Convention
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="doxygen.html">
    Doxygen
   </a>
  </li>
@@ -190,7 +221,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/fedora.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/user_guide.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -210,10 +241,12 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/selalib/selalib/issues/new?title=Issue%20on%20page%20%2Ffedora.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/selalib/selalib/issues/new?title=Issue%20on%20page%20%2Fuser_guide.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/selalib/selalib/edit/main/user_guide.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -239,45 +272,69 @@
         
               <div>
                 
-  <div class="section" id="fedora">
-<h1>Fedora<a class="headerlink" href="#fedora" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>Install source code manager:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install git-all
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Install build tools</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install cmake python3
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Install compilers ::</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install gcc-gfortran
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Install libraries (MPI, HDF5, FFTW3, LAPACK) ::</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install hdf5-openmpi-devel openmpi-devel fftw-devel openblas-devel
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Install software for documentation::</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install doxygen texlive-latex
-</pre></div>
-</div>
-<p>Don’t forget to load the mpi module ::</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">openmpi</span><span class="o">-</span><span class="n">x86_64</span>
-</pre></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>mpich on Fedora is not supported.</p>
+  <div class="section" id="preamble">
+<h1>Preamble<a class="headerlink" href="#preamble" title="Permalink to this headline">¶</a></h1>
+<p>Selalib is the <em>Se</em>mi<em>La</em>grangian <em>Lib</em>rary, a collection of types and
+its associated methods that are useful for creating parallel plasma
+physics simulations that use the semilagrangian methodology for the
+solution of the <em>Vlasov</em> equation. In its design, we have attempted to
+expose to the users an interface that expresses as naturally as possible
+the problems that arise when using the semilagrangian approach. However,
+most of the modules contained in the library are not intrinsically
+related with the semilagrangian method, but are more general utilities
+which could be used in different contexts. A principle in the
+development of the library has been to continually identify specific
+functionalities and to attempt to promote them into their own standalone
+module, with a sufficiently general interface which may still permit a
+reasonably efficient implementation.</p>
+<p>Selalib is structured in (loosely defined) layers. One can think about
+these layers as libraries in their own right. A given layer can use the
+capabilities offered by a lower layer through the exposed interface, but
+never from a higher level. The layer with the lowest level of
+abstraction presently contains basic utilities like memory allocators,
+assertions and basic numeric types. The second layer is composed of
+numerical and parallel utilities. The third and highest level of the
+library contains the semi-lagrangian methodology tools, types and
+methods. This manual will ultimately describe each of these layers and
+the modules therein.</p>
+<p>Most of the native types and operations provided by Selalib are prefixed
+by <code class="docutils literal notranslate"><span class="pre">sll_</span></code>. In this way you can at least have an expectation of finding
+documentation (if a user) and a starting point of where to start looking
+if you wish to dive into some particular aspect of an implementation (if
+a developer). This convention has not been always followed, so it would
+be advantageous to slowly but surely include this prefix throughout as a
+first means to create a Selalib namespace.</p>
+<p>Selalib is written in Fortran 2003. We have deviated from the original
+intent to make Selalib fully f95-compatible for multiple reasons: the
+newer standard permits a separation of interface and implementation
+which is desirable in a development like this, the reduction in coding
+that is obtained with the use of abstract classes is appealing for a
+project with quite limited manpower as this one, and finally, the desire
+to make this product as forward-looking as possible.</p>
+<p>Some features of the library are implemented as <em>macros</em>. To the user of
+the library, it makes no difference whether some functionality is
+implemented in the form of a procedure or a macro, with the exception
+that presently, macro names are written in <code class="docutils literal notranslate"><span class="pre">ALL-CAPS</span></code>. The use of the
+macro is required to offer certain capabilities, like informative error
+messages. For a developer, the use of the macros is needed in many cases
+to reduce code redundancy. The need for the use of macros will hopefully
+be more understandable when the reader sees the behavior of calls to
+simple macros like <code class="docutils literal notranslate"><span class="pre">SLL_ALLOCATE()</span></code> or <code class="docutils literal notranslate"><span class="pre">SLL_ASSERT()</span></code>.</p>
+<p>A macro is a pre-processor directive. Selalib uses only very simple
+macros that are handled by <em>fpp</em>, the Fortran Pre-Processor. <em>fpp</em>’s
+capabilities are very limited and one peculiarity of its output is that
+macros are expanded into a single long line, which can easily surpass
+the 132 character limit that Fortran systems have. For this reason
+alone, the compilation of Selalib requires the use of a compilation
+flag: <code class="docutils literal notranslate"><span class="pre">-ffree-line-length-none</span></code> (in <strong>gfortran</strong>) or its equivalent in
+another compiler. On a similar vein, some compilers require the
+extension <code class="docutils literal notranslate"><span class="pre">.F90</span></code> (as opposed to <code class="docutils literal notranslate"><span class="pre">.f90</span></code>) in order to apply a
+preprocessing step. Thus, all files in Selalib use the <code class="docutils literal notranslate"><span class="pre">.F90</span></code> extension.
+Clients of the library which want to use the macro facilities should
+thus also use this extension as well.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>INCLUDE EXAMPLE HERE OF THE EXTERNAL USE OF THE LIBRARY</p>
 </div>
 </div>
 
@@ -306,8 +363,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="ubuntu.html" title="previous page">Ubuntu or Debian</a>
-    <a class='right-next' id="next-link" href="build.html" title="next page">Build the library</a>
+    <a class='left-prev' id="prev-link" href="build.html" title="previous page">Build the library</a>
+    <a class='right-next' id="next-link" href="low_level.html" title="next page">Low-Level Layer: Basic Utilities</a>
 
         </div>
         

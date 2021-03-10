@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doxygen</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="References" href="markdown.html" />
+    <link rel="prev" title="Naming Convention" href="naming_convention.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/selalib.png" class="logo" alt="logo">
+  
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="equations.html">
+   Equations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  User guide
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="build.html">
+   Build the library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="user_guide.html">
+   Preamble
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="low_level.html">
+   Low-Level Layer: Basic Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mid_level.html">
+   Mid-Level Layer: Numerical and Parallel Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="top_level.html">
+   Top-Level Layer: Semi-Lagrangian Toolbox
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Developer guide
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmake.html">
+   CMake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="structure.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coding_style.html">
+   Coding guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="naming_convention.html">
+   Naming Convention
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Doxygen
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Credits
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="members.html">
+   Contributors
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/doxygen.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/selalib/selalib"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/selalib/selalib/issues/new?title=Issue%20on%20page%20%2Fdoxygen.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/selalib/selalib/edit/main/doxygen.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doxygen-configuration">
+   Doxygen configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-library-in-new-directory">
+   Document library in new directory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-a-fortran-module">
+   Document a fortran module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-a-derived-type">
+   Document a derived type
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-a-subroutine">
+   Document a subroutine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-a-function">
+   Document a function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-some-variables">
+   Document some variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-your-test-example">
+   Document your test example
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="doxygen">
+<h1>Doxygen<a class="headerlink" href="#doxygen" title="Permalink to this headline">¶</a></h1>
+<p>Every developer is responsible to provide documentation. A full doxygen
+user guide is available on the official website <a class="footnote-reference brackets" href="#id4" id="id1">1</a>.</p>
+<p>Laura Mendoza, from IPP Garching, wrote a script available on github
+<a class="footnote-reference brackets" href="#id5" id="id2">2</a> to comment fortran modules, functions and subroutines of a file.
+Basically it will write the needed comment lines. It doesn’t write the
+documentation for you (of course) but it could save some time!</p>
+<div class="section" id="doxygen-configuration">
+<h2>Doxygen configuration<a class="headerlink" href="#doxygen-configuration" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Doxyfile and html layout files are in directory
+<code class="docutils literal notranslate"><span class="pre">selalib/doc/doxygen</span></code></p></li>
+<li><p>To generate html documentation type in your build directory:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make doc-dev
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>html pages are generated in directory <code class="docutils literal notranslate"><span class="pre">selalib/build/doc/html</span></code>.</p></li>
+<li><p>These pages are published on the SeLaLib website <a class="footnote-reference brackets" href="#id6" id="id3">3</a> if pushed on the
+main branch.</p></li>
+</ul>
+</div>
+<div class="section" id="document-library-in-new-directory">
+<h2>Document library in new directory<a class="headerlink" href="#document-library-in-new-directory" title="Permalink to this headline">¶</a></h2>
+<p>Add a fortran file suffixe <code class="docutils literal notranslate"><span class="pre">_doc.F90</span></code> in the library directory. Here an
+example with file <code class="docutils literal notranslate"><span class="pre">maxwell_solvers_doc.F90</span></code> in <code class="docutils literal notranslate"><span class="pre">selalib/src/maxwell_solvers</span></code>
+directory.</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt; @defgroup maxwell_solvers sll_maxwell_solvers</span>
+<span class="c">!&gt; @brief</span>
+<span class="c">!&gt; Library to solve Maxwell system in 2D and 3D</span>
+<span class="c">!&gt; @details</span>
+<span class="c">!&gt; FDTD, PSTD and DG method are available</span>
+<span class="c">!&gt; - Include file : &lt;code&gt;sll_maxwell_solvers.h&lt;/code&gt;</span>
+<span class="c">!&gt; - Link with : &lt;code&gt;sll_maxwell_solvers&lt;/code&gt;</span>
+<span class="c">!&gt;</span>
+<span class="c">!&gt; @author Pierre Navaro</span>
+<span class="c">!&gt; @todo implement sll_maxwell_3d_fdtd</span>
+<span class="c">!&gt; @todo Add some examples in the documentation</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="document-a-fortran-module">
+<h2>Document a fortran module<a class="headerlink" href="#document-a-fortran-module" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt; @ingroup &lt;DIRECTORY_NAME&gt;</span>
+<span class="c">!&gt; @author &lt;MODULE_AUTHOR_NAME_AND_AFFILIATION&gt;</span>
+<span class="c">!&gt; @brief &lt;BRIEF_DESCRIPTION&gt;</span>
+<span class="c">!&gt; @details &lt;DETAILED_DESCRIPTION&gt;</span>
+
+<span class="k">module</span> <span class="o">&lt;</span><span class="n">MODULE_NAME</span><span class="o">&gt;</span>
+
+<span class="k">contains</span>
+
+<span class="k">end module</span> <span class="o">&lt;</span><span class="n">MODULE_NAME</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Every directory of the software should have an entry in the
+“Libraries” tab on the website generated by Doxygen. To create this
+entry, edit the fortran file “_doc.F90” and add the documentation of
+all fortran modules available in this directory. Add also some examples.</p>
+<p>To see your documentation, remove the line containing your directory in
+file doc/doxygen/Doxyfile (line 691). A good way to document fortran
+module is to copy and paste this at the the top of your fortran file :</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt; @ingroup file_io</span>
+<span class="c">!&gt; @brief</span>
+<span class="c">!&gt; Implements the functions to write data file plotable by GNUplot</span>
+<span class="c">!&gt; @details</span>
+<span class="c">!&gt; This is an example of how use the sll_gnuplot module.</span>
+<span class="c">!&gt; More details about this example</span>
+<span class="c">!&gt; @snippet file_io/unit_test_gnuplot.F90 example</span>
+<span class="c">!&gt; Here a snapshot when you execute:</span>
+<span class="c">!&gt; &lt;code&gt; gnuplot -persistent plot_2.gnu &lt;/code&gt;</span>
+<span class="c">!</span>
+<span class="c">!&gt; @image html gnuplot.png</span>
+<span class="k">module </span><span class="n">sll_gnuplot</span>
+
+<span class="k">use </span><span class="n">sll_ascii_io</span>
+<span class="k">use </span><span class="n">sll_utilities</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">sll_new_file_id</span><span class="p">,</span> <span class="n">int2string</span>
+
+<span class="k">contains</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="document-a-derived-type">
+<h2>Document a derived type<a class="headerlink" href="#document-a-derived-type" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt; @brief 2D logical mesh</span>
+<span class="c">!&gt; @details</span>
+<span class="c">!&gt;  Use new_logical_mesh_2d to allocate the memory space,</span>
+<span class="c">!&gt; initialize it and get a pointer to this object.</span>
+<span class="k">type</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">sll_logical_mesh_2d</span>
+  <span class="n">sll_int32</span>  <span class="kd">::</span> <span class="n">num_cells1</span> <span class="c">!&lt; number of cells in direction 1</span>
+  <span class="n">sll_int32</span>  <span class="kd">::</span> <span class="n">num_cells2</span> <span class="c">!&lt; number of cells in direction 2</span>
+  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">eta1_min</span>   <span class="c">!&lt; minimum value of eta, direction 1</span>
+  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">eta1_max</span>   <span class="c">!&lt; maximum value of eta, direction 1</span>
+  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">eta2_min</span>   <span class="c">!&lt; minimum value of eta, direction 2</span>
+  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">eta2_max</span>   <span class="c">!&lt; maximum value of eta, direction 2</span>
+  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">delta_eta1</span> <span class="c">!&lt; cell spacing, direction 1</span>
+  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">delta_eta2</span> <span class="c">!&lt; cell spacing, direction 2</span>
+<span class="k">end type </span><span class="n">sll_logical_mesh_2d</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="document-a-subroutine">
+<h2>Document a subroutine<a class="headerlink" href="#document-a-subroutine" title="Permalink to this headline">¶</a></h2>
+<p>To document function or subroutine :</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span> <span class="c">!&gt; @brief &lt;BRIEF_DESCRIPTION&gt;</span>
+ <span class="c">!&gt; @details &lt;DETAILED_DESCRIPTION&gt;</span>
+ <span class="c">!&gt; @param [&lt;in or out or inout&gt;] &lt;PARAM1&gt; &lt;DESCRIPTION&gt;</span>
+ <span class="c">!&gt; @param [&lt;in or out or inout&gt;] &lt;PARAM2&gt; &lt;DESCRIPTION&gt;</span>
+ <span class="k">function </span><span class="n">function_name</span><span class="p">(</span><span class="o">&lt;</span><span class="n">PARAM1</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">PARAM2</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt; @brief Create HDF5 file</span>
+<span class="c">!&gt; @details To use this subroutine HDF5_ENABLE should be set to ON</span>
+<span class="c">!&gt; in CMake configuration</span>
+<span class="k">subroutine </span><span class="n">sll_hdf5_file_create</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">file_id</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
+  <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">)</span> <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">filename</span>  <span class="c">!&lt; file name</span>
+  <span class="kt">integer</span><span class="p">(</span><span class="n">hid_t</span><span class="p">)</span>   <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">file_id</span>   <span class="c">!&lt; unit number</span>
+  <span class="kt">integer</span><span class="p">,</span>           <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">error</span>     <span class="c">!&lt; error code</span>
+
+  <span class="k">call </span><span class="n">H5open_f</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+  <span class="n">SLL_ASSERT</span><span class="p">(</span><span class="n">error</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+  <span class="k">call </span><span class="n">H5Fcreate_f</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">H5F_ACC_TRUNC_F</span><span class="p">,</span><span class="n">file_id</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
+  <span class="n">SLL_ASSERT</span><span class="p">(</span><span class="n">error</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">sll_hdf5_file_create</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="document-a-function">
+<h2>Document a function<a class="headerlink" href="#document-a-function" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt; @brief allocates the memory space for a new 1D logical mesh.</span>
+<span class="c">!&gt; @details</span>
+<span class="c">!&gt; initializes it with the given arguments and returns a pointer to the</span>
+<span class="c">!&gt; object.</span>
+<span class="c">!&gt; @param num_cells integer denoting the number of cells.</span>
+<span class="c">!&gt; @param eta_min  minimum value of the eta1 parameter in the logical mesh.</span>
+<span class="c">!&gt; @param eta_max maximum value of the eta1 parameter in the logical mesh.</span>
+<span class="c">!&gt; @return a pointer to the newly allocated object.</span>
+<span class="k">function </span><span class="n">new_logical_mesh_1d</span><span class="p">(</span> <span class="p">&amp;</span>
+  <span class="n">num_cells</span><span class="p">,</span>                  <span class="p">&amp;</span>
+  <span class="n">eta_min</span><span class="p">,</span>                    <span class="p">&amp;</span>
+  <span class="n">eta_max</span> <span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+  <span class="k">type</span><span class="p">(</span><span class="n">sll_logical_mesh_1d</span><span class="p">),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">m</span>
+  <span class="n">sll_int32</span><span class="p">,</span>              <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">num_cells</span>
+  <span class="n">sll_real64</span><span class="p">,</span> <span class="k">optional</span><span class="p">,</span>   <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eta_min</span>
+  <span class="n">sll_real64</span><span class="p">,</span> <span class="k">optional</span><span class="p">,</span>   <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eta_max</span>
+
+  <span class="n">sll_int32</span> <span class="kd">::</span> <span class="n">ierr</span>
+
+  <span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">ierr</span><span class="p">)</span>
+  <span class="k">call </span><span class="n">initialize_logical_mesh_1d</span><span class="p">(</span> <span class="n">m</span><span class="p">,</span> <span class="n">num_cells</span><span class="p">,</span> <span class="n">eta_min</span><span class="p">,</span> <span class="n">eta_max</span> <span class="p">)</span>
+  
+<span class="k">end function </span><span class="n">new_logical_mesh_1d</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="document-some-variables">
+<h2>Document some variables<a class="headerlink" href="#document-some-variables" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt; @ingroup constants</span>
+<span class="c">!&gt; @brief</span>
+<span class="c">!&gt; Fortran module where set some physical and mathematical constants.</span>
+<span class="c">!&gt; @details</span>
+<span class="c">!&gt; In this module, all variables must be protected</span>
+<span class="k">module </span><span class="n">sll_constants</span>
+<span class="k">use </span><span class="n">sll_working_precision</span>
+
+<span class="k">implicit none</span>
+
+<span class="c">!&gt; @param PI number</span>
+<span class="n">sll_real64</span><span class="p">,</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">sll_pi</span> <span class="o">=</span> <span class="mf">3.1415926535897932384626433D8</span>
+
+<span class="c">!&gt; @param speed of light in vacuum (def) m/s</span>
+<span class="n">sll_real64</span><span class="p">,</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">sll_c</span> <span class="o">=</span> <span class="mf">2.99792458D8</span>
+
+<span class="k">end module </span><span class="n">sll_constants</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="document-your-test-example">
+<h2>Document your test example<a class="headerlink" href="#document-your-test-example" title="Permalink to this headline">¶</a></h2>
+<p>Insert some doxygen comments to mark the code you want to share :</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt;@internal [example]</span>
+<span class="k">program </span><span class="n">test_io_gnuplot</span>
+
+<span class="k">use </span><span class="n">sll_gnuplot</span>
+
+<span class="k">call </span><span class="n">sll_gnuplot_2d</span><span class="p">(</span><span class="n">eta1_min</span><span class="p">,</span> <span class="n">eta1_max</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span> <span class="p">&amp;</span>
+                    <span class="n">eta2_min</span><span class="p">,</span> <span class="n">eta2_max</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="p">&amp;</span>
+                    <span class="k">array</span><span class="p">,</span> <span class="s1">&#39;plot_1&#39;</span><span class="p">,</span> <span class="n">iplot</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+
+<span class="k">end program </span><span class="n">test_io_gnuplot</span>
+<span class="c">!&gt;@internal [example]</span>
+</pre></div>
+</div>
+<p><strong>Test program must be short!</strong></p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html">http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p><a class="reference external" href="https://github.com/lasofivec/python-scripts/blob/master/make_sll_doxygen_doc.py">https://github.com/lasofivec/python-scripts/blob/master/make_sll_doxygen_doc.py</a></p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p><a class="reference external" href="http://selalib.gthub.io/selalib/">http://selalib.gthub.io/selalib/</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="naming_convention.html" title="previous page">Naming Convention</a>
+    <a class='right-next' id="next-link" href="markdown.html" title="next page">References</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The SeLaLib project team<br/>
+        
+            &copy; Copyright 2020.<br/>
+          Last updated on 10 Mar 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

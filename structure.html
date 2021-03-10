@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ubuntu or Debian</title>
+    <title>Libraries</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -52,10 +52,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Fedora" href="fedora.html" />
-    <link rel="prev" title="SeLaLib" href="selalib.html" />
+    <link rel="next" title="Coding guidelines" href="coding_style.html" />
+    <link rel="prev" title="CMake" href="cmake.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -83,32 +84,47 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="selalib.html">
-   SeLaLib
+  <a class="reference internal" href="equations.html">
+   Equations
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Install dependencies
+  User guide
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Ubuntu or Debian
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fedora.html">
-   Fedora
-  </a>
- </li>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="build.html">
    Build the library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="user_guide.html">
+   Preamble
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="low_level.html">
+   Low-Level Layer: Basic Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mid_level.html">
+   Mid-Level Layer: Numerical and Parallel Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="top_level.html">
+   Top-Level Layer: Semi-Lagrangian Toolbox
   </a>
  </li>
 </ul>
@@ -117,19 +133,34 @@
   Developer guide
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
    Getting Started
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="cmake_guide.html">
+  <a class="reference internal" href="cmake.html">
    CMake
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Libraries
+  </a>
+ </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="doxygen_guide.html">
+  <a class="reference internal" href="coding_style.html">
+   Coding guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="naming_convention.html">
+   Naming Convention
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="doxygen.html">
    Doxygen
   </a>
  </li>
@@ -190,7 +221,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/ubuntu.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/structure.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -210,10 +241,12 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/selalib/selalib/issues/new?title=Issue%20on%20page%20%2Fubuntu.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/selalib/selalib/issues/new?title=Issue%20on%20page%20%2Fstructure.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/selalib/selalib/edit/main/structure.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -239,43 +272,48 @@
         
               <div>
                 
-  <div class="section" id="ubuntu-or-debian">
-<h1>Ubuntu or Debian<a class="headerlink" href="#ubuntu-or-debian" title="Permalink to this headline">¶</a></h1>
-<p>The prerequisites can be installed with a couple of commands on Ubuntu.</p>
-<ul class="simple">
-<li><p>Install MPI, Most of our testing is done with openmpi but mpich should also work:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install libopenmpi-dev openmpi-bin libhdf5-openmpi-dev
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Install build tools :</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install cmake
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Install compilers :</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install gfortran python3
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Install libraries (MPI, HDF5, FFTW3, LAPACK) :</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install  libfftw3-dev liblapack-dev libopenblas-dev
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Install software for documentation:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install doxygen texlive-latex3
-</pre></div>
-</div>
-<p>For some outputs you can install also:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install gnuplot
-</pre></div>
-</div>
+  <div class="section" id="libraries">
+<h1>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h1>
+<p>The src folder contains all source files for the SeLaLib-library. It is
+organized in the following subfolders containing the different building
+blocks for kinetic and gyrokinetic simulations:</p>
+<dl class="simple myst">
+<dt>add_ons</dt><dd><p>Advanced features that extend various pieces of the library but there are no modules depending on these features.</p>
+</dd>
+<dt>data_structures</dt><dd><p>Definition of data structures and descriptors used throughout the library.</p>
+</dd>
+<dt>field_solvers</dt><dd><p>Solvers of the various field equations.</p>
+</dd>
+<dt>interfaces</dt><dd><p>Modules that implement interfaces to external libraries.</p>
+</dd>
+<dt>interpolation</dt><dd><p>Methods for numerical interpolation.</p>
+</dd>
+<dt>io</dt><dd><p>Modules for input-output of the simulations.</p>
+</dd>
+<dt>linear_solvers</dt><dd><p>Methods to solve linear systems.</p>
+</dd>
+<dt>low_level_utilities</dt><dd><p>Utilities for memory and error handling.</p>
+</dd>
+<dt>mesh</dt><dd><p>Modules to define mesh parameters and coordinate
+transformations.</p>
+</dd>
+<dt>parallelization</dt><dd><p>Modules providing routines for parallelization with MPI.</p>
+</dd>
+<dt>particle_methods</dt><dd><p>Modules implementing the building blocks for particle methods.</p>
+</dd>
+<dt>quadrature</dt><dd><p>Numerical quadrature methods.</p>
+</dd>
+<dt>semi_Lagrangian</dt><dd><p>Modules specific to semi-Lagrangian methods.</p>
+</dd>
+<dt>simulation_tools</dt><dd><p>Tools to build simulations such as simulation base class and initialization of typical test problems.</p>
+</dd>
+<dt>splines</dt><dd><p>Spline modules.</p>
+</dd>
+<dt>time_solvers</dt><dd><p>Methods for time stepping.</p>
+</dd>
+</dl>
+<p>Simulation examples for various kinetic and gyrokinetic test cases are
+found in the folder <code class="docutils literal notranslate"><span class="pre">selalib/simulations</span></code>.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -303,8 +341,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="selalib.html" title="previous page">SeLaLib</a>
-    <a class='right-next' id="next-link" href="fedora.html" title="next page">Fedora</a>
+    <a class='left-prev' id="prev-link" href="cmake.html" title="previous page">CMake</a>
+    <a class='right-next' id="next-link" href="coding_style.html" title="next page">Coding guidelines</a>
 
         </div>
         

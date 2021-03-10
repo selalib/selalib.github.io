@@ -1,0 +1,1818 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mid-Level Layer: Numerical and Parallel Utilities</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Top-Level Layer: Semi-Lagrangian Toolbox" href="top_level.html" />
+    <link rel="prev" title="Low-Level Layer: Basic Utilities" href="low_level.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/selalib.png" class="logo" alt="logo">
+  
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Mathematics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="equations.html">
+   Equations
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  User guide
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="build.html">
+   Build the library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="user_guide.html">
+   Preamble
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="low_level.html">
+   Low-Level Layer: Basic Utilities
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Mid-Level Layer: Numerical and Parallel Utilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="top_level.html">
+   Top-Level Layer: Semi-Lagrangian Toolbox
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Developer guide
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cmake.html">
+   CMake
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="structure.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coding_style.html">
+   Coding guidelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="naming_convention.html">
+   Naming Convention
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="doxygen.html">
+   Doxygen
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Credits
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="members.html">
+   Contributors
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/mid_level.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/selalib/selalib"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/selalib/selalib/issues/new?title=Issue%20on%20page%20%2Fmid_level.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/selalib/selalib/edit/main/mid_level.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tridiagonal-system-solver">
+   Tridiagonal System Solver
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#description">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exposed-interface">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usage">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#status">
+     Status
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-condition-descriptors">
+   Boundary Condition Descriptors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cubic-splines">
+   Cubic Splines
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Status
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gauss-legendre-integrator">
+   Gauss-Legendre Integrator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Status
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fft">
+   FFT
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     Status
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collective-communications">
+   Collective Communications
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     Status
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remapper">
+   Remapper
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-notes">
+     Implementation Notes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     Status
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="mid-level-layer-numerical-and-parallel-utilities">
+<h1>Mid-Level Layer: Numerical and Parallel Utilities<a class="headerlink" href="#mid-level-layer-numerical-and-parallel-utilities" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tridiagonal-system-solver">
+<h2>Tridiagonal System Solver<a class="headerlink" href="#tridiagonal-system-solver" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<p>To solve systems of the form <span class="math notranslate nohighlight">\(Ax=b\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> is a tridiagonal matrix,
+Selalib offers a native, robust tridiagonal system solver. The present
+implementation contains only a serial version. The algorithm is based on
+an <em>LU</em> factorization of a given matrix, with row pivoting. The
+tridiagonal matrix must be given as a single array, with a memory layout
+shown next. $<span class="math notranslate nohighlight">\(\begin{bmatrix}
+    a(2) &amp; a(3) &amp;        &amp;        &amp;        &amp;        &amp;  a(1) \\
+    a(4) &amp; a(5) &amp; a(6)   &amp;        &amp;        &amp;        &amp;       \\
+         &amp; a(7) &amp; a(8)   &amp; a(9)   &amp;        &amp;        &amp;       \\
+         &amp;      &amp; \ddots &amp; \ddots &amp; \ddots &amp;        &amp;       \\
+         &amp;      &amp;        &amp; \ddots &amp; \ddots &amp; \ddots &amp;       \\
+         &amp;      &amp;        &amp;        &amp; a(3n-5)&amp; a(3n-4)&amp;a(3n-3)\\
+    a(3n)&amp;      &amp;        &amp;        &amp;        &amp; a(3n-2)&amp;a(3n-1)\\
+  \end{bmatrix}\)</span>$</p>
+</div>
+<div class="section" id="exposed-interface">
+<h3>Exposed Interface<a class="headerlink" href="#exposed-interface" title="Permalink to this headline">¶</a></h3>
+<p>Factorization of the matrix <span class="math notranslate nohighlight">\(A\)</span> is obtained through a call to the
+subroutine</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_setup_cyclic_tridiag( a, n, lu, ipiv )
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">a</span></code> is the matrix to be factorized, <code class="docutils literal notranslate"><span class="pre">n</span></code> is the problem size (the
+number of unknowns), <code class="docutils literal notranslate"><span class="pre">lu</span></code> is a real array of size <span class="math notranslate nohighlight">\(7n\)</span> where
+factorization information will be returned and <code class="docutils literal notranslate"><span class="pre">ipiv</span></code> is an integer
+array of length <code class="docutils literal notranslate"><span class="pre">n</span></code> on which pivoting information will be returned. From
+the perspective of the user, <code class="docutils literal notranslate"><span class="pre">lu</span></code> and <code class="docutils literal notranslate"><span class="pre">ipiv</span></code> are only arrays that
+<code class="docutils literal notranslate"><span class="pre">sll_setup_cyclic_tridiag</span></code> requires and do not need any further
+consideration.</p>
+<p>The solution of a tridiagonal system, once the original array <span class="math notranslate nohighlight">\(A\)</span> has
+been factorized, is obtained through a call to</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_solve_cyclic_tridiag( lu, ipiv, b, n, x )
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">lu</span></code>, <code class="docutils literal notranslate"><span class="pre">ipiv</span></code> are the arrays returned by
+<code class="docutils literal notranslate"><span class="pre">sll_setup_cyclic_tridiag()</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> is the independent term in the
+original matrix equation, <code class="docutils literal notranslate"><span class="pre">n</span></code> is the system size and <code class="docutils literal notranslate"><span class="pre">x</span></code> is the array
+where the solution will be returned.</p>
+</div>
+<div class="section" id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+<p>To use the module in a stand-alone way, include the line:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     use sll_tridiagonal
+</pre></div>
+</div>
+<p>The following code snippet is an example of the use of the tridiagonal
+solver.</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span>         <span class="n">sll_int32</span> <span class="kd">::</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+         <span class="n">sll_int32</span> <span class="kd">::</span> <span class="n">ierr</span>
+         <span class="n">sll_real64</span><span class="p">,</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">lu</span>
+         <span class="n">sll_int32</span><span class="p">,</span>  <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">ipiv</span>
+         <span class="n">sll_real64</span><span class="p">,</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">x</span>
+
+         <span class="n">SLL_ALLOCATE</span><span class="p">(</span> <span class="n">lu</span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="n">n</span><span class="p">),</span> <span class="n">ierr</span> <span class="p">)</span>
+         <span class="n">SLL_ALLOCATE</span><span class="p">(</span> <span class="n">ipiv</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">ierr</span> <span class="p">)</span>
+         <span class="n">SLL_ALLOCATE</span><span class="p">(</span> <span class="n">x</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">ierr</span> <span class="p">)</span>
+         
+         <span class="c">! initialize a(:) with the proper coefficients here... </span>
+         <span class="nb">and </span><span class="k">then</span><span class="p">:</span>
+         
+         <span class="n">sll_setup_cyclic_tridiag</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">lu</span><span class="p">,</span> <span class="n">ipiv</span> <span class="p">)</span>
+         <span class="n">sll_solve_cyclic_tridiag</span><span class="p">(</span> <span class="n">lu</span><span class="p">,</span> <span class="n">ipiv</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">x</span> <span class="p">)</span>
+         
+          <span class="n">SLL_DEALLOCATE_ARRAY</span><span class="p">(</span> <span class="n">lu</span><span class="p">,</span> <span class="n">ierr</span> <span class="p">)</span>
+          <span class="n">SLL_DEALLOCATE_ARRAY</span><span class="p">(</span> <span class="n">ipiv</span><span class="p">,</span> <span class="n">ierr</span> <span class="p">)</span>
+          <span class="n">SLL_DEALLOCATE_ARRAY</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">ierr</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that if the last call had been made as in</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         <span class="n">sll_solve_cyclic_tridiag</span><span class="p">(</span> <span class="n">lu</span><span class="p">,</span> <span class="n">ipiv</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">b</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>the system would have been solved in-place.</p>
+</div>
+<div class="section" id="status">
+<h3>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
+<p>Unit-tested.</p>
+</div>
+</div>
+<div class="section" id="boundary-condition-descriptors">
+<h2>Boundary Condition Descriptors<a class="headerlink" href="#boundary-condition-descriptors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Description<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>This tiny module defines a few symbols that are meant to be used
+library-wide as a means to indicate various boundary condition types or
+their combinations. The objective is to have pre-defined symbols that
+will prevent the need of using numeric values explicitly to specify this
+information.</p>
+</div>
+<div class="section" id="id2">
+<h3>Exposed Interface<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The defined symbols are:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span>         <span class="n">SLL_USER_DEFINED</span>
+         <span class="n">SLL_PERIODIC</span>
+         <span class="n">SLL_DIRICHLET</span>
+         <span class="n">SLL_NEUMANN</span> 
+         <span class="n">SLL_HERMITE</span> 
+         <span class="n">SLL_NEUMANN_MODE_0</span>
+         <span class="n">SLL_SET_TO_LIMIT</span> 
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Usage<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Simply pass the parameter as an argument to any routine call which
+requires a <em>boundary condition descriptor</em>.</p>
+</div>
+</div>
+<div class="section" id="cubic-splines">
+<h2>Cubic Splines<a class="headerlink" href="#cubic-splines" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>Description<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>The cubic splines module provides capabilities for 1D and 2D data
+interpolation with cubic B-splines and different boundary conditions (at
+the time of this writing: periodic, hermite). The data to be
+interpolated are represented by a simple array. The spline coefficients
+and other information are stored in a spline object, which is also used
+to interpolate the fitted data. To use this module, simply declare an
+instance of the type to be used, initialize the object with the desired
+parameters, use the initialized object to do interpolations and when no
+longer needed, release the resources through a call to the
+<code class="docutils literal notranslate"><span class="pre">sll_delete(</span> <span class="pre">)</span></code> routine. More details below.</p>
+</div>
+<div class="section" id="id5">
+<h3>Exposed Interface<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Fundamental types:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_cubic_spline_1d</span>
+<span class="n">sll_cubic_spline_2d</span>
+</pre></div>
+</div>
+<p>These types are declared as pointers and only manipulated through the
+functions and subroutines described below. For more explicit examples,
+see the usage section.</p>
+<p>For the 1D case, the available routines are:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">new_cubic_spline_1D</span><span class="p">(</span> <span class="n">num_points</span><span class="p">,</span> 
+                     <span class="n">xmin</span><span class="p">,</span> 
+                     <span class="n">xmax</span><span class="p">,</span> 
+                     <span class="n">bc_type</span><span class="p">,</span> 
+                     <span class="p">[</span><span class="n">slope_L</span><span class="p">],</span> 
+                     <span class="p">[</span><span class="n">slope_R</span><span class="p">]</span> <span class="p">)</span>  
+<span class="n">compute_cubic_spline_1D</span><span class="p">(</span> <span class="k">data</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">interpolate_value</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">interpolate_derivative</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">interpolate_array_values</span><span class="p">(</span> <span class="n">a_in</span><span class="p">,</span> <span class="n">a_out</span><span class="p">,</span> <span class="n">np</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">interpolate_pointer_values</span><span class="p">(</span> <span class="n">a_in</span><span class="p">,</span> <span class="n">a_out</span><span class="p">,</span> <span class="n">np</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">interpolate_array_derivatives</span><span class="p">(</span> <span class="n">a_in</span><span class="p">,</span> <span class="n">a_out</span><span class="p">,</span> <span class="n">np</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">interpolate_pointer_derivatives</span><span class="p">(</span> <span class="n">ptr_in</span><span class="p">,</span> <span class="n">ptr_out</span><span class="p">,</span> <span class="n">np</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">get_x1_min</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">get_x1_max</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">get_x1_delta</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">sll_delete</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>In the above list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`new_cubic_spline_1D()` is responsible for allocating all the necessary
+storage for the spline object and initializating it. Arguments:
+
+num_points:
+
+:   32-bit integer. Number of data points for which the spline needs to
+    be computed, including the end-points (regardless of the boundary
+    condition used).
+
+xmin:
+
+:   Double precision real. Lower bound of the domain in which the data
+    array is defined. In other words, if we think of the data array
+    (indexed 1:NP) as the values of a discrete function *f* defined over
+    a sequence of $x_i$&#39;s, then $x_1 = xmin$.
+
+xmax:
+
+:   Double precision real. Similarly to `xmin`, `xmax` represents the
+    maximum extent of the domain. For data indexed 1:NP:
+    $xmax = x_{NP}$.
+
+bc_type:
+
+:   Pre-defined parameter. Descriptor of the type of boundary condition
+    to be imposed in the spline. Use only the symbols defined in
+    Selalib&#39;s *boundary condition descriptors* module. Presently, one of
+    `PERIODIC_SPLINE` or `HERMITE_SPLINE`. These are really aliases to
+    integer flags, but in Selalib we avoid the use of non-descriptive
+    flags.
+
+slope_L:
+
+:   Double precision real. Optional value representing the desired slope
+    at $x = xmin$, in the hermite BC case.
+
+slope_R:
+
+:   Double precision real. Optional value representing the desired slope
+    at $x = xmax$, in the hermite BC case.
+
+`compute_cubic_spline_1D()` calculates the spline coefficients needed to
+represent the given data and stores this information in the spline
+object. Arguments:
+
+ data:
+
+:   Double precision 1D real array containing NP values.
+
+ spline_object: 
+
+:   Initialized object of type `sll_cubic_spline_1d`.
+
+`interpolate_value()` returns the value of *f(x)* where *x* is a
+floating-point value between `xmin` and `xmax`, and *f* is a continuous
+function built with cubic B-splines and the user-defined boundary
+conditions contained in the spline object passed. Essentially, the
+spline object, together with the `interpolate_value()` function create
+the illusion of having available a continuous function when originally
+using the discrete data given. Arguments:
+
+ x:
+
+:   Double precision value representing the ordinate whose image is
+    sought.
+
+ spline_object: 
+
+:   Initialized object of type `sll_cubic_spline_1d`. A call to
+    `compute_cubic_spline_1D()` should have been made previous to
+    calling this function.
+
+`interpolate_array_values()` has an analogous functionality than the
+previous interpolation function, but is capable of processing whole
+arrays. This is useful to avoid the overhead associated with a call to
+`interpolate_value()` inside a loop.
+
+`interpolate_derivative()` returns the value of *f&#39;(x)* where *x* is a
+floating-point value between `xmin` and `xmax`, and *f* is a continuous
+function built with cubic B-splines and the user-defined boundary
+conditions contained in the spline object passed. Same types of
+arguments as in `interpolate_value()`.
+
+`interpolate_array_values()` is a subroutine that interpolates the
+results of multiple values of *x*. Arguments:
+
+a_in:
+
+:   \[in\] double precision 1D array containing the values of the
+    ordinates to be interpolated.
+
+a_out:
+
+:   \[out\]double precision 1D array to store the results, i.e., the
+    images of the values contained in `a_in`.
+
+np:
+
+:   \[in\] 32-bit integer storing the number of points meant to be
+    interpolated.
+
+ spline_object: 
+
+:   \[inout\] Initialized object of type `sll_cubic_spline_1d`.
+
+`interpolate_pointer_values()` is a subroutine with analogous arguments
+to `interpolate_array_values` except that it receives pointers instead
+of arrays for its arguments.
+
+`interpolate_array_derivatives()` computes multiple first-derivative
+values. Its interface is identical to `interpolate_array_values()`.
+
+`interpolate_pointer_derivatives()` computes multiple first-derivative
+values, just as `interpolate_array_derivatives()` except that its
+arguments are pointers.
+
+`get_x1_min()` returns the minimum value of the domain in which the
+spline object is defined. Arguments:
+
+spline_object:
+
+:   a pointer to a previously initialized object of type
+    `sll_cubic_spline_1D`
+
+`get_x1_max()` returns the maximum value of the domain in which the
+spline object is defined. Arguments:
+
+spline_object:
+
+:   a pointer to a previously initialized object of type
+    `sll_cubic_spline_1D`
+
+`get_x1_delta()` returns the value of the spacing between the points
+used to compute the spline values. This is determined from the extent of
+the domain and the number of cells used. Arguments:
+
+spline_object:
+
+:   a pointer to a previously initialized object of type
+    `sll_cubic_spline_1D`
+
+`sll_delete()` subroutine to free the resources of a given spline
+object. Arguments:
+
+spline_object:
+
+:   a pointer to a previously initialized object of type
+    `sll_cubic_spline_1D`
+</pre></div>
+</div>
+<p>For the 2D case, the available routines are:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">new_cubic_spline_2d</span><span class="p">(</span> <span class="n">num_pts_x1</span><span class="p">,</span>  
+                     <span class="n">num_pts_x2</span><span class="p">,</span>  
+                     <span class="n">x1_min</span><span class="p">,</span>      
+                     <span class="n">x1_max</span><span class="p">,</span>     
+                     <span class="n">x2_min</span><span class="p">,</span>      
+                     <span class="n">x2_max</span><span class="p">,</span>     
+                     <span class="n">x1_bc_type</span><span class="p">,</span> 
+                     <span class="n">x2_bc_type</span><span class="p">,</span>  
+                     <span class="n">const_slope_x1_min</span><span class="p">,</span>
+                     <span class="n">const_slope_x1_max</span><span class="p">,</span>
+                     <span class="n">const_slope_x2_min</span><span class="p">,</span> 
+                     <span class="n">const_slope_x2_max</span><span class="p">,</span>
+                     <span class="n">x1_min_slopes</span><span class="p">,</span>
+                     <span class="n">x1_max_slopes</span><span class="p">,</span>
+                     <span class="n">x2_min_slopes</span><span class="p">,</span> 
+                     <span class="n">x2_max_slopes</span> <span class="p">)</span>
+<span class="n">compute_cubic_spline_2d</span><span class="p">(</span> <span class="k">data</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">interpolate_value_2d</span><span class="p">(</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">interpolate_x1_derivative_2d</span><span class="p">(</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">interpolate_x2_derivative_2d</span><span class="p">(</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>      
+<span class="n">get_x1_min</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">get_x1_max</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">get_x2_min</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">get_x2_max</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">get_x1_delta</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">get_x2_delta</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
+<span class="n">sll_delete</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>             
+</pre></div>
+</div>
+<p>In the above list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`new_cubic_spline_2D()` is responsible for allocating all the necessary
+storage for the spline object and initializating it. Arguments:
+
+num_points_x1:
+
+:   \[in\] 32-bit integer. Number of data points in the first
+    (memory-contiguous) direction for which the spline needs to be
+    fitted. Endpoints at $x_{1,j} = x1_{min}$ and
+    $x_{NPX1,j} = x1_{max}$ must be included.
+
+num_points_x2:
+
+:   \[in\] 32-bit integer. Number of data points in the second direction
+    for which the spline needs to be fitted. Endpoints at
+    $x_{i,1} = x2_{min}$ and $x_{i,NPX2} = x2_{max}$ must be included.
+
+x1_min:
+
+:   \[in\] Double precision real. Lower bound of the domain in which the
+    data array is defined in the first (memory-contiguous) direction.
+
+x1_max:
+
+:   \[in\]Double precision real. Represents the maximum extent of the
+    domain in the first (memory-contiguous) direction.
+
+x2_min:
+
+:   \[in\] Double precision real. Lower bound of the domain in which the
+    data array is defined in the second direction.
+
+x2_max:
+
+:   \[in\]Double precision real. Represents the maximum extent of the
+    domain in the second direction.
+
+x1_bc_type:
+
+:   \[in\] Pre-defined parameter. Descriptor of the type of boundary
+    condition to be imposed in the spline in the first direction.
+    Presently, one of `PERIODIC_SPLINE` or `HERMITE_SPLINE` as defined
+    in Selalib&#39;s *boundary condition descriptors* module.
+
+x2_bc_type:
+
+:   \[in\] Pre-defined parameter. Descriptor of the type of boundary
+    condition to be imposed in the spline in the second direction.
+    Presently, one of `PERIODIC_SPLINE` or `HERMITE_SPLINE` as defined
+    in Selalib&#39;s *boundary condition descriptors* module.
+
+const_slope_x1_min:
+
+:   \[optional, in\]Double precision real. Optional value representing
+    the desired slope at $x1_{min}$, in the hermite BC case if a
+    constant value for the whole edge is to be specified.
+
+const_slope_x1_max:
+
+:   \[optional, in\]Double precision real. Optional value representing
+    the desired slope at $x1_{max}$, in the hermite BC case if a
+    constant value for the whole edge is to be specified.
+
+const_slope_x2_min:
+
+:   \[optional, in\]Double precision real. Optional value representing
+    the desired slope at $x2_{min}$, in the hermite BC case if a
+    constant value for the whole edge is to be specified.
+
+const_slope_x2_max:
+
+:   \[optional, in\]Double precision real. Optional value representing
+    the desired slope at $x2_{max}$, in the hermite BC case if a
+    constant value for the whole edge is to be specified.
+
+x1_min_slopes:
+
+:   \[optional, in\] Array with the values of the slopes at each of the
+    `num_points_x2` locations in the edge at $x1_{min}$. To be used with
+    the hermite boundary condition only.
+
+x1_max_slopes:
+
+:   \[optional, in\] Array with the values of the slopes at each of the
+    `num_points_x2` locations in the edge at $x1_{max}$. To be used with
+    the hermite boundary condition only.
+
+x2_min_slopes:
+
+:   \[optional, in\] Array with the values of the slopes at each of the
+    `num_points_x1` locations in the edge at $x2_{min}$. To be used with
+    the hermite boundary condition only.
+
+x2_max_slopes:
+
+:   \[optional, in\] Array with the values of the slopes at each of the
+    `num_points_x1` locations in the edge at $x2_{max}$. To be used with
+    the hermite boundary condition only.
+
+`compute_cubic_spline_2D()` calculates the spline coefficients needed to
+represent the given 2D data and stores this information in the spline
+object. Arguments:
+
+ data:
+
+:   \[in\] Double precision 2D real array containing NPX1\*NPX2 values.
+
+ spline_object: 
+
+:   Initialized object of type `sll_cubic_spline_2d`.
+
+`interpolate_value_2d()` returns the value of *f(x1,x2)* where the
+ordered pair $(x1,x2)$ is in the domain
+$[x1_{min},x1_{max}] X [x2_{min},x2_{max}]$. *f* is a continuous
+function built with cubic B-splines and the user-defined boundary
+conditions contained in the spline object passed. Arguments:
+
+ x1:
+
+:   \[in\] Double precision value representing the value of the first
+    coordinate.
+
+ x2:
+
+:   \[in\] Double precision value representing the value of the second
+    coordinate.
+
+ spline_object: 
+
+:   Initialized object of type `sll_cubic_spline_2d`. A call to
+    `compute_cubic_spline_2D()` should have been made previous to
+    calling this function.
+
+`interpolate_x1_derivative_2d()` returns the value of the first
+derivative in the $x1$ direction. Uses same types of arguments as the
+$interpolate_value_2d$ function.
+
+`interpolate_x2_derivative_2d()` returns the value of the first
+derivative in the $x2$ direction. Uses same types of arguments as the
+$interpolate_value_2d$ function.
+
+`get_x1_min()` returns the minimum value of $x1$ in the domain in which
+the spline object is defined. Arguments:
+
+spline_object:
+
+:   a pointer to a previously initialized object of type
+    `sll_cubic_spline_2D`
+
+`get_x1_max()` returns the maximum value of $x1$ in the domain in which
+the spline object is defined. Arguments:
+
+spline_object:
+
+:   a pointer to a previously initialized object of type
+    `sll_cubic_spline_2D`
+
+`get_x2_min()` returns the minimum value of $x2$ in the domain in which
+the spline object is defined. Arguments:
+
+spline_object:
+
+:   a pointer to a previously initialized object of type
+    `sll_cubic_spline_2D`
+
+`get_x2_max()` returns the maximum value of $x2$ in the domain in which
+the spline object is defined. Arguments:
+
+spline_object:
+
+:   a pointer to a previously initialized object of type
+    `sll_cubic_spline_2D`
+
+`get_x1_delta()` returns the value of the spacing between the points
+used to compute the spline values in the $x1$ direction. This is
+determined from the extent of the domain and the number of cells used.
+Arguments:
+
+spline_object:
+
+:   a pointer to a previously initialized object of type
+    `sll_cubic_spline_2D`
+
+`get_x2_delta()` returns the value of the spacing between the points
+used to compute the spline values in the $x2$ direction. This is
+determined from the extent of the domain and the number of cells used.
+Arguments:
+
+spline_object:
+
+:   a pointer to a previously initialized object of type
+    `sll_cubic_spline_2D`
+
+`sll_delete()` subroutine to free the resources of a given spline
+object. Arguments:
+
+spline_object:
+
+:   a pointer to a previously initialized object of type
+    `sll_cubic_spline_2D`
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Usage<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>To use the module in a stand-alone way, include the line:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     use sll_splines
+</pre></div>
+</div>
+<p>The following example is an extract from the module’s unit test.</p>
+<p>Here we do not go in detail over every line but only highlight those
+lines in which we interact with the splines module</p>
+<dl class="simple myst">
+<dt>Line 5:</dt><dd><p>Imports the spline module. The intent is to eventually not require
+this but to import a single module, say ‘selalib’ which will include
+all modules itself. For now, this is the way to include these
+individual capabilities.</p>
+</dd>
+<dt>Lines 13 - 14:</dt><dd><p>Declaration of the spline pointers.</p>
+</dd>
+<dt>Lines 29, 34:</dt><dd><p>Allocation and partial initialization of the splines. Note the <code class="docutils literal notranslate"><span class="pre">=&gt;</span></code>
+pointer assignment syntax.</p>
+</dd>
+<dt>Lines 33, 39:</dt><dd><p>Calculation of the spline coefficients. After this call the spline
+object becomes fully usable. Note that in the example we used both
+existing interfaces to call the initialization subroutine.</p>
+</dd>
+<dt>Lines 45, 52:</dt><dd><p>Value interpolation using the existing splines.</p>
+</dd>
+<dt>Lines 57, 67:</dt><dd><p>Destruction of spline objects.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id7">
+<h3>Status<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Unit-tested.</p>
+</div>
+</div>
+<div class="section" id="gauss-legendre-integrator">
+<h2>Gauss-Legendre Integrator<a class="headerlink" href="#gauss-legendre-integrator" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>Description<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>This is a low-level mathematical utility that applies the Gauss-Legendre
+method to compute numeric integrals. This module aims at providing a
+single interface to the process of integrating a function on a given
+interval.</p>
+</div>
+<div class="section" id="id9">
+<h3>Exposed Interface<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>To integrate the function <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> (real-valued and of a single,
+real-valued argument <code class="docutils literal notranslate"><span class="pre">x</span></code>) over the interval <span class="math notranslate nohighlight">\([a, b]\)</span>, the simplest way
+is through a function call such as:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      gauss_legendre_integrate_1D(f, a, b, n)
+</pre></div>
+</div>
+<p>In the function above, <code class="docutils literal notranslate"><span class="pre">n</span></code> represents the desired number of <em>Gauss</em>
+points used in the calculation:
+$<span class="math notranslate nohighlight">\(\int_{-1}^1f(x) \mathrm{d} x \approx \sum_{k=1}^n w_kf(x_k)\)</span>$</p>
+<p>Presently, the implementation accepts values of <code class="docutils literal notranslate"><span class="pre">degree</span></code> between <span class="math notranslate nohighlight">\(2\)</span> and
+<span class="math notranslate nohighlight">\(10\)</span> inclusively. The function <code class="docutils literal notranslate"><span class="pre">gauss_legendre_integrate_1D</span></code> internally
+does the proper scaling of the points to adjust the integral over the
+desired interval.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">gauss_legendre_integrate_1D</span></code> is a generic interface and as
+such, it hides some alternative integrators, which are selected
+depending on the type of the passed arguments. For instance, we have
+available the function</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     gauss_legendre_integrate_interpolated_1D(f, spline, a, b, n)
+</pre></div>
+</div>
+<p>which integrates a function represented by a spline object. The function
+<code class="docutils literal notranslate"><span class="pre">f</span></code> in this case is the spline interpolation function. It looks like
+this interface could be simplified and we could eliminate the first
+parameter and pass only the spline object. The only reason to leave the
+interpolation function as an argument is if we find some compelling
+reason to parametrize the interpolation function as well.</p>
+<p>It will be necessary to implement other integrators for functions with a
+different signature, such as two- or three-parameter functions. It might
+also be necessary to distinguish between one-dimensional and two- or
+3-dimensional integration. While this is not yet implemented, here we
+lay out some suggestions on how to proceed in such cases.</p>
+<p>For the class of integrals that are done in one-dimension, such as the
+above, the cleanest but somewhat more laborious approach appears to be
+to write a different integrator for every function signature that is
+needed. For instance, one may need to write specialized integrators for
+<span class="math notranslate nohighlight">\(f(x_1, x_2)\)</span>, <span class="math notranslate nohighlight">\(f(x_1, x_2, x_3)\)</span> and so on, with the convention that
+the integral is carried out over, say, the first of the variables. The
+variables which are not integrated can be used as parameters. The
+alternative to this approach could be to write a single integrator that
+is able to receive multiple parameters, through the use of arrays or
+derived types, but the ugliness of this approach, and the need to
+basically write glue-code (pack/unpack the arrays or derived types with
+variables and parameters) every time one wants to integrate something
+are reasons to reject this approach.</p>
+</div>
+<div class="section" id="id10">
+<h3>Usage<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>As mentioned above, the name of the generic function that hides the
+specialized functions is <code class="docutils literal notranslate"><span class="pre">gauss_legendre_integrate_1D</span></code>. The specialized
+functions can be individually called to avoid the overhead of the
+generic function call if desired. A one-dimensional function (user or
+Fortran) can be integrated by a call like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     gauss_legendre_integral_1D( test_function, &amp;
+                                 0.0_f64,       &amp;
+                                 sll_pi/2.0,    &amp;
+                                 4 )
+</pre></div>
+</div>
+<p>A function that is represented by an underlying spline object can be
+called like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     gauss_legendre_integral_interpolated_1D( interpolate_value,&amp;
+                                              sp1,              &amp;
+                                              0.0_f64,          &amp;
+                                              sll_pi,           &amp;
+                                              4)
+</pre></div>
+</div>
+<p>where sp1 is a spline object. It should be decided if this last case is
+indeed that interface that is wished, or if something more simplified
+should be implemented intstead.</p>
+</div>
+<div class="section" id="id11">
+<h3>Status<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>Unit-tested.</p>
+</div>
+</div>
+<div class="section" id="fft">
+<h2>FFT<a class="headerlink" href="#fft" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>Description<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>The FFT module intends to provide an unified interface to native or
+external library FFT functions. This module plays a role analogous to
+the <em>Collective</em> module, explained below, but in this case applied to
+FFT capabilities instead of a parallelization library like MPI. In this
+sense, the <code class="docutils literal notranslate"><span class="pre">sll_fft</span></code> module provides a set of types, functions and
+subroutines that can in principle be implemented with a choice of
+external libraries.</p>
+</div>
+<div class="section" id="id13">
+<h3>Exposed Interface<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>The interface to the FFT functions is inspired by the FFTW interface in
+which the FFT operation is carried out by the creation of a plan
+followed by the execution of this plan. The “plan” stores all relevant
+information (twiddle factor arrays, auxiliary arrays, etc.) that may be
+needed by a given type of FFT operation. The application of the plan
+executes the operation itself on a given data. Like all other native
+types in Selalib, the FFT plan is declared through a pointer, which must
+be allocated and initialized. To declare, call:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     type(sll_fft_plan), pointer :: fft_plan
+</pre></div>
+</div>
+<p>Followed by an initialization step:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     fft_plan =&gt; sll_new_fft( sample_number,  
+                              data_type, 
+                              fft_flags )
+</pre></div>
+</div>
+<p>Where the <code class="docutils literal notranslate"><span class="pre">data_type</span></code> parameter can take either of the values:
+<code class="docutils literal notranslate"><span class="pre">FFT_REAL</span></code> or <code class="docutils literal notranslate"><span class="pre">FFT_COMPLEX</span></code>. Presently we only provide double precision
+transforms (i.e.: 64-bit floating precision numbers). The <code class="docutils literal notranslate"><span class="pre">fft_flags</span></code>
+can take the values: <code class="docutils literal notranslate"><span class="pre">FFT_NORMALIZE_FORWARD</span></code> and/or
+<code class="docutils literal notranslate"><span class="pre">FFT_NORMALIZE_INVERSE</span></code>. If no flags are present, an unnormalized FFT
+will be executed. The user may request that the FFT be normalized in
+both directions by combining the flags with a <code class="docutils literal notranslate"> </code> + sign.</p>
+<p>To execute the FFT plan:</p>
+<p>sample_number:</p>
+<p>:</p>
+<dl class="simple myst">
+<dt>spline:</dt><dd><p>A pointer to the spline object to be filled or updated.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id14">
+<h3>Usage<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id15">
+<h3>Status<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="collective-communications">
+<h2>Collective Communications<a class="headerlink" href="#collective-communications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id16">
+<h3>Description<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>Selalib applies the principle of modularization throughout all levels of
+abstraction of the library and aims at keeping third-party library
+modules as what they are: separate library modules. Therefore, in its
+current design, even a library like MPI has a single point of entry to
+Selalib. The collective communications module is such point of entry. We
+focus thus on the functionality offered by MPI, assign wrappers to its
+most desirable functionalities and write wrappers around them. These are
+the functions that are actually used throughout the program. This allows
+to adjust the exposed interfaces, do additional error-checking and would
+even permit to completely change the means to parallelize a code, by
+being able to replace MPI in a single file if this were ever needed.</p>
+</div>
+<div class="section" id="id17">
+<h3>Exposed Interface<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>Fundamental type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_collective_t
+</pre></div>
+</div>
+<p>Constructors, destructors and access functions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_new_collective( parent_col )
+     sll_delete_collective( col )
+</pre></div>
+</div>
+<p>When the Selalib environment is activated, there exists, in exact
+analogy with <code class="docutils literal notranslate"><span class="pre">MPI_COMM_WORLD</span></code>, a global named <code class="docutils literal notranslate"><span class="pre">sll_world_collective</span></code>. At
+the beginning of a program execution, this is the only collective in
+existence. Further collectives can be created down the road. The above
+functions are responsible for the creation and destruction of such
+collectives. The following functions are used to access the values that
+a particular collective knows about.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_get_collective_rank( col )
+     sll_get_collective_size( col )
+     sll_get_collective_color( col )
+     sll_get_collective_comm( col )
+</pre></div>
+</div>
+<p>Since the wrapped library requires initialization, so does
+<code class="docutils literal notranslate"><span class="pre">sll_collective</span></code>. To start and end the parallel environment, the user
+needs to call the functions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_boot_collective( )
+     sll_halt_collective( )
+</pre></div>
+</div>
+<p>These functions would not be exposed at the top level, and would be
+hidden by a further call to something akin to <code class="docutils literal notranslate"><span class="pre">boot_selalib</span></code> and
+<code class="docutils literal notranslate"><span class="pre">halt_selalib</span></code>. Finally, the wrappers around the standard <code class="docutils literal notranslate"><span class="pre">MPI</span></code>
+capabilities are presently exposed through the following generic
+functions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_collective_bcast( col, buffer, size, root )
+     sll_collective_gather( col, send_buf, send_sz, root, 
+                            rec_buf )
+     sll_collective_gatherv( col, send_buf, send_sz, recvcnts, 
+                             displs, root, recv_buf )
+     sll_collective_allgatherv( col, send_buf, send_sz, sizes, 
+                                displs, rec_buf )
+     sll_collective_scatter( col, send_buf, size, root, 
+                             rec_buf )
+     sll_collective_scatterv( col, send_buf, sizes, displs, 
+                              rec_szs, root, rec_buf )
+     sll_collective_all_reduce( col, send_buf, count, op, 
+                                rec_buf )
+</pre></div>
+</div>
+<p>which presently stand for specialized versions that operate on specific
+types. For instance:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     sll_collective_all_to_allv_real( send_buf, 
+                                      send_cnts, 
+                                      send_displs, 
+                                      recv_buf, 
+                                      recv_cnts, 
+                                      recv_displs, 
+                                      col )
+</pre></div>
+</div>
+</div>
+<div class="section" id="id18">
+<h3>Usage<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>To use the module as stand-alone, include the line:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     use sll_collective
+</pre></div>
+</div>
+<p>Any use of the module’s functionalities must be preceeded by calling</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     call sll_boot_collective()
+</pre></div>
+</div>
+<p>and to “turn off” the parallel capabilities, one should finish by a
+call to:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     call sll_halt_collective()
+</pre></div>
+</div>
+<p>This <em>booting</em> of the parallel environment needs to be done only once in
+a program.</p>
+<p>Some more specific examples are needed here…</p>
+</div>
+<div class="section" id="id19">
+<h3>Status<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>Several core functionalities tested, but no comprehensive unit test done
+yet</p>
+</div>
+</div>
+<div class="section" id="remapper">
+<h2>Remapper<a class="headerlink" href="#remapper" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id20">
+<h3>Description<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>Written on top of <code class="docutils literal notranslate"><span class="pre">sll_collective</span></code>, the remapper is a powerful module
+capable of rearranging non-overlapping data in a parallel machine. This
+module also implements the concept of a <em>layout</em>, which is a data
+structure that stores the index ranges of a given array to be found in
+each processor. In other words, the layout contains a description of the
+distribution of the data. Layouts are needed to specify remap
+operations.</p>
+<p>The use of the remapper module can be broken down in several stages:</p>
+<ol class="simple">
+<li><p>Declare the layouts and the remap plan object, as well as the arrays
+to be used.</p></li>
+<li><p>Initialize the layouts,</p></li>
+<li><p>use the layouts and the arrays to create the remapper plan and,</p></li>
+<li><p>apply the remapper plan using the input and output arrays as
+arguments.</p></li>
+<li><p>As a final step, the resources in the layouts and remap plan should
+be deallocated wtih <code class="docutils literal notranslate"><span class="pre">sll_delete()</span></code></p></li>
+</ol>
+<p>The remap operation is an out-of-place operation. Remap is designed to
+consider only non-overlapping data configurations, that is, an
+<em>all_gather</em>-type operation should not be attempted with a remap.</p>
+</div>
+<div class="section" id="id21">
+<h3>Exposed Interface<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>Since the layouts are a pre-requisite for dealing with the remapper, we
+start with these. Presently, Selalib offers the following layout types:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     layout_2D
+     layout_3D
+     layout_4D
+     layout_5D
+     layout_6D
+</pre></div>
+</div>
+<p>These types are each accompanied by their own constructors, destructors
+and accessors. A comprehensive list of the procedures that operate with
+the layouts is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     new_layout_2D( collective )
+     new_layout_3D( collective )
+     new_layout_4D( collective )
+     new_layout_5D( collective )
+     new_layout_6D( collective )
+     
+     get_layout_collective( layout )
+     get_layout_num_nodes( layout )
+     
+     get_layout_global_size_i( layout )
+     get_layout_global_size_j( layout )
+     get_layout_global_size_k( layout )
+     get_layout_global_size_l( layout )
+     get_layout_global_size_m( layout )
+     get_layout_global_size_n( layout )
+     
+     get_layout_i_min( layout, rank )
+     get_layout_i_max( layout, rank )
+     get_layout_j_min( layout, rank )
+     get_layout_j_max( layout, rank )
+     get_layout_k_min( layout, rank )
+     get_layout_k_max( layout, rank )
+     get_layout_l_min( layout, rank )
+     get_layout_l_max( layout, rank )
+     get_layout_m_min( layout, rank )
+     get_layout_m_max( layout, rank )
+     get_layout_n_min( layout, rank )
+     get_layout_n_max( layout, rank )
+     
+     set_layout_i_min( layout, rank, val )
+     set_layout_i_max( layout, rank, val )
+     set_layout_j_min( layout, rank, val )
+     set_layout_j_max( layout, rank, val )
+     set_layout_k_min( layout, rank, val )
+     set_layout_k_max( layout, rank, val )
+     set_layout_l_min( layout, rank, val )
+     set_layout_l_max( layout, rank, val )
+     set_layout_m_min( layout, rank, val )
+     set_layout_m_max( layout, rank, val )
+     set_layout_n_min( layout, rank, val )
+     set_layout_n_max( layout, rank, val )
+
+     initialize_layout_with_distributed_2d_array( 
+          global_npx1, 
+          global_npx2, 
+          num_proc_x1, 
+          num_proc_x2, 
+          layout)
+          
+     initialize_layout_with_distributed_3d_array( 
+          global_npx1, 
+          global_npx2, 
+          global_npx3, 
+          num_proc_x1, 
+          num_proc_x2, 
+          num_proc_x3, 
+          layout)
+          
+     initialize_layout_with_distributed_4d_array( 
+          global_npx1, 
+          global_npx2, 
+          global_npx3, 
+          global_npx4, 
+          num_proc_x1, 
+          num_proc_x2, 
+          num_proc_x3, 
+          num_proc_x4, 
+          layout)
+          
+     initialize_layout_with_distributed_5d_array( 
+          global_npx1, 
+          global_npx2, 
+          global_npx3, 
+          global_npx4, 
+          global_npx5, 
+          num_proc_x1, 
+          num_proc_x2, 
+          num_proc_x3, 
+          num_proc_x4, 
+          num_proc_x5, 
+          layout)
+          
+     initialize_layout_with_distributed_6d_array( 
+          global_npx1, 
+          global_npx2, 
+          global_npx3, 
+          global_npx4, 
+          global_npx5, 
+          global_npx6, 
+          num_proc_x1, 
+          num_proc_x2, 
+          num_proc_x3, 
+          num_proc_x4, 
+          num_proc_x5, 
+          num_proc_x6, 
+          layout)
+
+     compute_local_sizes( 
+          layout_Nd, 
+          loc_sz_1, 
+          loc_sz_2, 
+          ..., 
+          loc_sz_N )
+
+     sll_delete( layout )
+</pre></div>
+</div>
+<p>In brief:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`new_layout_ND()` function, is responsible for allocating all the
+necessary storage for the layout. Returns a pointer to a layout_ND
+object, ready for initialization. Arguments:
+
+collective:
+
+:   \[pointer\] sll_collective type to be associated with the layout.
+
+`get_layout_collective` returns a pointer to the sll_collective object
+associated with a given layout. Arguments:
+
+layout:
+
+:   \[pointer\] layout whose collective is requested.
+
+`get_layout_num_nodes` returns a 32-bit integer with the number of
+processors in the collective associated with the given layout.
+Arguments:
+
+layout:
+
+:   \[pointer\] layout whose size (in number of processes) is being
+    requested.
+
+`get_layout_global_size_X` returns a 32-bit integer with the size of the
+global array (in an abstract sense, i.e. the array that is distributed)
+in the direction X. Arguments:
+
+layout:
+
+:   \[pointer\] layout whose size (in number of processes) is being
+    requested.
+
+`get_layout_X_min` returns a 32-bit integer with the minimum index in
+direction X contained in the given process rank. Arguments:
+
+layout:
+
+:   \[pointer\] layout whose size (in number of processes) is being
+    requested. \[in\] 32-bit integer, rank of the process under inquiry.
+
+`get_layout_X_max` returns a 32-bit integer with the maximum index in
+direction X contained in the given process rank. Arguments:
+
+layout:
+
+:   \[pointer\] layout whose size (in number of processes) is being
+    requested. \[in\] 32-bit integer, rank of the process under inquiry.
+</pre></div>
+</div>
+<p>Specifically, the constructors are:</p>
+<p>Note that each layout descriptor needs to be allocated by providing an
+instance of <code class="docutils literal notranslate"><span class="pre">sll_collective</span></code>. This can be understood by reasoning about
+the data layout as a group of processors (the collective) and a
+specification of the data boxes contained in each one. More concretely,
+a layout for an N-dimensional array associated with a collective of size
+<span class="math notranslate nohighlight">\(N_p\)</span> can be thought of as a collection of <span class="math notranslate nohighlight">\(N_p\)</span> N-dimensional boxes,
+each representing the intervals of the array indices contained in a
+given processor (rank: 0 … <span class="math notranslate nohighlight">\(N_p-1\)</span>). After calling any of the
+<code class="docutils literal notranslate"><span class="pre">new_layout</span></code> functions, the returned instance becomes associated to the
+given collective and enough memory is allocated (size of the collective)
+to hold the boxes specification. While the memory has been allocated,
+the layout itself still needs to be initialized.</p>
+<p>There are at least two ways to accomplish the initialization. The manual
+way is through the individual access functions defined for the layouts.
+The second method involves helper routines.</p>
+<p>The following is a list of the access functions defined for the layouts:</p>
+<p>In the above list, all the routines are generic, thus they will accept
+layouts of any dimension as long as the field to be accessed is defined
+in the layout. The array dimensions are labeled <code class="docutils literal notranslate"><span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">l,</span> <span class="pre">m,</span> <span class="pre">n</span></code>
+(although in the arguments we use the numbers 1, 2, … , 6). Thus, for
+example, a <code class="docutils literal notranslate"><span class="pre">layout_2D</span></code> contains information on the indices <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code>
+only. Accessing the <code class="docutils literal notranslate"><span class="pre">k</span></code> index would yield a compilation error. The
+<code class="docutils literal notranslate"><span class="pre">get_</span></code> routines are functions. Except for <code class="docutils literal notranslate"><span class="pre">get_layout_collective(</span> <span class="pre">)</span></code>
+which returns a pointer to the collective associated with a given
+layout, all the other <code class="docutils literal notranslate"><span class="pre">get_</span></code>-functions return the value of a 32-bit
+integer value, representing the minimum or maximum value of an index
+contained in a given rank, or in the case of the
+<code class="docutils literal notranslate"><span class="pre">get_layout_global_size_X</span></code> functions, the global size of the (abstract)
+array that is split among the different processors in the way described
+by the layout.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">set_</span></code> procedures are subroutines. These can be used to set a given
+minimum/maximum index value in a given layout to a desired value. These
+are the accessors that may be used when initializing a layout manually.
+However this is not encouraged. In general, it is recommended to
+initialize layout with the provided helper functions, as shown next.</p>
+<p>The above procedures are subroutines. Except for the layout to be
+initialized, all the arguments are 32-bit integers. The <code class="docutils literal notranslate"><span class="pre">global_npxX</span></code>
+arguments denote the global size of the array (its total size in the
+<span class="math notranslate nohighlight">\(X\)</span>-th direction) that is to be divided amongst multiple processors in
+accordance with the partition determined by the <code class="docutils literal notranslate"><span class="pre">num_proc_xX</span></code> arguments.
+To understand the role of the <code class="docutils literal notranslate"><span class="pre">num_proc_xX</span></code> parameters it is necessary
+to imagine the domain represented by the N-dimensional array as being
+divided in a number of blocks in each dimension, just as if the
+processors themselves were arranged in a <em>processor mesh</em> of dimensions
+<code class="docutils literal notranslate"><span class="pre">num_proc_x1</span></code> * <code class="docutils literal notranslate"><span class="pre">num_proc_x2</span></code> * … * <code class="docutils literal notranslate"><span class="pre">num_proc_xN</span></code> = number of
+processes in the collective. Thus, if distributing a 2D array of sizes
+<code class="docutils literal notranslate"><span class="pre">global_npx1</span></code> <span class="math notranslate nohighlight">\(= 1024\)</span>, <code class="docutils literal notranslate"><span class="pre">global_npx2</span></code> <span class="math notranslate nohighlight">\(= 512\)</span>, in a process mesh of
+dimensions <code class="docutils literal notranslate"><span class="pre">num_proc_x1</span></code> <span class="math notranslate nohighlight">\(= 2\)</span> and <code class="docutils literal notranslate"><span class="pre">num_proc_x2</span></code> <span class="math notranslate nohighlight">\(= 1\)</span>, this would yield
+a partition of the original array in one block, of dimensions
+<span class="math notranslate nohighlight">\(512 * 512\)</span> in each of the two processors. Note again that the number of
+processors corresponds to the product of the <code class="docutils literal notranslate"><span class="pre">nproc_xX</span></code> arguments.</p>
+<p>The information in the initialized layouts can be used to inquire about
+the size of the data distributed as per a given layout. The procedures
+for this are hidden behind the generic interface:</p>
+<p>Once a layout is declared and initialized it can be used as an aid to
+allocate the memory of the array(s) whose distribution it represents.
+For instance, suppose that you start with a multidimensional array that
+needs to be distributed among <span class="math notranslate nohighlight">\(N_p\)</span> processors. The layout of the data
+(that is, the description of what ranges of the data are contained in
+each processor) is specified by an instance of the type <code class="docutils literal notranslate"><span class="pre">layout_XD</span></code>,
+(where <code class="docutils literal notranslate"><span class="pre">X</span></code> is the dimension of the data). The layout contains a notion
+of an <span class="math notranslate nohighlight">\(N_p\)</span>-sized collection of boxes, each box representing a
+contiguous chunk of the multidimensional array stored in each processor.
+If in the course of a computation, you wish to reconfigure the layout of
+the data (for example, if you wished to re-arrange data in a way that
+would permit launching serial algorithms locally in each processor),
+then you would create and initialize a new layout descriptor with the
+target configuration (i.e.: you to define the box to be stored in each
+node). Armed with the layout descriptions for the initial and target
+configurations, one can execute a remap operation to reconfigure the
+data. This is an out-of-place operation.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     NEW_REMAPPER_PLAN_3D( initial_layout, 
+                           target_layout, 
+                           data_size_in_integer_sizes )
+     NEW_REMAPPER_PLAN_4D( initial_layout, 
+                           target_layout, 
+                           data_size_in_integer_sizes ) 
+     NEW_REMAPPER_PLAN_5D( initial_layout, 
+                             target_layout, 
+                           data_size_in_integer_sizes )
+</pre></div>
+</div>
+<p>will yield an instance of the type <code class="docutils literal notranslate"><span class="pre">remap_plan_3D_t</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">remap_plan_4D_t</span></code> or <code class="docutils literal notranslate"><span class="pre">remap_plan_5D</span></code> , respectively, that will contain
+all the information necessary to actually carry out the data
+re-distribution. Finally, a call to</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     apply_remap_3D( plan, data_in, data_out )
+     apply_remap_4D( plan, data_in, data_out )
+     apply_remap_5D( plan, data_in, data_out )
+</pre></div>
+</div>
+<p>will actually redistribute <code class="docutils literal notranslate"><span class="pre">data</span></code> (as an out-of-place operation)
+according to <code class="docutils literal notranslate"><span class="pre">plan</span></code> in an optimized way[^3].</p>
+<p>To appreciate the power of such facility, note that in principle, the
+construction of a (communications latency-limited) parallel
+quasi-neutral solver can be based exclusively on remapping operations.
+This is an important tool in any problem that would require global
+rearrangements of data. The remapper thus is able to present a single
+powerful abstraction that is general, reusable and completely hides most
+of the complications introduced by the data distribution.</p>
+<p>The access functions for the <code class="docutils literal notranslate"><span class="pre">layout</span></code> types are are always prefixed with
+the corresponding <code class="docutils literal notranslate"><span class="pre">get_layout_XD</span></code>/<code class="docutils literal notranslate"><span class="pre">set_layout_XD</span></code> (where the ‘<code class="docutils literal notranslate"><span class="pre">X</span></code>’
+denotes the dimensionality of the data), and they presuppose knowledge
+of the convention for ordering the indices as in <code class="docutils literal notranslate"><span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">l,</span> <span class="pre">m</span></code>, for
+the dimensions. Specifically, to get/set values inside the <code class="docutils literal notranslate"><span class="pre">layout</span></code>
+types we have available for 3D layouts:</p>
+<p>As a very inelegant convenience, the layout type allows direct access to
+its collective reference.</p>
+<p>The above functions define the interface that will allow you to declare
+and initialize the <code class="docutils literal notranslate"><span class="pre">layout</span></code> types as desired. This is where the work
+lies when using this module. Note that all the above functions could be
+coalesced into a set of functions of the type
+<code class="docutils literal notranslate"><span class="pre">set_layout_X_XXX(layout,</span> <span class="pre">rank,</span> <span class="pre">val)</span></code> if we choose to hide all the above
+functions behind a generic interface. The selection would be done
+automatically depending on the type of layout passed as an argument.</p>
+<p>The type <code class="docutils literal notranslate"><span class="pre">remap_plan</span></code> exists also in multiple flavors, depending on the
+dimensionality of the data to be remapped:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     remap_plan_3D_t
+     remap_plan_4D_t
+     remap_plan_5D_t
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">remap_plan_t</span></code> type stores the locations of the memory buffers that
+will be involved in the communications, the specification of the data
+that will be sent and received, as well as the collective within which
+the communications will take place. There are, however, declaration
+functions available. The choice depends on the dimensionality of the
+data:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     NEW_REMAPPER_PLAN_3D( initial_layout, 
+                           final_layout, 
+                           array_name )
+     NEW_REMAPPER_PLAN_4D( initial_layout, 
+                           final_layout, 
+                           array_name )
+     NEW_REMAPPER_PLAN_5D( initial_layout, 
+                           final_layout, 
+                           array_name )
+</pre></div>
+</div>
+<p>Finally, the way to execute the plan on a particular data set is through
+a call of the appropriate subroutine (here presented as generic
+interfaces)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     apply_remap_3D( plan, data_in, data_out )
+     apply_remap_4D( plan, data_in, data_out )
+     apply_remap_5D( plan, data_in, data_out )
+</pre></div>
+</div>
+</div>
+<div class="section" id="id22">
+<h3>Usage<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<p>For use in stand-alone way, use the line:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#include &quot;sll_remap.h&quot;
+</pre></div>
+</div>
+<p>While verbose, the best way to demonstrate the usage of the remapper is
+with a complete program. Below it, we examine the different statements.</p>
+<dl class="simple myst">
+<dt>Lines 1 - 5:</dt><dd><p>Required preamble at the time of this writing. Eventually this will
+be replaced by a single statement to include the whole library.
+Presently, we include various headers individually, so bear in mind
+that this is not the way this will end up being. Line 3 specifically
+loads the remapper facility. Here it is brought as a header file as
+the NEW_REMAPPER_PLAN_XD() is implemented as a macro.</p>
+</dd>
+<dt>Lines 9 - 12:</dt><dd><p>For this example we allocate two 3D arrays for the input and output
+of the remap operation.</p>
+</dd>
+<dt>Lines 14 - 22:</dt><dd><p>Definition of the array size from a global perspective. In other
+words, the array to be remapped is a <span class="math notranslate nohighlight">\(8*8*1\)</span> array, to be
+distributed on a processor mesh of dimensions <span class="math notranslate nohighlight">\(4*4*1\)</span>.</p>
+</dd>
+<dt>Lines 24 - 36</dt><dd><p>Miscellaneous integer variables that we will use.</p>
+</dd>
+<dt>Lines 38 - 41</dt><dd><p>Pointers to the initial and final layouts and the remap plan.</p>
+</dd>
+<dt>Line 44</dt><dd><p>Presently we boot from collective. Eventually this will be replaced
+by a call to something like <code class="docutils literal notranslate"><span class="pre">boot_selalib()</span></code> or something similar,
+where we declare and initialize anything we need in a single call.</p>
+</dd>
+<dt>Lines 46 - 57</dt><dd><p>Initialization of the variables.</p>
+</dd>
+<dt>Lines 59 - 78</dt><dd><p>This is where the actual work is when using the remapper. We need to
+initialize a layout, in this case the initial configuration. We use
+the access functions <code class="docutils literal notranslate"><span class="pre">set_layout_x_xxx(</span> <span class="pre">)</span></code> to populate the fields.
+Here we obviously take into account the geometry of our ‘process
+mesh’ to find out the rank of the process that we are initializing.</p>
+</dd>
+<dt>Lines 80 - 90</dt><dd><p>We need to initialize the data, here we choose simply to assign the
+index of the array, considered as a 1D array. Note the use of the
+helper function <code class="docutils literal notranslate"><span class="pre">local_to_global_3D(</span> <span class="pre">layout,</span> <span class="pre">triplet</span> <span class="pre">)</span></code>. We exploit
+the knowledge of the global layout of the data to find out the
+global indices of a local 3-tuple.</p>
+</dd>
+<dt>Lines 92 - 112</dt><dd><p>The other main part of the work, the initialization of the target
+layout. In this case, we chose a simple transposition, which is
+achieved by switching <code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code>.</p>
+</dd>
+<dt>Lines 114 - 115</dt><dd><p>Here we allocate and initialize the remap plan, using the initial
+and final configurations as input. The third argument is passed to
+inform the remapper of the type of data to be passed. The call to
+<code class="docutils literal notranslate"><span class="pre">apply_remap_3D()</span></code> is a call to a generic function, hence, a
+type-dependent sub-function must have been defined to be able to
+successfully make this call. At the time of this writing, only
+single precision integers and double precision floats have been
+implemented.</p>
+</dd>
+<dt>Line 116</dt><dd><p>Here we apply the plan. This function is type-dependent due to the
+input/output arrays. Please refer to the implementation notes for
+some commentary on our options with this interface.</p>
+</dd>
+<dt>Lines 122 - 125</dt><dd><p>Cleanup. The layouts need to be deleted to prevent memory leaks.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="implementation-notes">
+<h3>Implementation Notes<a class="headerlink" href="#implementation-notes" title="Permalink to this headline">¶</a></h3>
+<p>The biggest challenge with the remapper is to attain a desired level of
+genericity and to preserve the modularity of the library. These two
+problems are intimately related. Ideally, we should be able to apply a
+remap operation on data of any type, including user-derived types.
+Another requirement has been to confine a library like MPI to a single
+entry point into Selalib. This means that we do not want the MPI derived
+types to pollute the higher abstraction levels of the library:
+especially at the top level, we want to express our programs with the
+capabilities of the FORTRAN language alone.</p>
+<p>These requirements were solved in the prototype version of the remapper
+through the use of a single datatype to represent all other types of
+data at the moment of assembling the exchange buffers and launching the
+MPI calls. In our case, we have chosen to represent all data as
+‘integers’. This means that the exchange buffers that are stored in the
+remap plans are integer arrays. Thus, the design decision in the
+prototype has been to choose flexibility and ease of change over
+execution speed. In contrast with the C language, the constant call to
+the <code class="docutils literal notranslate"><span class="pre">transfer()</span></code> function to store and retrieve data from the exchange
+buffers carries with it a possibly significant execution time penalty.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">NEW_REMAPPER_PLAN_XD()</span></code> is by nature type-independent, as
+the design of the plan only depends on the layouts. However, it is also
+convenient to store the send/receive buffers in the plan, and the
+allocation of these buffers requires knowledge of the amount of memory
+required. This information is passed in the third argument. The macro
+will internally select an element of this array and determine its size
+in terms of the fundamental datatype being exchanged (i.e.: <code class="docutils literal notranslate"><span class="pre">integer</span></code>).
+This way we now how much memory to allocate in the buffers.</p>
+<p>Another means to achieve the illusion of genericity are Fortran’s
+built-in features in this regard. For example, we can have specialized
+<code class="docutils literal notranslate"><span class="pre">apply_remap_3D()</span></code> functions for the most commonly used datatypes, all
+hidden behind the same generic name. These specialized functions would
+not depend on the current choice of using a single type for the exchange
+buffers, eliminating any penalty that we are definitively paying at
+present, with the calls to the <code class="docutils literal notranslate"><span class="pre">transfer()</span></code> intrinsic function. This
+solution would mean writing redundant code, something that could be
+addressed with preprocessor macros, but this would not be a solution for
+eliminating the penalizations of the <code class="docutils literal notranslate"><span class="pre">transfer()</span></code> intrinsic when we are
+exchanging derived types. A solution that can exchange these arbitrary
+data while not requiring the use of the MPI derived types at the higher
+levels is yet to be found. It could be that the Fortran way to solve
+this problem would be to accept the invasion of MPI at the higher
+levels…</p>
+</div>
+<div class="section" id="id23">
+<h3>Status<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<p>In testing.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="low_level.html" title="previous page">Low-Level Layer: Basic Utilities</a>
+    <a class='right-next' id="next-link" href="top_level.html" title="next page">Top-Level Layer: Semi-Lagrangian Toolbox</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The SeLaLib project team<br/>
+        
+            &copy; Copyright 2020.<br/>
+          Last updated on 10 Mar 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
