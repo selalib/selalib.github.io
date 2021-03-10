@@ -1,26 +1,45 @@
 # Institutions
 
+````{panels}
 ```{image} images/logo_INRIA.png
-:alt: http://www.inria.fr/en/teams/tonus
 :width: 200px
 ```
-
++++
+[MINGUS](https://team.inria.fr/mingus) - [TONUS](https://team.inria.fr/tonus)
+---
 ```{image} images/ipp_logo.gif
-:alt: https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik
 :width: 100px
 ```
-
++++
+```{link-button} https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik
+:text: Numerical Methods in Plasma Physics
+:classes: stretched-link
+```
+---
 ```{image} images/irma_logo.gif
-:alt: https://www-irma.u-strasbg.fr
 :width: 100px
 ```
-
-```{image} images/irma_logo.gif
-:alt: https://irmar.univ-rennes1.fr
++++
+```{link-button} https://www-irma.u-strasbg.fr
+:text: Institut de Recherche Mathématique Avancée
+:classes: stretched-link
+```
+---
+```{image} images/irmar_logo.gif
 :width: 100px
 ```
-
++++
+```{link-button} https://irmar.univ-rennes1.fr
+:text: Institut de Recherche Mathématique de Rennes
+:classes: stretched-link
+```
+---
 ```{image} images/logo_ljll.gif
-:alt: https://www.ljll.math.upmc.fr
 :width: 100px 
 ```
++++
+```{link-button} https://www.ljll.math.upmc.fr
+:text: Laboratoire Jacques-Louis Lions
+:classes: stretched-link
+```
+````
