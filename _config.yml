@@ -1,0 +1,41 @@
+title: ""
+author: The SeLaLib project team
+logo: images/selalib.png
+description: "Modular library for the kinetic and gyrokinetic simulation of tokamak plasmas by the semi-lagrangian or particle-in-cell methods"
+only_build_toc_files: true
+bibtex_bibfiles:
+   - references.bib
+
+execute:
+  execute_notebooks: false
+
+latex:
+  latex_documents:
+    targetname: selalib.tex
+
+repository:
+  url: https://github.com/selalib/selalib.github.io
+  branch: main  
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+
+parse:
+  myst_extended_syntax: true
+
+sphinx:
+    config:
+        html_show_copyright: true
+        html_last_updated_fmt: "%d %b %Y"
+        latex_logo: 'images/selalib.png'
+        latex_toplevel_sectioning: 'chapter'
+
+latex:
+  latex_documents:
+     targetname: selalib.tex
+     title: "Semi-Lagrangian Library"
+     author: 'The SeLalib project team'
+     theme: "manual"
+     toctree_only: True
+     papersize: 'a4paper'

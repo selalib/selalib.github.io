@@ -1,0 +1,13 @@
+- file: selalib
+- file: install
+  sections:
+    - file: ubuntu
+    - file: fedora
+    - file: quickstart
+- file: developer
+  sections:
+    - getting_started
+    - cmake_guide
+    - doxygen_guide
+- file: markdown
+- file: members
