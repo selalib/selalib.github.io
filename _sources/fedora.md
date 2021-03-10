@@ -26,7 +26,7 @@ sudo dnf install hdf5-openmpi-devel openmpi-devel fftw-devel openblas-devel
 
 - Install software for documentation::
 
-``bash
+```bash
 sudo dnf install doxygen texlive-latex
 ```
 

@@ -268,18 +268,16 @@
 <ul class="simple">
 <li><p>Install software for documentation::</p></li>
 </ul>
-<p>``bash
-sudo dnf install doxygen texlive-latex</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="n">Don</span><span class="s1">&#39;t forget to load the mpi module ::</span>
-
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install doxygen texlive-latex
 </pre></div>
 </div>
-<p>module load openmpi-x86_64</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-```{warning}
-mpich on Fedora is not supported.
+<p>Don’t forget to load the mpi module ::</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">openmpi</span><span class="o">-</span><span class="n">x86_64</span>
 </pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>mpich on Fedora is not supported.</p>
 </div>
 </div>
 
