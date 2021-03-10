@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Install dependencies on FEDORA</title>
+    <title>Fedora</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Quick Start Guide" href="quickstart.html" />
-    <link rel="prev" title="Install dependencies on UBUNTU or DEBIAN" href="ubuntu.html" />
+    <link rel="prev" title="Ubuntu or Debian" href="ubuntu.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -92,18 +92,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Install
+  Install dependencies
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="ubuntu.html">
-   Install dependencies on UBUNTU or DEBIAN
+   Ubuntu or Debian
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Install dependencies on FEDORA
+   Fedora
   </a>
  </li>
  <li class="toctree-l1">
@@ -190,9 +190,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/fedora.rst"><button type="button"
+        <a class="dropdown-buttons" href="_sources/fedora.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -239,37 +239,47 @@
         
               <div>
                 
-  <div class="toctree-wrapper compound">
-</div>
-<div class="section" id="install-dependencies-on-fedora">
-<h1>Install dependencies on FEDORA<a class="headerlink" href="#install-dependencies-on-fedora" title="Permalink to this headline">¶</a></h1>
-<p>Install source code manager</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install git-all
+  <div class="section" id="fedora">
+<h1>Fedora<a class="headerlink" href="#fedora" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Install source code manager:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install git-all
 </pre></div>
 </div>
-<p>Install build tools</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install cmake
+<ul class="simple">
+<li><p>Install build tools</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install cmake python3
 </pre></div>
 </div>
-<p>Install compilers</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install gcc-gfortran
+<ul class="simple">
+<li><p>Install compilers ::</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install gcc-gfortran
 </pre></div>
 </div>
-<p>Install libraries (MPI, HDF5, FFTW3, LAPACK)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install hdf5-openmpi-devel openmpi-devel fftw-devel openblas-devel
+<ul class="simple">
+<li><p>Install libraries (MPI, HDF5, FFTW3, LAPACK) ::</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install hdf5-openmpi-devel openmpi-devel fftw-devel openblas-devel
 </pre></div>
 </div>
-<p>Install software for documentation:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install doxygen texlive-latex
+<ul class="simple">
+<li><p>Install software for documentation::</p></li>
+</ul>
+<p>``bash
+sudo dnf install doxygen texlive-latex</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">Don</span><span class="s1">&#39;t forget to load the mpi module ::</span>
+
 </pre></div>
 </div>
-<p>Don’t forget to load the mpi module</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load openmpi-x86_64
+<p>module load openmpi-x86_64</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```{warning}
+mpich on Fedora is not supported.
 </pre></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>mpich on Fedora is not supported.</p>
 </div>
 </div>
 
@@ -298,7 +308,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="ubuntu.html" title="previous page">Install dependencies on UBUNTU or DEBIAN</a>
+    <a class='left-prev' id="prev-link" href="ubuntu.html" title="previous page">Ubuntu or Debian</a>
     <a class='right-next' id="next-link" href="quickstart.html" title="next page">Quick Start Guide</a>
 
         </div>

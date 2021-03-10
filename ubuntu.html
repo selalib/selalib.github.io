@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Install dependencies on UBUNTU or DEBIAN</title>
+    <title>Ubuntu or Debian</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,7 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Install dependencies on FEDORA" href="fedora.html" />
+    <link rel="next" title="Fedora" href="fedora.html" />
     <link rel="prev" title="SeLaLib" href="selalib.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -92,18 +92,18 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Install
+  Install dependencies
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Install dependencies on UBUNTU or DEBIAN
+   Ubuntu or Debian
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fedora.html">
-   Install dependencies on FEDORA
+   Fedora
   </a>
  </li>
  <li class="toctree-l1">
@@ -190,9 +190,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/ubuntu.rst"><button type="button"
+        <a class="dropdown-buttons" href="_sources/ubuntu.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -239,44 +239,43 @@
         
               <div>
                 
-  <div class="toctree-wrapper compound">
+  <div class="section" id="ubuntu-or-debian">
+<h1>Ubuntu or Debian<a class="headerlink" href="#ubuntu-or-debian" title="Permalink to this headline">¶</a></h1>
+<p>The prerequisites can be installed with a couple of commands on Ubuntu.</p>
+<ul class="simple">
+<li><p>Install MPI, Most of our testing is done with openmpi but mpich should also work:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install libopenmpi-dev openmpi-bin libhdf5-openmpi-dev
+</pre></div>
 </div>
-<div class="section" id="install-dependencies-on-ubuntu-or-debian">
-<h1>Install dependencies on UBUNTU or DEBIAN<a class="headerlink" href="#install-dependencies-on-ubuntu-or-debian" title="Permalink to this headline">¶</a></h1>
-<p>The prerequisites can be installed with a couple of commands on Ubuntu. The only choice to make is between openmpi and mpich2. Most of our testing is done with openmpi but mpich should also work.</p>
-<p>For openmpi do:</p>
-<blockquote>
-<div><p>$ sudo apt-get install libopenmpi-dev openmpi-bin libhdf5-openmpi-dev</p>
-</div></blockquote>
-<p>For mpich do:</p>
-<blockquote>
-<div><p>$ sudo apt-get install mpich libmpich-dev libhdf5-mpich-dev</p>
-</div></blockquote>
-<p>Please make sure not to install mpich and openmpi together. When both openmpi and mpich are installed strange errors will occur and selalib will not work. If you see both installed please remove both and install one.</p>
-<p>Install source code manager :</p>
-<blockquote>
-<div><p>$ sudo apt-get install git</p>
-</div></blockquote>
-<p>Install build tools :</p>
-<blockquote>
-<div><p>$ sudo apt-get install cmake</p>
-</div></blockquote>
-<p>Install compilers :</p>
-<blockquote>
-<div><p>$ sudo apt-get install gfortran</p>
-</div></blockquote>
-<p>Install libraries (MPI, HDF5, FFTW3, LAPACK) :</p>
-<blockquote>
-<div><p>$ sudo apt-get install  libfftw3-dev liblapack-dev libopenblas-dev</p>
-</div></blockquote>
-<p>Install software for documentation:</p>
-<blockquote>
-<div><p>$ sudo apt-get install doxygen texlive-latex3</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>Install build tools :</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install cmake
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Install compilers :</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install gfortran python3
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Install libraries (MPI, HDF5, FFTW3, LAPACK) :</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install  libfftw3-dev liblapack-dev libopenblas-dev
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Install software for documentation:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install doxygen texlive-latex3
+</pre></div>
+</div>
 <p>For some outputs you can install also:</p>
-<blockquote>
-<div><p>$ sudo apt-get install gnuplot</p>
-</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install gnuplot
+</pre></div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -305,7 +304,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="selalib.html" title="previous page">SeLaLib</a>
-    <a class='right-next' id="next-link" href="fedora.html" title="next page">Install dependencies on FEDORA</a>
+    <a class='right-next' id="next-link" href="fedora.html" title="next page">Fedora</a>
 
         </div>
         
