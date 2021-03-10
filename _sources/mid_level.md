@@ -9,7 +9,9 @@ Selalib offers a native, robust tridiagonal system solver. The present
 implementation contains only a serial version. The algorithm is based on
 an *LU* factorization of a given matrix, with row pivoting. The
 tridiagonal matrix must be given as a single array, with a memory layout
-shown next. $$\begin{bmatrix}
+shown next. 
+
+$$\begin{bmatrix}
     a(2) & a(3) &        &        &        &        &  a(1) \\
     a(4) & a(5) & a(6)   &        &        &        &       \\
          & a(7) & a(8)   & a(9)   &        &        &       \\
@@ -17,14 +19,16 @@ shown next. $$\begin{bmatrix}
          &      &        & \ddots & \ddots & \ddots &       \\
          &      &        &        & a(3n-5)& a(3n-4)&a(3n-3)\\
     a(3n)&      &        &        &        & a(3n-2)&a(3n-1)\\
-  \end{bmatrix}$$
+\end{bmatrix}$$
 
 ### Exposed Interface
 
 Factorization of the matrix $A$ is obtained through a call to the
 subroutine
 
-         sll_setup_cyclic_tridiag( a, n, lu, ipiv )
+```fortran
+sll_setup_cyclic_tridiag( a, n, lu, ipiv )
+```
 
 where `a` is the matrix to be factorized, `n` is the problem size (the
 number of unknowns), `lu` is a real array of size $7n$ where
@@ -37,7 +41,9 @@ consideration.
 The solution of a tridiagonal system, once the original array $A$ has
 been factorized, is obtained through a call to
 
-         sll_solve_cyclic_tridiag( lu, ipiv, b, n, x )
+```fortran
+sll_solve_cyclic_tridiag( lu, ipiv, b, n, x )
+```
 
 where `lu`, `ipiv` are the arrays returned by
 `sll_setup_cyclic_tridiag()`, `b` is the independent term in the
@@ -48,44 +54,42 @@ where the solution will be returned.
 
 To use the module in a stand-alone way, include the line:
 
-         use sll_tridiagonal
+```fortran
+use sll_tridiagonal
+```
 
 The following code snippet is an example of the use of the tridiagonal
 solver.
 
 ```fortran
-         sll_int32 :: n = 1000
-         sll_int32 :: ierr
-         sll_real64, allocatable, dimension(:) :: lu
-         sll_int32,  allocatable, dimension(:) :: ipiv
-         sll_real64, allocatable, dimension(:) :: x
+sll_int32 :: n = 1000
+sll_int32 :: ierr
+sll_real64, allocatable, dimension(:) :: lu
+sll_int32,  allocatable, dimension(:) :: ipiv
+sll_real64, allocatable, dimension(:) :: x
 
-         SLL_ALLOCATE( lu(7*n), ierr )
-         SLL_ALLOCATE( ipiv(n), ierr )
-         SLL_ALLOCATE( x(n), ierr )
-         
-         ! initialize a(:) with the proper coefficients here... 
-         and then:
-         
-         sll_setup_cyclic_tridiag( a, n, lu, ipiv )
-         sll_solve_cyclic_tridiag( lu, ipiv, b, n, x )
-         
-          SLL_DEALLOCATE_ARRAY( lu, ierr )
-          SLL_DEALLOCATE_ARRAY( ipiv, ierr )
-          SLL_DEALLOCATE_ARRAY( x, ierr )
+SLL_ALLOCATE( lu(7*n), ierr )
+SLL_ALLOCATE( ipiv(n), ierr )
+SLL_ALLOCATE( x(n), ierr )
+
+! initialize a(:) with the proper coefficients here... 
+and then:
+
+sll_setup_cyclic_tridiag( a, n, lu, ipiv )
+sll_solve_cyclic_tridiag( lu, ipiv, b, n, x )
+
+SLL_DEALLOCATE_ARRAY( lu, ierr )
+SLL_DEALLOCATE_ARRAY( ipiv, ierr )
+SLL_DEALLOCATE_ARRAY( x, ierr )
 ```
 
 Note that if the last call had been made as in
 
-```
-         sll_solve_cyclic_tridiag( lu, ipiv, b, n, b )
+```fortran
+sll_solve_cyclic_tridiag( lu, ipiv, b, n, b )
 ```
 
 the system would have been solved in-place.
-
-### Status
-
-Unit-tested.
 
 ## Boundary Condition Descriptors
 
@@ -101,14 +105,14 @@ information.
 
 The defined symbols are:
 
-```fortran
-         SLL_USER_DEFINED
-         SLL_PERIODIC
-         SLL_DIRICHLET
-         SLL_NEUMANN 
-         SLL_HERMITE 
-         SLL_NEUMANN_MODE_0
-         SLL_SET_TO_LIMIT 
+```c
+SLL_USER_DEFINED
+SLL_PERIODIC
+SLL_DIRICHLET
+SLL_NEUMANN 
+SLL_HERMITE 
+SLL_NEUMANN_MODE_0
+SLL_SET_TO_LIMIT 
 ```
 
 ### Usage
@@ -168,30 +172,27 @@ sll_delete( spline_object )
 
 In the above list:
 
-::: 
-`new_cubic_spline_1D()` is responsible for allocating all the necessary
+`new_cubic_spline_1D()`
+: is responsible for allocating all the necessary
 storage for the spline object and initializating it. Arguments:
 
-num_points:
-
+num_points
 :   32-bit integer. Number of data points for which the spline needs to
     be computed, including the end-points (regardless of the boundary
     condition used).
 
-xmin:
-
+xmin
 :   Double precision real. Lower bound of the domain in which the data
     array is defined. In other words, if we think of the data array
     (indexed 1:NP) as the values of a discrete function *f* defined over
     a sequence of $x_i$'s, then $x_1 = xmin$.
 
-xmax:
-
+xmax
 :   Double precision real. Similarly to `xmin`, `xmax` represents the
     maximum extent of the domain. For data indexed 1:NP:
     $xmax = x_{NP}$.
 
-bc_type:
+bc\_type
 
 :   Pre-defined parameter. Descriptor of the type of boundary condition
     to be imposed in the spline. Use only the symbols defined in
@@ -200,13 +201,11 @@ bc_type:
     integer flags, but in Selalib we avoid the use of non-descriptive
     flags.
 
-slope_L:
-
+slope\_L
 :   Double precision real. Optional value representing the desired slope
     at $x = xmin$, in the hermite BC case.
 
-slope_R:
-
+slope\_R
 :   Double precision real. Optional value representing the desired slope
     at $x = xmax$, in the hermite BC case.
 
@@ -214,12 +213,10 @@ slope_R:
 represent the given data and stores this information in the spline
 object. Arguments:
 
- data:
-
+data
 :   Double precision 1D real array containing NP values.
 
- spline_object: 
-
+spline\_object 
 :   Initialized object of type `sll_cubic_spline_1d`.
 
 `interpolate_value()` returns the value of *f(x)* where *x* is a
@@ -230,13 +227,11 @@ spline object, together with the `interpolate_value()` function create
 the illusion of having available a continuous function when originally
 using the discrete data given. Arguments:
 
- x:
-
+x
 :   Double precision value representing the ordinate whose image is
     sought.
 
- spline_object: 
-
+spline\_object 
 :   Initialized object of type `sll_cubic_spline_1d`. A call to
     `compute_cubic_spline_1D()` should have been made previous to
     calling this function.
@@ -255,23 +250,19 @@ arguments as in `interpolate_value()`.
 `interpolate_array_values()` is a subroutine that interpolates the
 results of multiple values of *x*. Arguments:
 
-a_in:
-
+a\_in
 :   \[in\] double precision 1D array containing the values of the
     ordinates to be interpolated.
 
-a_out:
-
+a\_out
 :   \[out\]double precision 1D array to store the results, i.e., the
     images of the values contained in `a_in`.
 
-np:
-
+np
 :   \[in\] 32-bit integer storing the number of points meant to be
     interpolated.
 
- spline_object: 
-
+spline\_object
 :   \[inout\] Initialized object of type `sll_cubic_spline_1d`.
 
 `interpolate_pointer_values()` is a subroutine with analogous arguments
@@ -288,16 +279,14 @@ arguments are pointers.
 `get_x1_min()` returns the minimum value of the domain in which the
 spline object is defined. Arguments:
 
-spline_object:
-
+spline\_object
 :   a pointer to a previously initialized object of type
     `sll_cubic_spline_1D`
 
 `get_x1_max()` returns the maximum value of the domain in which the
 spline object is defined. Arguments:
 
-spline_object:
-
+spline\_object
 :   a pointer to a previously initialized object of type
     `sll_cubic_spline_1D`
 
@@ -305,19 +294,16 @@ spline_object:
 used to compute the spline values. This is determined from the extent of
 the domain and the number of cells used. Arguments:
 
-spline_object:
-
+spline\_object
 :   a pointer to a previously initialized object of type
     `sll_cubic_spline_1D`
 
 `sll_delete()` subroutine to free the resources of a given spline
 object. Arguments:
 
-spline_object:
-
+spline_object
 :   a pointer to a previously initialized object of type
     `sll_cubic_spline_1D`
-:::
 
 For the 2D case, the available routines are:
 
@@ -353,101 +339,84 @@ sll_delete( spline_object )
 
 In the above list:
 
-::: 
 `new_cubic_spline_2D()` is responsible for allocating all the necessary
 storage for the spline object and initializating it. Arguments:
 
-num_points_x1:
-
+num_points_x1
 :   \[in\] 32-bit integer. Number of data points in the first
     (memory-contiguous) direction for which the spline needs to be
     fitted. Endpoints at $x_{1,j} = x1_{min}$ and
     $x_{NPX1,j} = x1_{max}$ must be included.
 
-num_points_x2:
-
+num_points_x2
 :   \[in\] 32-bit integer. Number of data points in the second direction
     for which the spline needs to be fitted. Endpoints at
     $x_{i,1} = x2_{min}$ and $x_{i,NPX2} = x2_{max}$ must be included.
 
-x1_min:
-
+x1_min
 :   \[in\] Double precision real. Lower bound of the domain in which the
     data array is defined in the first (memory-contiguous) direction.
 
-x1_max:
-
+x1_max
 :   \[in\]Double precision real. Represents the maximum extent of the
     domain in the first (memory-contiguous) direction.
 
-x2_min:
-
+x2_min
 :   \[in\] Double precision real. Lower bound of the domain in which the
     data array is defined in the second direction.
 
-x2_max:
-
+x2_max
 :   \[in\]Double precision real. Represents the maximum extent of the
     domain in the second direction.
 
-x1_bc_type:
-
+x1_bc_type
 :   \[in\] Pre-defined parameter. Descriptor of the type of boundary
     condition to be imposed in the spline in the first direction.
     Presently, one of `PERIODIC_SPLINE` or `HERMITE_SPLINE` as defined
     in Selalib's *boundary condition descriptors* module.
 
-x2_bc_type:
-
+x2_bc_type
 :   \[in\] Pre-defined parameter. Descriptor of the type of boundary
     condition to be imposed in the spline in the second direction.
     Presently, one of `PERIODIC_SPLINE` or `HERMITE_SPLINE` as defined
     in Selalib's *boundary condition descriptors* module.
 
-const_slope_x1_min:
-
+const\_slope\_x1\_min
 :   \[optional, in\]Double precision real. Optional value representing
     the desired slope at $x1_{min}$, in the hermite BC case if a
     constant value for the whole edge is to be specified.
 
-const_slope_x1_max:
-
+const\_slope\_x1\_max
 :   \[optional, in\]Double precision real. Optional value representing
     the desired slope at $x1_{max}$, in the hermite BC case if a
     constant value for the whole edge is to be specified.
 
-const_slope_x2_min:
-
+const_slope_x2_min
 :   \[optional, in\]Double precision real. Optional value representing
     the desired slope at $x2_{min}$, in the hermite BC case if a
     constant value for the whole edge is to be specified.
 
-const_slope_x2_max:
-
+const_slope_x2_max
 :   \[optional, in\]Double precision real. Optional value representing
     the desired slope at $x2_{max}$, in the hermite BC case if a
     constant value for the whole edge is to be specified.
 
-x1_min_slopes:
-
+x1\_min\_slopes
 :   \[optional, in\] Array with the values of the slopes at each of the
     `num_points_x2` locations in the edge at $x1_{min}$. To be used with
     the hermite boundary condition only.
 
-x1_max_slopes:
-
+x1\_max\_slopes
 :   \[optional, in\] Array with the values of the slopes at each of the
     `num_points_x2` locations in the edge at $x1_{max}$. To be used with
     the hermite boundary condition only.
 
-x2_min_slopes:
-
+x2\_min\_slopes
 :   \[optional, in\] Array with the values of the slopes at each of the
     `num_points_x1` locations in the edge at $x2_{min}$. To be used with
     the hermite boundary condition only.
 
-x2_max_slopes:
-
+x2\_max\_slopes
 :   \[optional, in\] Array with the values of the slopes at each of the
     `num_points_x1` locations in the edge at $x2_{max}$. To be used with
     the hermite boundary condition only.
@@ -456,12 +425,10 @@ x2_max_slopes:
 represent the given 2D data and stores this information in the spline
 object. Arguments:
 
- data:
-
+data
 :   \[in\] Double precision 2D real array containing NPX1\*NPX2 values.
 
- spline_object: 
-
+spline_object: 
 :   Initialized object of type `sll_cubic_spline_2d`.
 
 `interpolate_value_2d()` returns the value of *f(x1,x2)* where the
@@ -470,18 +437,15 @@ $[x1_{min},x1_{max}] X [x2_{min},x2_{max}]$. *f* is a continuous
 function built with cubic B-splines and the user-defined boundary
 conditions contained in the spline object passed. Arguments:
 
- x1:
-
+x1
 :   \[in\] Double precision value representing the value of the first
     coordinate.
 
- x2:
-
+x2
 :   \[in\] Double precision value representing the value of the second
     coordinate.
 
- spline_object: 
-
+spline_object
 :   Initialized object of type `sll_cubic_spline_2d`. A call to
     `compute_cubic_spline_2D()` should have been made previous to
     calling this function.
@@ -497,32 +461,28 @@ $interpolate_value_2d$ function.
 `get_x1_min()` returns the minimum value of $x1$ in the domain in which
 the spline object is defined. Arguments:
 
-spline_object:
-
+spline_object
 :   a pointer to a previously initialized object of type
     `sll_cubic_spline_2D`
 
 `get_x1_max()` returns the maximum value of $x1$ in the domain in which
 the spline object is defined. Arguments:
 
-spline_object:
-
+spline_object
 :   a pointer to a previously initialized object of type
     `sll_cubic_spline_2D`
 
 `get_x2_min()` returns the minimum value of $x2$ in the domain in which
 the spline object is defined. Arguments:
 
-spline_object:
-
+spline_object
 :   a pointer to a previously initialized object of type
     `sll_cubic_spline_2D`
 
 `get_x2_max()` returns the maximum value of $x2$ in the domain in which
 the spline object is defined. Arguments:
 
-spline_object:
-
+spline_object
 :   a pointer to a previously initialized object of type
     `sll_cubic_spline_2D`
 
@@ -531,8 +491,7 @@ used to compute the spline values in the $x1$ direction. This is
 determined from the extent of the domain and the number of cells used.
 Arguments:
 
-spline_object:
-
+spline_object
 :   a pointer to a previously initialized object of type
     `sll_cubic_spline_2D`
 
@@ -541,64 +500,129 @@ used to compute the spline values in the $x2$ direction. This is
 determined from the extent of the domain and the number of cells used.
 Arguments:
 
-spline_object:
-
+spline_object
 :   a pointer to a previously initialized object of type
     `sll_cubic_spline_2D`
 
 `sll_delete()` subroutine to free the resources of a given spline
 object. Arguments:
 
-spline_object:
-
+spline_object
 :   a pointer to a previously initialized object of type
     `sll_cubic_spline_2D`
-:::
 
 ### Usage
 
 To use the module in a stand-alone way, include the line: 
 
-         use sll_splines
+```fortran
+use sll_splines
+```
 
 The following example is an extract from the module's unit test.
+
+```fortran
+program spline_tester
+#include "sll_working_precision.h"
+#include "sll_assert.h"
+#include "sll_memory.h"
+  use sll_splines
+  use numeric_constants
+  implicit none
+
+#define NP 5000
+
+  sll_int32 :: err
+  sll_int32 :: i
+  type(sll_spline_1d), pointer :: sp1
+  type(sll_spline_1d), pointer :: sp2
+  sll_real64, allocatable, dimension(:) :: data
+  sll_real64 :: accumulator1, accumulator2
+  sll_real64 :: val
+
+  accumulator1 = 0.0_f64
+  accumulator2 = 0.0_f64
+
+  SLL_ALLOCATE(data(NP), err)
+
+  print *, 'initialize data array'
+  do i=1,NP
+    data(i) = sin((i-1)*sll_pi/real(NP-1,f64))
+  end do
+
+  sp1 =>  new_spline_1D( NP,         &
+                         0.0_f64,    &
+                         sll_pi,     &
+                         SLL_PERIODIC )
+  call compute_cubic_spline_1D( data, sp1 )
+  sp2 =>  new_spline_1D( NP, 0.0_f64,    &
+                              sll_pi,         &
+                         SLL_HERMITE,
+                         1.0_f64,
+                        -1.0_f64 )
+  call compute_cubic_spline_1D( data, sp2 )
+
+  print *, 'cumulative errors at nodes: '
+  do i=1, NP-1
+     val = real(i-1,f64)*sll_pi/real(NP-1,f64)
+     accumulator1 = accumulator1 + abs(data(i) - &
+                    interpolate_value(val, sp1))
+  end do
+
+  print *, 'hermite case: '
+  do i=1, NP
+     val = real(i-1,f64)*sll_pi/real(NP-1,f64)
+     accumulator2 = accumulator2 + abs(data(i) - &
+                    interpolate_value(val, sp2))
+  end do
+  print *, 'Periodic case: '
+  print *, 'average error at the nodes = '
+  print *, accumulator1/real(NP,f64)
+  call delete_spline_1D(sp1)
+  if( accumulator1/real(NP,f64) < 1.0e-15 ) then
+     print *, 'PASSED TEST'
+  else
+     print *, 'FAILED TEST'
+  end if
+  print *, '**************************** '
+  print *, 'Hermite case: '
+  print *, 'average error at the nodes = '
+  print *, accumulator2/real(NP,f64)
+  call delete_spline_1D(sp2)
+  if( accumulator2/real(NP,f64) < 1.0e-15 ) then
+     print *, 'PASSED TEST'
+  else
+     print *, 'FAILED TEST'
+  end if
+end program spline_tester
+```
 
 Here we do not go in detail over every line but only highlight those
 lines in which we interact with the splines module
 
-Line 5:
-
+Line 5
 :   Imports the spline module. The intent is to eventually not require
     this but to import a single module, say 'selalib' which will include
     all modules itself. For now, this is the way to include these
     individual capabilities.
 
 Lines 13 - 14: 
-
 :   Declaration of the spline pointers.
 
 Lines 29, 34:
-
 :   Allocation and partial initialization of the splines. Note the `=>`
     pointer assignment syntax.
 
 Lines 33, 39:
-
 :   Calculation of the spline coefficients. After this call the spline
     object becomes fully usable. Note that in the example we used both
     existing interfaces to call the initialization subroutine.
 
 Lines 45, 52:
-
 :   Value interpolation using the existing splines.
 
 Lines 57, 67:
-
 :   Destruction of spline objects.
-
-### Status
-
-Unit-tested.
 
 ## Gauss-Legendre Integrator
 
@@ -615,7 +639,9 @@ To integrate the function `f(x)` (real-valued and of a single,
 real-valued argument `x`) over the interval $[a, b]$, the simplest way
 is through a function call such as:
 
-          gauss_legendre_integrate_1D(f, a, b, n)
+```fortran
+gauss_legendre_integrate_1D(f, a, b, n)
+```
 
 In the function above, `n` represents the desired number of *Gauss*
 points used in the calculation:
@@ -631,7 +657,9 @@ such, it hides some alternative integrators, which are selected
 depending on the type of the passed arguments. For instance, we have
 available the function
 
-         gauss_legendre_integrate_interpolated_1D(f, spline, a, b, n)
+```fortran
+gauss_legendre_integrate_interpolated_1D(f, spline, a, b, n)
+```
 
 which integrates a function represented by a spline object. The function
 `f` in this case is the spline interpolation function. It looks like
@@ -668,27 +696,27 @@ functions can be individually called to avoid the overhead of the
 generic function call if desired. A one-dimensional function (user or
 Fortran) can be integrated by a call like:
 
-         gauss_legendre_integral_1D( test_function, &
-                                     0.0_f64,       &
-                                     sll_pi/2.0,    &
-                                     4 )
+```fortran
+gauss_legendre_integral_1D( test_function, &
+                            0.0_f64,       &
+                            sll_pi/2.0,    &
+                            4 )
+```
 
 A function that is represented by an underlying spline object can be
 called like:
 
-         gauss_legendre_integral_interpolated_1D( interpolate_value,&
-                                                  sp1,              &
-                                                  0.0_f64,          &
-                                                  sll_pi,           &
-                                                  4)
+```fortran
+gauss_legendre_integral_interpolated_1D( interpolate_value,&
+                                         sp1,              &
+                                         0.0_f64,          &
+                                         sll_pi,           &
+                                         4)
+```
 
 where sp1 is a spline object. It should be decided if this last case is
 indeed that interface that is wished, or if something more simplified
 should be implemented intstead.
-
-### Status
-
-Unit-tested.
 
 ## FFT
 
@@ -713,13 +741,17 @@ executes the operation itself on a given data. Like all other native
 types in Selalib, the FFT plan is declared through a pointer, which must
 be allocated and initialized. To declare, call:
 
-         type(sll_fft_plan), pointer :: fft_plan
+```fortran
+type(sll_fft_plan), pointer :: fft_plan
+```
 
 Followed by an initialization step:
 
-         fft_plan => sll_new_fft( sample_number,  
-                                  data_type, 
-                                  fft_flags )
+```fortran
+fft_plan => sll_new_fft( sample_number,  
+                         data_type, 
+                         fft_flags )
+```
 
 Where the `data_type` parameter can take either of the values:
 `FFT_REAL` or `FFT_COMPLEX`. Presently we only provide double precision
@@ -731,17 +763,10 @@ both directions by combining the flags with a ` ` + sign.
 
 To execute the FFT plan:
 
-sample_number:
+sample\_number
 
-:   
-
-spline:
-
+spline
 :   A pointer to the spline object to be filled or updated.
-
-### Usage
-
-### Status
 
 ## Collective Communications
 
@@ -763,12 +788,16 @@ being able to replace MPI in a single file if this were ever needed.
 
 Fundamental type:
 
-         sll_collective_t
+```fortran
+sll_collective_t
+```
 
 Constructors, destructors and access functions:
 
-         sll_new_collective( parent_col )
-         sll_delete_collective( col )
+```fortran
+sll_new_collective( parent_col )
+sll_delete_collective( col )
+```
 
 When the Selalib environment is activated, there exists, in exact
 analogy with `MPI_COMM_WORLD`, a global named `sll_world_collective`. At
@@ -778,17 +807,21 @@ functions are responsible for the creation and destruction of such
 collectives. The following functions are used to access the values that
 a particular collective knows about.
 
-         sll_get_collective_rank( col )
-         sll_get_collective_size( col )
-         sll_get_collective_color( col )
-         sll_get_collective_comm( col )
+```fortran
+sll_get_collective_rank( col )
+sll_get_collective_size( col )
+sll_get_collective_color( col )
+sll_get_collective_comm( col )
+```
 
 Since the wrapped library requires initialization, so does
 `sll_collective`. To start and end the parallel environment, the user
 needs to call the functions:
 
-         sll_boot_collective( )
-         sll_halt_collective( )
+```fortran
+sll_boot_collective( )
+sll_halt_collective( )
+```
 
 These functions would not be exposed at the top level, and would be
 hidden by a further call to something akin to `boot_selalib` and
@@ -796,45 +829,55 @@ hidden by a further call to something akin to `boot_selalib` and
 capabilities are presently exposed through the following generic
 functions:
 
-         sll_collective_bcast( col, buffer, size, root )
-         sll_collective_gather( col, send_buf, send_sz, root, 
-                                rec_buf )
-         sll_collective_gatherv( col, send_buf, send_sz, recvcnts, 
-                                 displs, root, recv_buf )
-         sll_collective_allgatherv( col, send_buf, send_sz, sizes, 
-                                    displs, rec_buf )
-         sll_collective_scatter( col, send_buf, size, root, 
-                                 rec_buf )
-         sll_collective_scatterv( col, send_buf, sizes, displs, 
-                                  rec_szs, root, rec_buf )
-         sll_collective_all_reduce( col, send_buf, count, op, 
-                                    rec_buf )
+```fortran
+sll_collective_bcast( col, buffer, size, root )
+sll_collective_gather( col, send_buf, send_sz, root, 
+                       rec_buf )
+sll_collective_gatherv( col, send_buf, send_sz, recvcnts, 
+                        displs, root, recv_buf )
+sll_collective_allgatherv( col, send_buf, send_sz, sizes, 
+                           displs, rec_buf )
+sll_collective_scatter( col, send_buf, size, root, 
+                        rec_buf )
+sll_collective_scatterv( col, send_buf, sizes, displs, 
+                         rec_szs, root, rec_buf )
+sll_collective_all_reduce( col, send_buf, count, op, 
+                           rec_buf )
+```
 
 which presently stand for specialized versions that operate on specific
 types. For instance:
 
-         sll_collective_all_to_allv_real( send_buf, 
-                                          send_cnts, 
-                                          send_displs, 
-                                          recv_buf, 
-                                          recv_cnts, 
-                                          recv_displs, 
-                                          col )
+```fortran
+sll_collective_all_to_allv_real( send_buf, 
+                                 send_cnts, 
+                                 send_displs, 
+                                 recv_buf, 
+                                 recv_cnts, 
+                                 recv_displs, 
+                                 col )
+```
 
 ### Usage
 
 To use the module as stand-alone, include the line:
 
-         use sll_collective
+```fortran
+use sll_collective
+```
 
 Any use of the module's functionalities must be preceeded by calling
 
-         call sll_boot_collective()
+```fortran
+call sll_boot_collective()
+```
 
 and to \"turn off\" the parallel capabilities, one should finish by a
 call to:
 
-         call sll_halt_collective()
+```fortran
+call sll_halt_collective()
+```
 
 This *booting* of the parallel environment needs to be done only once in
 a program.
@@ -860,18 +903,18 @@ operations.
 
 The use of the remapper module can be broken down in several stages:
 
-1.  Declare the layouts and the remap plan object, as well as the arrays
-    to be used.
+1. Declare the layouts and the remap plan object, as well as the arrays
+   to be used.
 
-2.  Initialize the layouts,
+2. Initialize the layouts,
 
-3.  use the layouts and the arrays to create the remapper plan and,
+3. use the layouts and the arrays to create the remapper plan and,
 
-4.  apply the remapper plan using the input and output arrays as
-    arguments.
+4. apply the remapper plan using the input and output arrays as
+   arguments.
 
-5.  As a final step, the resources in the layouts and remap plan should
-    be deallocated wtih `sll_delete()`
+5. As a final step, the resources in the layouts and remap plan should
+   be deallocated wtih `sll_delete()`
 
 The remap operation is an out-of-place operation. Remap is designed to
 consider only non-overlapping data configurations, that is, an
@@ -882,174 +925,176 @@ consider only non-overlapping data configurations, that is, an
 Since the layouts are a pre-requisite for dealing with the remapper, we
 start with these. Presently, Selalib offers the following layout types:
 
-         layout_2D
-         layout_3D
-         layout_4D
-         layout_5D
-         layout_6D
+```
+layout_2D
+layout_3D
+layout_4D
+layout_5D
+layout_6D
+```
 
 These types are each accompanied by their own constructors, destructors
 and accessors. A comprehensive list of the procedures that operate with
 the layouts is:
 
-         new_layout_2D( collective )
-         new_layout_3D( collective )
-         new_layout_4D( collective )
-         new_layout_5D( collective )
-         new_layout_6D( collective )
-         
-         get_layout_collective( layout )
-         get_layout_num_nodes( layout )
-         
-         get_layout_global_size_i( layout )
-         get_layout_global_size_j( layout )
-         get_layout_global_size_k( layout )
-         get_layout_global_size_l( layout )
-         get_layout_global_size_m( layout )
-         get_layout_global_size_n( layout )
-         
-         get_layout_i_min( layout, rank )
-         get_layout_i_max( layout, rank )
-         get_layout_j_min( layout, rank )
-         get_layout_j_max( layout, rank )
-         get_layout_k_min( layout, rank )
-         get_layout_k_max( layout, rank )
-         get_layout_l_min( layout, rank )
-         get_layout_l_max( layout, rank )
-         get_layout_m_min( layout, rank )
-         get_layout_m_max( layout, rank )
-         get_layout_n_min( layout, rank )
-         get_layout_n_max( layout, rank )
-         
-         set_layout_i_min( layout, rank, val )
-         set_layout_i_max( layout, rank, val )
-         set_layout_j_min( layout, rank, val )
-         set_layout_j_max( layout, rank, val )
-         set_layout_k_min( layout, rank, val )
-         set_layout_k_max( layout, rank, val )
-         set_layout_l_min( layout, rank, val )
-         set_layout_l_max( layout, rank, val )
-         set_layout_m_min( layout, rank, val )
-         set_layout_m_max( layout, rank, val )
-         set_layout_n_min( layout, rank, val )
-         set_layout_n_max( layout, rank, val )
+```
+new_layout_2D( collective )
+new_layout_3D( collective )
+new_layout_4D( collective )
+new_layout_5D( collective )
+new_layout_6D( collective )
 
-         initialize_layout_with_distributed_2d_array( 
-              global_npx1, 
-              global_npx2, 
-              num_proc_x1, 
-              num_proc_x2, 
-              layout)
-              
-         initialize_layout_with_distributed_3d_array( 
-              global_npx1, 
-              global_npx2, 
-              global_npx3, 
-              num_proc_x1, 
-              num_proc_x2, 
-              num_proc_x3, 
-              layout)
-              
-         initialize_layout_with_distributed_4d_array( 
-              global_npx1, 
-              global_npx2, 
-              global_npx3, 
-              global_npx4, 
-              num_proc_x1, 
-              num_proc_x2, 
-              num_proc_x3, 
-              num_proc_x4, 
-              layout)
-              
-         initialize_layout_with_distributed_5d_array( 
-              global_npx1, 
-              global_npx2, 
-              global_npx3, 
-              global_npx4, 
-              global_npx5, 
-              num_proc_x1, 
-              num_proc_x2, 
-              num_proc_x3, 
-              num_proc_x4, 
-              num_proc_x5, 
-              layout)
-              
-         initialize_layout_with_distributed_6d_array( 
-              global_npx1, 
-              global_npx2, 
-              global_npx3, 
-              global_npx4, 
-              global_npx5, 
-              global_npx6, 
-              num_proc_x1, 
-              num_proc_x2, 
-              num_proc_x3, 
-              num_proc_x4, 
-              num_proc_x5, 
-              num_proc_x6, 
-              layout)
+get_layout_collective( layout )
+get_layout_num_nodes( layout )
 
-         compute_local_sizes( 
-              layout_Nd, 
-              loc_sz_1, 
-              loc_sz_2, 
-              ..., 
-              loc_sz_N )
+get_layout_global_size_i( layout )
+get_layout_global_size_j( layout )
+get_layout_global_size_k( layout )
+get_layout_global_size_l( layout )
+get_layout_global_size_m( layout )
+get_layout_global_size_n( layout )
 
-         sll_delete( layout )
+get_layout_i_min( layout, rank )
+get_layout_i_max( layout, rank )
+get_layout_j_min( layout, rank )
+get_layout_j_max( layout, rank )
+get_layout_k_min( layout, rank )
+get_layout_k_max( layout, rank )
+get_layout_l_min( layout, rank )
+get_layout_l_max( layout, rank )
+get_layout_m_min( layout, rank )
+get_layout_m_max( layout, rank )
+get_layout_n_min( layout, rank )
+get_layout_n_max( layout, rank )
+
+set_layout_i_min( layout, rank, val )
+set_layout_i_max( layout, rank, val )
+set_layout_j_min( layout, rank, val )
+set_layout_j_max( layout, rank, val )
+set_layout_k_min( layout, rank, val )
+set_layout_k_max( layout, rank, val )
+set_layout_l_min( layout, rank, val )
+set_layout_l_max( layout, rank, val )
+set_layout_m_min( layout, rank, val )
+set_layout_m_max( layout, rank, val )
+set_layout_n_min( layout, rank, val )
+set_layout_n_max( layout, rank, val )
+
+initialize_layout_with_distributed_2d_array( 
+     global_npx1, 
+     global_npx2, 
+     num_proc_x1, 
+     num_proc_x2, 
+     layout)
+     
+initialize_layout_with_distributed_3d_array( 
+     global_npx1, 
+     global_npx2, 
+     global_npx3, 
+     num_proc_x1, 
+     num_proc_x2, 
+     num_proc_x3, 
+     layout)
+     
+initialize_layout_with_distributed_4d_array( 
+     global_npx1, 
+     global_npx2, 
+     global_npx3, 
+     global_npx4, 
+     num_proc_x1, 
+     num_proc_x2, 
+     num_proc_x3, 
+     num_proc_x4, 
+     layout)
+     
+initialize_layout_with_distributed_5d_array( 
+     global_npx1, 
+     global_npx2, 
+     global_npx3, 
+     global_npx4, 
+     global_npx5, 
+     num_proc_x1, 
+     num_proc_x2, 
+     num_proc_x3, 
+     num_proc_x4, 
+     num_proc_x5, 
+     layout)
+     
+initialize_layout_with_distributed_6d_array( 
+     global_npx1, 
+     global_npx2, 
+     global_npx3, 
+     global_npx4, 
+     global_npx5, 
+     global_npx6, 
+     num_proc_x1, 
+     num_proc_x2, 
+     num_proc_x3, 
+     num_proc_x4, 
+     num_proc_x5, 
+     num_proc_x6, 
+     layout)
+
+compute_local_sizes( 
+     layout_Nd, 
+     loc_sz_1, 
+     loc_sz_2, 
+     ..., 
+     loc_sz_N )
+
+sll_delete( layout )
+```
 
 In brief:
 
-::: 
-`new_layout_ND()` function, is responsible for allocating all the
+`new_layout_ND()`
+: function, is responsible for allocating all the
 necessary storage for the layout. Returns a pointer to a layout_ND
 object, ready for initialization. Arguments:
 
-collective:
-
+collective
 :   \[pointer\] sll_collective type to be associated with the layout.
 
-`get_layout_collective` returns a pointer to the sll_collective object
+`get_layout_collective`
+: returns a pointer to the sll_collective object
 associated with a given layout. Arguments:
 
-layout:
-
+layout
 :   \[pointer\] layout whose collective is requested.
 
-`get_layout_num_nodes` returns a 32-bit integer with the number of
+`get_layout_num_nodes`
+: returns a 32-bit integer with the number of
 processors in the collective associated with the given layout.
 Arguments:
 
-layout:
-
+layout
 :   \[pointer\] layout whose size (in number of processes) is being
     requested.
 
-`get_layout_global_size_X` returns a 32-bit integer with the size of the
+`get_layout_global_size_X`
+: returns a 32-bit integer with the size of the
 global array (in an abstract sense, i.e. the array that is distributed)
 in the direction X. Arguments:
 
-layout:
-
+layout
 :   \[pointer\] layout whose size (in number of processes) is being
     requested.
 
-`get_layout_X_min` returns a 32-bit integer with the minimum index in
+`get_layout_X_min`
+: returns a 32-bit integer with the minimum index in
 direction X contained in the given process rank. Arguments:
 
-layout:
-
+layout
 :   \[pointer\] layout whose size (in number of processes) is being
     requested. \[in\] 32-bit integer, rank of the process under inquiry.
 
-`get_layout_X_max` returns a 32-bit integer with the maximum index in
+`get_layout_X_max`
+: returns a 32-bit integer with the maximum index in
 direction X contained in the given process rank. Arguments:
 
-layout:
-
+layout
 :   \[pointer\] layout whose size (in number of processes) is being
     requested. \[in\] 32-bit integer, rank of the process under inquiry.
-:::
 
 Specifically, the constructors are:
 
@@ -1132,27 +1177,38 @@ node). Armed with the layout descriptions for the initial and target
 configurations, one can execute a remap operation to reconfigure the
 data. This is an out-of-place operation.
 
-         NEW_REMAPPER_PLAN_3D( initial_layout, 
-                               target_layout, 
-                               data_size_in_integer_sizes )
-         NEW_REMAPPER_PLAN_4D( initial_layout, 
-                               target_layout, 
-                               data_size_in_integer_sizes ) 
-         NEW_REMAPPER_PLAN_5D( initial_layout, 
-                                 target_layout, 
-                               data_size_in_integer_sizes )
+```
+NEW_REMAPPER_PLAN_3D( initial_layout, 
+                      target_layout, 
+                      data_size_in_integer_sizes )
+NEW_REMAPPER_PLAN_4D( initial_layout, 
+                      target_layout, 
+                      data_size_in_integer_sizes ) 
+NEW_REMAPPER_PLAN_5D( initial_layout, 
+                        target_layout, 
+                      data_size_in_integer_sizes )
+```
 
 will yield an instance of the type `remap_plan_3D_t`, or
 `remap_plan_4D_t` or `remap_plan_5D` , respectively, that will contain
 all the information necessary to actually carry out the data
 re-distribution. Finally, a call to
 
-         apply_remap_3D( plan, data_in, data_out )
-         apply_remap_4D( plan, data_in, data_out )
-         apply_remap_5D( plan, data_in, data_out )
+```
+apply_remap_3D( plan, data_in, data_out )
+apply_remap_4D( plan, data_in, data_out )
+apply_remap_5D( plan, data_in, data_out )
+```
 
 will actually redistribute `data` (as an out-of-place operation)
 according to `plan` in an optimized way[^3].
+
+
+[^3]: The optimizations carried out by the remapper are related with
+    finding out the minimally-sized communicators to launch the
+    exchanges and the selection of the lower-level communications
+    functions (alltoall vs. alltoallv, for instance). Other
+    optimizations depend on how the local MPI is tuned.
 
 To appreciate the power of such facility, note that in principle, the
 construction of a (communications latency-limited) parallel
@@ -1183,9 +1239,11 @@ automatically depending on the type of layout passed as an argument.
 The type `remap_plan` exists also in multiple flavors, depending on the
 dimensionality of the data to be remapped:
 
-         remap_plan_3D_t
-         remap_plan_4D_t
-         remap_plan_5D_t
+```
+remap_plan_3D_t
+remap_plan_4D_t
+remap_plan_5D_t
+```
 
 The `remap_plan_t` type stores the locations of the memory buffers that
 will be involved in the communications, the specification of the data
@@ -1194,35 +1252,170 @@ the communications will take place. There are, however, declaration
 functions available. The choice depends on the dimensionality of the
 data:
 
-         NEW_REMAPPER_PLAN_3D( initial_layout, 
-                               final_layout, 
-                               array_name )
-         NEW_REMAPPER_PLAN_4D( initial_layout, 
-                               final_layout, 
-                               array_name )
-         NEW_REMAPPER_PLAN_5D( initial_layout, 
-                               final_layout, 
-                               array_name )
+```
+NEW_REMAPPER_PLAN_3D( initial_layout, 
+                      final_layout, 
+                      array_name )
+NEW_REMAPPER_PLAN_4D( initial_layout, 
+                      final_layout, 
+                      array_name )
+NEW_REMAPPER_PLAN_5D( initial_layout, 
+                      final_layout, 
+                      array_name )
+```
 
 Finally, the way to execute the plan on a particular data set is through
 a call of the appropriate subroutine (here presented as generic
 interfaces)
 
-         apply_remap_3D( plan, data_in, data_out )
-         apply_remap_4D( plan, data_in, data_out )
-         apply_remap_5D( plan, data_in, data_out )
+```
+apply_remap_3D( plan, data_in, data_out )
+apply_remap_4D( plan, data_in, data_out )
+apply_remap_5D( plan, data_in, data_out )
+```
 
 ### Usage
 
 For use in stand-alone way, use the line:
 
-    #include "sll_remap.h"
+```c
+#include "sll_remap.h"
+```
 
 While verbose, the best way to demonstrate the usage of the remapper is
 with a complete program. Below it, we examine the different statements.
 
-Lines 1 - 5:
+```fortran
+program remap_test
+  use sll_collective
+#include "sll_remap.h"
+#include "sll_memory.h"
+#include "sll_working_precision.h"
+#include "misc_utils.h"
+  implicit none
 
+  ! Test of the 3D remapper takes a 3D array whose global
+  ! size Nx*Ny*Nz, distributed among pi*pj*pk processors.
+  integer, dimension(:,:,:), allocatable :: a3
+  integer, dimension(:,:,:), allocatable :: b3
+
+  ! Take a 3D array of dimensions 8X8X1
+  integer, parameter                 :: total_sz_i = 8
+  integer, parameter                 :: total_sz_j = 8
+  integer, parameter                 :: total_sz_k = 1
+
+  ! the process mesh
+  integer, parameter                 :: pi = 4
+  integer, parameter                 :: pj = 4
+  integer, parameter                 :: pk = 1
+
+  ! Split into 16 processes, each with a local chunk 2X2X1
+  integer                            :: local_sz_i
+  integer                            :: local_sz_j
+  integer                            :: local_sz_k
+  integer                            :: ierr
+  integer                            :: myrank
+  integer                            :: colsz
+  integer                            :: i,j,k
+  integer                            :: i_min, i_max
+  integer                            :: j_min, j_max
+  integer                            :: k_min, k_max
+  integer                            :: node
+  integer, dimension(1:3)            :: gcoords
+
+  ! Remap variables
+  type(layout_3D_t), pointer         :: conf3_init
+  type(layout_3D_t), pointer         :: conf3_final
+  type(remap_plan_3D_t), pointer     :: rmp3
+
+  ! Boot parallel layer
+  call sll_boot_collective()
+
+  ! Initialize and allocate the variables.
+  local_sz_i = total_sz_i/pi
+  local_sz_j = total_sz_j/pj
+  local_sz_k = total_sz_k/pk
+  SLL_ALLOCATE(a3(1:local_sz_i,1:local_sz_j,1:local_sz_k), ierr)
+  SLL_ALLOCATE(b3(1:local_sz_i,1:local_sz_j,1:local_sz_k), ierr)
+  myrank    = sll_get_collective_rank(sll_world_collective)
+  colsz     = sll_get_collective_size(sll_world_collective)
+
+  conf3_init     => new_layout_3D( sll_world_collective )
+  conf3_final    => new_layout_3D( sll_world_collective )
+  random_layout1 => new_layout_3D( sll_world_collective )
+
+  ! Initialize the layout
+  do k=0, pk-1
+     do j=0, pj-1
+        do i=0, pi-1
+           node = i+pi*(j+pj*k) ! linear index of node
+           i_min = i*local_sz_i + 1
+           i_max = i*local_sz_i + local_sz_i
+           j_min = j*local_sz_j + 1
+           j_max = j*local_sz_j + local_sz_j
+           k_min = k*local_sz_k + 1
+           k_max = k*local_sz_k + local_sz_k
+           call set_layout_i_min( conf3_init, node, i_min )
+           call set_layout_i_max( conf3_init, node, i_max )
+           call set_layout_j_min( conf3_init, node, j_min )
+           call set_layout_j_max( conf3_init, node, j_max )
+           call set_layout_k_min( conf3_init, node, k_min )
+           call set_layout_k_max( conf3_init, node, k_max )
+        end do
+     end do
+  end do
+
+  ! Initialize the data using layout information.
+  do k=1, local_sz_k
+     do j=1, local_sz_j
+        do i=1, local_sz_i
+           gcoords= local_to_global_3D(conf3_init,(/i,j,k/))
+           a3(i,j,k) = gcoords(1) + &
+                total_sz_i*((gcoords(2)-1) + &
+                total_sz_j*(gcoords(3)-1))
+        end do
+     end do
+  end do
+
+  ! Initialize the final layout, in this case, just a
+  ! transposition
+  do k=0, pk-1
+     do j=0, pj-1
+        do i=0, pi-1
+           node = i+pi*(j+pj*k) ! linear index of node
+           i_min = i*local_sz_i + 1
+           i_max = i*local_sz_i + local_sz_i
+           j_min = j*local_sz_j + 1
+           j_max = j*local_sz_j + local_sz_j
+           k_min = k*local_sz_k + 1
+           k_max = k*local_sz_k + local_sz_k
+           call set_layout_i_min( conf3_final, node, j_min )
+           call set_layout_i_max( conf3_final, node, j_max )
+           call set_layout_j_min( conf3_final, node, i_min )
+           call set_layout_j_max( conf3_final, node, i_max )
+           call set_layout_k_min( conf3_final, node, k_min )
+           call set_layout_k_max( conf3_final, node, k_max )
+        end do
+     end do
+  end do
+
+  rmp3 => NEW_REMAPPER_PLAN_3D( conf3_init, conf3_final, a3 )
+  call apply_remap_3D( rmp3, a3, b3 )
+
+  ! At this moment, b3 contains the expected output
+  ! from the remap operation.
+
+  ! Delete the layouts
+  call delete_layout_3D( conf3_init )
+  call delete_layout_3D( conf3_final )
+
+  call sll_halt_collective()
+
+end program remap_test
+```
+
+
+Lines 1 - 5
 :   Required preamble at the time of this writing. Eventually this will
     be replaced by a single statement to include the whole library.
     Presently, we include various headers individually, so bear in mind
@@ -1230,37 +1423,30 @@ Lines 1 - 5:
     loads the remapper facility. Here it is brought as a header file as
     the NEW_REMAPPER_PLAN_XD() is implemented as a macro.
 
-Lines 9 - 12: 
-
+Lines 9 - 12 
 :   For this example we allocate two 3D arrays for the input and output
     of the remap operation.
 
-Lines 14 - 22: 
-
+Lines 14 - 22
 :   Definition of the array size from a global perspective. In other
     words, the array to be remapped is a $8*8*1$ array, to be
     distributed on a processor mesh of dimensions $4*4*1$.
 
 Lines 24 - 36
-
 :   Miscellaneous integer variables that we will use.
 
 Lines 38 - 41
-
 :   Pointers to the initial and final layouts and the remap plan.
 
 Line 44
-
 :   Presently we boot from collective. Eventually this will be replaced
     by a call to something like `boot_selalib()` or something similar,
     where we declare and initialize anything we need in a single call.
 
 Lines 46 - 57
-
 :   Initialization of the variables.
 
 Lines 59 - 78
-
 :   This is where the actual work is when using the remapper. We need to
     initialize a layout, in this case the initial configuration. We use
     the access functions `set_layout_x_xxx( )` to populate the fields.
@@ -1268,7 +1454,6 @@ Lines 59 - 78
     mesh' to find out the rank of the process that we are initializing.
 
 Lines 80 - 90
-
 :   We need to initialize the data, here we choose simply to assign the
     index of the array, considered as a 1D array. Note the use of the
     helper function `local_to_global_3D( layout, triplet )`. We exploit
@@ -1276,13 +1461,11 @@ Lines 80 - 90
     global indices of a local 3-tuple.
 
 Lines 92 - 112
-
 :   The other main part of the work, the initialization of the target
     layout. In this case, we chose a simple transposition, which is
     achieved by switching `i` and `j`.
 
 Lines 114 - 115
-
 :   Here we allocate and initialize the remap plan, using the initial
     and final configurations as input. The third argument is passed to
     inform the remapper of the type of data to be passed. The call to
@@ -1293,13 +1476,11 @@ Lines 114 - 115
     implemented.
 
 Line 116
-
 :   Here we apply the plan. This function is type-dependent due to the
     input/output arrays. Please refer to the implementation notes for
     some commentary on our options with this interface.
 
 Lines 122 - 125
-
 :   Cleanup. The layouts need to be deleted to prevent memory leaks.
 
 ### Implementation Notes
@@ -1349,8 +1530,3 @@ data while not requiring the use of the MPI derived types at the higher
 levels is yet to be found. It could be that the Fortran way to solve
 this problem would be to accept the invasion of MPI at the higher
 levels\...
-
-### Status
-
-In testing.
-
