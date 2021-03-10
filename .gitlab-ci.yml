@@ -1,9 +1,9 @@
-image: pnavaro/selalib
+image: pnavaro/jupyter
 
 pages:
   stage: deploy
   script:
-    - pip3 install --user jupyter-book
+    - pip install --user -U jupyter-book
     - jupyter-book build .
     - mv _build/html public
   artifacts:
