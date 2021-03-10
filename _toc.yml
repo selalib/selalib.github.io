@@ -24,5 +24,6 @@
 
 - part: Credits
   chapters:
+  - file: institutions
   - file: markdown
   - file: members
