@@ -1,4 +1,4 @@
-# Mid-Level Layer: Numerical and Parallel Utilities
+# Numerical and Parallel Utilities
 
 ## Tridiagonal System Solver
 

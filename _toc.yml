@@ -11,6 +11,7 @@
   - file: low_level
   - file: mid_level
   - file: top_level
+  - file: pic
 
 - part: Developer guide
   chapters:
