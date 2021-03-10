@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="CMake" href="cmake_guide.html" />
-    <link rel="prev" title="Quick Start Guide" href="quickstart.html" />
+    <link rel="prev" title="Build the library" href="build.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -107,8 +107,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="quickstart.html">
-   Quick Start Guide
+  <a class="reference internal" href="build.html">
+   Build the library
   </a>
  </li>
 </ul>
@@ -206,11 +206,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/selalib/selalib.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/selalib/selalib"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/selalib/selalib.github.io/issues/new?title=Issue%20on%20page%20%2Fgetting_started.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/selalib/selalib/issues/new?title=Issue%20on%20page%20%2Fgetting_started.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -290,26 +290,18 @@ The latest development version of SeLaLib is tracked in the ‘master’ branch.
 <div class="section" id="get-the-source-code">
 <h2>Get the source code<a class="headerlink" href="#get-the-source-code" title="Permalink to this headline">¶</a></h2>
 <p>Developer GIT Access via SSH</p>
-<p><a class="reference external" href="https://gforge.inria.fr/account/editsshkeys.php">Edit keys on your INRIA gforge account</a> and follow instructions.
+<p>Edit SSH keys on your GitHub account profile and follow instructions.
 Only project developers can access the GIT tree via this method. Substitute with the proper values:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="o">+</span><span class="n">ssh</span><span class="p">:</span><span class="o">//</span><span class="n">YOUR_INRIA_LOGIN</span><span class="nd">@scm</span><span class="o">.</span><span class="n">gforge</span><span class="o">.</span><span class="n">inria</span><span class="o">.</span><span class="n">fr</span><span class="o">//</span><span class="n">gitroot</span><span class="o">//</span><span class="n">selalib</span><span class="o">/</span><span class="n">selalib</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">selalib</span><span class="o">/</span><span class="n">selalib</span><span class="o">.</span><span class="n">git</span>
 <span class="n">cd</span> <span class="n">selalib</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>Display all branches with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">a</span>
-</pre></div>
-</div>
-<p>Create the local branch and merge the remote branch:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
-</pre></div>
-</div>
-<p>More information available on document <a class="reference external" href="https://gforge.inria.fr/docman/view.php/3042/7642/selalib_coding_guidelines.pdf">An overview of GIT A short tutorial for SELALIB developers</a> by Edwin Chacon-Golcher.</p>
 </div>
 <div class="section" id="build-the-devel-branch">
 <h2>Build the devel branch<a class="headerlink" href="#build-the-devel-branch" title="Permalink to this headline">¶</a></h2>
-<p>Create a new directory, build the libraries within</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">build</span>
+<p>Create a build directory, build the libraries within</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">devel</span>
+<span class="n">mkdir</span> <span class="n">build</span>
 <span class="n">cd</span> <span class="n">build</span>
 <span class="n">cmake</span> <span class="o">../</span>
 <span class="n">make</span>
@@ -396,7 +388,7 @@ you can use your own implementation</p></td>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="quickstart.html" title="previous page">Quick Start Guide</a>
+    <a class='left-prev' id="prev-link" href="build.html" title="previous page">Build the library</a>
     <a class='right-next' id="next-link" href="cmake_guide.html" title="next page">CMake</a>
 
         </div>

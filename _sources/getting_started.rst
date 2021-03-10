@@ -30,27 +30,18 @@ Get the source code
 -------------------
 Developer GIT Access via SSH
 
-`Edit keys on your INRIA gforge account <https://gforge.inria.fr/account/editsshkeys.php>`_ and follow instructions.
+Edit SSH keys on your GitHub account profile and follow instructions.
 Only project developers can access the GIT tree via this method. Substitute with the proper values::
 
- git clone git+ssh://YOUR_INRIA_LOGIN@scm.gforge.inria.fr//gitroot//selalib/selalib.git
+ git clone git@github.com:selalib/selalib.git
  cd selalib/
-
-Display all branches with::
-
- git branch -a
-
-Create the local branch and merge the remote branch:: 
-
- git checkout master
-
-More information available on document `An overview of GIT A short tutorial for SELALIB developers <https://gforge.inria.fr/docman/view.php/3042/7642/selalib_coding_guidelines.pdf>`_ by Edwin Chacon-Golcher.
 
 Build the devel branch
 ----------------------
 
-Create a new directory, build the libraries within ::
+Create a build directory, build the libraries within ::
 
+ git checkout -b devel
  mkdir build
  cd build
  cmake ../

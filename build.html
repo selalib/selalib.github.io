@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quick Start Guide</title>
+    <title>Build the library</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -108,7 +108,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Quick Start Guide
+   Build the library
   </a>
  </li>
 </ul>
@@ -190,9 +190,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/quickstart.rst"><button type="button"
+        <a class="dropdown-buttons" href="_sources/build.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -206,11 +206,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/selalib/selalib.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/selalib/selalib"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/selalib/selalib.github.io/issues/new?title=Issue%20on%20page%20%2Fquickstart.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/selalib/selalib/issues/new?title=Issue%20on%20page%20%2Fbuild.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -238,13 +238,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#from-git-repository">
-   From git repository
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#use-selalib">
-   Use selalib
+  <a class="reference internal nav-link" href="#run-a-similation">
+   Run a similation
   </a>
  </li>
 </ul>
@@ -259,56 +254,35 @@
         
               <div>
                 
-  <div class="section" id="quick-start-guide">
-<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="from-git-repository">
-<h2>From git repository<a class="headerlink" href="#from-git-repository" title="Permalink to this headline">¶</a></h2>
-<p>Change the variable CMAKE_BUILD_TYPE to “Release”.</p>
-<p>Set the variable CMAKE_INSTALL_PREFIX to the path where you want to install selalib.</p>
-<p>Fortran modules, header files and library will be installed to this path.</p>
+  <div class="section" id="build-the-library">
+<h1>Build the library<a class="headerlink" href="#build-the-library" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>header files in ${CMAKE_INSTALL_PREFIX}/include</p></li>
-<li><p>fortran module files in ${CMAKE_INSTALL_PREFIX}/include/fortran</p></li>
-<li><p>library archives in ${CMAKE_INSTALL_PREFIX}/lib</p></li>
+<li><p>Download the sources:</p></li>
 </ul>
-<p>Just type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DCMAKE_BUILD_TYPE</span><span class="o">=</span><span class="s2">&quot;Release&quot;</span> \
-      <span class="o">-</span><span class="n">DCMAKE_INSTALL_PREFIX</span><span class="o">=&lt;</span><span class="n">install_dir</span><span class="o">&gt;</span> \
-      <span class="o">-</span><span class="n">DBUILD_PACKAGE</span><span class="o">=</span><span class="n">ON</span> <span class="o">&lt;</span><span class="n">selalib_dir</span><span class="o">&gt;</span>
-<span class="n">make</span>
-<span class="n">make</span> <span class="n">install</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/selalib/selalib
+<span class="nb">cd</span> selalib
 </pre></div>
 </div>
-</div>
-<div class="section" id="use-selalib">
-<h2>Use selalib<a class="headerlink" href="#use-selalib" title="Permalink to this headline">¶</a></h2>
-<p>To use the sequential version of selalib just add:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;selalib.h&quot;</span>
+<ul class="simple">
+<li><p>Build the library</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir build
+<span class="nb">cd</span>  build
+cmake ..
+make 
 </pre></div>
 </div>
-<p>To use the parallel version of selalib just add:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;selalib-mpi.h&quot;</span>
+<ul class="simple">
+<li><p>Run the test</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ctest --output-on-failure
 </pre></div>
 </div>
-<p>and link your program with flag <em>-lselalib</em>.
-You can also use one of selalib capabilities separately, headers file available are:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;sll_working_precision.h&quot;</span>
-<span class="c1">#include &quot;sll_memory.h&quot;</span>
-<span class="c1">#include &quot;sll_assert.h&quot;</span>
-<span class="c1">#include &quot;sll_splines.h&quot;</span>
-<span class="c1">#include &quot;sll_constants.h&quot;</span>
-<span class="c1">#include &quot;sll_utilities.h&quot;</span>
-<span class="c1">#include &quot;sll_interpolators.h&quot;</span>
-</pre></div>
-</div>
-<p>To use solvers:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;sll_poisson_solvers.h&quot;</span>
-<span class="c1">#include &quot;sll_maxwell_solvers.h&quot;</span>
-</pre></div>
-</div>
-<p>Be careful, you could have to link with HDF5, FFTW, LAPACK, etc …</p>
-<p>Il you want to use some macros like SLL_ALLOCATE or SLL_ASSERT with gfortran, just add
-the compilation flag <em>-ffree-line-length-none</em>.</p>
+<div class="section" id="run-a-similation">
+<h2>Run a similation<a class="headerlink" href="#run-a-similation" title="Permalink to this headline">¶</a></h2>
+<p>In simulations directory, you will find examples to use the library, every program
+must have a README file with instructions.</p>
+<p>Please open an issue <a class="reference external" href="https://github.com/selalib/selalib/issues/new">https://github.com/selalib/selalib/issues/new</a></p>
 </div>
 </div>
 
