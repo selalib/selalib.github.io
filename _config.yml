@@ -6,6 +6,19 @@ only_build_toc_files: true
 bibtex_bibfiles:
    - references.bib
 
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+
 execute:
   execute_notebooks: false
 
@@ -18,6 +31,9 @@ repository:
   branch: main  
 
 html:
+  favicon: images/favicon.ico
+  home_page_in_navbar: false
+  use_edit_page_button: true
   use_issues_button: true
   use_repository_button: true
 

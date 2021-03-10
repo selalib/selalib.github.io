@@ -26,6 +26,7 @@ Contributors
 * Pierre NAVARO 
 * Laurent NAVORET 
 * Thi Trang Nhung PHAM 
+* Benedict PERSE
 * Charles PROUVEUR 
 * Ahmed RATNANI 
 * Klaus REUTER 

@@ -1,16 +1,25 @@
 - file: selalib
 
-- part: Install dependencies
+- part: Mathematics
   chapters:
-  - file: ubuntu
-  - file: fedora
+  - file: equations
+
+- part: User guide
+  chapters:
   - file: build
+  - file: user_guide
+  - file: low_level
+  - file: mid_level
+  - file: top_level
 
 - part: Developer guide
   chapters:
   - file: getting_started
-  - file: cmake_guide
-  - file: doxygen_guide
+  - file: cmake
+  - file: structure
+  - file: coding_style
+  - file: naming_convention
+  - file: doxygen
 
 - part: Credits
   chapters:
