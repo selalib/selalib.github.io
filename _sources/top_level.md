@@ -1,4 +1,4 @@
-# Top-Level Layer: Semi-Lagrangian Toolbox
+# Semi-Lagrangian Toolbox
 
 ## Meshes
 

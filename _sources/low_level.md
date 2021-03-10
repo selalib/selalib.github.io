@@ -1,4 +1,4 @@
-# Low-Level Layer: Basic Utilities
+# Basic Utilities
 
 ## Numeric Types
 

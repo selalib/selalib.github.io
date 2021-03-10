@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Build the library</title>
+    <title>Particle-In-Cell</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -55,8 +55,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Preamble" href="user_guide.html" />
-    <link rel="prev" title="Equations" href="equations.html" />
+    <link rel="next" title="Getting Started" href="getting_started.html" />
+    <link rel="prev" title="Semi-Lagrangian Toolbox" href="top_level.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -102,8 +102,8 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="build.html">
    Build the library
   </a>
  </li>
@@ -127,8 +127,8 @@
    Semi-Lagrangian Toolbox
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pic.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Particle-In-Cell
   </a>
  </li>
@@ -226,7 +226,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/build.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/pic.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -246,10 +246,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/selalib/selalib.github.io/issues/new?title=Issue%20on%20page%20%2Fbuild.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/selalib/selalib.github.io/issues/new?title=Issue%20on%20page%20%2Fpic.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/selalib/selalib.github.io/edit/main/build.md"><button
+        <a class="edit-button" href="https://github.com/selalib/selalib.github.io/edit/main/pic.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -269,46 +269,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-dependencies-on-ubuntu">
-   Install dependencies on Ubuntu
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-dependencies-on-fedora">
-   Install dependencies on Fedora
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-the-sources">
-   Download the sources
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Build the library
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#check-your-installation">
-   Check your installation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#run-a-similation">
-   Run a similation
-  </a>
- </li>
-</ul>
-
-        </nav>
-        
         </div>
     </div>
 </div>
@@ -317,72 +277,8 @@
         
               <div>
                 
-  <div class="section" id="build-the-library">
-<h1>Build the library<a class="headerlink" href="#build-the-library" title="Permalink to this headline">¶</a></h1>
-<p>The prerequisites can be installed with a couple of commands on linux systems.</p>
-<ul class="simple">
-<li><p>MPI, Most of our testing is done with openmpi but mpich should also work.</p></li>
-<li><p>build tools: CMake, python3</p></li>
-<li><p>compilers: fortran</p></li>
-<li><p>libraries: HDF5, FFTW3, LAPACK</p></li>
-<li><p>documentation (optional): Doxygen</p></li>
-<li><p>visualisation : gnuplot, paraview, VisIt</p></li>
-</ul>
-<div class="section" id="install-dependencies-on-ubuntu">
-<h2>Install dependencies on Ubuntu<a class="headerlink" href="#install-dependencies-on-ubuntu" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install cmake git
-sudo apt-get install libopenmpi-dev openmpi-bin libhdf5-openmpi-dev
-sudo apt-get install  libfftw3-dev liblapack-dev libopenblas-dev
-sudo apt-get install doxygen texlive graphviz
-</pre></div>
-</div>
-</div>
-<div class="section" id="install-dependencies-on-fedora">
-<h2>Install dependencies on Fedora<a class="headerlink" href="#install-dependencies-on-fedora" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install git-all
-sudo dnf install cmake python3
-sudo dnf install gcc-gfortran
-sudo dnf install hdf5-openmpi-devel openmpi-devel fftw-devel openblas-devel
-sudo dnf install doxygen texlive-latex graphviz
-</pre></div>
-</div>
-<p>Don’t forget to load the mpi module</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">mpi</span><span class="o">/</span><span class="n">openmpi</span><span class="o">-</span><span class="n">x86_64</span>
-</pre></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>mpich on Fedora is not supported.</p>
-</div>
-</div>
-<div class="section" id="download-the-sources">
-<h2>Download the sources<a class="headerlink" href="#download-the-sources" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/selalib/selalib
-<span class="nb">cd</span> selalib
-</pre></div>
-</div>
-</div>
-<div class="section" id="id1">
-<h2>Build the library<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir build
-<span class="nb">cd</span>  build
-cmake ..
-make 
-</pre></div>
-</div>
-</div>
-<div class="section" id="check-your-installation">
-<h2>Check your installation<a class="headerlink" href="#check-your-installation" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ctest --output-on-failure
-</pre></div>
-</div>
-</div>
-<div class="section" id="run-a-similation">
-<h2>Run a similation<a class="headerlink" href="#run-a-similation" title="Permalink to this headline">¶</a></h2>
-<p>In simulations directory, you will find examples to use the library, every program
-must have a README file with instructions.</p>
-<p>Please open an issue <a class="reference external" href="https://github.com/selalib/selalib/issues/new">https://github.com/selalib/selalib/issues/new</a></p>
-</div>
+  <div class="section" id="particle-in-cell">
+<h1>Particle-In-Cell<a class="headerlink" href="#particle-in-cell" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -410,8 +306,8 @@ must have a README file with instructions.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="equations.html" title="previous page">Equations</a>
-    <a class='right-next' id="next-link" href="user_guide.html" title="next page">Preamble</a>
+    <a class='left-prev' id="prev-link" href="top_level.html" title="previous page">Semi-Lagrangian Toolbox</a>
+    <a class='right-next' id="next-link" href="getting_started.html" title="next page">Getting Started</a>
 
         </div>
         
