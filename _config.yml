@@ -14,15 +14,13 @@ latex:
     targetname: selalib.tex
 
 repository:
-  url: https://github.com/selalib/selalib.github.io
+  url: https://github.com/selalib/selalib
   branch: main  
 
 html:
   use_issues_button: true
   use_repository_button: true
 
-parse:
-  myst_extended_syntax: true
 
 sphinx:
     config:
