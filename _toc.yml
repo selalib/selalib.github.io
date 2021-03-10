@@ -1,6 +1,6 @@
 - file: selalib
 
-- part: Install
+- part: Install dependencies
   chapters:
   - file: ubuntu
   - file: fedora
