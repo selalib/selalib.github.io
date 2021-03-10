@@ -27,7 +27,7 @@ latex:
     targetname: selalib.tex
 
 repository:
-  url: https://github.com/selalib/selalib
+  url: https://github.com/selalib/selalib.github.io
   branch: main  
 
 html:
