@@ -6,8 +6,9 @@ plasmas by the semi-lagrangian or particle-in-cell methods*
 In the context of the [Inria Project Lab
 FRATRES](https://team.inria.fr/ipl-fratres/) and a longstanding
 collaboration between the CEA-Cadarache (French Atomic Energy
-Commision), the [Tonus INRIA Project
-Team](https://www.inria.fr/equipes/tonus) based at the University of
+Commision), the [MINGUS](https://www.inria.fr/equipes/mingus) 
+and [TONUS](https://www.inria.fr/equipes/tonus) INRIA Project
+Teams based respectively at the University of Rennes and
 Strasbourg and the [Max-Planck-Institut für Plasmaphysik
 (IPP)](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik) in
 Garching, we are currently developing the Selalib library.
