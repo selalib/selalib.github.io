@@ -607,7 +607,7 @@ the particles’ gyrocenters (gyrocenters do not polarize). Thus,
 Poisson’s equation becomes</p>
 <div class="math notranslate nohighlight">
 \[
-\label{eq:poisson_2}
+:label: poisson_2
 -\nabla ^2 \phi = \frac{1}{\epsilon_0}(\rho^G_i + \rho^{pol}_i - \rho^G_e - \rho^{pol}_e),
 \]</div>
 <p>where the indices <span class="math notranslate nohighlight">\(G\)</span>, <span class="math notranslate nohighlight">\(pol\)</span>, <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(e\)</span> indicate <em>gyrocenters</em>,
@@ -625,7 +625,7 @@ applies to positive and negative particles respectively. Heuristically,
 the polarization charge obeys a continuity equation:</p>
 <div class="math notranslate nohighlight">
 \[
-\label{eq:rho_pol_continuity}
+:label: rho_pol_continuity
 \frac{\partial \rho^{pol} }{\partial t} = - \nabla \cdot \vec{j}^{pol} = - \nabla \cdot (nZe \vec{v}^{pol})=- \nabla \cdot \bigg( n Ze \frac{1}{\omega_{ci}B}\frac{\partial \vec{E}_{\perp}}{\partial t}\bigg) .
 \]</div>
 <p>Here, <span class="math notranslate nohighlight">\(Z\)</span> is the charge state of the ions under consideration (obviously
@@ -635,13 +635,12 @@ factors of the time derivative depends itself on time, we can integrate
 immediately and arrive at an expression for <span class="math notranslate nohighlight">\(\rho^{pol}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-\label{eq:rho_pol}
+:label: eq:rho_pol
 \rho^{pol}(\vec{x}) = \nabla \cdot \bigg( \frac{n_i(\vec{x})Ze}{\omega_{ci}(\vec{x}) B(\vec{x}) }\nabla_{\perp}\phi(\vec{x},t) \bigg).
 \]</div>
 <p>Here we have introduced the assumption of <span class="math notranslate nohighlight">\(n_i\)</span>, the ion particle
 density, being independent of time. In equation
-(<a class="reference external" href="#eq:rho_pol">[eq:rho_pol]</a>{reference-type=“ref”
-reference=“eq:rho_pol”}), we can consider that the differential
+<code class="xref eq docutils literal notranslate"><span class="pre">rho_pol</span></code>, we can consider that the differential
 operators act only in the directions perpendicular to the magnetic
 field, as these are the only terms that will survive the taking of the
 divergence. Finally, by multiplying by the proper unit factors and using
@@ -650,11 +649,10 @@ the relation</p>
 \[
 \omega_p = \bigg( \frac{ne^2} {\epsilon_0 m} \bigg)^{\frac{1}{2}}
 \]</div>
-<p>we can recast equation (<a class="reference external" href="#eq:rho_pol">[eq:rho_pol]</a>{reference-type=“ref”
-reference=“eq:rho_pol”}) into</p>
+<p>we can recast equation <code class="xref eq docutils literal notranslate"><span class="pre">rho_pol</span></code> into</p>
 <div class="math notranslate nohighlight">
 \[
-\label{eq:rho_pol_epsilon}
+:label: rho_pol_epsilon
 \rho^{pol}(\vec{x}) = \epsilon_0 \nabla_{\perp} \cdot \big( \varepsilon^G(\vec{x})\nabla_{\perp}\phi(\vec{x},t) \big).
 \]</div>
 <p>where</p>
@@ -664,11 +662,8 @@ reference=“eq:rho_pol”}) into</p>
 \]</div>
 <p>is called the <em>dielectric constant of the gyrokinetic vacuum</em>. With
 equation
-(<a class="reference external" href="#eq:rho_pol_epsilon">[eq:rho_pol_epsilon]</a>{reference-type=“ref”
-reference=“eq:rho_pol_epsilon”}), and neglecting the polarization of the
-electrons, the modified Poisson equation
-(<a class="reference external" href="#eq:poisson_2">[eq:poisson_2]</a>{reference-type=“ref”
-reference=“eq:poisson_2”}) can be written as:</p>
+<code class="xref eq docutils literal notranslate"><span class="pre">rho_pol_epsilon</span></code>, and neglecting the polarization of the
+electrons, the modified Poisson equation <code class="xref eq docutils literal notranslate"><span class="pre">poisson_2</span></code> can be written as:</p>
 <div class="math notranslate nohighlight">
 \[
 -\nabla ^2 \phi(\vec{x},t) - \nabla_{\perp} \cdot \big(\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t) \big) = \frac{1}{\epsilon_0}(\rho^G_i - \rho^G_e).
@@ -683,11 +678,10 @@ density. Thus, it is assumed that along a field line, the electrons obey
 the Boltzmann relation:</p>
 <div class="math notranslate nohighlight">
 \[
-\label{eq:boltzmann}
+:label: boltzmann
 n_e(\vec{x},t) = \bar{n}_e(\vec{x},0) \exp \bigg(\frac{e}{k_BT_e}(\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})\bigg).
 \]</div>
-<p>In equation (<a class="reference external" href="#eq:boltzmann">[eq:boltzmann]</a>{reference-type=“ref”
-reference=“eq:boltzmann”}), <span class="math notranslate nohighlight">\(n_e(\vec{x},t)\)</span> is the instantaneous
+<p>In equation <code class="xref eq docutils literal notranslate"><span class="pre">boltzmann</span></code>, <span class="math notranslate nohighlight">\(n_e(\vec{x},t)\)</span> is the instantaneous
 electron particle density, <span class="math notranslate nohighlight">\(\bar{n}_e(\vec{x})\)</span> is the average electron
 density along the magnetic field line, <span class="math notranslate nohighlight">\(k_B\)</span> is Boltzmann’s constant,
 <span class="math notranslate nohighlight">\(T_e\)</span> is the electron temperature and the <span class="math notranslate nohighlight">\(&lt; \cdot &gt;_{\ell}\)</span> average is
@@ -696,7 +690,7 @@ very small deviations from the average electric potential, the previous
 equation can be linearized:</p>
 <div class="math notranslate nohighlight">
 \[
-\label{eq:boltzmann_linear}
+:label: boltzmann_linear
 n_e(\vec{x},t) = \bar{n}_e(\vec{x},0) \bigg(1+\frac{e}{k_BT_e}(\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})\bigg).
 \]</div>
 <p>At the risk of being too sloppy, we will equate the electron particle
@@ -710,22 +704,20 @@ function. With this assumption, our modified poisson becomes:</p>
 <p>Rearranging terms and using the relation:</p>
 <div class="math notranslate nohighlight">
 \[
-\label{eq:debye_length}
+:label: debye_length
 \lambda_D=\bigg(\frac{\epsilon_0k_BT_e}{ne^2}\bigg)^\frac{1}{2}=\bigg(\frac{\epsilon_0k_BT_e}{\rho e}\bigg)^\frac{1}{2},
 \]</div>
 <p>we arrive at:</p>
 <div class="math notranslate nohighlight">
 \[
-\label{eq:gk_poisson}
+:label: gk_poisson
 - \nabla_{\perp} \cdot \big(\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t) \big)+\frac{1}{\bar{\lambda}_{D0}} (\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})= \frac{1}{\epsilon_0}\Big(\rho^G_i - \bar{\rho}_{e0}^G\Big).
 \]</div>
 <p>But for a normalization of the variables, equation
-(<a class="reference external" href="#eq:gk_poisson">[eq:gk_poisson]</a>{reference-type=“ref”
-reference=“eq:gk_poisson”}) is virtually the same as the one stated in
+<code class="xref eq docutils literal notranslate"><span class="pre">gk_poisson</span></code> is virtually the same as the one stated in
 the report by Latu (list here reference for “Scalable Quasineutral
 solver for gyrokinetic simulation”). Equation
-(<a class="reference external" href="#eq:gk_poisson">[eq:gk_poisson]</a>{reference-type=“ref”
-reference=“eq:gk_poisson”}) is not yet ready to solve due to the
+<code class="xref eq docutils literal notranslate"><span class="pre">gk_poisson</span></code> is not yet ready to solve due to the
 presence of the <span class="math notranslate nohighlight">\(&lt;\phi(\vec{x},t)&gt;\)</span> term. We need to average the
 solution we seek, after all. To obtain an additional equation that will
 help us find this term, we take the average of both sides of the
@@ -736,7 +728,8 @@ already been averaged so we can get them out of the averaging operator
 when necessary. Averages of averages remain unchanged and thus we arrive
 at:</p>
 <div class="math notranslate nohighlight">
-\[\label{eq:gk_poisson_aux}
+\[
+:label: gk_poisson_aux
 - \nabla_{\perp} \cdot \big(&lt;\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t)&gt;_{\ell} \big)= \frac{1}{\epsilon_0}(&lt;\rho^G_i&gt;_{\ell} - &lt;\bar{\rho}_{e0}^G&gt;_{\ell}).
 \]</div>
 <p>By making two final assumptions: that the quantities involved in the
@@ -746,11 +739,9 @@ vary along the domain of the average procedure (the magnetic field
 line), we can extract <span class="math notranslate nohighlight">\(\varepsilon^G(\vec{x},t)\)</span> from the average
 operator, yielding the auxiliary equation that we need to compute
 <span class="math notranslate nohighlight">\(&lt;\phi(\vec{x},t)&gt;_{\ell}\)</span>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">label</span><span class="p">{</span><span class="n">eq</span><span class="p">:</span><span class="n">gk_poisson_aux</span><span class="p">}</span>
-</pre></div>
-</div>
 <div class="math notranslate nohighlight">
 \[
+:label: gk_poisson_aux
 - \nabla_{\perp} \cdot 
 \big(\varepsilon ^G\nabla_{\perp} &lt;\phi(\vec{x},t)&gt;_{\ell} \big)
 = \frac{1}{\epsilon_0}(&lt;\rho^G_i&gt;_{\ell} - &lt;\bar{\rho}_{e0}^G&gt;_{\ell}).
@@ -763,13 +754,12 @@ quasineutrality condition, i.e.: <span class="math notranslate nohighlight">\(\r
 able to compute all the quantities involved based on the initial ion
 distribution profile.</p>
 <p>Once we calculate <span class="math notranslate nohighlight">\(&lt;\phi(\vec{x},t)&gt;_{\ell}\)</span> with equation
-(<a class="reference external" href="#eq:gk_poisson_aux">[eq:gk_poisson_aux]</a>{reference-type=“ref”
-reference=“eq:gk_poisson_aux”}) we can use this to solve the final
+<code class="xref eq docutils literal notranslate"><span class="pre">gk_poisson_aux</span></code> we can use this to solve the final
 version of our quasi neutral equation, after introducing all the
 assumptions:</p>
 <div class="math notranslate nohighlight">
 \[
-\label{eq:gk_poisson_final}
+:label: gk_poisson_final
 - \nabla_{\perp} \cdot \big(\bar{\varepsilon}^G(\vec{x},0)\nabla_{\perp} \phi(\vec{x},t) \big)+\frac{1}{\bar{\lambda}_D} (\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})= \frac{1}{\epsilon_0}(\rho^G_i - \bar{\rho}_{i0}^G).
 \]</div>
 </div>
