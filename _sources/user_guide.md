@@ -1,4 +1,4 @@
-# Preamble
+# User guide
 
 Selalib is the **Se**mi **La**grangian **Lib**rary, a collection of types and
 its associated methods that are useful for creating parallel plasma
@@ -63,8 +63,3 @@ extension `.F90` (as opposed to `.f90`) in order to apply a
 preprocessing step. Thus, all files in Selalib use the `.F90` extension.
 Clients of the library which want to use the macro facilities should
 thus also use this extension as well.
-
-```{note}
-INCLUDE EXAMPLE HERE OF THE EXTERNAL USE OF THE LIBRARY
-```
-
