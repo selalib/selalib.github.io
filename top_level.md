@@ -195,7 +195,7 @@ the particles' gyrocenters (gyrocenters do not polarize). Thus,
 Poisson's equation becomes
 
 $$
-\label{eq:poisson_2}
+:label: poisson_2
 -\nabla ^2 \phi = \frac{1}{\epsilon_0}(\rho^G_i + \rho^{pol}_i - \rho^G_e - \rho^{pol}_e),
 $$
 
@@ -215,7 +215,7 @@ applies to positive and negative particles respectively. Heuristically,
 the polarization charge obeys a continuity equation:
 
 $$
-\label{eq:rho_pol_continuity}
+:label: rho_pol_continuity
 \frac{\partial \rho^{pol} }{\partial t} = - \nabla \cdot \vec{j}^{pol} = - \nabla \cdot (nZe \vec{v}^{pol})=- \nabla \cdot \bigg( n Ze \frac{1}{\omega_{ci}B}\frac{\partial \vec{E}_{\perp}}{\partial t}\bigg) .
 $$
 
@@ -226,14 +226,13 @@ factors of the time derivative depends itself on time, we can integrate
 immediately and arrive at an expression for $\rho^{pol}$:
 
 $$
-\label{eq:rho_pol}
+:label: eq:rho_pol
 \rho^{pol}(\vec{x}) = \nabla \cdot \bigg( \frac{n_i(\vec{x})Ze}{\omega_{ci}(\vec{x}) B(\vec{x}) }\nabla_{\perp}\phi(\vec{x},t) \bigg).
 $$
 
 Here we have introduced the assumption of $n_i$, the ion particle
 density, being independent of time. In equation
-([\[eq:rho_pol\]](#eq:rho_pol){reference-type="ref"
-reference="eq:rho_pol"}), we can consider that the differential
+{eq}`rho_pol`, we can consider that the differential
 operators act only in the directions perpendicular to the magnetic
 field, as these are the only terms that will survive the taking of the
 divergence. Finally, by multiplying by the proper unit factors and using
@@ -243,11 +242,10 @@ $$
 \omega_p = \bigg( \frac{ne^2} {\epsilon_0 m} \bigg)^{\frac{1}{2}}
 $$ 
 
-we can recast equation ([\[eq:rho_pol\]](#eq:rho_pol){reference-type="ref"
-reference="eq:rho_pol"}) into
+we can recast equation {eq}`rho_pol` into
 
 $$
-\label{eq:rho_pol_epsilon}
+:label: rho_pol_epsilon
 \rho^{pol}(\vec{x}) = \epsilon_0 \nabla_{\perp} \cdot \big( \varepsilon^G(\vec{x})\nabla_{\perp}\phi(\vec{x},t) \big).
 $$
 where
@@ -258,11 +256,8 @@ $$
 
 is called the *dielectric constant of the gyrokinetic vacuum*. With
 equation
-([\[eq:rho_pol_epsilon\]](#eq:rho_pol_epsilon){reference-type="ref"
-reference="eq:rho_pol_epsilon"}), and neglecting the polarization of the
-electrons, the modified Poisson equation
-([\[eq:poisson_2\]](#eq:poisson_2){reference-type="ref"
-reference="eq:poisson_2"}) can be written as:
+{eq}`rho_pol_epsilon`, and neglecting the polarization of the
+electrons, the modified Poisson equation {eq}`poisson_2` can be written as:
 
 $$
 -\nabla ^2 \phi(\vec{x},t) - \nabla_{\perp} \cdot \big(\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t) \big) = \frac{1}{\epsilon_0}(\rho^G_i - \rho^G_e).
@@ -279,12 +274,11 @@ density. Thus, it is assumed that along a field line, the electrons obey
 the Boltzmann relation:
 
 $$
-\label{eq:boltzmann}
+:label: boltzmann
 n_e(\vec{x},t) = \bar{n}_e(\vec{x},0) \exp \bigg(\frac{e}{k_BT_e}(\phi(\vec{x},t) - <\phi(\vec{x},t)>_{\ell})\bigg).
 $$
 
-In equation ([\[eq:boltzmann\]](#eq:boltzmann){reference-type="ref"
-reference="eq:boltzmann"}), $n_e(\vec{x},t)$ is the instantaneous
+In equation {eq}`boltzmann`, $n_e(\vec{x},t)$ is the instantaneous
 electron particle density, $\bar{n}_e(\vec{x})$ is the average electron
 density along the magnetic field line, $k_B$ is Boltzmann's constant,
 $T_e$ is the electron temperature and the $< \cdot >_{\ell}$ average is
@@ -293,7 +287,7 @@ very small deviations from the average electric potential, the previous
 equation can be linearized:
 
 $$
-\label{eq:boltzmann_linear}
+:label: boltzmann_linear
 n_e(\vec{x},t) = \bar{n}_e(\vec{x},0) \bigg(1+\frac{e}{k_BT_e}(\phi(\vec{x},t) - <\phi(\vec{x},t)>_{\ell})\bigg).
 $$
 At the risk of being too sloppy, we will equate the electron particle
@@ -308,24 +302,22 @@ $$
 Rearranging terms and using the relation: 
 
 $$
-\label{eq:debye_length}
+:label: debye_length
 \lambda_D=\bigg(\frac{\epsilon_0k_BT_e}{ne^2}\bigg)^\frac{1}{2}=\bigg(\frac{\epsilon_0k_BT_e}{\rho e}\bigg)^\frac{1}{2},
 $$
 
 we arrive at: 
 
 $$
-\label{eq:gk_poisson}
+:label: gk_poisson
 - \nabla_{\perp} \cdot \big(\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t) \big)+\frac{1}{\bar{\lambda}_{D0}} (\phi(\vec{x},t) - <\phi(\vec{x},t)>_{\ell})= \frac{1}{\epsilon_0}\Big(\rho^G_i - \bar{\rho}_{e0}^G\Big).
 $$
 
 But for a normalization of the variables, equation
-([\[eq:gk_poisson\]](#eq:gk_poisson){reference-type="ref"
-reference="eq:gk_poisson"}) is virtually the same as the one stated in
+{eq}`gk_poisson` is virtually the same as the one stated in
 the report by Latu (list here reference for \"Scalable Quasineutral
 solver for gyrokinetic simulation\"). Equation
-([\[eq:gk_poisson\]](#eq:gk_poisson){reference-type="ref"
-reference="eq:gk_poisson"}) is not yet ready to solve due to the
+{eq}`gk_poisson` is not yet ready to solve due to the
 presence of the $<\phi(\vec{x},t)>$ term. We need to average the
 solution we seek, after all. To obtain an additional equation that will
 help us find this term, we take the average of both sides of the
@@ -336,7 +328,8 @@ already been averaged so we can get them out of the averaging operator
 when necessary. Averages of averages remain unchanged and thus we arrive
 at:
 
-$$\label{eq:gk_poisson_aux}
+$$
+:label: gk_poisson_aux
 - \nabla_{\perp} \cdot \big(<\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t)>_{\ell} \big)= \frac{1}{\epsilon_0}(<\rho^G_i>_{\ell} - <\bar{\rho}_{e0}^G>_{\ell}).
 $$
 
@@ -348,10 +341,8 @@ line), we can extract $\varepsilon^G(\vec{x},t)$ from the average
 operator, yielding the auxiliary equation that we need to compute
 $<\phi(\vec{x},t)>_{\ell}$:
 
-```
-\label{eq:gk_poisson_aux}
-```
 $$
+:label: gk_poisson_aux
 - \nabla_{\perp} \cdot 
 \big(\varepsilon ^G\nabla_{\perp} <\phi(\vec{x},t)>_{\ell} \big)
 = \frac{1}{\epsilon_0}(<\rho^G_i>_{\ell} - <\bar{\rho}_{e0}^G>_{\ell}).
@@ -366,13 +357,12 @@ able to compute all the quantities involved based on the initial ion
 distribution profile.
 
 Once we calculate $<\phi(\vec{x},t)>_{\ell}$ with equation
-([\[eq:gk_poisson_aux\]](#eq:gk_poisson_aux){reference-type="ref"
-reference="eq:gk_poisson_aux"}) we can use this to solve the final
+{eq}`gk_poisson_aux` we can use this to solve the final
 version of our quasi neutral equation, after introducing all the
 assumptions:
 
 $$
-\label{eq:gk_poisson_final}
+:label: gk_poisson_final
 - \nabla_{\perp} \cdot \big(\bar{\varepsilon}^G(\vec{x},0)\nabla_{\perp} \phi(\vec{x},t) \big)+\frac{1}{\bar{\lambda}_D} (\phi(\vec{x},t) - <\phi(\vec{x},t)>_{\ell})= \frac{1}{\epsilon_0}(\rho^G_i - \bar{\rho}_{i0}^G).
 $$
 
