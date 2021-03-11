@@ -195,9 +195,8 @@ the particles' gyrocenters (gyrocenters do not polarize). Thus,
 Poisson's equation becomes
 
 $$
-:label: poisson_2
 -\nabla ^2 \phi = \frac{1}{\epsilon_0}(\rho^G_i + \rho^{pol}_i - \rho^G_e - \rho^{pol}_e),
-$$
+$$ (poisson_2)
 
 where the indices $G$, $pol$, $i$ and $e$ indicate *gyrocenters*,
 *polarization*, *ions* and *electrons* respectively. The polarization
@@ -215,9 +214,8 @@ applies to positive and negative particles respectively. Heuristically,
 the polarization charge obeys a continuity equation:
 
 $$
-:label: rho_pol_continuity
 \frac{\partial \rho^{pol} }{\partial t} = - \nabla \cdot \vec{j}^{pol} = - \nabla \cdot (nZe \vec{v}^{pol})=- \nabla \cdot \bigg( n Ze \frac{1}{\omega_{ci}B}\frac{\partial \vec{E}_{\perp}}{\partial t}\bigg) .
-$$
+$$ (rho_pol_continuity)
 
 Here, $Z$ is the charge state of the ions under consideration (obviously
 1 for a hydrogen-burning fusion plasma), $e$ is the electron charge and
@@ -226,9 +224,8 @@ factors of the time derivative depends itself on time, we can integrate
 immediately and arrive at an expression for $\rho^{pol}$:
 
 $$
-:label: eq:rho_pol
 \rho^{pol}(\vec{x}) = \nabla \cdot \bigg( \frac{n_i(\vec{x})Ze}{\omega_{ci}(\vec{x}) B(\vec{x}) }\nabla_{\perp}\phi(\vec{x},t) \bigg).
-$$
+$$ (rho_pol)
 
 Here we have introduced the assumption of $n_i$, the ion particle
 density, being independent of time. In equation
@@ -245,9 +242,8 @@ $$
 we can recast equation {eq}`rho_pol` into
 
 $$
-:label: rho_pol_epsilon
 \rho^{pol}(\vec{x}) = \epsilon_0 \nabla_{\perp} \cdot \big( \varepsilon^G(\vec{x})\nabla_{\perp}\phi(\vec{x},t) \big).
-$$
+$$ (rho_pol_epsilon)
 where
 
 $$
@@ -274,9 +270,8 @@ density. Thus, it is assumed that along a field line, the electrons obey
 the Boltzmann relation:
 
 $$
-:label: boltzmann
 n_e(\vec{x},t) = \bar{n}_e(\vec{x},0) \exp \bigg(\frac{e}{k_BT_e}(\phi(\vec{x},t) - <\phi(\vec{x},t)>_{\ell})\bigg).
-$$
+$$ (boltzmann)
 
 In equation {eq}`boltzmann`, $n_e(\vec{x},t)$ is the instantaneous
 electron particle density, $\bar{n}_e(\vec{x})$ is the average electron
@@ -287,9 +282,8 @@ very small deviations from the average electric potential, the previous
 equation can be linearized:
 
 $$
-:label: boltzmann_linear
 n_e(\vec{x},t) = \bar{n}_e(\vec{x},0) \bigg(1+\frac{e}{k_BT_e}(\phi(\vec{x},t) - <\phi(\vec{x},t)>_{\ell})\bigg).
-$$
+$$ (boltzmann_linear)
 At the risk of being too sloppy, we will equate the electron particle
 density with the electron gyrocenter density. A more careful step would
 involve gyroaveraging directly the original electron distribution
@@ -302,16 +296,14 @@ $$
 Rearranging terms and using the relation: 
 
 $$
-:label: debye_length
 \lambda_D=\bigg(\frac{\epsilon_0k_BT_e}{ne^2}\bigg)^\frac{1}{2}=\bigg(\frac{\epsilon_0k_BT_e}{\rho e}\bigg)^\frac{1}{2},
-$$
+$$ (debye_length)
 
 we arrive at: 
 
 $$
-:label: gk_poisson
 - \nabla_{\perp} \cdot \big(\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t) \big)+\frac{1}{\bar{\lambda}_{D0}} (\phi(\vec{x},t) - <\phi(\vec{x},t)>_{\ell})= \frac{1}{\epsilon_0}\Big(\rho^G_i - \bar{\rho}_{e0}^G\Big).
-$$
+$$ (gk_poisson)
 
 But for a normalization of the variables, equation
 {eq}`gk_poisson` is virtually the same as the one stated in
@@ -329,9 +321,8 @@ when necessary. Averages of averages remain unchanged and thus we arrive
 at:
 
 $$
-:label: gk_poisson_aux
 - \nabla_{\perp} \cdot \big(<\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t)>_{\ell} \big)= \frac{1}{\epsilon_0}(<\rho^G_i>_{\ell} - <\bar{\rho}_{e0}^G>_{\ell}).
-$$
+$$ (gk_poisson_aux)
 
 By making two final assumptions: that the quantities involved in the
 calculation of $\varepsilon^G(\vec{x},t)$ are not time-dependent but
@@ -342,11 +333,10 @@ operator, yielding the auxiliary equation that we need to compute
 $<\phi(\vec{x},t)>_{\ell}$:
 
 $$
-:label: gk_poisson_aux
 - \nabla_{\perp} \cdot 
 \big(\varepsilon ^G\nabla_{\perp} <\phi(\vec{x},t)>_{\ell} \big)
 = \frac{1}{\epsilon_0}(<\rho^G_i>_{\ell} - <\bar{\rho}_{e0}^G>_{\ell}).
-$$
+$$ (gk_poisson_aux)
 
 The average ion charge density can be computed from
 $\rho^G_i(\vec{x},t)$ which is input data for the solver. To compute the
@@ -362,9 +352,8 @@ version of our quasi neutral equation, after introducing all the
 assumptions:
 
 $$
-:label: gk_poisson_final
 - \nabla_{\perp} \cdot \big(\bar{\varepsilon}^G(\vec{x},0)\nabla_{\perp} \phi(\vec{x},t) \big)+\frac{1}{\bar{\lambda}_D} (\phi(\vec{x},t) - <\phi(\vec{x},t)>_{\ell})= \frac{1}{\epsilon_0}(\rho^G_i - \bar{\rho}_{i0}^G).
-$$
+$$ (gk_poisson_final)
 
 ### Exposed Interface
 
@@ -379,69 +368,6 @@ sll_solve_quasi_neutral_equation( electron_T_profile_2D,
 ```
 
 ### Usage
-
-### Status
-
-## Particle Distribution Function
-
-### Description
-
-### Exposed Interface
-
-Fundamental type:
-
-```
-sll_distribution_function_t
-```
-
-All the fundamental types in the library are implemented as pointers.
-This choice has been made to ease the addition of Python bindings, in
-case that an even higher-level interface is desired some day.
-
-Constructor and destructor:
-
-```
-sll_new_distribution_function( nr, ntheta, nphi, nvpar, mu )
-sll_delete_distribution_function( f )
-```
-
-The constructor essentially limits itself to allocating the memory for
-the type. An initialization step is required afterwards:
-
-```
-sll_initialize_df( boundary_type_r, 
-                   boundary_type_vpar, 
-                   species_charge )
-```
-
-The functions that get/set a particular value of a distribution function
-on a node are defined as macros to be able to keep a single interface
-while not risking a penalization when used in critical loops. Other
-queries on this type are implemented as ordinary functions. (Need to
-define this better, for instance, if some query functions would operate
-on integer arguments and/or real coordinates.)
-
-```
-SLL_GET_DF_VAL( i, j, k, l, df )
-SLL_SET_DF_VAL( val, i, j, k, l, df )
-sll_interpolate_df( r, theta, phi, vpar, mu )
-sll_compute_derivative( f, r, theta, phi, vpar, mu )
-sll_get_df_nr( df )
-sll_get_df_nphi( df )
-sll_get_df_ntheta( df )
-sll_get_df_nvpar( df )
-sll_get_df_mu( df )
-```
-
-The type also offers the services:
-
-```
-sll_compute_moments( df, ... )
-```
-
-### Usage
-
-### Status
 
 ## Advection Field
 
@@ -459,8 +385,6 @@ This implies that one of the options is to have multiple
 representations, for 3D, 2D, 1D.
 
 ### Usage
-
-### Status
 
 ## Advection
 
@@ -485,7 +409,4 @@ interface. The above assumes that we can devise a standard functional
 interface.
 
 ### Usage
-
-### Status
-
 

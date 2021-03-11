@@ -326,16 +326,11 @@
      Usage
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#status">
-     Status
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#particle-distribution-function">
-   Particle Distribution Function
+  <a class="reference internal nav-link" href="#advection-field">
+   Advection Field
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -353,38 +348,6 @@
      Usage
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
-     Status
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#advection-field">
-   Advection Field
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Description
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     Exposed Interface
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     Usage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     Status
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -393,23 +356,18 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+    <a class="reference internal nav-link" href="#id6">
      Description
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
+    <a class="reference internal nav-link" href="#id7">
      Exposed Interface
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
+    <a class="reference internal nav-link" href="#id8">
      Usage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
-     Status
     </a>
    </li>
   </ul>
@@ -605,9 +563,8 @@ polarization drift, etc.). In doing so, we allow ourselves to further
 separate the charge density into a polarization charge and a charge at
 the particles’ gyrocenters (gyrocenters do not polarize). Thus,
 Poisson’s equation becomes</p>
-<div class="math notranslate nohighlight">
-\[
-:label: poisson_2
+<div class="math notranslate nohighlight" id="equation-poisson-2">
+<span class="eqno">(1)<a class="headerlink" href="#equation-poisson-2" title="Permalink to this equation">¶</a></span>\[
 -\nabla ^2 \phi = \frac{1}{\epsilon_0}(\rho^G_i + \rho^{pol}_i - \rho^G_e - \rho^{pol}_e),
 \]</div>
 <p>where the indices <span class="math notranslate nohighlight">\(G\)</span>, <span class="math notranslate nohighlight">\(pol\)</span>, <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(e\)</span> indicate <em>gyrocenters</em>,
@@ -623,9 +580,8 @@ of the local magnetic field and <span class="math notranslate nohighlight">\(\ve
 perpendicular to the magnetic field. The plus/minus sign in the equation
 applies to positive and negative particles respectively. Heuristically,
 the polarization charge obeys a continuity equation:</p>
-<div class="math notranslate nohighlight">
-\[
-:label: rho_pol_continuity
+<div class="math notranslate nohighlight" id="equation-rho-pol-continuity">
+<span class="eqno">(2)<a class="headerlink" href="#equation-rho-pol-continuity" title="Permalink to this equation">¶</a></span>\[
 \frac{\partial \rho^{pol} }{\partial t} = - \nabla \cdot \vec{j}^{pol} = - \nabla \cdot (nZe \vec{v}^{pol})=- \nabla \cdot \bigg( n Ze \frac{1}{\omega_{ci}B}\frac{\partial \vec{E}_{\perp}}{\partial t}\bigg) .
 \]</div>
 <p>Here, <span class="math notranslate nohighlight">\(Z\)</span> is the charge state of the ions under consideration (obviously
@@ -633,14 +589,13 @@ the polarization charge obeys a continuity equation:</p>
 <span class="math notranslate nohighlight">\(n\)</span> is the particle density per unit volume. As long as none of the
 factors of the time derivative depends itself on time, we can integrate
 immediately and arrive at an expression for <span class="math notranslate nohighlight">\(\rho^{pol}\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-:label: eq:rho_pol
+<div class="math notranslate nohighlight" id="equation-rho-pol">
+<span class="eqno">(3)<a class="headerlink" href="#equation-rho-pol" title="Permalink to this equation">¶</a></span>\[
 \rho^{pol}(\vec{x}) = \nabla \cdot \bigg( \frac{n_i(\vec{x})Ze}{\omega_{ci}(\vec{x}) B(\vec{x}) }\nabla_{\perp}\phi(\vec{x},t) \bigg).
 \]</div>
 <p>Here we have introduced the assumption of <span class="math notranslate nohighlight">\(n_i\)</span>, the ion particle
 density, being independent of time. In equation
-<code class="xref eq docutils literal notranslate"><span class="pre">rho_pol</span></code>, we can consider that the differential
+<a class="reference internal" href="#equation-rho-pol">(3)</a>, we can consider that the differential
 operators act only in the directions perpendicular to the magnetic
 field, as these are the only terms that will survive the taking of the
 divergence. Finally, by multiplying by the proper unit factors and using
@@ -649,10 +604,9 @@ the relation</p>
 \[
 \omega_p = \bigg( \frac{ne^2} {\epsilon_0 m} \bigg)^{\frac{1}{2}}
 \]</div>
-<p>we can recast equation <code class="xref eq docutils literal notranslate"><span class="pre">rho_pol</span></code> into</p>
-<div class="math notranslate nohighlight">
-\[
-:label: rho_pol_epsilon
+<p>we can recast equation <a class="reference internal" href="#equation-rho-pol">(3)</a> into</p>
+<div class="math notranslate nohighlight" id="equation-rho-pol-epsilon">
+<span class="eqno">(4)<a class="headerlink" href="#equation-rho-pol-epsilon" title="Permalink to this equation">¶</a></span>\[
 \rho^{pol}(\vec{x}) = \epsilon_0 \nabla_{\perp} \cdot \big( \varepsilon^G(\vec{x})\nabla_{\perp}\phi(\vec{x},t) \big).
 \]</div>
 <p>where</p>
@@ -662,8 +616,8 @@ the relation</p>
 \]</div>
 <p>is called the <em>dielectric constant of the gyrokinetic vacuum</em>. With
 equation
-<code class="xref eq docutils literal notranslate"><span class="pre">rho_pol_epsilon</span></code>, and neglecting the polarization of the
-electrons, the modified Poisson equation <code class="xref eq docutils literal notranslate"><span class="pre">poisson_2</span></code> can be written as:</p>
+<a class="reference internal" href="#equation-rho-pol-epsilon">(4)</a>, and neglecting the polarization of the
+electrons, the modified Poisson equation <a class="reference internal" href="#equation-poisson-2">(1)</a> can be written as:</p>
 <div class="math notranslate nohighlight">
 \[
 -\nabla ^2 \phi(\vec{x},t) - \nabla_{\perp} \cdot \big(\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t) \big) = \frac{1}{\epsilon_0}(\rho^G_i - \rho^G_e).
@@ -676,21 +630,19 @@ along a magnetic field line and thus are able to rapidly react to
 electric potential variations through changes in the electron particle
 density. Thus, it is assumed that along a field line, the electrons obey
 the Boltzmann relation:</p>
-<div class="math notranslate nohighlight">
-\[
-:label: boltzmann
+<div class="math notranslate nohighlight" id="equation-boltzmann">
+<span class="eqno">(5)<a class="headerlink" href="#equation-boltzmann" title="Permalink to this equation">¶</a></span>\[
 n_e(\vec{x},t) = \bar{n}_e(\vec{x},0) \exp \bigg(\frac{e}{k_BT_e}(\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})\bigg).
 \]</div>
-<p>In equation <code class="xref eq docutils literal notranslate"><span class="pre">boltzmann</span></code>, <span class="math notranslate nohighlight">\(n_e(\vec{x},t)\)</span> is the instantaneous
+<p>In equation <a class="reference internal" href="#equation-boltzmann">(5)</a>, <span class="math notranslate nohighlight">\(n_e(\vec{x},t)\)</span> is the instantaneous
 electron particle density, <span class="math notranslate nohighlight">\(\bar{n}_e(\vec{x})\)</span> is the average electron
 density along the magnetic field line, <span class="math notranslate nohighlight">\(k_B\)</span> is Boltzmann’s constant,
 <span class="math notranslate nohighlight">\(T_e\)</span> is the electron temperature and the <span class="math notranslate nohighlight">\(&lt; \cdot &gt;_{\ell}\)</span> average is
 taken along the magnetic field line. By making yet another assumption of
 very small deviations from the average electric potential, the previous
 equation can be linearized:</p>
-<div class="math notranslate nohighlight">
-\[
-:label: boltzmann_linear
+<div class="math notranslate nohighlight" id="equation-boltzmann-linear">
+<span class="eqno">(6)<a class="headerlink" href="#equation-boltzmann-linear" title="Permalink to this equation">¶</a></span>\[
 n_e(\vec{x},t) = \bar{n}_e(\vec{x},0) \bigg(1+\frac{e}{k_BT_e}(\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})\bigg).
 \]</div>
 <p>At the risk of being too sloppy, we will equate the electron particle
@@ -702,22 +654,20 @@ function. With this assumption, our modified poisson becomes:</p>
 - \nabla_{\perp} \cdot \big(\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t) \big) = \frac{1}{\epsilon_0}\bigg(\rho^G_i - \bar{\rho}_{e0}^G\Big(1+\frac{e}{k_BT_e}(\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})\Big)\bigg).
 \]</div>
 <p>Rearranging terms and using the relation:</p>
-<div class="math notranslate nohighlight">
-\[
-:label: debye_length
+<div class="math notranslate nohighlight" id="equation-debye-length">
+<span class="eqno">(7)<a class="headerlink" href="#equation-debye-length" title="Permalink to this equation">¶</a></span>\[
 \lambda_D=\bigg(\frac{\epsilon_0k_BT_e}{ne^2}\bigg)^\frac{1}{2}=\bigg(\frac{\epsilon_0k_BT_e}{\rho e}\bigg)^\frac{1}{2},
 \]</div>
 <p>we arrive at:</p>
-<div class="math notranslate nohighlight">
-\[
-:label: gk_poisson
+<div class="math notranslate nohighlight" id="equation-gk-poisson">
+<span class="eqno">(8)<a class="headerlink" href="#equation-gk-poisson" title="Permalink to this equation">¶</a></span>\[
 - \nabla_{\perp} \cdot \big(\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t) \big)+\frac{1}{\bar{\lambda}_{D0}} (\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})= \frac{1}{\epsilon_0}\Big(\rho^G_i - \bar{\rho}_{e0}^G\Big).
 \]</div>
 <p>But for a normalization of the variables, equation
-<code class="xref eq docutils literal notranslate"><span class="pre">gk_poisson</span></code> is virtually the same as the one stated in
+<a class="reference internal" href="#equation-gk-poisson">(8)</a> is virtually the same as the one stated in
 the report by Latu (list here reference for “Scalable Quasineutral
 solver for gyrokinetic simulation”). Equation
-<code class="xref eq docutils literal notranslate"><span class="pre">gk_poisson</span></code> is not yet ready to solve due to the
+<a class="reference internal" href="#equation-gk-poisson">(8)</a> is not yet ready to solve due to the
 presence of the <span class="math notranslate nohighlight">\(&lt;\phi(\vec{x},t)&gt;\)</span> term. We need to average the
 solution we seek, after all. To obtain an additional equation that will
 help us find this term, we take the average of both sides of the
@@ -727,9 +677,8 @@ may extend and fill a surface or even worse.) The barred quantities have
 already been averaged so we can get them out of the averaging operator
 when necessary. Averages of averages remain unchanged and thus we arrive
 at:</p>
-<div class="math notranslate nohighlight">
-\[
-:label: gk_poisson_aux
+<div class="math notranslate nohighlight" id="equation-gk-poisson-aux">
+<span class="eqno">(10)<a class="headerlink" href="#equation-gk-poisson-aux" title="Permalink to this equation">¶</a></span>\[
 - \nabla_{\perp} \cdot \big(&lt;\varepsilon ^G(\vec{x},t)\nabla_{\perp} \phi(\vec{x},t)&gt;_{\ell} \big)= \frac{1}{\epsilon_0}(&lt;\rho^G_i&gt;_{\ell} - &lt;\bar{\rho}_{e0}^G&gt;_{\ell}).
 \]</div>
 <p>By making two final assumptions: that the quantities involved in the
@@ -739,9 +688,8 @@ vary along the domain of the average procedure (the magnetic field
 line), we can extract <span class="math notranslate nohighlight">\(\varepsilon^G(\vec{x},t)\)</span> from the average
 operator, yielding the auxiliary equation that we need to compute
 <span class="math notranslate nohighlight">\(&lt;\phi(\vec{x},t)&gt;_{\ell}\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-:label: gk_poisson_aux
+<div class="math notranslate nohighlight" id="equation-gk-poisson-aux">
+<span class="eqno">(10)<a class="headerlink" href="#equation-gk-poisson-aux" title="Permalink to this equation">¶</a></span>\[
 - \nabla_{\perp} \cdot 
 \big(\varepsilon ^G\nabla_{\perp} &lt;\phi(\vec{x},t)&gt;_{\ell} \big)
 = \frac{1}{\epsilon_0}(&lt;\rho^G_i&gt;_{\ell} - &lt;\bar{\rho}_{e0}^G&gt;_{\ell}).
@@ -754,12 +702,11 @@ quasineutrality condition, i.e.: <span class="math notranslate nohighlight">\(\r
 able to compute all the quantities involved based on the initial ion
 distribution profile.</p>
 <p>Once we calculate <span class="math notranslate nohighlight">\(&lt;\phi(\vec{x},t)&gt;_{\ell}\)</span> with equation
-<code class="xref eq docutils literal notranslate"><span class="pre">gk_poisson_aux</span></code> we can use this to solve the final
+<a class="reference internal" href="#equation-gk-poisson-aux">(10)</a> we can use this to solve the final
 version of our quasi neutral equation, after introducing all the
 assumptions:</p>
-<div class="math notranslate nohighlight">
-\[
-:label: gk_poisson_final
+<div class="math notranslate nohighlight" id="equation-gk-poisson-final">
+<span class="eqno">(11)<a class="headerlink" href="#equation-gk-poisson-final" title="Permalink to this equation">¶</a></span>\[
 - \nabla_{\perp} \cdot \big(\bar{\varepsilon}^G(\vec{x},0)\nabla_{\perp} \phi(\vec{x},t) \big)+\frac{1}{\bar{\lambda}_D} (\phi(\vec{x},t) - &lt;\phi(\vec{x},t)&gt;_{\ell})= \frac{1}{\epsilon_0}(\rho^G_i - \bar{\rho}_{i0}^G).
 \]</div>
 </div>
@@ -777,72 +724,14 @@ top-level types. Function:</p>
 <div class="section" id="usage">
 <h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="status">
-<h3>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
 </div>
-</div>
-<div class="section" id="particle-distribution-function">
-<h2>Particle Distribution Function<a class="headerlink" href="#particle-distribution-function" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="advection-field">
+<h2>Advection Field<a class="headerlink" href="#advection-field" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
 <h3>Description<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="id4">
 <h3>Exposed Interface<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>Fundamental type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sll_distribution_function_t</span>
-</pre></div>
-</div>
-<p>All the fundamental types in the library are implemented as pointers.
-This choice has been made to ease the addition of Python bindings, in
-case that an even higher-level interface is desired some day.</p>
-<p>Constructor and destructor:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sll_new_distribution_function</span><span class="p">(</span> <span class="n">nr</span><span class="p">,</span> <span class="n">ntheta</span><span class="p">,</span> <span class="n">nphi</span><span class="p">,</span> <span class="n">nvpar</span><span class="p">,</span> <span class="n">mu</span> <span class="p">)</span>
-<span class="n">sll_delete_distribution_function</span><span class="p">(</span> <span class="n">f</span> <span class="p">)</span>
-</pre></div>
-</div>
-<p>The constructor essentially limits itself to allocating the memory for
-the type. An initialization step is required afterwards:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sll_initialize_df</span><span class="p">(</span> <span class="n">boundary_type_r</span><span class="p">,</span> 
-                   <span class="n">boundary_type_vpar</span><span class="p">,</span> 
-                   <span class="n">species_charge</span> <span class="p">)</span>
-</pre></div>
-</div>
-<p>The functions that get/set a particular value of a distribution function
-on a node are defined as macros to be able to keep a single interface
-while not risking a penalization when used in critical loops. Other
-queries on this type are implemented as ordinary functions. (Need to
-define this better, for instance, if some query functions would operate
-on integer arguments and/or real coordinates.)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_GET_DF_VAL</span><span class="p">(</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">df</span> <span class="p">)</span>
-<span class="n">SLL_SET_DF_VAL</span><span class="p">(</span> <span class="n">val</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">df</span> <span class="p">)</span>
-<span class="n">sll_interpolate_df</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">vpar</span><span class="p">,</span> <span class="n">mu</span> <span class="p">)</span>
-<span class="n">sll_compute_derivative</span><span class="p">(</span> <span class="n">f</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">vpar</span><span class="p">,</span> <span class="n">mu</span> <span class="p">)</span>
-<span class="n">sll_get_df_nr</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
-<span class="n">sll_get_df_nphi</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
-<span class="n">sll_get_df_ntheta</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
-<span class="n">sll_get_df_nvpar</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
-<span class="n">sll_get_df_mu</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
-</pre></div>
-</div>
-<p>The type also offers the services:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sll_compute_moments</span><span class="p">(</span> <span class="n">df</span><span class="p">,</span> <span class="o">...</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id5">
-<h3>Usage<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="id6">
-<h3>Status<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="advection-field">
-<h2>Advection Field<a class="headerlink" href="#advection-field" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>Description<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="id8">
-<h3>Exposed Interface<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>Fundamental type:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sll_advection_field_3D_t</span>
 </pre></div>
@@ -850,20 +739,17 @@ on integer arguments and/or real coordinates.)</p>
 <p>This implies that one of the options is to have multiple
 representations, for 3D, 2D, 1D.</p>
 </div>
-<div class="section" id="id9">
-<h3>Usage<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="id10">
-<h3>Status<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>Usage<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="advection">
 <h2>Advection<a class="headerlink" href="#advection" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id11">
-<h3>Description<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>Description<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="id12">
-<h3>Exposed Interface<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>Exposed Interface<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>Fundamental type: None. This is a function that operates on multiple
 top-level types. Function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sll_advect</span><span class="p">(</span> <span class="n">distribution_function</span><span class="p">,</span> 
@@ -878,11 +764,8 @@ methods in use (PSM, BSL, …) and for which we need a standardized
 interface. The above assumes that we can devise a standard functional
 interface.</p>
 </div>
-<div class="section" id="id13">
-<h3>Usage<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="id14">
-<h3>Status<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>Usage<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>

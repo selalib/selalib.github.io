@@ -884,11 +884,6 @@ a program.
 
 Some more specific examples are needed here\...
 
-### Status
-
-Several core functionalities tested, but no comprehensive unit test done
-yet
-
 ## Remapper
 
 ### Description

@@ -274,6 +274,43 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#particle-distribution-function">
+   Particle Distribution Function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#description">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exposed-interface">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usage">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#status">
+     Status
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -284,6 +321,61 @@
                 
   <div class="section" id="particle-in-cell">
 <h1>Particle-In-Cell<a class="headerlink" href="#particle-in-cell" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="particle-distribution-function">
+<h2>Particle Distribution Function<a class="headerlink" href="#particle-distribution-function" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="exposed-interface">
+<h3>Exposed Interface<a class="headerlink" href="#exposed-interface" title="Permalink to this headline">¶</a></h3>
+<p>Fundamental type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sll_distribution_function_t</span>
+</pre></div>
+</div>
+<p>All the fundamental types in the library are implemented as pointers.
+This choice has been made to ease the addition of Python bindings, in
+case that an even higher-level interface is desired some day.</p>
+<p>Constructor and destructor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sll_new_distribution_function</span><span class="p">(</span> <span class="n">nr</span><span class="p">,</span> <span class="n">ntheta</span><span class="p">,</span> <span class="n">nphi</span><span class="p">,</span> <span class="n">nvpar</span><span class="p">,</span> <span class="n">mu</span> <span class="p">)</span>
+<span class="n">sll_delete_distribution_function</span><span class="p">(</span> <span class="n">f</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>The constructor essentially limits itself to allocating the memory for
+the type. An initialization step is required afterwards:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sll_initialize_df</span><span class="p">(</span> <span class="n">boundary_type_r</span><span class="p">,</span> 
+                   <span class="n">boundary_type_vpar</span><span class="p">,</span> 
+                   <span class="n">species_charge</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>The functions that get/set a particular value of a distribution function
+on a node are defined as macros to be able to keep a single interface
+while not risking a penalization when used in critical loops. Other
+queries on this type are implemented as ordinary functions. (Need to
+define this better, for instance, if some query functions would operate
+on integer arguments and/or real coordinates.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_GET_DF_VAL</span><span class="p">(</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">df</span> <span class="p">)</span>
+<span class="n">SLL_SET_DF_VAL</span><span class="p">(</span> <span class="n">val</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">df</span> <span class="p">)</span>
+<span class="n">sll_interpolate_df</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">vpar</span><span class="p">,</span> <span class="n">mu</span> <span class="p">)</span>
+<span class="n">sll_compute_derivative</span><span class="p">(</span> <span class="n">f</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">vpar</span><span class="p">,</span> <span class="n">mu</span> <span class="p">)</span>
+<span class="n">sll_get_df_nr</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
+<span class="n">sll_get_df_nphi</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
+<span class="n">sll_get_df_ntheta</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
+<span class="n">sll_get_df_nvpar</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
+<span class="n">sll_get_df_mu</span><span class="p">(</span> <span class="n">df</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>The type also offers the services:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sll_compute_moments</span><span class="p">(</span> <span class="n">df</span><span class="p">,</span> <span class="o">...</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="status">
+<h3>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
