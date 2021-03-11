@@ -1,6 +1,6 @@
 # Preamble
 
-Selalib is the *Se*mi*La*grangian *Lib*rary, a collection of types and
+Selalib is the **Se**mi **La**grangian **Lib**rary, a collection of types and
 its associated methods that are useful for creating parallel plasma
 physics simulations that use the semilagrangian methodology for the
 solution of the *Vlasov* equation. In its design, we have attempted to
