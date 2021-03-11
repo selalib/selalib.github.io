@@ -336,7 +336,7 @@ $$
 - \nabla_{\perp} \cdot 
 \big(\varepsilon ^G\nabla_{\perp} <\phi(\vec{x},t)>_{\ell} \big)
 = \frac{1}{\epsilon_0}(<\rho^G_i>_{\ell} - <\bar{\rho}_{e0}^G>_{\ell}).
-$$ (gk_poisson_aux)
+$$ 
 
 The average ion charge density can be computed from
 $\rho^G_i(\vec{x},t)$ which is input data for the solver. To compute the
