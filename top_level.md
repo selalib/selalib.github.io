@@ -1,4 +1,4 @@
-# Semi-Lagrangian Toolbox
+# Semi-Lagrangian
 
 ## Meshes
 

@@ -8,7 +8,6 @@
 [MINGUS](https://team.inria.fr/mingus) - [TONUS](https://team.inria.fr/tonus)
 ---
 ```{image} images/ipp_logo.gif
-:width: 100px
 ```
 +++
 ```{link-button} https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik
@@ -20,7 +19,7 @@
 :width: 100px
 ```
 +++
-```{link-button} https://www-irma.u-strasbg.fr
+```{link-button} https://irma.math.unistra.fr
 :text: Institut de Recherche Mathématique Avancée
 :classes: stretched-link
 ```
@@ -35,11 +34,20 @@
 ```
 ---
 ```{image} images/logo_ljll.gif
-:width: 100px 
+:width: 200px 
 ```
 +++
 ```{link-button} https://www.ljll.math.upmc.fr
 :text: Laboratoire Jacques-Louis Lions
+:classes: stretched-link
+```
+---
+```{image} images/irfm.jpg
+:width: 150px 
+```
++++
+```{link-button} https://irfm.cea.fr
+:text: Institut de Recherche sur la Fusion par confinement Magnétique
 :classes: stretched-link
 ```
 ````

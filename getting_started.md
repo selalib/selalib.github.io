@@ -1,7 +1,7 @@
 # Getting Started
 
 To download the developer version you need to use GIT.
-The latest development version of SeLaLib is tracked in the 'main' branch.
+The latest development version of SeLaLib is tracked in the **main** branch.
 
 Git is tracking and controlling changes in the software. Git branches
 allow frictionless context switching. Everything is local so we have
@@ -69,4 +69,4 @@ git commit -m 'Update from main and fixed conflicts'
 Merge modifications from develop as much as possible
 
 
-Full documentation for Git is available `here <http://git-scm.com/>`_.
+Full documentation for Git is available [here](http://git-scm.com/).
