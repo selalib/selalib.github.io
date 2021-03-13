@@ -55,9 +55,57 @@ make
 ctest --output-on-failure
 ```
 
+To open an issue, follow this url: <https://github.com/selalib/selalib/issues/new>
+
 ## Run a similation
 
-In simulations directory, you will find examples to use the library, every program
-must have a README file with instructions.
+In simulations directory, you will find examples to use the library, every program must have a README file with instructions.
 
-Please open an issue <https://github.com/selalib/selalib/issues/new>
+## Use as external library
+
+If selalib is already installed on your server or if you just want to build and run a simulation. Copy files in one of the simulations directory and use the Makefile below:
+
+```makefile
+SIM_NAME = bsl_dk_3d1v_polar
+NML_FILE = dksim4d_polar_input.nml
+SLL_DIR ?= /opt/selalib
+FC = h5pfc    # hfd5 wrapper for mpif90
+FFLAGS = -w -ffree-line-length-none -fall-intrinsics -O3 -fPIC -march=native -I${SLL_DIR}/include/selalib
+FLIBS = -L${SLL_DIR}/lib -lselalib -lfftw3 -ldfftpack
+
+${SIM_NAME}: sll_m_sim_${SIM_NAME}.o ${SIM_NAME}.o
+	${FC} ${FFLAGS} -o ${SIM_NAME} $^ -I${SLL_DIR}/include/selalib ${FLIBS}
+
+run: ${SIM_NAME}
+	mpirun -np 8 $^ ${NML_FILE}
+
+clean:
+	rm -f *.o ${SIM_NAME} *.mod
+
+selalib:
+	git clone https://github.com/selalib
+
+sll_build: selalib
+	mkdir -p $@
+	cd $@
+	cmake ../selalib -DCMAKE_INSTALL_PREFIX=${SLL_DIR} \
+ 	       -DBUILD_TESTING=OFF -DBUILD_SIMULATIONS=OFF
+	make install
+
+.SUFFIXES: $(SUFFIXES) .F90
+
+.F90.o:
+	$(FC) $(FFLAGS) -c $<
+
+.mod.o:
+	$(FC) $(FFLAGS) -c $*.F90
+```
+
+Download, build and install the library with:
+```bash
+make sll_build
+```
+Run your simulation :
+```
+make run
+```

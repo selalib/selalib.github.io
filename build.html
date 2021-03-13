@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="User guide" href="user_guide.html" />
-    <link rel="prev" title="Equations" href="equations.html" />
+    <link rel="prev" title="SeLaLib" href="selalib.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -85,18 +85,6 @@
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
- <span class="caption-text">
-  Mathematics
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="equations.html">
-   Equations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
  <span class="caption-text">
   User guide
  </span>
@@ -130,6 +118,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="pic.html">
    Particle-In-Cell
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Examples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="equations.html">
+   Equations
   </a>
  </li>
 </ul>
@@ -310,6 +310,11 @@
    Run a similation
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-as-external-library">
+   Use as external library
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -381,12 +386,58 @@ make
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ctest --output-on-failure
 </pre></div>
 </div>
+<p>To open an issue, follow this url: <a class="reference external" href="https://github.com/selalib/selalib/issues/new">https://github.com/selalib/selalib/issues/new</a></p>
 </div>
 <div class="section" id="run-a-similation">
 <h2>Run a similation<a class="headerlink" href="#run-a-similation" title="Permalink to this headline">¶</a></h2>
-<p>In simulations directory, you will find examples to use the library, every program
-must have a README file with instructions.</p>
-<p>Please open an issue <a class="reference external" href="https://github.com/selalib/selalib/issues/new">https://github.com/selalib/selalib/issues/new</a></p>
+<p>In simulations directory, you will find examples to use the library, every program must have a README file with instructions.</p>
+</div>
+<div class="section" id="use-as-external-library">
+<h2>Use as external library<a class="headerlink" href="#use-as-external-library" title="Permalink to this headline">¶</a></h2>
+<p>If selalib is already installed on your server or if you just want to build and run a simulation. Copy files in one of the simulations directory and use the Makefile below:</p>
+<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">SIM_NAME</span> <span class="o">=</span> bsl_dk_3d1v_polar
+<span class="nv">NML_FILE</span> <span class="o">=</span> dksim4d_polar_input.nml
+<span class="nv">SLL_DIR</span> <span class="o">?=</span> /opt/selalib
+<span class="nv">FC</span> <span class="o">=</span> h5pfc    <span class="c1"># hfd5 wrapper for mpif90</span>
+<span class="nv">FFLAGS</span> <span class="o">=</span> -w -ffree-line-length-none -fall-intrinsics -O3 -fPIC -march<span class="o">=</span>native -I<span class="si">${</span><span class="nv">SLL_DIR</span><span class="si">}</span>/include/selalib
+<span class="nv">FLIBS</span> <span class="o">=</span> -L<span class="si">${</span><span class="nv">SLL_DIR</span><span class="si">}</span>/lib -lselalib -lfftw3 -ldfftpack
+
+<span class="nf">${SIM_NAME}</span><span class="o">:</span> <span class="n">sll_m_sim_</span>${<span class="n">SIM_NAME</span>}.<span class="n">o</span> ${<span class="n">SIM_NAME</span>}.<span class="n">o</span>
+	<span class="si">${</span><span class="nv">FC</span><span class="si">}</span> <span class="si">${</span><span class="nv">FFLAGS</span><span class="si">}</span> -o <span class="si">${</span><span class="nv">SIM_NAME</span><span class="si">}</span> $^ -I<span class="si">${</span><span class="nv">SLL_DIR</span><span class="si">}</span>/include/selalib <span class="si">${</span><span class="nv">FLIBS</span><span class="si">}</span>
+
+<span class="nf">run</span><span class="o">:</span> ${<span class="n">SIM_NAME</span>}
+	mpirun -np <span class="m">8</span> $^ <span class="si">${</span><span class="nv">NML_FILE</span><span class="si">}</span>
+
+<span class="nf">clean</span><span class="o">:</span>
+	rm -f *.o <span class="si">${</span><span class="nv">SIM_NAME</span><span class="si">}</span> *.mod
+
+<span class="nf">selalib</span><span class="o">:</span>
+	git clone https://github.com/selalib
+
+<span class="nf">sll_build</span><span class="o">:</span> <span class="n">selalib</span>
+	mkdir -p <span class="nv">$@</span>
+	<span class="nb">cd</span> <span class="nv">$@</span>
+	cmake ../selalib -DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="si">${</span><span class="nv">SLL_DIR</span><span class="si">}</span> <span class="se">\</span>
+ 	       -DBUILD_TESTING<span class="o">=</span>OFF -DBUILD_SIMULATIONS<span class="o">=</span>OFF
+	make install
+
+<span class="nf">.SUFFIXES</span><span class="o">:</span> <span class="k">$(</span><span class="nv">SUFFIXES</span><span class="k">)</span> .<span class="n">F</span>90
+
+<span class="nf">.F90.o</span><span class="o">:</span>
+	<span class="k">$(</span>FC<span class="k">)</span> <span class="k">$(</span>FFLAGS<span class="k">)</span> -c $&lt;
+
+<span class="nf">.mod.o</span><span class="o">:</span>
+	<span class="k">$(</span>FC<span class="k">)</span> <span class="k">$(</span>FFLAGS<span class="k">)</span> -c <span class="nv">$*</span>.F90
+</pre></div>
+</div>
+<p>Download, build and install the library with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make sll_build
+</pre></div>
+</div>
+<p>Run your simulation :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">run</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -415,7 +466,7 @@ must have a README file with instructions.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="equations.html" title="previous page">Equations</a>
+    <a class='left-prev' id="prev-link" href="selalib.html" title="previous page">SeLaLib</a>
     <a class='right-next' id="next-link" href="user_guide.html" title="next page">User guide</a>
 
         </div>
@@ -429,7 +480,7 @@ must have a README file with instructions.</p>
           By The SeLaLib project team<br/>
         
             &copy; Copyright 2020.<br/>
-          Last updated on 11 Mar 2021.<br/>
+          Last updated on 13 Mar 2021.<br/>
       </p>
     </div>
   </footer>

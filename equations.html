@@ -57,8 +57,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Build the library" href="build.html" />
-    <link rel="prev" title="SeLaLib" href="selalib.html" />
+    <link rel="next" title="Getting Started" href="getting_started.html" />
+    <link rel="prev" title="Particle-In-Cell" href="pic.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -87,18 +87,6 @@
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
- <span class="caption-text">
-  Mathematics
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Equations
-  </a>
- </li>
-</ul>
-<p class="caption collapsible-parent">
  <span class="caption-text">
   User guide
  </span>
@@ -132,6 +120,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="pic.html">
    Particle-In-Cell
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Examples
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Equations
   </a>
  </li>
 </ul>
@@ -286,16 +286,66 @@
   <a class="reference internal nav-link" href="#advection">
    Advection
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rigit-body-rotation">
+     Rigit body rotation:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#translation">
+     Translation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#swirling-flow">
+     Swirling flow
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vlasovpoisson">
    Vlasov–Poisson
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#landau-damping">
+     Landau damping
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-stream-instability">
+     Two-stream instability:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bump-on-tail">
+     Bump-on-tail:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keen-waves-1d1v-cf-afeyan14-ponderomotive-force-drive-electric-field-added">
+     KEEN waves (1d1v) (cf.
+     <span class="xref cite">
+      Afeyan14
+     </span>
+     ): ponderomotive force drive electric field added
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vlasovmaxwell">
    Vlasov–Maxwell
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weibel-instability">
+     Weibel instability
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#guiding-center">
@@ -327,84 +377,93 @@
 \[
 \partial_t f(t,\mathbf{x}) + A \cdot \nabla_{\mathbf{x}} f(t,\mathbf{x}) = 0.
 \]</div>
-<ul class="simple">
-<li><p>Dimensions: 1d, 2d, 3d.</p></li>
-<li><p>Identifier in SeLaLib: <code class="docutils literal notranslate"><span class="pre">adv</span></code>.</p></li>
-<li><p>Typical cases:</p>
-<ul>
-<li><p>2D Rotation: <span class="math notranslate nohighlight">\(A = \begin{pmatrix}
-  0 &amp; -1 \\ 1 &amp; 0
-  \end{pmatrix}\)</span></p></li>
-<li><p>Translation: <span class="math notranslate nohighlight">\(A\)</span> diagonal, time independent.</p></li>
-<li><p>Swirling flow (cf. <span id="id1">[<a class="reference internal" href="markdown.html#id5"><span>CMV12</span></a>]</span>)</p></li>
-</ul>
-</li>
-</ul>
+<div class="section" id="rigit-body-rotation">
+<h3>Rigit body rotation:<a class="headerlink" href="#rigit-body-rotation" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+        0 &amp; -1 \\ 1 &amp; 0
+        \end{pmatrix}
+\end{split}\]</div>
+</div>
+<div class="section" id="translation">
+<h3>Translation<a class="headerlink" href="#translation" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(A\)</span> diagonal, time independent.</p>
+</div>
+<div class="section" id="swirling-flow">
+<h3>Swirling flow<a class="headerlink" href="#swirling-flow" title="Permalink to this headline">¶</a></h3>
+<p>Here we apply a time dependent velocity field <span id="id1">[<a class="reference internal" href="markdown.html#id5"><span>CMV12</span></a>]</span>
+The swirling flow distorts the initial distribution and reaching a maximum
+distortion at <span class="math notranslate nohighlight">\(t=T/2\)</span>. At that point the flow reverses and the distribution
+returns to its initial value.</p>
 <div class="math notranslate nohighlight">
 \[
 \partial_t f + \partial_x \left(\sin^2(\pi x) \sin(2\pi y)g(t) f\right) + \partial_y \left(-\sin^2(\pi y) \sin (2\pi x) g(t)f\right) = 0.
 \]</div>
+<p>where <span class="math notranslate nohighlight">\(g(t) = cos(\pi t / T ) \)</span>.</p>
+</div>
 </div>
 <div class="section" id="vlasovpoisson">
 <h2>Vlasov–Poisson<a class="headerlink" href="#vlasovpoisson" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[
-\partial_t f(t,\mathbf{x},\mathbf{v}) + \mathbf{v}\nabla_{\mathbf{x}} f(t,\mathbf{x},\mathbf{v}) + \frac{q}{m} \mathbf{E}(t,\mathbf{x}) \nabla_{\mathbf{v}} f(t,\mathbf{x},\mathbf{v}) = 0
+\partial_t f(t,\mathbf{x},\mathbf{v}) + 
+\mathbf{v}\nabla_{\mathbf{x}} f(t,\mathbf{x},\mathbf{v}) + 
+\frac{q}{m} \mathbf{E}(t,\mathbf{x}) \nabla_{\mathbf{v}} f(t,\mathbf{x},\mathbf{v}) = 0
 \]</div>
 <div class="math notranslate nohighlight">
 \[
 -\Delta \phi(t,\mathbf{x}) =  1- \rho(t, \mathbf{x})
 \]</div>
-<ul>
+<ul class="simple">
 <li><p>Dimensions: 1d1v, 2d2v, 3d3v</p></li>
 <li><p>Identifier in SeLaLib: <code class="docutils literal notranslate"><span class="pre">vp</span></code></p></li>
-<li><p>Typical initial conditions:</p>
-<ul class="simple">
-<li><p>Landau damping:</p></li>
+<li><p>Typical initial conditions:</p></li>
 </ul>
+<div class="section" id="landau-damping">
+<h3>Landau damping<a class="headerlink" href="#landau-damping" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[
-    f_0 = (1+\varepsilon \sum_j \cos(k_jx_j)) /\sqrt{2\pi}  (\exp(-0.5\|\mathbf{v}\|^2))
-    \]</div>
-<ul>
-<li><p>Usual parameters:</p>
+f_0 = (1+\varepsilon \sum_j \cos(k_jx_j)) /\sqrt{2\pi}  (\exp(-0.5\|\mathbf{v}\|^2))
+\]</div>
 <ul class="simple">
 <li><p>Linear Landau damping: <span class="math notranslate nohighlight">\(k_x=0.5\)</span>, <span class="math notranslate nohighlight">\(\varepsilon = 0.01\)</span></p></li>
 <li><p>Non-linear Landau damping: <span class="math notranslate nohighlight">\(k_x =0.5\)</span>, <span class="math notranslate nohighlight">\(\varepsilon = 0.5\)</span></p></li>
 </ul>
-</li>
-<li><p>Two-stream instability:</p>
+</div>
+<div class="section" id="two-stream-instability">
+<h3>Two-stream instability:<a class="headerlink" href="#two-stream-instability" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Version 1 (cf. <span id="id2">[<a class="reference internal" href="markdown.html#id21"><span>CGLSonnendrucker08</span></a>]</span>):</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-        f_0 = (1+\varepsilon \cos(k_xx))0.5 /\sqrt{2\pi}  (\exp(-0.5 (v-v_0)^2)+ \exp(-0.5(v+v_0)^2))
-        \]</div>
+    f_0 = (1+\varepsilon \cos(k_xx))0.5 /\sqrt{2\pi}  (\exp(-0.5 (v-v_0)^2)+ \exp(-0.5(v+v_0)^2))
+   \]</div>
 <ul class="simple">
 <li><p>Version 2 (cf. <span id="id3">[<a class="reference internal" href="markdown.html#id22"><span>FSonnendrucker03</span></a>]</span>):</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-        f_0 = \frac{2}{7\sqrt{2\pi}}\left( 1+ 5v^2 \right) \left( 1+ \alpha \left( (\cos(2kx)+\cos(3kx) \right)/1.2 + \cos(kx) \right) \mathrm{e}^{-v^2/2}
-        \]</div>
-</li>
-<li><p>Bump-on-tail:</p>
+    f_0 = \frac{2}{7\sqrt{2\pi}}\left( 1+ 5v^2 \right)
+          \left( 1+ \alpha \left( (\cos(2kx)+\cos(3kx) 
+          \right)/1.2 + \cos(kx) \right) \mathrm{e}^{-v^2/2}
+   \]</div>
+</div>
+<div class="section" id="bump-on-tail">
+<h3>Bump-on-tail:<a class="headerlink" href="#bump-on-tail" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[
-        f_0(x,v) = \left(\frac{9}{10 \sqrt{2\pi}} \mathrm{e}^{-0.5 v^2} + \frac{2}{10 \sqrt{2\pi}} \mathrm{e}^{-2 (v-4.5)^2} \right) (1+\alpha \cos(kx)),
-        \]</div>
-</li>
-<li><p>KEEN waves (1d1v) (cf. <span id="id4">[<a class="reference internal" href="markdown.html#id17"><span>ACC+14</span></a>]</span>): ponderomotive force drive
-electric field added</p>
+ f_0(x,v) = \left(\frac{9}{10 \sqrt{2\pi}} \mathrm{e}^{-0.5 v^2} 
+ + \frac{2}{10 \sqrt{2\pi}} \mathrm{e}^{-2 (v-4.5)^2} \right) (1+\alpha \cos(kx)),
+\]</div>
+</div>
+<div class="section" id="keen-waves-1d1v-cf-afeyan14-ponderomotive-force-drive-electric-field-added">
+<h3>KEEN waves (1d1v) (cf. <span id="id4">[<a class="reference internal" href="markdown.html#id17"><span>ACC+14</span></a>]</span>): ponderomotive force drive electric field added<a class="headerlink" href="#keen-waves-1d1v-cf-afeyan14-ponderomotive-force-drive-electric-field-added" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[
-        E_{\mathrm{pond}}(t,x) = a_{\mathrm{Dr}} k_{\mathrm{Dr}} a(t) \sin(k_{\mathrm{Dr}}x-\omega_{\mathrm{Dr}}t).
-        \]</div>
-</li>
-</ul>
-</li>
-</ul>
+ E_{\mathrm{pond}}(t,x) = a_{\mathrm{Dr}} k_{\mathrm{Dr}} a(t) \sin(k_{\mathrm{Dr}}x-\omega_{\mathrm{Dr}}t).
+\]</div>
+</div>
 </div>
 <div class="section" id="vlasovmaxwell">
 <h2>Vlasov–Maxwell<a class="headerlink" href="#vlasovmaxwell" title="Permalink to this headline">¶</a></h2>
@@ -413,56 +472,34 @@ electric field added</p>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-  \begin{aligned}
+\begin{aligned}
       &amp;&amp;\partial_t f(t,x,\mathbf{v}) + v_1 \partial_{x_1} f(t,x,\mathbf{v}) + \mathbf{E}(t, x) \cdot \nabla_{\mathbf{v}} f(t, x, \mathbf{v}) + B v_2 \partial_{v_1} f(t,x,\mathbf{v}) - B v_1 \partial_{v_2} f(t,x,\mathbf{v}) = 0, \\
       &amp;&amp; \partial_t B(t,x) = - \partial_{x_1} E_2, \\
       &amp;&amp; \partial_t E_2 = - \partial_{x_1} B - \int_{\mathsf{R}^1} v_2 f(t, x, \mathbf{v}) \, \mathrm{d}v,\\
       &amp;&amp; \partial_t E_1 = - \int_{\mathsf{R}^1} v_1 f(t, x, \mathbf{v}) \, \mathrm{d}v.\end{aligned}
-  \end{split}\]</div>
-<ul>
-<li><p>Identifier in SeLaLib: <code class="docutils literal notranslate"><span class="pre">vm</span></code></p></li>
-<li><p>Typical initial conditions:</p>
-<ul>
-<li><p>Weibel instability (cf. <span id="id5">[<a class="reference internal" href="markdown.html#id20"><span>CEF15</span></a>]</span>):</p>
-<ul class="simple">
-<li><p>Initial condition:</p></li>
-</ul>
+\end{split}\]</div>
+<div class="section" id="weibel-instability">
+<h3>Weibel instability<a class="headerlink" href="#weibel-instability" title="Permalink to this headline">¶</a></h3>
+<p>Initial condition (cf. <span id="id5">[<a class="reference internal" href="markdown.html#id20"><span>CEF15</span></a>]</span>):</p>
 <div class="math notranslate nohighlight">
 \[
-           f_0(x_1,v_1,v_2) = \frac{1}{\pi v_{th} \sqrt{T_r}} \mathrm{e}^{-(v_1^2+v_2^2/T_r)/v_{th}^2}(1+\alpha \cos(kx_1)
-           \]</div>
-<ul class="simple">
-<li><p>Initial magnetic field: <span class="math notranslate nohighlight">\(B_0(x_1) = \beta \cos(kx_1)\)</span></p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+f_0(x_1,v_1,v_2) = \frac{1}{\pi v_{th} \sqrt{T_r}} \mathrm{e}^{-(v_1^2+v_2^2/T_r)/v_{th}^2}(1+\alpha \cos(kx_1)
+\]</div>
+<p>Initial magnetic field: <span class="math notranslate nohighlight">\(B_0(x_1) = \beta \cos(kx_1)\)</span></p>
+</div>
 </div>
 <div class="section" id="guiding-center">
 <h2>Guiding center<a class="headerlink" href="#guiding-center" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Equation in polar coordinates:</p></li>
-</ul>
+<p>Equation in polar coordinates:</p>
 <div class="math notranslate nohighlight">
 \[
 \partial_t f(t,r,\theta) - \frac{\partial_{\theta}\Phi(r, \theta)}{r} \partial_r f(t,r,\theta) +  \frac{\partial_{r}\Phi}{r} \partial_{\theta} f  = 0.
 \]</div>
-<ul class="simple">
-<li><p>Dimensions: 2d(0v)</p></li>
-<li><p>Identifier in SeLaLib: <code class="docutils literal notranslate"><span class="pre">gc</span></code></p></li>
-<li><p>Typical cases:</p>
-<ul>
-<li><p>Diocotron instability <span id="id6">[<a class="reference internal" href="markdown.html#id18"><span>CGH+14</span></a>]</span></p></li>
-</ul>
-</li>
-</ul>
+<p>Diocotron instability <span id="id6">[<a class="reference internal" href="markdown.html#id18"><span>CGH+14</span></a>]</span></p>
 </div>
 <div class="section" id="drift-kinetic">
 <h2>Drift kinetic<a class="headerlink" href="#drift-kinetic" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Equation in polar coordinates:</p></li>
-</ul>
+<p>Equation in polar coordinates:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -504,8 +541,8 @@ electric field added</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="selalib.html" title="previous page">SeLaLib</a>
-    <a class='right-next' id="next-link" href="build.html" title="next page">Build the library</a>
+    <a class='left-prev' id="prev-link" href="pic.html" title="previous page">Particle-In-Cell</a>
+    <a class='right-next' id="next-link" href="getting_started.html" title="next page">Getting Started</a>
 
         </div>
         
@@ -518,7 +555,7 @@ electric field added</p>
           By The SeLaLib project team<br/>
         
             &copy; Copyright 2020.<br/>
-          Last updated on 11 Mar 2021.<br/>
+          Last updated on 13 Mar 2021.<br/>
       </p>
     </div>
   </footer>
