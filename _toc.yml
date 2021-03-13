@@ -15,8 +15,13 @@
     sections:
     - file: translation
     - file: rotation
-    - file: swirling_flow
+    - file: swirling-flow
   - file: vlasov-poisson
+    sections:
+    - file: landau
+    - file: tsi
+    - file: bot
+    - file: keen
   - file: vlasov-maxwell
   - file: guiding-center
   - file: drift-kinetic
