@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index</title>
+    <title>Vlasov–Poisson</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -52,9 +52,13 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="index" title="Index" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Vlasov–Maxwell" href="vlasov-maxwell.html" />
+    <link rel="prev" title="Advection" href="advection.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -124,14 +128,14 @@
   Examples
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="advection.html">
    Advection
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="vlasov-poisson.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Vlasov–Poisson
   </a>
  </li>
@@ -241,6 +245,23 @@
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/vlasov-poisson.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -252,10 +273,12 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/selalib/selalib.github.io/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/selalib/selalib.github.io/issues/new?title=Issue%20on%20page%20%2Fvlasov-poisson.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/selalib/selalib.github.io/edit/main/vlasov-poisson.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -273,6 +296,40 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#landau-damping">
+   Landau damping
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-stream-instability">
+   Two-stream instability:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bump-on-tail">
+   Bump-on-tail:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#keen-waves-1d1v-cf-afeyan14-ponderomotive-force-drive-electric-field-added">
+   KEEN waves (1d1v) (cf.
+   <span class="xref cite">
+    Afeyan14
+   </span>
+   ): ponderomotive force drive electric field added
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -281,19 +338,97 @@
         
               <div>
                 
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="vlasovpoisson">
+<h1>Vlasov–Poisson<a class="headerlink" href="#vlasovpoisson" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate nohighlight">
+\[
+\partial_t f(t,\mathbf{x},\mathbf{v}) + 
+\mathbf{v}\nabla_{\mathbf{x}} f(t,\mathbf{x},\mathbf{v}) + 
+\frac{q}{m} \mathbf{E}(t,\mathbf{x}) \nabla_{\mathbf{v}} f(t,\mathbf{x},\mathbf{v}) = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+-\Delta \phi(t,\mathbf{x}) =  1- \rho(t, \mathbf{x})
+\]</div>
+<ul class="simple">
+<li><p>Dimensions: 1d1v, 2d2v, 3d3v</p></li>
+<li><p>Identifier in SeLaLib: <code class="docutils literal notranslate"><span class="pre">vp</span></code></p></li>
+<li><p>Typical initial conditions:</p></li>
+</ul>
+<div class="section" id="landau-damping">
+<h2>Landau damping<a class="headerlink" href="#landau-damping" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[
+f_0 = (1+\varepsilon \sum_j \cos(k_jx_j)) /\sqrt{2\pi}  (\exp(-0.5\|\mathbf{v}\|^2))
+\]</div>
+<ul class="simple">
+<li><p>Linear Landau damping: <span class="math notranslate nohighlight">\(k_x=0.5\)</span>, <span class="math notranslate nohighlight">\(\varepsilon = 0.01\)</span></p></li>
+<li><p>Non-linear Landau damping: <span class="math notranslate nohighlight">\(k_x =0.5\)</span>, <span class="math notranslate nohighlight">\(\varepsilon = 0.5\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="two-stream-instability">
+<h2>Two-stream instability:<a class="headerlink" href="#two-stream-instability" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Version 1 (cf. <span id="id1">[<a class="reference internal" href="markdown.html#id21"><span>CGLSonnendrucker08</span></a>]</span>):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+    f_0 = (1+\varepsilon \cos(k_xx))0.5 /\sqrt{2\pi}  (\exp(-0.5 (v-v_0)^2)+ \exp(-0.5(v+v_0)^2))
+   \]</div>
+<ul class="simple">
+<li><p>Version 2 (cf. <span id="id2">[<a class="reference internal" href="markdown.html#id22"><span>FSonnendrucker03</span></a>]</span>):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+    f_0 = \frac{2}{7\sqrt{2\pi}}\left( 1+ 5v^2 \right)
+          \left( 1+ \alpha \left( (\cos(2kx)+\cos(3kx) 
+          \right)/1.2 + \cos(kx) \right) \mathrm{e}^{-v^2/2}
+   \]</div>
+</div>
+<div class="section" id="bump-on-tail">
+<h2>Bump-on-tail:<a class="headerlink" href="#bump-on-tail" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[
+ f_0(x,v) = \left(\frac{9}{10 \sqrt{2\pi}} \mathrm{e}^{-0.5 v^2} 
+ + \frac{2}{10 \sqrt{2\pi}} \mathrm{e}^{-2 (v-4.5)^2} \right) (1+\alpha \cos(kx)),
+\]</div>
+</div>
+<div class="section" id="keen-waves-1d1v-cf-afeyan14-ponderomotive-force-drive-electric-field-added">
+<h2>KEEN waves (1d1v) (cf. <span id="id3">[<a class="reference internal" href="markdown.html#id17"><span>ACC+14</span></a>]</span>): ponderomotive force drive electric field added<a class="headerlink" href="#keen-waves-1d1v-cf-afeyan14-ponderomotive-force-drive-electric-field-added" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[
+ E_{\mathrm{pond}}(t,x) = a_{\mathrm{Dr}} k_{\mathrm{Dr}} a(t) \sin(k_{\mathrm{Dr}}x-\omega_{\mathrm{Dr}}t).
+\]</div>
+</div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="advection.html" title="previous page">Advection</a>
+    <a class='right-next' id="next-link" href="vlasov-maxwell.html" title="next page">Vlasov–Maxwell</a>
 
         </div>
         
