@@ -1,9 +1,5 @@
 - file: selalib
 
-- part: Mathematics
-  chapters:
-  - file: equations
-
 - part: User guide
   chapters:
   - file: build
@@ -12,6 +8,10 @@
   - file: mid_level
   - file: top_level
   - file: pic
+
+- part: Examples
+  chapters:
+  - file: equations
 
 - part: Developer guide
   chapters:
