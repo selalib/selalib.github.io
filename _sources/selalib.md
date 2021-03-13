@@ -32,3 +32,7 @@ input-output modules as well as parallelization strategies. Moreover, a
 collection of simulations for typical test cases with various
 discretization schemes supplements the library.
 
+## Acknowledgements
+
+SeLalib has many {doc}`contributors`, many of whom are member of these
+{doc}`institutions`.
