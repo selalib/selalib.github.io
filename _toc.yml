@@ -12,6 +12,10 @@
 - part: Examples
   chapters:
   - file: advection
+    sections:
+    - file: translation
+    - file: rotation
+    - file: swirling_flow
   - file: vlasov-poisson
   - file: vlasov-maxwell
   - file: guiding-center
