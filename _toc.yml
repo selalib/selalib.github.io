@@ -11,7 +11,11 @@
 
 - part: Examples
   chapters:
-  - file: equations
+  - file: advection
+  - file: vlasov-poisson
+  - file: vlasov-maxwell
+  - file: guiding-center
+  - file: drift-kinetic
 
 - part: Developer guide
   chapters:
