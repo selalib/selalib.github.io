@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Vlasov–Poisson" href="vlasov-poisson.html" />
+    <link rel="next" title="Translation" href="translation.html" />
     <link rel="prev" title="Particle-In-Cell" href="pic.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -129,10 +129,29 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="current reference internal" href="#">
    Advection
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="translation.html">
+     Translation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rotation.html">
+     Rotation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="swirling_flow.html">
+     Swirling flow
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="vlasov-poisson.html">
@@ -296,31 +315,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rigit-body-rotation">
-   Rigit body rotation:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#translation">
-   Translation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#swirling-flow">
-   Swirling flow
-  </a>
- </li>
-</ul>
-
-        </nav>
-        
         </div>
     </div>
 </div>
@@ -335,29 +329,14 @@
 \[
 \partial_t f(t,\mathbf{x}) + A \cdot \nabla_{\mathbf{x}} f(t,\mathbf{x}) = 0.
 \]</div>
-<div class="section" id="rigit-body-rotation">
-<h2>Rigit body rotation:<a class="headerlink" href="#rigit-body-rotation" title="Permalink to this headline">¶</a></h2>
-<div class="math notranslate nohighlight">
-\[\begin{split}A = \begin{pmatrix}
-        0 &amp; -1 \\ 1 &amp; 0
-        \end{pmatrix}
-\end{split}\]</div>
+<div class="tableofcontents-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rotation.html">Rotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swirling_flow.html">Swirling flow</a></li>
+</ul>
 </div>
-<div class="section" id="translation">
-<h2>Translation<a class="headerlink" href="#translation" title="Permalink to this headline">¶</a></h2>
-<p><span class="math notranslate nohighlight">\(A\)</span> diagonal, time independent.</p>
-</div>
-<div class="section" id="swirling-flow">
-<h2>Swirling flow<a class="headerlink" href="#swirling-flow" title="Permalink to this headline">¶</a></h2>
-<p>Here we apply a time dependent velocity field <span id="id1">[<a class="reference internal" href="markdown.html#id5"><span>CMV12</span></a>]</span>
-The swirling flow distorts the initial distribution and reaching a maximum
-distortion at <span class="math notranslate nohighlight">\(t=T/2\)</span>. At that point the flow reverses and the distribution
-returns to its initial value.</p>
-<div class="math notranslate nohighlight">
-\[
-\partial_t f + \partial_x \left(\sin^2(\pi x) \sin(2\pi y)g(t) f\right) + \partial_y \left(-\sin^2(\pi y) \sin (2\pi x) g(t)f\right) = 0.
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(g(t) = cos(\pi t / T ) \)</span>.</p>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -387,7 +366,7 @@ returns to its initial value.</p>
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="pic.html" title="previous page">Particle-In-Cell</a>
-    <a class='right-next' id="next-link" href="vlasov-poisson.html" title="next page">Vlasov–Poisson</a>
+    <a class='right-next' id="next-link" href="translation.html" title="next page">Translation</a>
 
         </div>
         

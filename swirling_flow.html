@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Build the library</title>
+    <title>Swirling flow</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -52,11 +52,13 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="User guide" href="user_guide.html" />
-    <link rel="prev" title="SeLaLib" href="selalib.html" />
+    <link rel="next" title="Vlasov–Poisson" href="vlasov-poisson.html" />
+    <link rel="prev" title="Rotation" href="rotation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -89,9 +91,9 @@
   User guide
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="build.html">
    Build the library
   </a>
  </li>
@@ -126,12 +128,12 @@
   Examples
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="advection.html">
    Advection
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="translation.html">
      Translation
@@ -142,8 +144,8 @@
      Rotation
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="swirling_flow.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Swirling flow
     </a>
    </li>
@@ -270,7 +272,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/build.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/swirling_flow.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -290,10 +292,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/selalib/selalib.github.io/issues/new?title=Issue%20on%20page%20%2Fbuild.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/selalib/selalib.github.io/issues/new?title=Issue%20on%20page%20%2Fswirling_flow.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/selalib/selalib.github.io/edit/main/build.md"><button
+        <a class="edit-button" href="https://github.com/selalib/selalib.github.io/edit/main/swirling_flow.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -313,51 +315,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-dependencies-on-ubuntu">
-   Install dependencies on Ubuntu
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-dependencies-on-fedora">
-   Install dependencies on Fedora
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-the-sources">
-   Download the sources
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Build the library
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#check-your-installation">
-   Check your installation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#run-a-similation">
-   Run a similation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#use-as-external-library">
-   Use as external library
-  </a>
- </li>
-</ul>
-
-        </nav>
-        
         </div>
     </div>
 </div>
@@ -366,118 +323,17 @@
         
               <div>
                 
-  <div class="section" id="build-the-library">
-<h1>Build the library<a class="headerlink" href="#build-the-library" title="Permalink to this headline">¶</a></h1>
-<p>The prerequisites can be installed with a couple of commands on linux systems.</p>
-<ul class="simple">
-<li><p>MPI, Most of our testing is done with openmpi but mpich should also work.</p></li>
-<li><p>build tools: CMake, python3</p></li>
-<li><p>compilers: fortran</p></li>
-<li><p>libraries: HDF5, FFTW3, LAPACK</p></li>
-<li><p>documentation (optional): Doxygen</p></li>
-<li><p>visualisation : gnuplot, paraview, VisIt</p></li>
-</ul>
-<div class="section" id="install-dependencies-on-ubuntu">
-<h2>Install dependencies on Ubuntu<a class="headerlink" href="#install-dependencies-on-ubuntu" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install cmake git
-sudo apt-get install libopenmpi-dev openmpi-bin libhdf5-openmpi-dev
-sudo apt-get install  libfftw3-dev liblapack-dev libopenblas-dev
-sudo apt-get install doxygen texlive graphviz
-</pre></div>
-</div>
-</div>
-<div class="section" id="install-dependencies-on-fedora">
-<h2>Install dependencies on Fedora<a class="headerlink" href="#install-dependencies-on-fedora" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install git-all
-sudo dnf install cmake python3
-sudo dnf install gcc-gfortran
-sudo dnf install hdf5-openmpi-devel openmpi-devel fftw-devel openblas-devel
-sudo dnf install doxygen texlive-latex graphviz
-</pre></div>
-</div>
-<p>Don’t forget to load the mpi module</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">mpi</span><span class="o">/</span><span class="n">openmpi</span><span class="o">-</span><span class="n">x86_64</span>
-</pre></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>mpich on Fedora is not supported.</p>
-</div>
-</div>
-<div class="section" id="download-the-sources">
-<h2>Download the sources<a class="headerlink" href="#download-the-sources" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/selalib/selalib
-<span class="nb">cd</span> selalib
-</pre></div>
-</div>
-</div>
-<div class="section" id="id1">
-<h2>Build the library<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir build
-<span class="nb">cd</span>  build
-cmake ..
-make 
-</pre></div>
-</div>
-</div>
-<div class="section" id="check-your-installation">
-<h2>Check your installation<a class="headerlink" href="#check-your-installation" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ctest --output-on-failure
-</pre></div>
-</div>
-<p>To open an issue, follow this url: <a class="reference external" href="https://github.com/selalib/selalib/issues/new">https://github.com/selalib/selalib/issues/new</a></p>
-</div>
-<div class="section" id="run-a-similation">
-<h2>Run a similation<a class="headerlink" href="#run-a-similation" title="Permalink to this headline">¶</a></h2>
-<p>In simulations directory, you will find examples to use the library, every program must have a README file with instructions.</p>
-</div>
-<div class="section" id="use-as-external-library">
-<h2>Use as external library<a class="headerlink" href="#use-as-external-library" title="Permalink to this headline">¶</a></h2>
-<p>If selalib is already installed on your server or if you just want to build and run a simulation. Copy files in one of the simulations directory and use the Makefile below:</p>
-<div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nv">SIM_NAME</span> <span class="o">=</span> bsl_dk_3d1v_polar
-<span class="nv">NML_FILE</span> <span class="o">=</span> dksim4d_polar_input.nml
-<span class="nv">SLL_DIR</span> <span class="o">?=</span> /opt/selalib
-<span class="nv">FC</span> <span class="o">=</span> h5pfc    <span class="c1"># hfd5 wrapper for mpif90</span>
-<span class="nv">FFLAGS</span> <span class="o">=</span> -w -ffree-line-length-none -fall-intrinsics -O3 -fPIC -march<span class="o">=</span>native -I<span class="si">${</span><span class="nv">SLL_DIR</span><span class="si">}</span>/include/selalib
-<span class="nv">FLIBS</span> <span class="o">=</span> -L<span class="si">${</span><span class="nv">SLL_DIR</span><span class="si">}</span>/lib -lselalib -lfftw3 -ldfftpack
-
-<span class="nf">${SIM_NAME}</span><span class="o">:</span> <span class="n">sll_m_sim_</span>${<span class="n">SIM_NAME</span>}.<span class="n">o</span> ${<span class="n">SIM_NAME</span>}.<span class="n">o</span>
-	<span class="si">${</span><span class="nv">FC</span><span class="si">}</span> <span class="si">${</span><span class="nv">FFLAGS</span><span class="si">}</span> -o <span class="si">${</span><span class="nv">SIM_NAME</span><span class="si">}</span> $^ -I<span class="si">${</span><span class="nv">SLL_DIR</span><span class="si">}</span>/include/selalib <span class="si">${</span><span class="nv">FLIBS</span><span class="si">}</span>
-
-<span class="nf">run</span><span class="o">:</span> ${<span class="n">SIM_NAME</span>}
-	mpirun -np <span class="m">8</span> $^ <span class="si">${</span><span class="nv">NML_FILE</span><span class="si">}</span>
-
-<span class="nf">clean</span><span class="o">:</span>
-	rm -f *.o <span class="si">${</span><span class="nv">SIM_NAME</span><span class="si">}</span> *.mod
-
-<span class="nf">selalib</span><span class="o">:</span>
-	git clone https://github.com/selalib
-
-<span class="nf">sll_build</span><span class="o">:</span> <span class="n">selalib</span>
-	mkdir -p <span class="nv">$@</span>
-	<span class="nb">cd</span> <span class="nv">$@</span>
-	cmake ../selalib -DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="si">${</span><span class="nv">SLL_DIR</span><span class="si">}</span> <span class="se">\</span>
- 	       -DBUILD_TESTING<span class="o">=</span>OFF -DBUILD_SIMULATIONS<span class="o">=</span>OFF
-	make install
-
-<span class="nf">.SUFFIXES</span><span class="o">:</span> <span class="k">$(</span><span class="nv">SUFFIXES</span><span class="k">)</span> .<span class="n">F</span>90
-
-<span class="nf">.F90.o</span><span class="o">:</span>
-	<span class="k">$(</span>FC<span class="k">)</span> <span class="k">$(</span>FFLAGS<span class="k">)</span> -c $&lt;
-
-<span class="nf">.mod.o</span><span class="o">:</span>
-	<span class="k">$(</span>FC<span class="k">)</span> <span class="k">$(</span>FFLAGS<span class="k">)</span> -c <span class="nv">$*</span>.F90
-</pre></div>
-</div>
-<p>Download, build and install the library with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make sll_build
-</pre></div>
-</div>
-<p>Run your simulation :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">run</span>
-</pre></div>
-</div>
-</div>
+  <div class="section" id="swirling-flow">
+<h1>Swirling flow<a class="headerlink" href="#swirling-flow" title="Permalink to this headline">¶</a></h1>
+<p>Here we apply a time dependent velocity field <span id="id1">[<a class="reference internal" href="markdown.html#id5"><span>CMV12</span></a>]</span>
+The swirling flow distorts the initial distribution and reaching a maximum
+distortion at <span class="math notranslate nohighlight">\(t=T/2\)</span>. At that point the flow reverses and the distribution
+returns to its initial value.</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_t f + \partial_x \left(\sin^2(\pi x) \sin(2\pi y)g(t) f\right) + \partial_y \left(-\sin^2(\pi y) \sin (2\pi x) g(t)f\right) = 0.
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(g(t) = cos(\pi t / T ) \)</span>.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -505,8 +361,8 @@ make
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="selalib.html" title="previous page">SeLaLib</a>
-    <a class='right-next' id="next-link" href="user_guide.html" title="next page">User guide</a>
+    <a class='left-prev' id="prev-link" href="rotation.html" title="previous page">Rotation</a>
+    <a class='right-next' id="next-link" href="vlasov-poisson.html" title="next page">Vlasov–Poisson</a>
 
         </div>
         
