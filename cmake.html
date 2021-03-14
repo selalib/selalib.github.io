@@ -641,38 +641,39 @@ run by <code class="docutils literal notranslate"><span class="pre">make</span> 
 <ul class="simple">
 <li><p>To build a debug version, pass into ‘cmake’ :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>          <span class="o">-</span><span class="n">D</span> <span class="n">CMAKE_BUILD_TYPE</span><span class="o">=</span><span class="n">Debug</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">D</span> <span class="n">CMAKE_BUILD_TYPE</span><span class="o">=</span><span class="n">Debug</span>
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This will result in default debug flags getting passed to the
-compiler.
-</pre></div>
-</div>
+<p>This will result in default debug flags getting passed to the compiler.</p>
 <ul class="simple">
 <li><p>To build a release (optimized) version, pass into ‘cmake’ :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>          <span class="o">-</span><span class="n">D</span> <span class="n">CMAKE_BUILD_TYPE</span><span class="o">=</span><span class="n">Release</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">D</span> <span class="n">CMAKE_BUILD_TYPE</span><span class="o">=</span><span class="n">Release</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>MPI is enabled by default, to disable the support you must
-minimally :</p></li>
+<li><p>MPI is enabled by default, to disable the support you must minimally :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>          <span class="o">-</span><span class="n">D</span> <span class="n">MPI_ENABLED</span><span class="o">=</span><span class="n">OFF</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">D</span> <span class="n">MPI_ENABLED</span><span class="o">=</span><span class="n">OFF</span>
 </pre></div>
 </div>
+<p>With this option most of library won’t be compiled. Library use is very limited
+in this case</p>
 <ul class="simple">
 <li><p>To enable OpenMP support you must set :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>          <span class="o">-</span><span class="n">D</span> <span class="n">OPENMP_ENABLED</span><span class="o">=</span><span class="n">ON</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">D</span> <span class="n">OPENMP_ENABLED</span><span class="o">=</span><span class="n">ON</span>
 </pre></div>
 </div>
+<p>Very few part of the library use OpenMP except some simulations. Check if the simulation you want to run use this feature.</p>
 <ul class="simple">
-<li><p>To enable Parallel HDF5 support you must set :</p></li>
+<li><p>To enable Parallel HDF5 support (default) you must set :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>          <span class="o">-</span><span class="n">D</span> <span class="n">HDF5_PARALLEL_ENABLED</span><span class="o">=</span><span class="n">ON</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">D</span> <span class="n">HDF5_PARALLEL_ENABLED</span><span class="o">=</span><span class="n">ON</span>
 </pre></div>
 </div>
+<p>as MPI the support of HDF5 serial version is very limited, that’s why the compilation on MacOS with
+<a class="reference external" href="https://brew.sh">homebrew</a> is difficiult but possible though.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
