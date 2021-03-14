@@ -271,38 +271,35 @@ will produce :
 
 You can configure to build with default debug or release compiler flags.
 
--   To build a debug version, pass into 'cmake' :
-
+- To build a debug version, pass into 'cmake' :
 ```
-          -D CMAKE_BUILD_TYPE=Debug
+-D CMAKE_BUILD_TYPE=Debug
 ```
+This will result in default debug flags getting passed to the compiler.
 
-    This will result in default debug flags getting passed to the
-    compiler.
-
--   To build a release (optimized) version, pass into 'cmake' :
-
+- To build a release (optimized) version, pass into 'cmake' :
 ```
-          -D CMAKE_BUILD_TYPE=Release
+-D CMAKE_BUILD_TYPE=Release
 ```
 
--   MPI is enabled by default, to disable the support you must
-    minimally :
+- MPI is enabled by default, to disable the support you must minimally :
+```
+-D MPI_ENABLED=OFF
+```
+With this option most of library won't be compiled. Library use is very limited 
+in this case
 
+- To enable OpenMP support you must set :
 ```
-          -D MPI_ENABLED=OFF
+-D OPENMP_ENABLED=ON
 ```
+Very few part of the library use OpenMP except some simulations. Check if the simulation you want to run use this feature.
 
--   To enable OpenMP support you must set :
-
+- To enable Parallel HDF5 support (default) you must set :
 ```
-          -D OPENMP_ENABLED=ON
+-D HDF5_PARALLEL_ENABLED=ON
 ```
-
--   To enable Parallel HDF5 support you must set :
-
-```
-          -D HDF5_PARALLEL_ENABLED=ON
-```
+as MPI the support of HDF5 serial version is very limited, that's why the compilation on MacOS with
+[homebrew](https://brew.sh) is difficiult but possible though.
 
 [^1]: <http://www.cmake.org/cmake/resources/software.html>
