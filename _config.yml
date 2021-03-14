@@ -28,7 +28,7 @@ latex:
 
 repository:
   url: https://github.com/selalib/selalib.github.io
-  branch: main  
+  branch: master  
 
 html:
   favicon: images/favicon.ico
