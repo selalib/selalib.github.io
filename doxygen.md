@@ -1,27 +1,28 @@
 # Doxygen
 
 Every developer is responsible to provide documentation. A full doxygen
-user guide is available on the official website [^1].
+user guide is available on the official website[^1].
 
-[Laura Mendoza](https://github.com/lasofivec), wrote a script available on github
-[^2] to comment fortran modules, functions and subroutines of a file.
+[Laura Mendoza](https://github.com/lasofivec), wrote a script available on github[^2] 
+to comment fortran modules, functions and subroutines of a file.
 Basically it will write the needed comment lines. It doesn't write the
 documentation for you (of course) but it could save some time!
 
 ## Doxygen configuration
 
--   Doxyfile and html layout files are in directory
-    `selalib/doc/doxygen`
-
--   To generate html documentation type in your build directory:
+- Doxyfile and html layout files are in directory `selalib/doc/doxygen`
+- To generate html documentation type in your build directory:
 
 ```bash
 make doc-dev
 ```
 
--   html pages are generated in directory `selalib/build/doc/html`.
--   These pages are published on the SeLaLib website [^3] if pushed on the
+- html pages are generated in directory `selalib/build/doc/html`.
+- These pages are published on [GitHub pages](http://selalib.gthub.io/selalib) if pushed on the
     main branch.
+
+[^1]: <http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html>
+[^2]: <https://github.com/lasofivec/python-scripts/blob/master/make_sll_doxygen_doc.py>
 
 ## Document library in new directory
 
@@ -205,6 +206,3 @@ end program test_io_gnuplot
 
 **Test program must be short!**
 
-[^1]: <http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html>
-[^2]: <https://github.com/lasofivec/python-scripts/blob/master/make_sll_doxygen_doc.py>
-[^3]: <http://selalib.gthub.io/selalib/>
