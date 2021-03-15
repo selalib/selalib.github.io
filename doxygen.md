@@ -3,7 +3,7 @@
 Every developer is responsible to provide documentation. A full doxygen
 user guide is available on the official website [^1].
 
-Laura Mendoza [@lasofivec](https://github.com/lasofivec), wrote a script available on github
+[Laura Mendoza](https://github.com/lasofivec), wrote a script available on github
 [^2] to comment fortran modules, functions and subroutines of a file.
 Basically it will write the needed comment lines. It doesn't write the
 documentation for you (of course) but it could save some time!
