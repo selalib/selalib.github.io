@@ -83,7 +83,7 @@ clean:
 	rm -f *.o ${SIM_NAME} *.mod
 
 selalib:
-	git clone https://github.com/selalib
+	git clone https://github.com/selalib/selalib.git
 
 sll_build: selalib
 	mkdir -p $@
