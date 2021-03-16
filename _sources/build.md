@@ -59,7 +59,7 @@ To open an issue, follow this url: <https://github.com/selalib/selalib/issues/ne
 
 ## Run a similation
 
-In simulations directory, you will find examples to use the library, every program must have a README file with instructions.
+In [simulations directory](https://github.com/selalib/selalib/tree/main/simulations), you will find examples to use the library, every program should have a README file with instructions.
 
 ## Use as external library
 
