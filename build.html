@@ -354,6 +354,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-dependencies-on-macosx">
+   Install dependencies on MACOSX
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#download-the-sources">
    Download the sources
   </a>
@@ -426,6 +431,15 @@ sudo dnf install doxygen texlive-latex graphviz
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>mpich on Fedora is not supported.</p>
+</div>
+</div>
+<div class="section" id="install-dependencies-on-macosx">
+<h2>Install dependencies on MACOSX<a class="headerlink" href="#install-dependencies-on-macosx" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way is to use <a class="reference external" href="https://brew.sh">Homebrew</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">git</span> <span class="n">cmake</span> <span class="n">gfortran</span> <span class="nb">open</span><span class="o">-</span><span class="n">mpi</span>
+<span class="n">brew</span> <span class="n">install</span> <span class="n">hdf5</span><span class="o">-</span><span class="n">mpi</span> <span class="n">openmpi</span> <span class="n">fftw</span> <span class="n">openblas</span>
+<span class="n">brew</span> <span class="n">install</span> <span class="n">doxygen</span> <span class="n">graphviz</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="download-the-sources">
@@ -543,7 +557,7 @@ make
           By The SeLaLib project team<br/>
         
             &copy; Copyright 2020.<br/>
-          Last updated on 16 Mar 2021.<br/>
+          Last updated on 29 Mar 2021.<br/>
       </p>
     </div>
   </footer>

@@ -36,6 +36,15 @@ module load mpi/openmpi-x86_64
 ```{warning}
 mpich on Fedora is not supported.
 ```
+## Install dependencies on MACOSX
+
+The easiest way is to use [Homebrew](https://brew.sh)
+
+```
+brew install git cmake gfortran open-mpi
+brew install hdf5-mpi openmpi fftw openblas
+brew install doxygen graphviz
+```
 
 ## Download the sources
 ```bash
