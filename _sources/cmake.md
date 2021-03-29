@@ -300,6 +300,6 @@ Very few part of the library use OpenMP except some simulations. Check if the si
 -D HDF5_PARALLEL_ENABLED=ON
 ```
 as MPI the support of HDF5 serial version is very limited, that's why the compilation on MacOS with
-[homebrew](https://brew.sh) is difficiult but possible though.
+[homebrew](https://brew.sh) is less easy but possible though.
 
 [^1]: <http://www.cmake.org/cmake/resources/software.html>
