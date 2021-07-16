@@ -1,6 +1,7 @@
-- file: selalib
-
-- part: User guide
+format: jb-book
+root: selalib
+parts:
+- caption: User guide
   chapters:
   - file: build
   - file: user_guide
@@ -8,8 +9,7 @@
   - file: mid_level
   - file: top_level
   - file: pic
-
-- part: Examples
+- caption: Examples
   chapters:
   - file: advection
     sections:
@@ -25,8 +25,7 @@
   - file: vlasov-maxwell
   - file: guiding-center
   - file: drift-kinetic
-
-- part: Developer guide
+- caption: Developer guide
   chapters:
   - file: getting_started
   - file: cmake
@@ -34,8 +33,7 @@
   - file: coding_style
   - file: naming_convention
   - file: doxygen
-
-- part: Credits
+- caption: Credits
   chapters:
   - file: institutions
   - file: bibliography
