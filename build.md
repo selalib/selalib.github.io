@@ -78,7 +78,7 @@ If selalib is already installed on your server or if you just want to build and 
 SIM_NAME = bsl_dk_3d1v_polar
 NML_FILE = dksim4d_polar_input.nml
 SLL_DIR ?= /opt/selalib
-FC = h5pfc    # hfd5 wrapper for mpif90
+FC = h5pfc    # hdf5 wrapper for mpif90
 FFLAGS = -w -ffree-line-length-none -fall-intrinsics -O3 -fPIC -march=native -I${SLL_DIR}/include/selalib
 FLIBS = -L${SLL_DIR}/lib -lselalib -lfftw3 -ldfftpack
 
