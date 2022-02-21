@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doxygen</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -31,19 +31,22 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -55,7 +58,10 @@
     <link rel="next" title="Institutions" href="institutions.html" />
     <link rel="prev" title="Naming Convention" href="naming_convention.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -72,6 +78,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="_static/selalib.png" class="logo" alt="logo">
       
       
@@ -79,9 +89,9 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   User guide
  </span>
@@ -118,7 +128,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Examples
  </span>
@@ -199,7 +209,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Developer guide
  </span>
@@ -236,7 +246,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Credits
  </span>
@@ -303,7 +313,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -339,12 +349,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#doxygen-configuration">
@@ -394,10 +404,68 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Doxygen</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doxygen-configuration">
+   Doxygen configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-library-in-new-directory">
+   Document library in new directory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-a-fortran-module">
+   Document a fortran module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-a-derived-type">
+   Document a derived type
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-a-subroutine">
+   Document a subroutine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-a-function">
+   Document a function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-some-variables">
+   Document some variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#document-your-test-example">
+   Document your test example
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="doxygen">
+  <div class="tex2jax_ignore mathjax_ignore section" id="doxygen">
 <h1>Doxygen<a class="headerlink" href="#doxygen" title="Permalink to this headline">¶</a></h1>
 <p>Every developer is responsible to provide documentation. A full doxygen
 user guide is available on the official website<a class="footnote-reference brackets" href="#id3" id="id1">1</a>.</p>
@@ -446,11 +514,11 @@ directory.</p>
 <span class="c">!&gt; @brief &lt;BRIEF_DESCRIPTION&gt;</span>
 <span class="c">!&gt; @details &lt;DETAILED_DESCRIPTION&gt;</span>
 
-<span class="k">module</span> <span class="o">&lt;</span><span class="n">MODULE_NAME</span><span class="o">&gt;</span>
+<span class="k">module</span><span class="w"> </span><span class="o">&lt;</span><span class="n">MODULE_NAME</span><span class="o">&gt;</span><span class="w"></span>
 
 <span class="k">contains</span>
 
-<span class="k">end module</span> <span class="o">&lt;</span><span class="n">MODULE_NAME</span><span class="o">&gt;</span>
+<span class="k">end module</span><span class="w"> </span><span class="o">&lt;</span><span class="n">MODULE_NAME</span><span class="o">&gt;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Every directory of the software should have an entry in the
@@ -471,12 +539,12 @@ module is to copy and paste this at the the top of your fortran file :</p>
 <span class="c">!&gt; &lt;code&gt; gnuplot -persistent plot_2.gnu &lt;/code&gt;</span>
 <span class="c">!</span>
 <span class="c">!&gt; @image html gnuplot.png</span>
-<span class="k">module </span><span class="n">sll_gnuplot</span>
+<span class="k">module </span><span class="n">sll_gnuplot</span><span class="w"></span>
 
-<span class="k">use </span><span class="n">sll_ascii_io</span>
-<span class="k">use </span><span class="n">sll_utilities</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">sll_new_file_id</span><span class="p">,</span> <span class="n">int2string</span>
+<span class="k">use </span><span class="n">sll_ascii_io</span><span class="w"></span>
+<span class="k">use </span><span class="n">sll_utilities</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">sll_new_file_id</span><span class="p">,</span><span class="w"> </span><span class="n">int2string</span><span class="w"></span>
 
-<span class="k">contains</span>
+<span class="k">contains</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -486,42 +554,42 @@ module is to copy and paste this at the the top of your fortran file :</p>
 <span class="c">!&gt; @details</span>
 <span class="c">!&gt;  Use new_logical_mesh_2d to allocate the memory space,</span>
 <span class="c">!&gt; initialize it and get a pointer to this object.</span>
-<span class="k">type</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">sll_logical_mesh_2d</span>
-  <span class="n">sll_int32</span>  <span class="kd">::</span> <span class="n">num_cells1</span> <span class="c">!&lt; number of cells in direction 1</span>
-  <span class="n">sll_int32</span>  <span class="kd">::</span> <span class="n">num_cells2</span> <span class="c">!&lt; number of cells in direction 2</span>
-  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">eta1_min</span>   <span class="c">!&lt; minimum value of eta, direction 1</span>
-  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">eta1_max</span>   <span class="c">!&lt; maximum value of eta, direction 1</span>
-  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">eta2_min</span>   <span class="c">!&lt; minimum value of eta, direction 2</span>
-  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">eta2_max</span>   <span class="c">!&lt; maximum value of eta, direction 2</span>
-  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">delta_eta1</span> <span class="c">!&lt; cell spacing, direction 1</span>
-  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">delta_eta2</span> <span class="c">!&lt; cell spacing, direction 2</span>
-<span class="k">end type </span><span class="n">sll_logical_mesh_2d</span>
+<span class="k">type</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sll_logical_mesh_2d</span><span class="w"></span>
+<span class="w">  </span><span class="n">sll_int32</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">num_cells1</span><span class="w"> </span><span class="c">!&lt; number of cells in direction 1</span>
+<span class="w">  </span><span class="n">sll_int32</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">num_cells2</span><span class="w"> </span><span class="c">!&lt; number of cells in direction 2</span>
+<span class="w">  </span><span class="n">sll_real64</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">eta1_min</span><span class="w">   </span><span class="c">!&lt; minimum value of eta, direction 1</span>
+<span class="w">  </span><span class="n">sll_real64</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">eta1_max</span><span class="w">   </span><span class="c">!&lt; maximum value of eta, direction 1</span>
+<span class="w">  </span><span class="n">sll_real64</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">eta2_min</span><span class="w">   </span><span class="c">!&lt; minimum value of eta, direction 2</span>
+<span class="w">  </span><span class="n">sll_real64</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">eta2_max</span><span class="w">   </span><span class="c">!&lt; maximum value of eta, direction 2</span>
+<span class="w">  </span><span class="n">sll_real64</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">delta_eta1</span><span class="w"> </span><span class="c">!&lt; cell spacing, direction 1</span>
+<span class="w">  </span><span class="n">sll_real64</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">delta_eta2</span><span class="w"> </span><span class="c">!&lt; cell spacing, direction 2</span>
+<span class="k">end type </span><span class="n">sll_logical_mesh_2d</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="document-a-subroutine">
 <h2>Document a subroutine<a class="headerlink" href="#document-a-subroutine" title="Permalink to this headline">¶</a></h2>
 <p>To document function or subroutine :</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span> <span class="c">!&gt; @brief &lt;BRIEF_DESCRIPTION&gt;</span>
- <span class="c">!&gt; @details &lt;DETAILED_DESCRIPTION&gt;</span>
- <span class="c">!&gt; @param [&lt;in or out or inout&gt;] &lt;PARAM1&gt; &lt;DESCRIPTION&gt;</span>
- <span class="c">!&gt; @param [&lt;in or out or inout&gt;] &lt;PARAM2&gt; &lt;DESCRIPTION&gt;</span>
- <span class="k">function </span><span class="n">function_name</span><span class="p">(</span><span class="o">&lt;</span><span class="n">PARAM1</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">PARAM2</span><span class="o">&gt;</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="c">!&gt; @brief &lt;BRIEF_DESCRIPTION&gt;</span>
+<span class="w"> </span><span class="c">!&gt; @details &lt;DETAILED_DESCRIPTION&gt;</span>
+<span class="w"> </span><span class="c">!&gt; @param [&lt;in or out or inout&gt;] &lt;PARAM1&gt; &lt;DESCRIPTION&gt;</span>
+<span class="w"> </span><span class="c">!&gt; @param [&lt;in or out or inout&gt;] &lt;PARAM2&gt; &lt;DESCRIPTION&gt;</span>
+<span class="w"> </span><span class="k">function </span><span class="n">function_name</span><span class="p">(</span><span class="o">&lt;</span><span class="n">PARAM1</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">PARAM2</span><span class="o">&gt;</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt; @brief Create HDF5 file</span>
 <span class="c">!&gt; @details To use this subroutine HDF5_ENABLE should be set to ON</span>
 <span class="c">!&gt; in CMake configuration</span>
-<span class="k">subroutine </span><span class="n">sll_hdf5_file_create</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">file_id</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
-  <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">)</span> <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">filename</span>  <span class="c">!&lt; file name</span>
-  <span class="kt">integer</span><span class="p">(</span><span class="n">hid_t</span><span class="p">)</span>   <span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">file_id</span>   <span class="c">!&lt; unit number</span>
-  <span class="kt">integer</span><span class="p">,</span>           <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">error</span>     <span class="c">!&lt; error code</span>
+<span class="k">subroutine </span><span class="n">sll_hdf5_file_create</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">file_id</span><span class="p">,</span><span class="n">error</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">filename</span><span class="w">  </span><span class="c">!&lt; file name</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">(</span><span class="n">hid_t</span><span class="p">)</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">file_id</span><span class="w">   </span><span class="c">!&lt; unit number</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w">           </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">error</span><span class="w">     </span><span class="c">!&lt; error code</span>
 
-  <span class="k">call </span><span class="n">H5open_f</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
-  <span class="n">SLL_ASSERT</span><span class="p">(</span><span class="n">error</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
-  <span class="k">call </span><span class="n">H5Fcreate_f</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">H5F_ACC_TRUNC_F</span><span class="p">,</span><span class="n">file_id</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
-  <span class="n">SLL_ASSERT</span><span class="p">(</span><span class="n">error</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">end subroutine </span><span class="n">sll_hdf5_file_create</span>
+<span class="w">  </span><span class="k">call </span><span class="n">H5open_f</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">SLL_ASSERT</span><span class="p">(</span><span class="n">error</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">H5Fcreate_f</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">H5F_ACC_TRUNC_F</span><span class="p">,</span><span class="n">file_id</span><span class="p">,</span><span class="n">error</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">SLL_ASSERT</span><span class="p">(</span><span class="n">error</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="k">end subroutine </span><span class="n">sll_hdf5_file_create</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -535,22 +603,22 @@ module is to copy and paste this at the the top of your fortran file :</p>
 <span class="c">!&gt; @param eta_min  minimum value of the eta1 parameter in the logical mesh.</span>
 <span class="c">!&gt; @param eta_max maximum value of the eta1 parameter in the logical mesh.</span>
 <span class="c">!&gt; @return a pointer to the newly allocated object.</span>
-<span class="k">function </span><span class="n">new_logical_mesh_1d</span><span class="p">(</span> <span class="p">&amp;</span>
-  <span class="n">num_cells</span><span class="p">,</span>                  <span class="p">&amp;</span>
-  <span class="n">eta_min</span><span class="p">,</span>                    <span class="p">&amp;</span>
-  <span class="n">eta_max</span> <span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="k">function </span><span class="n">new_logical_mesh_1d</span><span class="p">(</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">  </span><span class="n">num_cells</span><span class="p">,</span><span class="w">                  </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">  </span><span class="n">eta_min</span><span class="p">,</span><span class="w">                    </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">  </span><span class="n">eta_max</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w"></span>
 
-  <span class="k">type</span><span class="p">(</span><span class="n">sll_logical_mesh_1d</span><span class="p">),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">m</span>
-  <span class="n">sll_int32</span><span class="p">,</span>              <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">num_cells</span>
-  <span class="n">sll_real64</span><span class="p">,</span> <span class="k">optional</span><span class="p">,</span>   <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eta_min</span>
-  <span class="n">sll_real64</span><span class="p">,</span> <span class="k">optional</span><span class="p">,</span>   <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">eta_max</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">sll_logical_mesh_1d</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">m</span><span class="w"></span>
+<span class="w">  </span><span class="n">sll_int32</span><span class="p">,</span><span class="w">              </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">num_cells</span><span class="w"></span>
+<span class="w">  </span><span class="n">sll_real64</span><span class="p">,</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w">   </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">eta_min</span><span class="w"></span>
+<span class="w">  </span><span class="n">sll_real64</span><span class="p">,</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w">   </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">eta_max</span><span class="w"></span>
 
-  <span class="n">sll_int32</span> <span class="kd">::</span> <span class="n">ierr</span>
+<span class="w">  </span><span class="n">sll_int32</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ierr</span><span class="w"></span>
 
-  <span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">ierr</span><span class="p">)</span>
-  <span class="k">call </span><span class="n">initialize_logical_mesh_1d</span><span class="p">(</span> <span class="n">m</span><span class="p">,</span> <span class="n">num_cells</span><span class="p">,</span> <span class="n">eta_min</span><span class="p">,</span> <span class="n">eta_max</span> <span class="p">)</span>
-  
-<span class="k">end function </span><span class="n">new_logical_mesh_1d</span>
+<span class="w">  </span><span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">ierr</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">initialize_logical_mesh_1d</span><span class="p">(</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">num_cells</span><span class="p">,</span><span class="w"> </span><span class="n">eta_min</span><span class="p">,</span><span class="w"> </span><span class="n">eta_max</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span>
+<span class="k">end function </span><span class="n">new_logical_mesh_1d</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -561,18 +629,18 @@ module is to copy and paste this at the the top of your fortran file :</p>
 <span class="c">!&gt; Fortran module where set some physical and mathematical constants.</span>
 <span class="c">!&gt; @details</span>
 <span class="c">!&gt; In this module, all variables must be protected</span>
-<span class="k">module </span><span class="n">sll_constants</span>
-<span class="k">use </span><span class="n">sll_working_precision</span>
+<span class="k">module </span><span class="n">sll_constants</span><span class="w"></span>
+<span class="k">use </span><span class="n">sll_working_precision</span><span class="w"></span>
 
-<span class="k">implicit none</span>
+<span class="k">implicit none</span><span class="w"></span>
 
 <span class="c">!&gt; @param PI number</span>
-<span class="n">sll_real64</span><span class="p">,</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">sll_pi</span> <span class="o">=</span> <span class="mf">3.1415926535897932384626433D8</span>
+<span class="n">sll_real64</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sll_pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.1415926535897932384626433D8</span><span class="w"></span>
 
 <span class="c">!&gt; @param speed of light in vacuum (def) m/s</span>
-<span class="n">sll_real64</span><span class="p">,</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">sll_c</span> <span class="o">=</span> <span class="mf">2.99792458D8</span>
+<span class="n">sll_real64</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sll_c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.99792458D8</span><span class="w"></span>
 
-<span class="k">end module </span><span class="n">sll_constants</span>
+<span class="k">end module </span><span class="n">sll_constants</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -580,15 +648,15 @@ module is to copy and paste this at the the top of your fortran file :</p>
 <h2>Document your test example<a class="headerlink" href="#document-your-test-example" title="Permalink to this headline">¶</a></h2>
 <p>Insert some doxygen comments to mark the code you want to share :</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt;@internal [example]</span>
-<span class="k">program </span><span class="n">test_io_gnuplot</span>
+<span class="k">program </span><span class="n">test_io_gnuplot</span><span class="w"></span>
 
-<span class="k">use </span><span class="n">sll_gnuplot</span>
+<span class="k">use </span><span class="n">sll_gnuplot</span><span class="w"></span>
 
-<span class="k">call </span><span class="n">sll_gnuplot_2d</span><span class="p">(</span><span class="n">eta1_min</span><span class="p">,</span> <span class="n">eta1_max</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span> <span class="p">&amp;</span>
-                    <span class="n">eta2_min</span><span class="p">,</span> <span class="n">eta2_max</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="p">&amp;</span>
-                    <span class="k">array</span><span class="p">,</span> <span class="s1">&#39;plot_1&#39;</span><span class="p">,</span> <span class="n">iplot</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+<span class="k">call </span><span class="n">sll_gnuplot_2d</span><span class="p">(</span><span class="n">eta1_min</span><span class="p">,</span><span class="w"> </span><span class="n">eta1_max</span><span class="p">,</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">eta2_min</span><span class="p">,</span><span class="w"> </span><span class="n">eta2_max</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;plot_1&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">iplot</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">)</span><span class="w"></span>
 
-<span class="k">end program </span><span class="n">test_io_gnuplot</span>
+<span class="k">end program </span><span class="n">test_io_gnuplot</span><span class="w"></span>
 <span class="c">!&gt;@internal [example]</span>
 </pre></div>
 </div>
@@ -627,35 +695,43 @@ module is to copy and paste this at the the top of your fortran file :</p>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="naming_convention.html" title="previous page">Naming Convention</a>
-    <a class='right-next' id="next-link" href="institutions.html" title="next page">Institutions</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="naming_convention.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Naming Convention</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="institutions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Institutions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By The SeLaLib project team<br/>
-        
-            &copy; Copyright 2021.<br/>
-          Last updated on 16 Jul 2021.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By The SeLaLib project team<br/>
+    
+        &copy; Copyright 2021.<br/>
+      Last updated on 21 Feb 2022.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Numerical and Parallel Utilities</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -31,33 +31,39 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Semi-Lagrangian" href="top_level.html" />
     <link rel="prev" title="Basic Utilities" href="low_level.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -74,6 +80,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="_static/selalib.png" class="logo" alt="logo">
       
       
@@ -81,9 +91,9 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   User guide
  </span>
@@ -120,7 +130,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Examples
  </span>
@@ -201,7 +211,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Developer guide
  </span>
@@ -238,7 +248,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Credits
  </span>
@@ -305,7 +315,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -341,12 +351,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tridiagonal-system-solver">
@@ -510,10 +520,182 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Numerical and Parallel Utilities</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tridiagonal-system-solver">
+   Tridiagonal System Solver
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#description">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exposed-interface">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usage">
+     Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-condition-descriptors">
+   Boundary Condition Descriptors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cubic-splines">
+   Cubic Splines
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gauss-legendre-integrator">
+   Gauss-Legendre Integrator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fft">
+   FFT
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Exposed Interface
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collective-communications">
+   Collective Communications
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remapper">
+   Remapper
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementation-notes">
+     Implementation Notes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="numerical-and-parallel-utilities">
+  <div class="tex2jax_ignore mathjax_ignore section" id="numerical-and-parallel-utilities">
 <h1>Numerical and Parallel Utilities<a class="headerlink" href="#numerical-and-parallel-utilities" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="tridiagonal-system-solver">
 <h2>Tridiagonal System Solver<a class="headerlink" href="#tridiagonal-system-solver" title="Permalink to this headline">¶</a></h2>
@@ -540,7 +722,7 @@ shown next.</p>
 <h3>Exposed Interface<a class="headerlink" href="#exposed-interface" title="Permalink to this headline">¶</a></h3>
 <p>Factorization of the matrix <span class="math notranslate nohighlight">\(A\)</span> is obtained through a call to the
 subroutine</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_setup_cyclic_tridiag</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">lu</span><span class="p">,</span> <span class="n">ipiv</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_setup_cyclic_tridiag</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">lu</span><span class="p">,</span><span class="w"> </span><span class="n">ipiv</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">a</span></code> is the matrix to be factorized, <code class="docutils literal notranslate"><span class="pre">n</span></code> is the problem size (the
@@ -552,7 +734,7 @@ the perspective of the user, <code class="docutils literal notranslate"><span cl
 consideration.</p>
 <p>The solution of a tridiagonal system, once the original array <span class="math notranslate nohighlight">\(A\)</span> has
 been factorized, is obtained through a call to</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_solve_cyclic_tridiag</span><span class="p">(</span> <span class="n">lu</span><span class="p">,</span> <span class="n">ipiv</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">x</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_solve_cyclic_tridiag</span><span class="p">(</span><span class="w"> </span><span class="n">lu</span><span class="p">,</span><span class="w"> </span><span class="n">ipiv</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">lu</span></code>, <code class="docutils literal notranslate"><span class="pre">ipiv</span></code> are the arrays returned by
@@ -563,34 +745,34 @@ where the solution will be returned.</p>
 <div class="section" id="usage">
 <h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
 <p>To use the module in a stand-alone way, include the line:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">sll_tridiagonal</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">sll_tridiagonal</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The following code snippet is an example of the use of the tridiagonal
 solver.</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_int32</span> <span class="kd">::</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">sll_int32</span> <span class="kd">::</span> <span class="n">ierr</span>
-<span class="n">sll_real64</span><span class="p">,</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">lu</span>
-<span class="n">sll_int32</span><span class="p">,</span>  <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">ipiv</span>
-<span class="n">sll_real64</span><span class="p">,</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="n">x</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_int32</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="w"></span>
+<span class="n">sll_int32</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ierr</span><span class="w"></span>
+<span class="n">sll_real64</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lu</span><span class="w"></span>
+<span class="n">sll_int32</span><span class="p">,</span><span class="w">  </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ipiv</span><span class="w"></span>
+<span class="n">sll_real64</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
 
-<span class="n">SLL_ALLOCATE</span><span class="p">(</span> <span class="n">lu</span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="n">n</span><span class="p">),</span> <span class="n">ierr</span> <span class="p">)</span>
-<span class="n">SLL_ALLOCATE</span><span class="p">(</span> <span class="n">ipiv</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">ierr</span> <span class="p">)</span>
-<span class="n">SLL_ALLOCATE</span><span class="p">(</span> <span class="n">x</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">ierr</span> <span class="p">)</span>
+<span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="w"> </span><span class="n">lu</span><span class="p">(</span><span class="mi">7</span><span class="o">*</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">ierr</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="w"> </span><span class="n">ipiv</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">ierr</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">ierr</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 
 <span class="c">! initialize a(:) with the proper coefficients here... </span>
-<span class="nb">and </span><span class="k">then</span><span class="p">:</span>
+<span class="nb">and </span><span class="k">then</span><span class="p">:</span><span class="w"></span>
 
-<span class="n">sll_setup_cyclic_tridiag</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">lu</span><span class="p">,</span> <span class="n">ipiv</span> <span class="p">)</span>
-<span class="n">sll_solve_cyclic_tridiag</span><span class="p">(</span> <span class="n">lu</span><span class="p">,</span> <span class="n">ipiv</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">x</span> <span class="p">)</span>
+<span class="n">sll_setup_cyclic_tridiag</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">lu</span><span class="p">,</span><span class="w"> </span><span class="n">ipiv</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_solve_cyclic_tridiag</span><span class="p">(</span><span class="w"> </span><span class="n">lu</span><span class="p">,</span><span class="w"> </span><span class="n">ipiv</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 
-<span class="n">SLL_DEALLOCATE_ARRAY</span><span class="p">(</span> <span class="n">lu</span><span class="p">,</span> <span class="n">ierr</span> <span class="p">)</span>
-<span class="n">SLL_DEALLOCATE_ARRAY</span><span class="p">(</span> <span class="n">ipiv</span><span class="p">,</span> <span class="n">ierr</span> <span class="p">)</span>
-<span class="n">SLL_DEALLOCATE_ARRAY</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">ierr</span> <span class="p">)</span>
+<span class="n">SLL_DEALLOCATE_ARRAY</span><span class="p">(</span><span class="w"> </span><span class="n">lu</span><span class="p">,</span><span class="w"> </span><span class="n">ierr</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">SLL_DEALLOCATE_ARRAY</span><span class="p">(</span><span class="w"> </span><span class="n">ipiv</span><span class="p">,</span><span class="w"> </span><span class="n">ierr</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">SLL_DEALLOCATE_ARRAY</span><span class="p">(</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">ierr</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Note that if the last call had been made as in</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_solve_cyclic_tridiag</span><span class="p">(</span> <span class="n">lu</span><span class="p">,</span> <span class="n">ipiv</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">b</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_solve_cyclic_tridiag</span><span class="p">(</span><span class="w"> </span><span class="n">lu</span><span class="p">,</span><span class="w"> </span><span class="n">ipiv</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>the system would have been solved in-place.</p>
@@ -609,13 +791,13 @@ information.</p>
 <div class="section" id="id2">
 <h3>Exposed Interface<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>The defined symbols are:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_USER_DEFINED</span>
-<span class="n">SLL_PERIODIC</span>
-<span class="n">SLL_DIRICHLET</span>
-<span class="n">SLL_NEUMANN</span> 
-<span class="n">SLL_HERMITE</span> 
-<span class="n">SLL_NEUMANN_MODE_0</span>
-<span class="n">SLL_SET_TO_LIMIT</span> 
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_USER_DEFINED</span><span class="w"></span>
+<span class="n">SLL_PERIODIC</span><span class="w"></span>
+<span class="n">SLL_DIRICHLET</span><span class="w"></span>
+<span class="n">SLL_NEUMANN</span><span class="w"> </span>
+<span class="n">SLL_HERMITE</span><span class="w"> </span>
+<span class="n">SLL_NEUMANN_MODE_0</span><span class="w"></span>
+<span class="n">SLL_SET_TO_LIMIT</span><span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -643,31 +825,31 @@ longer needed, release the resources through a call to the
 <div class="section" id="id5">
 <h3>Exposed Interface<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>Fundamental types:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_cubic_spline_1d</span>
-<span class="n">sll_cubic_spline_2d</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_cubic_spline_1d</span><span class="w"></span>
+<span class="n">sll_cubic_spline_2d</span><span class="w"></span>
 </pre></div>
 </div>
 <p>These types are declared as pointers and only manipulated through the
 functions and subroutines described below. For more explicit examples,
 see the usage section.</p>
 <p>For the 1D case, the available routines are:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">new_cubic_spline_1D</span><span class="p">(</span> <span class="n">num_points</span><span class="p">,</span> 
-                     <span class="n">xmin</span><span class="p">,</span> 
-                     <span class="n">xmax</span><span class="p">,</span> 
-                     <span class="n">bc_type</span><span class="p">,</span> 
-                     <span class="p">[</span><span class="n">slope_L</span><span class="p">],</span> 
-                     <span class="p">[</span><span class="n">slope_R</span><span class="p">]</span> <span class="p">)</span>  
-<span class="n">compute_cubic_spline_1D</span><span class="p">(</span> <span class="k">data</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">interpolate_value</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">interpolate_derivative</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">interpolate_array_values</span><span class="p">(</span> <span class="n">a_in</span><span class="p">,</span> <span class="n">a_out</span><span class="p">,</span> <span class="n">np</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">interpolate_pointer_values</span><span class="p">(</span> <span class="n">a_in</span><span class="p">,</span> <span class="n">a_out</span><span class="p">,</span> <span class="n">np</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">interpolate_array_derivatives</span><span class="p">(</span> <span class="n">a_in</span><span class="p">,</span> <span class="n">a_out</span><span class="p">,</span> <span class="n">np</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">interpolate_pointer_derivatives</span><span class="p">(</span> <span class="n">ptr_in</span><span class="p">,</span> <span class="n">ptr_out</span><span class="p">,</span> <span class="n">np</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">get_x1_min</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">get_x1_max</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">get_x1_delta</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">sll_delete</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">new_cubic_spline_1D</span><span class="p">(</span><span class="w"> </span><span class="n">num_points</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">xmin</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">xmax</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">bc_type</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="p">[</span><span class="n">slope_L</span><span class="p">],</span><span class="w"> </span>
+<span class="w">                     </span><span class="p">[</span><span class="n">slope_R</span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w">  </span>
+<span class="n">compute_cubic_spline_1D</span><span class="p">(</span><span class="w"> </span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">interpolate_value</span><span class="p">(</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">interpolate_derivative</span><span class="p">(</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">interpolate_array_values</span><span class="p">(</span><span class="w"> </span><span class="n">a_in</span><span class="p">,</span><span class="w"> </span><span class="n">a_out</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">interpolate_pointer_values</span><span class="p">(</span><span class="w"> </span><span class="n">a_in</span><span class="p">,</span><span class="w"> </span><span class="n">a_out</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">interpolate_array_derivatives</span><span class="p">(</span><span class="w"> </span><span class="n">a_in</span><span class="p">,</span><span class="w"> </span><span class="n">a_out</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">interpolate_pointer_derivatives</span><span class="p">(</span><span class="w"> </span><span class="n">ptr_in</span><span class="p">,</span><span class="w"> </span><span class="n">ptr_out</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">get_x1_min</span><span class="p">(</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">get_x1_max</span><span class="p">(</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">get_x1_delta</span><span class="p">(</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_delete</span><span class="p">(</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>In the above list:</p>
@@ -789,33 +971,33 @@ object. Arguments:</p>
 </dd>
 </dl>
 <p>For the 2D case, the available routines are:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">new_cubic_spline_2d</span><span class="p">(</span> <span class="n">num_pts_x1</span><span class="p">,</span>  
-                     <span class="n">num_pts_x2</span><span class="p">,</span>  
-                     <span class="n">x1_min</span><span class="p">,</span>      
-                     <span class="n">x1_max</span><span class="p">,</span>     
-                     <span class="n">x2_min</span><span class="p">,</span>      
-                     <span class="n">x2_max</span><span class="p">,</span>     
-                     <span class="n">x1_bc_type</span><span class="p">,</span> 
-                     <span class="n">x2_bc_type</span><span class="p">,</span>  
-                     <span class="n">const_slope_x1_min</span><span class="p">,</span>
-                     <span class="n">const_slope_x1_max</span><span class="p">,</span>
-                     <span class="n">const_slope_x2_min</span><span class="p">,</span> 
-                     <span class="n">const_slope_x2_max</span><span class="p">,</span>
-                     <span class="n">x1_min_slopes</span><span class="p">,</span>
-                     <span class="n">x1_max_slopes</span><span class="p">,</span>
-                     <span class="n">x2_min_slopes</span><span class="p">,</span> 
-                     <span class="n">x2_max_slopes</span> <span class="p">)</span>
-<span class="n">compute_cubic_spline_2d</span><span class="p">(</span> <span class="k">data</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">interpolate_value_2d</span><span class="p">(</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">interpolate_x1_derivative_2d</span><span class="p">(</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">interpolate_x2_derivative_2d</span><span class="p">(</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">spline_object</span> <span class="p">)</span>      
-<span class="n">get_x1_min</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">get_x1_max</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">get_x2_min</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">get_x2_max</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">get_x1_delta</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">get_x2_delta</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>
-<span class="n">sll_delete</span><span class="p">(</span> <span class="n">spline_object</span> <span class="p">)</span>             
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">new_cubic_spline_2d</span><span class="p">(</span><span class="w"> </span><span class="n">num_pts_x1</span><span class="p">,</span><span class="w">  </span>
+<span class="w">                     </span><span class="n">num_pts_x2</span><span class="p">,</span><span class="w">  </span>
+<span class="w">                     </span><span class="n">x1_min</span><span class="p">,</span><span class="w">      </span>
+<span class="w">                     </span><span class="n">x1_max</span><span class="p">,</span><span class="w">     </span>
+<span class="w">                     </span><span class="n">x2_min</span><span class="p">,</span><span class="w">      </span>
+<span class="w">                     </span><span class="n">x2_max</span><span class="p">,</span><span class="w">     </span>
+<span class="w">                     </span><span class="n">x1_bc_type</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">x2_bc_type</span><span class="p">,</span><span class="w">  </span>
+<span class="w">                     </span><span class="n">const_slope_x1_min</span><span class="p">,</span><span class="w"></span>
+<span class="w">                     </span><span class="n">const_slope_x1_max</span><span class="p">,</span><span class="w"></span>
+<span class="w">                     </span><span class="n">const_slope_x2_min</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">const_slope_x2_max</span><span class="p">,</span><span class="w"></span>
+<span class="w">                     </span><span class="n">x1_min_slopes</span><span class="p">,</span><span class="w"></span>
+<span class="w">                     </span><span class="n">x1_max_slopes</span><span class="p">,</span><span class="w"></span>
+<span class="w">                     </span><span class="n">x2_min_slopes</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">x2_max_slopes</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">compute_cubic_spline_2d</span><span class="p">(</span><span class="w"> </span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">interpolate_value_2d</span><span class="p">(</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">interpolate_x1_derivative_2d</span><span class="p">(</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">interpolate_x2_derivative_2d</span><span class="p">(</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">,</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w">      </span>
+<span class="n">get_x1_min</span><span class="p">(</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">get_x1_max</span><span class="p">(</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">get_x2_min</span><span class="p">(</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">get_x2_max</span><span class="p">(</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">get_x1_delta</span><span class="p">(</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">get_x2_delta</span><span class="p">(</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_delete</span><span class="p">(</span><span class="w"> </span><span class="n">spline_object</span><span class="w"> </span><span class="p">)</span><span class="w">             </span>
 </pre></div>
 </div>
 <p>In the above list:</p>
@@ -975,83 +1157,83 @@ object. Arguments:</p>
 <div class="section" id="id6">
 <h3>Usage<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>To use the module in a stand-alone way, include the line:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">sll_splines</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">sll_splines</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The following example is an extract from the module’s unit test.</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">spline_tester</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">spline_tester</span><span class="w"></span>
 <span class="cp">#include &quot;sll_working_precision.h&quot;</span>
 <span class="cp">#include &quot;sll_assert.h&quot;</span>
 <span class="cp">#include &quot;sll_memory.h&quot;</span>
-  <span class="k">use </span><span class="n">sll_splines</span>
-  <span class="k">use </span><span class="n">numeric_constants</span>
-  <span class="k">implicit none</span>
+<span class="w">  </span><span class="k">use </span><span class="n">sll_splines</span><span class="w"></span>
+<span class="w">  </span><span class="k">use </span><span class="n">numeric_constants</span><span class="w"></span>
+<span class="w">  </span><span class="k">implicit none</span><span class="w"></span>
 
 <span class="cp">#define NP 5000</span>
 
-  <span class="n">sll_int32</span> <span class="kd">::</span> <span class="n">err</span>
-  <span class="n">sll_int32</span> <span class="kd">::</span> <span class="n">i</span>
-  <span class="k">type</span><span class="p">(</span><span class="n">sll_spline_1d</span><span class="p">),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">sp1</span>
-  <span class="k">type</span><span class="p">(</span><span class="n">sll_spline_1d</span><span class="p">),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">sp2</span>
-  <span class="n">sll_real64</span><span class="p">,</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:)</span> <span class="kd">::</span> <span class="k">data</span>
-<span class="k">  </span><span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">accumulator1</span><span class="p">,</span> <span class="n">accumulator2</span>
-  <span class="n">sll_real64</span> <span class="kd">::</span> <span class="n">val</span>
+<span class="w">  </span><span class="n">sll_int32</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">err</span><span class="w"></span>
+<span class="w">  </span><span class="n">sll_int32</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">sll_spline_1d</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sp1</span><span class="w"></span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">sll_spline_1d</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sp2</span><span class="w"></span>
+<span class="w">  </span><span class="n">sll_real64</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">data</span>
+<span class="k">  </span><span class="n">sll_real64</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">accumulator1</span><span class="p">,</span><span class="w"> </span><span class="n">accumulator2</span><span class="w"></span>
+<span class="w">  </span><span class="n">sll_real64</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">val</span><span class="w"></span>
 
-  <span class="n">accumulator1</span> <span class="o">=</span> <span class="mf">0.0_f64</span>
-  <span class="n">accumulator2</span> <span class="o">=</span> <span class="mf">0.0_f64</span>
+<span class="w">  </span><span class="n">accumulator1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0_f64</span><span class="w"></span>
+<span class="w">  </span><span class="n">accumulator2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0_f64</span><span class="w"></span>
 
-  <span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="k">data</span><span class="p">(</span><span class="n">NP</span><span class="p">),</span> <span class="n">err</span><span class="p">)</span>
+<span class="w">  </span><span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="k">data</span><span class="p">(</span><span class="n">NP</span><span class="p">),</span><span class="w"> </span><span class="n">err</span><span class="p">)</span><span class="w"></span>
 
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;initialize data array&#39;</span>
-  <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NP</span>
-    <span class="k">data</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="nb">sin</span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sll_pi</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">f64</span><span class="p">))</span>
-  <span class="k">end do</span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;initialize data array&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">NP</span><span class="w"></span>
+<span class="w">    </span><span class="k">data</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">((</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sll_pi</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">f64</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="k">end do</span>
 
-<span class="k">  </span><span class="n">sp1</span> <span class="o">=&gt;</span>  <span class="n">new_spline_1D</span><span class="p">(</span> <span class="n">NP</span><span class="p">,</span>         <span class="p">&amp;</span>
-                         <span class="mf">0.0_f64</span><span class="p">,</span>    <span class="p">&amp;</span>
-                         <span class="n">sll_pi</span><span class="p">,</span>     <span class="p">&amp;</span>
-                         <span class="n">SLL_PERIODIC</span> <span class="p">)</span>
-  <span class="k">call </span><span class="n">compute_cubic_spline_1D</span><span class="p">(</span> <span class="k">data</span><span class="p">,</span> <span class="n">sp1</span> <span class="p">)</span>
-  <span class="n">sp2</span> <span class="o">=&gt;</span>  <span class="n">new_spline_1D</span><span class="p">(</span> <span class="n">NP</span><span class="p">,</span> <span class="mf">0.0_f64</span><span class="p">,</span>    <span class="p">&amp;</span>
-                              <span class="n">sll_pi</span><span class="p">,</span>         <span class="p">&amp;</span>
-                         <span class="n">SLL_HERMITE</span><span class="p">,</span>
-                         <span class="mf">1.0_f64</span><span class="p">,</span>
-                        <span class="o">-</span><span class="mf">1.0_f64</span> <span class="p">)</span>
-  <span class="k">call </span><span class="n">compute_cubic_spline_1D</span><span class="p">(</span> <span class="k">data</span><span class="p">,</span> <span class="n">sp2</span> <span class="p">)</span>
+<span class="k">  </span><span class="n">sp1</span><span class="w"> </span><span class="o">=&gt;</span><span class="w">  </span><span class="n">new_spline_1D</span><span class="p">(</span><span class="w"> </span><span class="n">NP</span><span class="p">,</span><span class="w">         </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                         </span><span class="mf">0.0_f64</span><span class="p">,</span><span class="w">    </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                         </span><span class="n">sll_pi</span><span class="p">,</span><span class="w">     </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                         </span><span class="n">SLL_PERIODIC</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">compute_cubic_spline_1D</span><span class="p">(</span><span class="w"> </span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">sp1</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">sp2</span><span class="w"> </span><span class="o">=&gt;</span><span class="w">  </span><span class="n">new_spline_1D</span><span class="p">(</span><span class="w"> </span><span class="n">NP</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0_f64</span><span class="p">,</span><span class="w">    </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                              </span><span class="n">sll_pi</span><span class="p">,</span><span class="w">         </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                         </span><span class="n">SLL_HERMITE</span><span class="p">,</span><span class="w"></span>
+<span class="w">                         </span><span class="mf">1.0_f64</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="o">-</span><span class="mf">1.0_f64</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">compute_cubic_spline_1D</span><span class="p">(</span><span class="w"> </span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">sp2</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;cumulative errors at nodes: &#39;</span>
-  <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">NP</span><span class="o">-</span><span class="mi">1</span>
-     <span class="n">val</span> <span class="o">=</span> <span class="kt">real</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span><span class="o">*</span><span class="n">sll_pi</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span>
-     <span class="n">accumulator1</span> <span class="o">=</span> <span class="n">accumulator1</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="k">data</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="p">&amp;</span>
-                    <span class="n">interpolate_value</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">sp1</span><span class="p">))</span>
-  <span class="k">end do</span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;cumulative errors at nodes: &#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">NP</span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">     </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span><span class="o">*</span><span class="n">sll_pi</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span><span class="w"></span>
+<span class="w">     </span><span class="n">accumulator1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accumulator1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="k">data</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">interpolate_value</span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="n">sp1</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="k">end do</span>
 
-<span class="k">  print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;hermite case: &#39;</span>
-  <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">NP</span>
-     <span class="n">val</span> <span class="o">=</span> <span class="kt">real</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span><span class="o">*</span><span class="n">sll_pi</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span>
-     <span class="n">accumulator2</span> <span class="o">=</span> <span class="n">accumulator2</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="k">data</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="p">&amp;</span>
-                    <span class="n">interpolate_value</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">sp2</span><span class="p">))</span>
-  <span class="k">end do</span>
-<span class="k">  print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;Periodic case: &#39;</span>
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;average error at the nodes = &#39;</span>
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="n">accumulator1</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span>
-  <span class="k">call </span><span class="n">delete_spline_1D</span><span class="p">(</span><span class="n">sp1</span><span class="p">)</span>
-  <span class="k">if</span><span class="p">(</span> <span class="n">accumulator1</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1.0e-15</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">     print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;PASSED TEST&#39;</span>
-  <span class="k">else</span>
-<span class="k">     print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;FAILED TEST&#39;</span>
-  <span class="k">end if</span>
-<span class="k">  print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;**************************** &#39;</span>
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;Hermite case: &#39;</span>
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;average error at the nodes = &#39;</span>
-  <span class="k">print</span> <span class="o">*</span><span class="p">,</span> <span class="n">accumulator2</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span>
-  <span class="k">call </span><span class="n">delete_spline_1D</span><span class="p">(</span><span class="n">sp2</span><span class="p">)</span>
-  <span class="k">if</span><span class="p">(</span> <span class="n">accumulator2</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1.0e-15</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">     print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;PASSED TEST&#39;</span>
-  <span class="k">else</span>
-<span class="k">     print</span> <span class="o">*</span><span class="p">,</span> <span class="s1">&#39;FAILED TEST&#39;</span>
-  <span class="k">end if</span>
-<span class="k">end program </span><span class="n">spline_tester</span>
+<span class="k">  print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;hermite case: &#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">NP</span><span class="w"></span>
+<span class="w">     </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span><span class="o">*</span><span class="n">sll_pi</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span><span class="w"></span>
+<span class="w">     </span><span class="n">accumulator2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accumulator2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="k">data</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">interpolate_value</span><span class="p">(</span><span class="n">val</span><span class="p">,</span><span class="w"> </span><span class="n">sp2</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="k">end do</span>
+<span class="k">  print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Periodic case: &#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;average error at the nodes = &#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">accumulator1</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">delete_spline_1D</span><span class="p">(</span><span class="n">sp1</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">accumulator1</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1.0e-15</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">     print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;PASSED TEST&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">else</span>
+<span class="k">     print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;FAILED TEST&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">end if</span>
+<span class="k">  print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;**************************** &#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Hermite case: &#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;average error at the nodes = &#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">accumulator2</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">delete_spline_1D</span><span class="p">(</span><span class="n">sp2</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">accumulator2</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">NP</span><span class="p">,</span><span class="n">f64</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1.0e-15</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">     print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;PASSED TEST&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">else</span>
+<span class="k">     print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;FAILED TEST&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="k">end if</span>
+<span class="k">end program </span><span class="n">spline_tester</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Here we do not go in detail over every line but only highlight those
@@ -1092,7 +1274,7 @@ interval.</p>
 <p>To integrate the function <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> (real-valued and of a single,
 real-valued argument <code class="docutils literal notranslate"><span class="pre">x</span></code>) over the interval <span class="math notranslate nohighlight">\([a, b]\)</span>, the simplest way
 is through a function call such as:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">gauss_legendre_integrate_1D</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">gauss_legendre_integrate_1D</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>In the function above, <code class="docutils literal notranslate"><span class="pre">n</span></code> represents the desired number of <em>Gauss</em>
@@ -1106,7 +1288,7 @@ desired interval.</p>
 such, it hides some alternative integrators, which are selected
 depending on the type of the passed arguments. For instance, we have
 available the function</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">gauss_legendre_integrate_interpolated_1D</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">spline</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">gauss_legendre_integrate_interpolated_1D</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">spline</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which integrates a function represented by a spline object. The function
@@ -1141,19 +1323,19 @@ specialized functions is <code class="docutils literal notranslate"><span class=
 functions can be individually called to avoid the overhead of the
 generic function call if desired. A one-dimensional function (user or
 Fortran) can be integrated by a call like:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">gauss_legendre_integral_1D</span><span class="p">(</span> <span class="n">test_function</span><span class="p">,</span> <span class="p">&amp;</span>
-                            <span class="mf">0.0_f64</span><span class="p">,</span>       <span class="p">&amp;</span>
-                            <span class="n">sll_pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">,</span>    <span class="p">&amp;</span>
-                            <span class="mi">4</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">gauss_legendre_integral_1D</span><span class="p">(</span><span class="w"> </span><span class="n">test_function</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                            </span><span class="mf">0.0_f64</span><span class="p">,</span><span class="w">       </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                            </span><span class="n">sll_pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">,</span><span class="w">    </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                            </span><span class="mi">4</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>A function that is represented by an underlying spline object can be
 called like:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">gauss_legendre_integral_interpolated_1D</span><span class="p">(</span> <span class="n">interpolate_value</span><span class="p">,&amp;</span>
-                                         <span class="n">sp1</span><span class="p">,</span>              <span class="p">&amp;</span>
-                                         <span class="mf">0.0_f64</span><span class="p">,</span>          <span class="p">&amp;</span>
-                                         <span class="n">sll_pi</span><span class="p">,</span>           <span class="p">&amp;</span>
-                                         <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">gauss_legendre_integral_interpolated_1D</span><span class="p">(</span><span class="w"> </span><span class="n">interpolate_value</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                                         </span><span class="n">sp1</span><span class="p">,</span><span class="w">              </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                         </span><span class="mf">0.0_f64</span><span class="p">,</span><span class="w">          </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                         </span><span class="n">sll_pi</span><span class="p">,</span><span class="w">           </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                         </span><span class="mi">4</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>where sp1 is a spline object. It should be decided if this last case is
@@ -1183,13 +1365,13 @@ needed by a given type of FFT operation. The application of the plan
 executes the operation itself on a given data. Like all other native
 types in Selalib, the FFT plan is declared through a pointer, which must
 be allocated and initialized. To declare, call:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">type</span><span class="p">(</span><span class="n">sll_fft_plan</span><span class="p">),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">fft_plan</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">type</span><span class="p">(</span><span class="n">sll_fft_plan</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">fft_plan</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Followed by an initialization step:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">fft_plan</span> <span class="o">=&gt;</span> <span class="n">sll_new_fft</span><span class="p">(</span> <span class="n">sample_number</span><span class="p">,</span>  
-                         <span class="n">data_type</span><span class="p">,</span> 
-                         <span class="n">fft_flags</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">fft_plan</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">sll_new_fft</span><span class="p">(</span><span class="w"> </span><span class="n">sample_number</span><span class="p">,</span><span class="w">  </span>
+<span class="w">                         </span><span class="n">data_type</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">fft_flags</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Where the <code class="docutils literal notranslate"><span class="pre">data_type</span></code> parameter can take either of the values:
@@ -1226,12 +1408,12 @@ being able to replace MPI in a single file if this were ever needed.</p>
 <div class="section" id="id13">
 <h3>Exposed Interface<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>Fundamental type:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_collective_t</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_collective_t</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Constructors, destructors and access functions:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_new_collective</span><span class="p">(</span> <span class="n">parent_col</span> <span class="p">)</span>
-<span class="n">sll_delete_collective</span><span class="p">(</span> <span class="n">col</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_new_collective</span><span class="p">(</span><span class="w"> </span><span class="n">parent_col</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_delete_collective</span><span class="p">(</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>When the Selalib environment is activated, there exists, in exact
@@ -1241,17 +1423,17 @@ existence. Further collectives can be created down the road. The above
 functions are responsible for the creation and destruction of such
 collectives. The following functions are used to access the values that
 a particular collective knows about.</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_get_collective_rank</span><span class="p">(</span> <span class="n">col</span> <span class="p">)</span>
-<span class="n">sll_get_collective_size</span><span class="p">(</span> <span class="n">col</span> <span class="p">)</span>
-<span class="n">sll_get_collective_color</span><span class="p">(</span> <span class="n">col</span> <span class="p">)</span>
-<span class="n">sll_get_collective_comm</span><span class="p">(</span> <span class="n">col</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_get_collective_rank</span><span class="p">(</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_get_collective_size</span><span class="p">(</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_get_collective_color</span><span class="p">(</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_get_collective_comm</span><span class="p">(</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Since the wrapped library requires initialization, so does
 <code class="docutils literal notranslate"><span class="pre">sll_collective</span></code>. To start and end the parallel environment, the user
 needs to call the functions:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_boot_collective</span><span class="p">(</span> <span class="p">)</span>
-<span class="n">sll_halt_collective</span><span class="p">(</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_boot_collective</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_halt_collective</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>These functions would not be exposed at the top level, and would be
@@ -1259,46 +1441,46 @@ hidden by a further call to something akin to <code class="docutils literal notr
 <code class="docutils literal notranslate"><span class="pre">halt_selalib</span></code>. Finally, the wrappers around the standard <code class="docutils literal notranslate"><span class="pre">MPI</span></code>
 capabilities are presently exposed through the following generic
 functions:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_collective_bcast</span><span class="p">(</span> <span class="n">col</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">root</span> <span class="p">)</span>
-<span class="n">sll_collective_gather</span><span class="p">(</span> <span class="n">col</span><span class="p">,</span> <span class="n">send_buf</span><span class="p">,</span> <span class="n">send_sz</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> 
-                       <span class="n">rec_buf</span> <span class="p">)</span>
-<span class="n">sll_collective_gatherv</span><span class="p">(</span> <span class="n">col</span><span class="p">,</span> <span class="n">send_buf</span><span class="p">,</span> <span class="n">send_sz</span><span class="p">,</span> <span class="n">recvcnts</span><span class="p">,</span> 
-                        <span class="n">displs</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">recv_buf</span> <span class="p">)</span>
-<span class="n">sll_collective_allgatherv</span><span class="p">(</span> <span class="n">col</span><span class="p">,</span> <span class="n">send_buf</span><span class="p">,</span> <span class="n">send_sz</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> 
-                           <span class="n">displs</span><span class="p">,</span> <span class="n">rec_buf</span> <span class="p">)</span>
-<span class="n">sll_collective_scatter</span><span class="p">(</span> <span class="n">col</span><span class="p">,</span> <span class="n">send_buf</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> 
-                        <span class="n">rec_buf</span> <span class="p">)</span>
-<span class="n">sll_collective_scatterv</span><span class="p">(</span> <span class="n">col</span><span class="p">,</span> <span class="n">send_buf</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> <span class="n">displs</span><span class="p">,</span> 
-                         <span class="n">rec_szs</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">rec_buf</span> <span class="p">)</span>
-<span class="n">sll_collective_all_reduce</span><span class="p">(</span> <span class="n">col</span><span class="p">,</span> <span class="n">send_buf</span><span class="p">,</span> <span class="nb">count</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> 
-                           <span class="n">rec_buf</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_collective_bcast</span><span class="p">(</span><span class="w"> </span><span class="n">col</span><span class="p">,</span><span class="w"> </span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_collective_gather</span><span class="p">(</span><span class="w"> </span><span class="n">col</span><span class="p">,</span><span class="w"> </span><span class="n">send_buf</span><span class="p">,</span><span class="w"> </span><span class="n">send_sz</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                       </span><span class="n">rec_buf</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_collective_gatherv</span><span class="p">(</span><span class="w"> </span><span class="n">col</span><span class="p">,</span><span class="w"> </span><span class="n">send_buf</span><span class="p">,</span><span class="w"> </span><span class="n">send_sz</span><span class="p">,</span><span class="w"> </span><span class="n">recvcnts</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                        </span><span class="n">displs</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="n">recv_buf</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_collective_allgatherv</span><span class="p">(</span><span class="w"> </span><span class="n">col</span><span class="p">,</span><span class="w"> </span><span class="n">send_buf</span><span class="p">,</span><span class="w"> </span><span class="n">send_sz</span><span class="p">,</span><span class="w"> </span><span class="n">sizes</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                           </span><span class="n">displs</span><span class="p">,</span><span class="w"> </span><span class="n">rec_buf</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_collective_scatter</span><span class="p">(</span><span class="w"> </span><span class="n">col</span><span class="p">,</span><span class="w"> </span><span class="n">send_buf</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                        </span><span class="n">rec_buf</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_collective_scatterv</span><span class="p">(</span><span class="w"> </span><span class="n">col</span><span class="p">,</span><span class="w"> </span><span class="n">send_buf</span><span class="p">,</span><span class="w"> </span><span class="n">sizes</span><span class="p">,</span><span class="w"> </span><span class="n">displs</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                         </span><span class="n">rec_szs</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="n">rec_buf</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_collective_all_reduce</span><span class="p">(</span><span class="w"> </span><span class="n">col</span><span class="p">,</span><span class="w"> </span><span class="n">send_buf</span><span class="p">,</span><span class="w"> </span><span class="nb">count</span><span class="p">,</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                           </span><span class="n">rec_buf</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which presently stand for specialized versions that operate on specific
 types. For instance:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_collective_all_to_allv_real</span><span class="p">(</span> <span class="n">send_buf</span><span class="p">,</span> 
-                                 <span class="n">send_cnts</span><span class="p">,</span> 
-                                 <span class="n">send_displs</span><span class="p">,</span> 
-                                 <span class="n">recv_buf</span><span class="p">,</span> 
-                                 <span class="n">recv_cnts</span><span class="p">,</span> 
-                                 <span class="n">recv_displs</span><span class="p">,</span> 
-                                 <span class="n">col</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_collective_all_to_allv_real</span><span class="p">(</span><span class="w"> </span><span class="n">send_buf</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                 </span><span class="n">send_cnts</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                 </span><span class="n">send_displs</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                 </span><span class="n">recv_buf</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                 </span><span class="n">recv_cnts</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                 </span><span class="n">recv_displs</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                                 </span><span class="n">col</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id14">
 <h3>Usage<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <p>To use the module as stand-alone, include the line:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">sll_collective</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">sll_collective</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Any use of the module’s functionalities must be preceeded by calling</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">sll_boot_collective</span><span class="p">()</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">sll_boot_collective</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 <p>and to “turn off” the parallel capabilities, one should finish by a
 call to:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">sll_halt_collective</span><span class="p">()</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">sll_halt_collective</span><span class="p">()</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This <em>booting</em> of the parallel environment needs to be done only once in
@@ -1645,137 +1827,137 @@ interfaces)</p>
 <div class="section" id="id18">
 <h3>Usage<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <p>For use in stand-alone way, use the line:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;sll_remap.h&quot;</span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sll_remap.h&quot;</span><span class="cp"></span>
 </pre></div>
 </div>
 <p>While verbose, the best way to demonstrate the usage of the remapper is
 with a complete program. Below it, we examine the different statements.</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">remap_test</span>
-  <span class="k">use </span><span class="n">sll_collective</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">remap_test</span><span class="w"></span>
+<span class="w">  </span><span class="k">use </span><span class="n">sll_collective</span><span class="w"></span>
 <span class="cp">#include &quot;sll_remap.h&quot;</span>
 <span class="cp">#include &quot;sll_memory.h&quot;</span>
 <span class="cp">#include &quot;sll_working_precision.h&quot;</span>
 <span class="cp">#include &quot;misc_utils.h&quot;</span>
-  <span class="k">implicit none</span>
+<span class="w">  </span><span class="k">implicit none</span><span class="w"></span>
 
-  <span class="c">! Test of the 3D remapper takes a 3D array whose global</span>
-  <span class="c">! size Nx*Ny*Nz, distributed among pi*pj*pk processors.</span>
-  <span class="kt">integer</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,:,:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">a3</span>
-  <span class="kt">integer</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,:,:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">b3</span>
+<span class="w">  </span><span class="c">! Test of the 3D remapper takes a 3D array whose global</span>
+<span class="w">  </span><span class="c">! size Nx*Ny*Nz, distributed among pi*pj*pk processors.</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a3</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">b3</span><span class="w"></span>
 
-  <span class="c">! Take a 3D array of dimensions 8X8X1</span>
-  <span class="kt">integer</span><span class="p">,</span> <span class="k">parameter</span>                 <span class="kd">::</span> <span class="n">total_sz_i</span> <span class="o">=</span> <span class="mi">8</span>
-  <span class="kt">integer</span><span class="p">,</span> <span class="k">parameter</span>                 <span class="kd">::</span> <span class="n">total_sz_j</span> <span class="o">=</span> <span class="mi">8</span>
-  <span class="kt">integer</span><span class="p">,</span> <span class="k">parameter</span>                 <span class="kd">::</span> <span class="n">total_sz_k</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="w">  </span><span class="c">! Take a 3D array of dimensions 8X8X1</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">total_sz_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">total_sz_j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">total_sz_k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 
-  <span class="c">! the process mesh</span>
-  <span class="kt">integer</span><span class="p">,</span> <span class="k">parameter</span>                 <span class="kd">::</span> <span class="n">pi</span> <span class="o">=</span> <span class="mi">4</span>
-  <span class="kt">integer</span><span class="p">,</span> <span class="k">parameter</span>                 <span class="kd">::</span> <span class="n">pj</span> <span class="o">=</span> <span class="mi">4</span>
-  <span class="kt">integer</span><span class="p">,</span> <span class="k">parameter</span>                 <span class="kd">::</span> <span class="n">pk</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="w">  </span><span class="c">! the process mesh</span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">pj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">pk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 
-  <span class="c">! Split into 16 processes, each with a local chunk 2X2X1</span>
-  <span class="kt">integer</span>                            <span class="kd">::</span> <span class="n">local_sz_i</span>
-  <span class="kt">integer</span>                            <span class="kd">::</span> <span class="n">local_sz_j</span>
-  <span class="kt">integer</span>                            <span class="kd">::</span> <span class="n">local_sz_k</span>
-  <span class="kt">integer</span>                            <span class="kd">::</span> <span class="n">ierr</span>
-  <span class="kt">integer</span>                            <span class="kd">::</span> <span class="n">myrank</span>
-  <span class="kt">integer</span>                            <span class="kd">::</span> <span class="n">colsz</span>
-  <span class="kt">integer</span>                            <span class="kd">::</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span>
-  <span class="kt">integer</span>                            <span class="kd">::</span> <span class="n">i_min</span><span class="p">,</span> <span class="n">i_max</span>
-  <span class="kt">integer</span>                            <span class="kd">::</span> <span class="n">j_min</span><span class="p">,</span> <span class="n">j_max</span>
-  <span class="kt">integer</span>                            <span class="kd">::</span> <span class="n">k_min</span><span class="p">,</span> <span class="n">k_max</span>
-  <span class="kt">integer</span>                            <span class="kd">::</span> <span class="n">node</span>
-  <span class="kt">integer</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span>            <span class="kd">::</span> <span class="n">gcoords</span>
+<span class="w">  </span><span class="c">! Split into 16 processes, each with a local chunk 2X2X1</span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">local_sz_i</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">local_sz_j</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">local_sz_k</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">ierr</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">myrank</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">colsz</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">i_min</span><span class="p">,</span><span class="w"> </span><span class="n">i_max</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">j_min</span><span class="p">,</span><span class="w"> </span><span class="n">j_max</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">k_min</span><span class="p">,</span><span class="w"> </span><span class="n">k_max</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">node</span><span class="w"></span>
+<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">gcoords</span><span class="w"></span>
 
-  <span class="c">! Remap variables</span>
-  <span class="k">type</span><span class="p">(</span><span class="n">layout_3D_t</span><span class="p">),</span> <span class="k">pointer</span>         <span class="kd">::</span> <span class="n">conf3_init</span>
-  <span class="k">type</span><span class="p">(</span><span class="n">layout_3D_t</span><span class="p">),</span> <span class="k">pointer</span>         <span class="kd">::</span> <span class="n">conf3_final</span>
-  <span class="k">type</span><span class="p">(</span><span class="n">remap_plan_3D_t</span><span class="p">),</span> <span class="k">pointer</span>     <span class="kd">::</span> <span class="n">rmp3</span>
+<span class="w">  </span><span class="c">! Remap variables</span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">layout_3D_t</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">conf3_init</span><span class="w"></span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">layout_3D_t</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">conf3_final</span><span class="w"></span>
+<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">remap_plan_3D_t</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">rmp3</span><span class="w"></span>
 
-  <span class="c">! Boot parallel layer</span>
-  <span class="k">call </span><span class="n">sll_boot_collective</span><span class="p">()</span>
+<span class="w">  </span><span class="c">! Boot parallel layer</span>
+<span class="w">  </span><span class="k">call </span><span class="n">sll_boot_collective</span><span class="p">()</span><span class="w"></span>
 
-  <span class="c">! Initialize and allocate the variables.</span>
-  <span class="n">local_sz_i</span> <span class="o">=</span> <span class="n">total_sz_i</span><span class="o">/</span><span class="n">pi</span>
-  <span class="n">local_sz_j</span> <span class="o">=</span> <span class="n">total_sz_j</span><span class="o">/</span><span class="n">pj</span>
-  <span class="n">local_sz_k</span> <span class="o">=</span> <span class="n">total_sz_k</span><span class="o">/</span><span class="n">pk</span>
-  <span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="n">a3</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">local_sz_i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">local_sz_j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">local_sz_k</span><span class="p">),</span> <span class="n">ierr</span><span class="p">)</span>
-  <span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="n">b3</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">local_sz_i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">local_sz_j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">local_sz_k</span><span class="p">),</span> <span class="n">ierr</span><span class="p">)</span>
-  <span class="n">myrank</span>    <span class="o">=</span> <span class="n">sll_get_collective_rank</span><span class="p">(</span><span class="n">sll_world_collective</span><span class="p">)</span>
-  <span class="n">colsz</span>     <span class="o">=</span> <span class="n">sll_get_collective_size</span><span class="p">(</span><span class="n">sll_world_collective</span><span class="p">)</span>
+<span class="w">  </span><span class="c">! Initialize and allocate the variables.</span>
+<span class="w">  </span><span class="n">local_sz_i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total_sz_i</span><span class="o">/</span><span class="n">pi</span><span class="w"></span>
+<span class="w">  </span><span class="n">local_sz_j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total_sz_j</span><span class="o">/</span><span class="n">pj</span><span class="w"></span>
+<span class="w">  </span><span class="n">local_sz_k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total_sz_k</span><span class="o">/</span><span class="n">pk</span><span class="w"></span>
+<span class="w">  </span><span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="n">a3</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">local_sz_i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">local_sz_j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">local_sz_k</span><span class="p">),</span><span class="w"> </span><span class="n">ierr</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="n">b3</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">local_sz_i</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">local_sz_j</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">local_sz_k</span><span class="p">),</span><span class="w"> </span><span class="n">ierr</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">myrank</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">sll_get_collective_rank</span><span class="p">(</span><span class="n">sll_world_collective</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">colsz</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">sll_get_collective_size</span><span class="p">(</span><span class="n">sll_world_collective</span><span class="p">)</span><span class="w"></span>
 
-  <span class="n">conf3_init</span>     <span class="o">=&gt;</span> <span class="n">new_layout_3D</span><span class="p">(</span> <span class="n">sll_world_collective</span> <span class="p">)</span>
-  <span class="n">conf3_final</span>    <span class="o">=&gt;</span> <span class="n">new_layout_3D</span><span class="p">(</span> <span class="n">sll_world_collective</span> <span class="p">)</span>
-  <span class="n">random_layout1</span> <span class="o">=&gt;</span> <span class="n">new_layout_3D</span><span class="p">(</span> <span class="n">sll_world_collective</span> <span class="p">)</span>
+<span class="w">  </span><span class="n">conf3_init</span><span class="w">     </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">new_layout_3D</span><span class="p">(</span><span class="w"> </span><span class="n">sll_world_collective</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">conf3_final</span><span class="w">    </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">new_layout_3D</span><span class="p">(</span><span class="w"> </span><span class="n">sll_world_collective</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">random_layout1</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">new_layout_3D</span><span class="p">(</span><span class="w"> </span><span class="n">sll_world_collective</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 
-  <span class="c">! Initialize the layout</span>
-  <span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pk</span><span class="o">-</span><span class="mi">1</span>
-     <span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pj</span><span class="o">-</span><span class="mi">1</span>
-        <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pi</span><span class="o">-</span><span class="mi">1</span>
-           <span class="n">node</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">pj</span><span class="o">*</span><span class="n">k</span><span class="p">)</span> <span class="c">! linear index of node</span>
-           <span class="n">i_min</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">local_sz_i</span> <span class="o">+</span> <span class="mi">1</span>
-           <span class="n">i_max</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">local_sz_i</span> <span class="o">+</span> <span class="n">local_sz_i</span>
-           <span class="n">j_min</span> <span class="o">=</span> <span class="n">j</span><span class="o">*</span><span class="n">local_sz_j</span> <span class="o">+</span> <span class="mi">1</span>
-           <span class="n">j_max</span> <span class="o">=</span> <span class="n">j</span><span class="o">*</span><span class="n">local_sz_j</span> <span class="o">+</span> <span class="n">local_sz_j</span>
-           <span class="n">k_min</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="n">local_sz_k</span> <span class="o">+</span> <span class="mi">1</span>
-           <span class="n">k_max</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="n">local_sz_k</span> <span class="o">+</span> <span class="n">local_sz_k</span>
-           <span class="k">call </span><span class="n">set_layout_i_min</span><span class="p">(</span> <span class="n">conf3_init</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">i_min</span> <span class="p">)</span>
-           <span class="k">call </span><span class="n">set_layout_i_max</span><span class="p">(</span> <span class="n">conf3_init</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">i_max</span> <span class="p">)</span>
-           <span class="k">call </span><span class="n">set_layout_j_min</span><span class="p">(</span> <span class="n">conf3_init</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">j_min</span> <span class="p">)</span>
-           <span class="k">call </span><span class="n">set_layout_j_max</span><span class="p">(</span> <span class="n">conf3_init</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">j_max</span> <span class="p">)</span>
-           <span class="k">call </span><span class="n">set_layout_k_min</span><span class="p">(</span> <span class="n">conf3_init</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">k_min</span> <span class="p">)</span>
-           <span class="k">call </span><span class="n">set_layout_k_max</span><span class="p">(</span> <span class="n">conf3_init</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">k_max</span> <span class="p">)</span>
-        <span class="k">end do</span>
+<span class="w">  </span><span class="c">! Initialize the layout</span>
+<span class="w">  </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pk</span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">     </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pj</span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pi</span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">           </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">pj</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="c">! linear index of node</span>
+<span class="w">           </span><span class="n">i_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">local_sz_i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">           </span><span class="n">i_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">local_sz_i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">local_sz_i</span><span class="w"></span>
+<span class="w">           </span><span class="n">j_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="o">*</span><span class="n">local_sz_j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">           </span><span class="n">j_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="o">*</span><span class="n">local_sz_j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">local_sz_j</span><span class="w"></span>
+<span class="w">           </span><span class="n">k_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="o">*</span><span class="n">local_sz_k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">           </span><span class="n">k_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="o">*</span><span class="n">local_sz_k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">local_sz_k</span><span class="w"></span>
+<span class="w">           </span><span class="k">call </span><span class="n">set_layout_i_min</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_init</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">i_min</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">call </span><span class="n">set_layout_i_max</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_init</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">i_max</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">call </span><span class="n">set_layout_j_min</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_init</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">j_min</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">call </span><span class="n">set_layout_j_max</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_init</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">j_max</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">call </span><span class="n">set_layout_k_min</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_init</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">k_min</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">call </span><span class="n">set_layout_k_max</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_init</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">k_max</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">end do</span>
+<span class="k">     end do</span>
+<span class="k">  end do</span><span class="w"></span>
+
+<span class="w">  </span><span class="c">! Initialize the data using layout information.</span>
+<span class="w">  </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">local_sz_k</span><span class="w"></span>
+<span class="w">     </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">local_sz_j</span><span class="w"></span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">local_sz_i</span><span class="w"></span>
+<span class="w">           </span><span class="n">gcoords</span><span class="o">=</span><span class="w"> </span><span class="n">local_to_global_3D</span><span class="p">(</span><span class="n">conf3_init</span><span class="p">,(</span><span class="o">/</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="o">/</span><span class="p">))</span><span class="w"></span>
+<span class="w">           </span><span class="n">a3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gcoords</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                </span><span class="n">total_sz_i</span><span class="o">*</span><span class="p">((</span><span class="n">gcoords</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                </span><span class="n">total_sz_j</span><span class="o">*</span><span class="p">(</span><span class="n">gcoords</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
+<span class="w">        </span><span class="k">end do</span>
+<span class="k">     end do</span>
+<span class="k">  end do</span><span class="w"></span>
+
+<span class="w">  </span><span class="c">! Initialize the final layout, in this case, just a</span>
+<span class="w">  </span><span class="c">! transposition</span>
+<span class="w">  </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pk</span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">     </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pj</span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pi</span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">           </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">pj</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="c">! linear index of node</span>
+<span class="w">           </span><span class="n">i_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">local_sz_i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">           </span><span class="n">i_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">local_sz_i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">local_sz_i</span><span class="w"></span>
+<span class="w">           </span><span class="n">j_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="o">*</span><span class="n">local_sz_j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">           </span><span class="n">j_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="o">*</span><span class="n">local_sz_j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">local_sz_j</span><span class="w"></span>
+<span class="w">           </span><span class="n">k_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="o">*</span><span class="n">local_sz_k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">           </span><span class="n">k_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="o">*</span><span class="n">local_sz_k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">local_sz_k</span><span class="w"></span>
+<span class="w">           </span><span class="k">call </span><span class="n">set_layout_i_min</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_final</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">j_min</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">call </span><span class="n">set_layout_i_max</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_final</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">j_max</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">call </span><span class="n">set_layout_j_min</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_final</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">i_min</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">call </span><span class="n">set_layout_j_max</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_final</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">i_max</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">call </span><span class="n">set_layout_k_min</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_final</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">k_min</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">call </span><span class="n">set_layout_k_max</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_final</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">k_max</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">end do</span>
 <span class="k">     end do</span>
 <span class="k">  end do</span>
 
-  <span class="c">! Initialize the data using layout information.</span>
-  <span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">local_sz_k</span>
-     <span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">local_sz_j</span>
-        <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">local_sz_i</span>
-           <span class="n">gcoords</span><span class="o">=</span> <span class="n">local_to_global_3D</span><span class="p">(</span><span class="n">conf3_init</span><span class="p">,(</span><span class="o">/</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="o">/</span><span class="p">))</span>
-           <span class="n">a3</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">gcoords</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">&amp;</span>
-                <span class="n">total_sz_i</span><span class="o">*</span><span class="p">((</span><span class="n">gcoords</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">&amp;</span>
-                <span class="n">total_sz_j</span><span class="o">*</span><span class="p">(</span><span class="n">gcoords</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-        <span class="k">end do</span>
-<span class="k">     end do</span>
-<span class="k">  end do</span>
+<span class="k">  </span><span class="n">rmp3</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">NEW_REMAPPER_PLAN_3D</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_init</span><span class="p">,</span><span class="w"> </span><span class="n">conf3_final</span><span class="p">,</span><span class="w"> </span><span class="n">a3</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">apply_remap_3D</span><span class="p">(</span><span class="w"> </span><span class="n">rmp3</span><span class="p">,</span><span class="w"> </span><span class="n">a3</span><span class="p">,</span><span class="w"> </span><span class="n">b3</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 
-  <span class="c">! Initialize the final layout, in this case, just a</span>
-  <span class="c">! transposition</span>
-  <span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pk</span><span class="o">-</span><span class="mi">1</span>
-     <span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pj</span><span class="o">-</span><span class="mi">1</span>
-        <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pi</span><span class="o">-</span><span class="mi">1</span>
-           <span class="n">node</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">pj</span><span class="o">*</span><span class="n">k</span><span class="p">)</span> <span class="c">! linear index of node</span>
-           <span class="n">i_min</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">local_sz_i</span> <span class="o">+</span> <span class="mi">1</span>
-           <span class="n">i_max</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">local_sz_i</span> <span class="o">+</span> <span class="n">local_sz_i</span>
-           <span class="n">j_min</span> <span class="o">=</span> <span class="n">j</span><span class="o">*</span><span class="n">local_sz_j</span> <span class="o">+</span> <span class="mi">1</span>
-           <span class="n">j_max</span> <span class="o">=</span> <span class="n">j</span><span class="o">*</span><span class="n">local_sz_j</span> <span class="o">+</span> <span class="n">local_sz_j</span>
-           <span class="n">k_min</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="n">local_sz_k</span> <span class="o">+</span> <span class="mi">1</span>
-           <span class="n">k_max</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="n">local_sz_k</span> <span class="o">+</span> <span class="n">local_sz_k</span>
-           <span class="k">call </span><span class="n">set_layout_i_min</span><span class="p">(</span> <span class="n">conf3_final</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">j_min</span> <span class="p">)</span>
-           <span class="k">call </span><span class="n">set_layout_i_max</span><span class="p">(</span> <span class="n">conf3_final</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">j_max</span> <span class="p">)</span>
-           <span class="k">call </span><span class="n">set_layout_j_min</span><span class="p">(</span> <span class="n">conf3_final</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">i_min</span> <span class="p">)</span>
-           <span class="k">call </span><span class="n">set_layout_j_max</span><span class="p">(</span> <span class="n">conf3_final</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">i_max</span> <span class="p">)</span>
-           <span class="k">call </span><span class="n">set_layout_k_min</span><span class="p">(</span> <span class="n">conf3_final</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">k_min</span> <span class="p">)</span>
-           <span class="k">call </span><span class="n">set_layout_k_max</span><span class="p">(</span> <span class="n">conf3_final</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">k_max</span> <span class="p">)</span>
-        <span class="k">end do</span>
-<span class="k">     end do</span>
-<span class="k">  end do</span>
+<span class="w">  </span><span class="c">! At this moment, b3 contains the expected output</span>
+<span class="w">  </span><span class="c">! from the remap operation.</span>
 
-<span class="k">  </span><span class="n">rmp3</span> <span class="o">=&gt;</span> <span class="n">NEW_REMAPPER_PLAN_3D</span><span class="p">(</span> <span class="n">conf3_init</span><span class="p">,</span> <span class="n">conf3_final</span><span class="p">,</span> <span class="n">a3</span> <span class="p">)</span>
-  <span class="k">call </span><span class="n">apply_remap_3D</span><span class="p">(</span> <span class="n">rmp3</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">b3</span> <span class="p">)</span>
+<span class="w">  </span><span class="c">! Delete the layouts</span>
+<span class="w">  </span><span class="k">call </span><span class="n">delete_layout_3D</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_init</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">call </span><span class="n">delete_layout_3D</span><span class="p">(</span><span class="w"> </span><span class="n">conf3_final</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 
-  <span class="c">! At this moment, b3 contains the expected output</span>
-  <span class="c">! from the remap operation.</span>
+<span class="w">  </span><span class="k">call </span><span class="n">sll_halt_collective</span><span class="p">()</span><span class="w"></span>
 
-  <span class="c">! Delete the layouts</span>
-  <span class="k">call </span><span class="n">delete_layout_3D</span><span class="p">(</span> <span class="n">conf3_init</span> <span class="p">)</span>
-  <span class="k">call </span><span class="n">delete_layout_3D</span><span class="p">(</span> <span class="n">conf3_final</span> <span class="p">)</span>
-
-  <span class="k">call </span><span class="n">sll_halt_collective</span><span class="p">()</span>
-
-<span class="k">end program </span><span class="n">remap_test</span>
+<span class="k">end program </span><span class="n">remap_test</span><span class="w"></span>
 </pre></div>
 </div>
 <dl class="simple myst">
@@ -1916,35 +2098,43 @@ optimizations depend on how the local MPI is tuned.</p>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="low_level.html" title="previous page">Basic Utilities</a>
-    <a class='right-next' id="next-link" href="top_level.html" title="next page">Semi-Lagrangian</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="low_level.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Basic Utilities</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="top_level.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Semi-Lagrangian</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By The SeLaLib project team<br/>
-        
-            &copy; Copyright 2021.<br/>
-          Last updated on 16 Jul 2021.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By The SeLaLib project team<br/>
+    
+        &copy; Copyright 2021.<br/>
+      Last updated on 21 Feb 2022.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

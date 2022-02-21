@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basic Utilities</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -31,33 +31,39 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Numerical and Parallel Utilities" href="mid_level.html" />
     <link rel="prev" title="User guide" href="user_guide.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -74,6 +80,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="_static/selalib.png" class="logo" alt="logo">
       
       
@@ -81,9 +91,9 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   User guide
  </span>
@@ -120,7 +130,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Examples
  </span>
@@ -201,7 +211,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Developer guide
  </span>
@@ -238,7 +248,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Credits
  </span>
@@ -305,7 +315,7 @@
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -341,12 +351,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numeric-types">
@@ -510,10 +520,182 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Basic Utilities</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numeric-types">
+   Numeric Types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#description">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exposed-interface">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usage">
+     Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#memory-allocator">
+   Memory Allocator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assertions">
+   Assertions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#developer-notes">
+     Developer notes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#timing-utility">
+   Timing Utility
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constants">
+   Constants
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Exposed Interface
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logical-meshes">
+   Logical Meshes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Usage
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-io">
+   File IO
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     Exposed Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#critical-commentary">
+     Critical Commentary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="basic-utilities">
+  <div class="tex2jax_ignore mathjax_ignore section" id="basic-utilities">
 <h1>Basic Utilities<a class="headerlink" href="#basic-utilities" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="numeric-types">
 <h2>Numeric Types<a class="headerlink" href="#numeric-types" title="Permalink to this headline">¶</a></h2>
@@ -582,7 +764,7 @@ needed with only a parameter change.</p>
 <div class="section" id="usage">
 <h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
 <p>To use the module in a stand-alone way, use the line:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;sll_working_precision.h&quot;</span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sll_working_precision.h&quot;</span><span class="cp"></span>
 </pre></div>
 </div>
 <p>These types are to be used like the native Fortran types that they are
@@ -610,20 +792,20 @@ mandatory integer variable argument which does not need to be
 initialized. The user may decide to allocate arrays or pointers of any
 type, and up to the same number of dimensions as permitted by a given
 Fortran implementation. The exposed macros are:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_ALLOCATE</span><span class="p">(</span> <span class="n">array_and_lims</span><span class="p">,</span> <span class="n">ierr</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="w"> </span><span class="n">array_and_lims</span><span class="p">,</span><span class="w"> </span><span class="n">ierr</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This is the basic memory allocator with the same syntax as Fortran’s
 native <code class="docutils literal notranslate"><span class="pre">allocate()</span></code> but with a required integer error parameter. Any
 type and dimension that the native fortran allocator would accept can be
 given as the argument <code class="docutils literal notranslate"><span class="pre">array_and_lims</span></code>.</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_CLEAR_ALLOCATE</span><span class="p">(</span> <span class="n">array_and_lims</span><span class="p">,</span> <span class="n">ierr</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_CLEAR_ALLOCATE</span><span class="p">(</span><span class="w"> </span><span class="n">array_and_lims</span><span class="p">,</span><span class="w"> </span><span class="n">ierr</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Same behavior as <code class="docutils literal notranslate"><span class="pre">SLL_ALLOCATE()</span></code> but also initializes the allocated
 memory to zero. This works for Fortran native types only or for derived
 types for which an assignment operator (<span class="math notranslate nohighlight">\(= 0\)</span>) has been defined.</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_DEALLOCATE</span><span class="p">(</span> <span class="n">array_and_lims</span><span class="p">,</span> <span class="n">ierr</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_DEALLOCATE</span><span class="p">(</span><span class="w"> </span><span class="n">array_and_lims</span><span class="p">,</span><span class="w"> </span><span class="n">ierr</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Basic deallocator. It is a wrapper around Fortran’s native
@@ -631,14 +813,14 @@ types for which an assignment operator (<span class="math notranslate nohighligh
 argument after deallocation. This is a difference between the native
 Fortran routine and this wrapper, as we have thus needed to distinguish
 between the call that deallocates a pointer and a simple array:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_DEALLOCATE_ARRAY</span><span class="p">(</span> <span class="k">array</span><span class="p">,</span> <span class="n">ierr</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_DEALLOCATE_ARRAY</span><span class="p">(</span><span class="w"> </span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="n">ierr</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The array deallocator differs from the previous in that it does not
 attempt to nullify the array name after the deallocation is complete.
 This and the previous macro could in principle be merged into one for
 simplification.</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_INIT_ARRAY</span><span class="p">(</span> <span class="k">array</span><span class="p">,</span> <span class="n">val</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_INIT_ARRAY</span><span class="p">(</span><span class="w"> </span><span class="k">array</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>While not really an allocator/deallocator, we expose this macro for
@@ -648,17 +830,17 @@ consistency, it may be decided to eliminate this from the interface.</p>
 <div class="section" id="id3">
 <h3>Usage<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>To use the memory module in stand-alone fashion, use the line:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;sll_memory.h&quot;</span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sll_memory.h&quot;</span><span class="cp"></span>
 </pre></div>
 </div>
 <p>An example of the use of the module is:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">integer</span> <span class="kd">::</span> <span class="n">err</span>
-<span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">a</span>
-<span class="kt">real</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:,:,:),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">b</span><span class="o">=&gt;</span><span class="nb">null</span><span class="p">()</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">err</span><span class="w"></span>
+<span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+<span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:,:),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">b</span><span class="o">=&gt;</span><span class="nb">null</span><span class="p">()</span><span class="w"></span>
 
-<span class="n">SLL_ALLOCATE</span><span class="p">(</span> <span class="n">a</span><span class="p">(</span><span class="mi">5000</span><span class="p">),</span> <span class="n">err</span> <span class="p">)</span>
-<span class="n">SLL_CLEAR_ALLOCATE</span><span class="p">(</span> <span class="n">b</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">),</span> <span class="n">err</span><span class="p">)</span>
-<span class="n">SLL_INIT_ARRAY</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">SLL_ALLOCATE</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">5000</span><span class="p">),</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">SLL_CLEAR_ALLOCATE</span><span class="p">(</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">err</span><span class="p">)</span><span class="w"></span>
+<span class="n">SLL_INIT_ARRAY</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>When finding an error condition, the user is informed about the location
@@ -687,7 +869,7 @@ facility.</p>
 <div class="section" id="id5">
 <h3>Exposed Interface<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>Wherever a specific condition needs to be asserted, simply write:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_ASSERT</span><span class="p">(</span> <span class="n">logical_condition</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">SLL_ASSERT</span><span class="p">(</span><span class="w"> </span><span class="n">logical_condition</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Thus the condition to be checked must be cast in the form of a logical
@@ -702,20 +884,20 @@ production code.</p>
 <div class="section" id="id6">
 <h3>Usage<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>To use the <em>assertions</em> module in a stand-alone way, use the line:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;sll_assert.h&quot;</span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;sll_assert.h&quot;</span><span class="cp"></span>
 </pre></div>
 </div>
 <p>However, all the following steps are necessary:</p>
 <p>An example may be the checking of in-range indices on a protected array:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">function </span><span class="n">get_val</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">i</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">function </span><span class="n">get_val</span><span class="p">(</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 
-    <span class="n">sll_int32</span> <span class="kd">::</span> <span class="n">get_val</span>
-    <span class="n">sll_int32</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">i</span>
-    <span class="n">sll_int32</span><span class="p">,</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">a</span>
-    <span class="n">SLL_ASSERT</span><span class="p">(</span> <span class="p">(</span><span class="n">i</span> <span class="p">.</span><span class="n">ge</span><span class="p">.</span> <span class="mi">1</span><span class="p">)</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="p">(</span><span class="n">i</span> <span class="p">.</span><span class="n">le</span><span class="p">.</span> <span class="n">size</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="p">)</span>
-    <span class="n">get_val</span> <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="n">sll_int32</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_val</span><span class="w"></span>
+<span class="w">    </span><span class="n">sll_int32</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
+<span class="w">    </span><span class="n">sll_int32</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+<span class="w">    </span><span class="n">SLL_ASSERT</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="p">.</span><span class="n">ge</span><span class="p">.</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="p">.</span><span class="n">le</span><span class="p">.</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">get_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 
-<span class="k">end function </span><span class="n">get_val</span>
+<span class="k">end function </span><span class="n">get_val</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Which could produce a behavior such as:</p>
@@ -771,20 +953,20 @@ can be a bit smaller than 2 <span class="math notranslate nohighlight">\(\mu s\)
 <div class="section" id="id8">
 <h3>Exposed Interface<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>The module is imported by</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">sll_timer</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">sll_timer</span><span class="w"></span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">include </span><span class="n">sll_timer</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">include </span><span class="n">sll_timer</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which defines the type <code class="docutils literal notranslate"><span class="pre">sll_time_mark</span></code> which is meant to be treated as
 an opaque object i.e. only interact with it through the methods defined
 for it. An instance of this type can be used to measure time intervals
 with the following routines:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">set_time_mark</span><span class="p">(</span> <span class="n">mark</span><span class="p">)</span>
-<span class="n">time_elapsed_since</span><span class="p">(</span> <span class="n">mark</span> <span class="p">)</span>
-<span class="n">time_elapsed_between</span><span class="p">(</span> <span class="n">mark_0</span><span class="p">,</span> <span class="n">mark_1</span> <span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">set_time_mark</span><span class="p">(</span><span class="w"> </span><span class="n">mark</span><span class="p">)</span><span class="w"></span>
+<span class="n">time_elapsed_since</span><span class="p">(</span><span class="w"> </span><span class="n">mark</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">time_elapsed_between</span><span class="p">(</span><span class="w"> </span><span class="n">mark_0</span><span class="p">,</span><span class="w"> </span><span class="n">mark_1</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <dl class="simple myst">
@@ -806,26 +988,26 @@ time elapsed between them.</p>
 <div class="section" id="id9">
 <h3>Usage<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>Here is an example of the use of this module:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span> <span class="mi">1</span>     <span class="k">program </span><span class="n">timer_test</span>
- <span class="mi">2</span>     <span class="k">use </span><span class="n">sll_timer</span>
- <span class="mi">3</span>     <span class="k">implicit none</span>
-<span class="k"> </span><span class="mi">4</span>     <span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span>
- <span class="mi">5</span>     <span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span> <span class="k">dimension</span><span class="p">(:),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">dt</span>
- <span class="mi">6</span>     <span class="k">type</span><span class="p">(</span><span class="n">sll_time_mark</span><span class="p">)</span> <span class="kd">::</span> <span class="n">tmark</span>
- <span class="mi">7</span>
- <span class="mi">8</span>     <span class="kt">integer</span><span class="p">,</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">ITERATIONS</span> <span class="o">=</span> <span class="mi">1000</span>
- <span class="mi">9</span> 
- <span class="mi">10</span>    <span class="k">allocate</span><span class="p">(</span><span class="n">dt</span><span class="p">(</span><span class="n">ITERATIONS</span><span class="p">))</span>
- <span class="mi">11</span>
- <span class="mi">12</span>    <span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ITERATIONS</span>
- <span class="mi">13</span>       <span class="k">call </span><span class="n">sll_set_time_mark</span><span class="p">(</span><span class="n">tmark</span><span class="p">)</span>
- <span class="mi">14</span>       <span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">100000</span>    <span class="c">! Just a delay</span>
- <span class="mi">15</span>          <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">-</span> <span class="n">i</span>
- <span class="mi">16</span>       <span class="k">end do</span>
-<span class="k"> </span><span class="mi">17</span>       <span class="n">dt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">sll_time_elapsed_since</span><span class="p">(</span><span class="n">tmark</span><span class="p">)</span> 
- <span class="mi">18</span>    <span class="k">end do</span>
-<span class="k"> </span><span class="mi">19</span>    <span class="c">! print diagnostics here, averages, min, max, etc.</span>
- <span class="mi">20</span>    <span class="k">end program</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="mi">1</span><span class="w">     </span><span class="k">program </span><span class="n">timer_test</span><span class="w"></span>
+<span class="w"> </span><span class="mi">2</span><span class="w">     </span><span class="k">use </span><span class="n">sll_timer</span><span class="w"></span>
+<span class="w"> </span><span class="mi">3</span><span class="w">     </span><span class="k">implicit none</span>
+<span class="k"> </span><span class="mi">4</span><span class="w">     </span><span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"></span>
+<span class="w"> </span><span class="mi">5</span><span class="w">     </span><span class="kt">real</span><span class="p">(</span><span class="kt">c_double</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dt</span><span class="w"></span>
+<span class="w"> </span><span class="mi">6</span><span class="w">     </span><span class="k">type</span><span class="p">(</span><span class="n">sll_time_mark</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tmark</span><span class="w"></span>
+<span class="w"> </span><span class="mi">7</span><span class="w"></span>
+<span class="w"> </span><span class="mi">8</span><span class="w">     </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ITERATIONS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="w"></span>
+<span class="w"> </span><span class="mi">9</span><span class="w"> </span>
+<span class="w"> </span><span class="mi">10</span><span class="w">    </span><span class="k">allocate</span><span class="p">(</span><span class="n">dt</span><span class="p">(</span><span class="n">ITERATIONS</span><span class="p">))</span><span class="w"></span>
+<span class="w"> </span><span class="mi">11</span><span class="w"></span>
+<span class="w"> </span><span class="mi">12</span><span class="w">    </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ITERATIONS</span><span class="w"></span>
+<span class="w"> </span><span class="mi">13</span><span class="w">       </span><span class="k">call </span><span class="n">sll_set_time_mark</span><span class="p">(</span><span class="n">tmark</span><span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="mi">14</span><span class="w">       </span><span class="k">do </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">100000</span><span class="w">    </span><span class="c">! Just a delay</span>
+<span class="w"> </span><span class="mi">15</span><span class="w">          </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
+<span class="w"> </span><span class="mi">16</span><span class="w">       </span><span class="k">end do</span>
+<span class="k"> </span><span class="mi">17</span><span class="w">       </span><span class="n">dt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sll_time_elapsed_since</span><span class="p">(</span><span class="n">tmark</span><span class="p">)</span><span class="w"> </span>
+<span class="w"> </span><span class="mi">18</span><span class="w">    </span><span class="k">end do</span>
+<span class="k"> </span><span class="mi">19</span><span class="w">    </span><span class="c">! print diagnostics here, averages, min, max, etc.</span>
+<span class="w"> </span><span class="mi">20</span><span class="w">    </span><span class="k">end program</span><span class="w"></span>
 </pre></div>
 </div>
 <p>In brief:</p>
@@ -858,7 +1040,7 @@ read-only parameters that can be used library-wide or by users.</p>
 <h3>Exposed Interface<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>Selalib simply defines a list of symbols, all in units of the
 International System when applicable. To use, just write either</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">sll_constants</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">sll_constants</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The symbols defined are:</p>
@@ -904,49 +1086,49 @@ for the 1D mesh is <span class="math notranslate nohighlight">\(\eta_1\)</span>,
 <div class="section" id="id15">
 <h3>Exposed Interface<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <p>Public types:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_logical_mesh_1d</span>
-<span class="n">sll_logical_mesh_2d</span>
-<span class="n">sll_logical_mesh_3d</span>
-<span class="n">sll_logical_mesh_4d</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_logical_mesh_1d</span><span class="w"></span>
+<span class="n">sll_logical_mesh_2d</span><span class="w"></span>
+<span class="n">sll_logical_mesh_3d</span><span class="w"></span>
+<span class="n">sll_logical_mesh_4d</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Routines:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">new_logical_mesh_1d</span><span class="p">(</span> <span class="n">num_cells</span><span class="p">,</span>         
-                     <span class="n">eta1_min</span><span class="p">,</span> 
-                     <span class="n">eta1_max</span> <span class="p">)</span>
-                                              
-<span class="n">new_logical_mesh_2d</span><span class="p">(</span> <span class="n">num_cells1</span><span class="p">,</span> 
-                     <span class="n">num_cells2</span><span class="p">,</span> 
-                     <span class="n">eta1_min</span><span class="p">,</span> 
-                     <span class="n">eta1_max</span><span class="p">,</span> 
-                     <span class="n">eta2_min</span><span class="p">,</span> 
-                     <span class="n">eta2_max</span> <span class="p">)</span>
-                          
-<span class="n">new_logical_mesh_3d</span><span class="p">(</span> <span class="n">num_cells1</span><span class="p">,</span> 
-                     <span class="n">num_cells2</span><span class="p">,</span>
-                     <span class="n">num_cells3</span><span class="p">,</span> 
-                     <span class="n">eta1_min</span><span class="p">,</span> 
-                     <span class="n">eta1_max</span><span class="p">,</span> 
-                     <span class="n">eta2_min</span><span class="p">,</span> 
-                     <span class="n">eta2_max</span><span class="p">,</span> 
-                     <span class="n">eta3_min</span><span class="p">,</span> 
-                     <span class="n">eta3_max</span> <span class="p">)</span>
-                         
-<span class="n">new_logical_mesh_4d</span><span class="p">(</span> <span class="n">num_cells1</span><span class="p">,</span> 
-                     <span class="n">num_cells2</span><span class="p">,</span>
-                     <span class="n">num_cells3</span><span class="p">,</span>
-                     <span class="n">num_cells4</span><span class="p">,</span> 
-                     <span class="n">eta1_min</span><span class="p">,</span> 
-                     <span class="n">eta1_max</span><span class="p">,</span> 
-                     <span class="n">eta2_min</span><span class="p">,</span> 
-                     <span class="n">eta2_max</span><span class="p">,</span> 
-                     <span class="n">eta3_min</span><span class="p">,</span> 
-                     <span class="n">eta3_max</span><span class="p">,</span> 
-                     <span class="n">eta4_min</span><span class="p">,</span> 
-                     <span class="n">eta4_max</span> <span class="p">)</span>          
-                          
-<span class="n">sll_display</span><span class="p">(</span> <span class="n">mesh</span> <span class="p">)</span>  <span class="c">! generic, for any mesh dimension      </span>
-<span class="n">delete</span><span class="p">(</span> <span class="n">mesh</span> <span class="p">)</span>  <span class="c">! generic, for any mesh dimension</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">new_logical_mesh_1d</span><span class="p">(</span><span class="w"> </span><span class="n">num_cells</span><span class="p">,</span><span class="w">         </span>
+<span class="w">                     </span><span class="n">eta1_min</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta1_max</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">                                              </span>
+<span class="n">new_logical_mesh_2d</span><span class="p">(</span><span class="w"> </span><span class="n">num_cells1</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">num_cells2</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta1_min</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta1_max</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta2_min</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta2_max</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">                          </span>
+<span class="n">new_logical_mesh_3d</span><span class="p">(</span><span class="w"> </span><span class="n">num_cells1</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">num_cells2</span><span class="p">,</span><span class="w"></span>
+<span class="w">                     </span><span class="n">num_cells3</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta1_min</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta1_max</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta2_min</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta2_max</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta3_min</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta3_max</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">                         </span>
+<span class="n">new_logical_mesh_4d</span><span class="p">(</span><span class="w"> </span><span class="n">num_cells1</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">num_cells2</span><span class="p">,</span><span class="w"></span>
+<span class="w">                     </span><span class="n">num_cells3</span><span class="p">,</span><span class="w"></span>
+<span class="w">                     </span><span class="n">num_cells4</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta1_min</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta1_max</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta2_min</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta2_max</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta3_min</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta3_max</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta4_min</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                     </span><span class="n">eta4_max</span><span class="w"> </span><span class="p">)</span><span class="w">          </span>
+<span class="w">                          </span>
+<span class="n">sll_display</span><span class="p">(</span><span class="w"> </span><span class="n">mesh</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="c">! generic, for any mesh dimension      </span>
+<span class="n">delete</span><span class="p">(</span><span class="w"> </span><span class="n">mesh</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="c">! generic, for any mesh dimension</span>
 </pre></div>
 </div>
 <p>The ‘new’ functions return pointers to allocated and initialized meshes.
@@ -972,18 +1154,18 @@ directly access any of these slots as in:</p>
 </div>
 <div class="section" id="id16">
 <h3>Usage<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span>  <span class="mi">1</span> <span class="k">program </span><span class="n">logical_meshes</span>
-  <span class="mi">2</span> <span class="k">use </span><span class="n">sll_logical_meshes</span>
-  <span class="mi">3</span>  <span class="k">implicit none</span>
-<span class="k">  </span><span class="mi">4</span>
-  <span class="mi">5</span>  <span class="k">type</span><span class="p">(</span><span class="n">sll_logical_mesh_2d</span><span class="p">),</span> <span class="k">pointer</span> <span class="kd">::</span> <span class="n">m2d</span>
-  <span class="mi">6</span>  
-  <span class="mi">7</span>  <span class="n">m2d</span> <span class="o">=&gt;</span> <span class="n">new_logical_mesh_2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
-  <span class="mi">8</span>
-  <span class="mi">9</span>  <span class="k">call </span><span class="n">sll_display</span><span class="p">(</span><span class="n">m2d</span><span class="p">)</span>
-  <span class="mi">10</span>
-  <span class="mi">11</span> <span class="k">call </span><span class="n">delete</span><span class="p">(</span><span class="n">m2d</span><span class="p">)</span>
-  <span class="mi">12</span> <span class="k">end program </span><span class="n">logical_meshes</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="k">program </span><span class="n">logical_meshes</span><span class="w"></span>
+<span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="k">use </span><span class="n">sll_logical_meshes</span><span class="w"></span>
+<span class="w">  </span><span class="mi">3</span><span class="w">  </span><span class="k">implicit none</span>
+<span class="k">  </span><span class="mi">4</span><span class="w"></span>
+<span class="w">  </span><span class="mi">5</span><span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">sll_logical_mesh_2d</span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">m2d</span><span class="w"></span>
+<span class="w">  </span><span class="mi">6</span><span class="w">  </span>
+<span class="w">  </span><span class="mi">7</span><span class="w">  </span><span class="n">m2d</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">new_logical_mesh_2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="w"> </span><span class="mi">64</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="mi">8</span><span class="w"></span>
+<span class="w">  </span><span class="mi">9</span><span class="w">  </span><span class="k">call </span><span class="n">sll_display</span><span class="p">(</span><span class="n">m2d</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="mi">10</span><span class="w"></span>
+<span class="w">  </span><span class="mi">11</span><span class="w"> </span><span class="k">call </span><span class="n">delete</span><span class="p">(</span><span class="n">m2d</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="mi">12</span><span class="w"> </span><span class="k">end program </span><span class="n">logical_meshes</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1002,18 +1184,18 @@ higher-level functions to conveniently write data to files.</p>
 <div class="section" id="id18">
 <h3>Exposed Interface<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <p>The current interface is a collection of generic functions:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_xdmf_open</span><span class="p">(</span> <span class="n">file_name</span><span class="p">,</span>
-               <span class="n">mesh_name</span><span class="p">,</span>
-               <span class="n">nnodes_x1</span><span class="p">,</span><span class="n">nnodes_x2</span><span class="p">,[</span><span class="n">nnodes_x3</span><span class="p">,]</span>
-               <span class="n">file_id</span><span class="p">,</span>
-               <span class="n">error</span> <span class="p">)</span>
-<span class="n">sll_xdmf_write_array</span><span class="p">(</span> <span class="n">mesh_name</span><span class="p">,</span>
-                      <span class="k">array</span><span class="p">,</span>
-                      <span class="n">array_name</span><span class="p">,</span>
-                      <span class="n">error</span><span class="p">,</span>
-                      <span class="n">xmffile_id</span><span class="p">,</span>
-                      <span class="n">center</span> <span class="p">)</span>
-<span class="n">sll_xdmf_close</span><span class="p">(</span><span class="n">file_id</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">sll_xdmf_open</span><span class="p">(</span><span class="w"> </span><span class="n">file_name</span><span class="p">,</span><span class="w"></span>
+<span class="w">               </span><span class="n">mesh_name</span><span class="p">,</span><span class="w"></span>
+<span class="w">               </span><span class="n">nnodes_x1</span><span class="p">,</span><span class="n">nnodes_x2</span><span class="p">,[</span><span class="n">nnodes_x3</span><span class="p">,]</span><span class="w"></span>
+<span class="w">               </span><span class="n">file_id</span><span class="p">,</span><span class="w"></span>
+<span class="w">               </span><span class="n">error</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_xdmf_write_array</span><span class="p">(</span><span class="w"> </span><span class="n">mesh_name</span><span class="p">,</span><span class="w"></span>
+<span class="w">                      </span><span class="k">array</span><span class="p">,</span><span class="w"></span>
+<span class="w">                      </span><span class="n">array_name</span><span class="p">,</span><span class="w"></span>
+<span class="w">                      </span><span class="n">error</span><span class="p">,</span><span class="w"></span>
+<span class="w">                      </span><span class="n">xmffile_id</span><span class="p">,</span><span class="w"></span>
+<span class="w">                      </span><span class="n">center</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">sll_xdmf_close</span><span class="p">(</span><span class="n">file_id</span><span class="p">,</span><span class="n">error</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Where the parameters in brackets are used depending of the
@@ -1089,35 +1271,43 @@ domain is represented by multiple patches.</p>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="user_guide.html" title="previous page">User guide</a>
-    <a class='right-next' id="next-link" href="mid_level.html" title="next page">Numerical and Parallel Utilities</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="user_guide.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">User guide</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="mid_level.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Numerical and Parallel Utilities</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By The SeLaLib project team<br/>
-        
-            &copy; Copyright 2021.<br/>
-          Last updated on 16 Jul 2021.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      By The SeLaLib project team<br/>
+    
+        &copy; Copyright 2021.<br/>
+      Last updated on 21 Feb 2022.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
